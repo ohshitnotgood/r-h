@@ -2,6 +2,7 @@ import { createSignal, type Component } from 'solid-js';
 
 import logo from './logo.svg';
 import styles from './App.module.css';
+import Intro from './components/Intro';
 
 const App: Component = () => {
     const [d1Class, setD1Class] = createSignal("col col-full")
@@ -18,6 +19,12 @@ const App: Component = () => {
 
     const [d5Class, setD5Class] = createSignal("col col-fit")
     const [d5ClassContent, setD5ClassContent] = createSignal("column-content column-content-hidden")
+
+    const [d1Hidden, setD1Hidden] = createSignal(false);
+    const [d2Hidden, setD2Hidden] = createSignal(true);
+    const [d3Hidden, setD3Hidden] = createSignal(true);
+    const [d4Hidden, setD4Hidden] = createSignal(true);
+    const [d5Hidden, setD5Hidden] = createSignal(true);
 
     function resetAllWidthToDefault() {
         setD1Class("col col-fit")
@@ -40,12 +47,14 @@ const App: Component = () => {
         resetAllWidthToDefault()
         setD1Class("col col-full")
         setD1ClassContent("column-content column-content-visible")
+        setD1Hidden(false)
     }
 
     function onClickD2() {
         resetAllWidthToDefault()
         setD2Class("col col-full")
         setD2ClassContent("column-content column-content-visible")
+        setD1Hidden(true)
     }
 
     function onClickD3() {
@@ -70,16 +79,7 @@ const App: Component = () => {
     return (
         <div class='flex flex-row'>
             <div class={d1Class()} onClick={onClickD1}>
-                <div class='section'>
-                    <div class='column-header'>
-                        <div class='header-text rotate-[270deg]'>
-                            Header
-                        </div>
-                    </div>
-                    <div class={d1ClassContent()}>
-                        Content1
-                    </div>
-                </div>
+                <Intro hidden={d1Hidden()} contentStyle={d1ClassContent()} lang="bn"/>
             </div>
             <div class={d2Class()} onClick={onClickD2}>
                 <div class='section'>

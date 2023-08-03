@@ -17,6 +17,11 @@ code {
     monospace;
 }
 
+@font-face {
+    font-family: Inter;
+    src: url(./assets/fonts/inter.ttf);
+}
+
 
 @layer components {
     .section {
@@ -50,7 +55,7 @@ code {
     }
 
     .column-content {
-        @apply w-full grid h-screen place-content-center
+        @apply w-full grid h-screen place-content-center rounded-xl overflow-y-scroll
     }
 
     .column-content-visible {
@@ -61,6 +66,10 @@ code {
         opacity: 0;
         display: none;
         animation: 0.1s HideContent;
+    }
+
+    .font-inter {
+        font-family: Inter;
     }
 }
 
