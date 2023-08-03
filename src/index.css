@@ -19,6 +19,30 @@ code {
 
 @layer components {
     .col {
-        @apply border-r border-slate-300 h-screen cursor-pointer
+        @apply border-r border-slate-300 dark:border-zinc-600 dark:bg-zinc-900
+            text-black dark:text-white h-screen cursor-pointer
     }
+    
+    .col-full {
+        width: 100%;
+        animation-name: WidthFull;
+        animation-duration: 1s;
+    }
+    
+    .col-fit {
+        width: 100px;
+        animation-name: WidthFit;
+        animation-duration: 1s;
+    }
+}
+
+@keyframes WidthFull {
+    from { width: 100px; }
+    to { width: 100%; }
+}
+
+@keyframes WidthFit {
+    from { width: 100%; }
+    to { width: 100px; }
+    
 }
