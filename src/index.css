@@ -34,6 +34,27 @@ code {
         animation-name: WidthFit;
         animation-duration: 1s;
     }
+
+    .col-fit div {
+        display: hidden;
+    }
+
+    .column-header {
+        @apply rotate-[270deg] transform-gpu h-screen grid place-content-center
+    }
+
+    .column-content {
+        @apply w-full grid h-screen place-content-center
+    }
+
+    .column-content-visible {
+        animation: 1s ShowContent;
+    }
+
+    .column-content-hidden {
+        opacity: 0;
+        animation: 0.4s HideContent;
+    }
 }
 
 @keyframes WidthFull {
@@ -44,5 +65,26 @@ code {
 @keyframes WidthFit {
     from { width: 100%; }
     to { width: 100px; }
-    
+}
+
+@keyframes HideContent {
+    from { 
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: hidden;
+    }
+}
+
+@keyframes ShowContent {
+    from { 
+        opacity: 0;
+        display: hidden;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

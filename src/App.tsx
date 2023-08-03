@@ -8,14 +8,18 @@ const App: Component = () => {
     const [d2Class, setD2Class] = createSignal("col col-fit")
     const [d3Class, setD3Class] = createSignal("col col-fit")
     const [d4Class, setD4Class] = createSignal("col col-fit")
+
     const [d5Class, setD5Class] = createSignal("col col-fit")
+    const [d5ClassContent, setD5ClassContent] = createSignal("column-content column-content-hidden")
 
     function resetAllWidthToDefault() {
         setD1Class("col col-fit")
         setD2Class("col col-fit")
         setD3Class("col col-fit")
         setD4Class("col col-fit")
+        
         setD5Class("col col-fit")
+        setD5ClassContent("column-content column-content-hidden")
     }
 
     function onClickD1() {
@@ -41,34 +45,40 @@ const App: Component = () => {
     function onClickD5() {
         resetAllWidthToDefault()
         setD5Class("col col-full")
+        setD5ClassContent("column-content column-content-visible")
     }
 
 
     return (
         <div class='flex flex-row'>
             <div class={d1Class()} onClick={onClickD1}>
-                <div class='h-screen grid place-content-center'>
+                <div class='column-header'>
                     Content
                 </div>
             </div>
             <div class={d2Class()} onClick={onClickD2}>
-                <div class='h-screen grid place-content-center'>
+                <div class='column-header'>
                     Content
                 </div>
             </div>
             <div class={d3Class()} onclick={onClickD3}>
-                <div class='h-screen grid place-content-center'>
+                <div class='column-header'>
                     Content
                 </div>
             </div>
             <div class={d4Class()} onclick={onClickD4}>
-                <div class='h-screen grid place-content-center'>
+                <div class='column-header'>
                     Content
                 </div>
             </div>
             <div class={d5Class()} onclick={onClickD5}>
-                <div class='h-screen grid place-content-center'>
-                    <div class='rotate-[270deg] transform-gpu'>Content</div>
+                <div class='relative'>
+                    <div class='column-header absolute left-0'>
+                        Content
+                    </div>
+                    <div class={d5ClassContent()}>
+                        ছবির নেশার ছাড়লাম সবই
+                    </div>
                 </div>
             </div>
         </div>
