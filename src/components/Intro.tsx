@@ -1,30 +1,26 @@
 import { Show } from "solid-js"
+import ColumnSpacer from "./ColumnSpacer";
 
 export default function Intro(props) {
     return (
-        <div class='section relative'>
-            <div class='column-header'>
-                <div class='column-header-title'>
-                    INTRO
+        <div class="cursor-pointer">
+            <div class='w-full flex cursor-pointer'>
+                {/* Header Section */}
+                <div class='col-header cursor-pointer'>
+                    <div class="col-header-title">
+                        Intro
+                    </div>
                 </div>
-            </div>
-            <div class="column-content" classList={{"column-content-hidden": props.hidden, "column-content-visible": !props.hidden}}>
+
+                {/*Spacer Section*/}
+                <ColumnSpacer hidden={props.hidden}/>
             </div>
 
-            <div class="space-y-4 column-content"  classList={{"column-content-hidden": props.hidden, "column-content-visible": !props.hidden}}>
-                    <div class="font-inter text-8xl font-bold">
-                        I'm Praanto!
-                    </div>
-                    <div class="font-inter text-7xl font-medium">
-                        CompEng student at KTH
-                    </div>
-            </div>
-
-            <div classList={{"absolute right-0 bottom-0": !props.hidden, "hidden": props.hidden}}>
-                <button class="rounded-full dark:bg-slate-700 w-16 h-16 mb-2 mr-2">
-                    Button
-                </button>
-            </div>
+            {/*<div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>*/}
+            {/*    <div class='col-content' classList={{"col-spacer-visible col-content-visible": !props.hidden, "col-content-hidden col-spacer-hidden": props.hidden}}>*/}
+            {/*        Content*/}
+            {/*    </div>*/}
+            {/*</div>*/}
         </div>
     )
 }

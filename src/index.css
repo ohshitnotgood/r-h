@@ -28,48 +28,45 @@ code {
         text-black dark:text-white h-screen cursor-pointer
     }
 
+    .col-entire-section {
+        @apply relative
+    }
+
+    .col-spacer {
+        @apply border border-gray-200 bg-slate-400
+    }
 
     .col-spacer-visible {
         width: 100%;
-        animation-name: WidthFull;
-        animation-duration: 1s;
+        animation: 1s column-spacer-expand;
     }
 
     .col-spacer-hidden {
         width: 100px;
-        min-width: 100px;
-        animation-name: WidthFit;
-        animation-duration: 1s;
+        animation: 1s column-spacer-shrink;
     }
 
     .col-header {
-        @apply  h-screen grid place-content-center
+        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] border-r border-gray-600
     }
 
     .col-header-title {
         @apply font-inter text-3xl font-bold uppercase rotate-[270deg]
     }
 
-    .col-spacer {
 
-    }
-
-    .column-content {
-        @apply right-0 bottom-0 left-0 top-0 m-auto z-50 absolute
+    .col-content {
+        @apply grid place-content-center h-screen z-50 ml-[100px] min-w-[300px] max-w-[300px]
     }
 
     .col-content-visible {
         opacity: 1;
-        animation-name: ShowContent;
-        animation-duration: 0.1s;
-        animation-timing-function: ease-out;
-        @apply w-full grid h-screen place-content-center overflow-y-scroll
+        animation: 1s enable-content-opacity ease-out;
     }
 
     .col-content-hidden {
         opacity: 0; 
-        animation: 0.2s HideContent;
-        @apply w-full grid h-screen place-content-center overflow-y-scroll
+        animation: 1s disable-content-opacity ease-out;
     }
 
     .font-inter {
@@ -77,22 +74,22 @@ code {
     }
 }
 
-@keyframes WidthFull {
+@keyframes column-spacer-expand {
     from { width: 100px; }
     to { width: 100%; }
 }
 
-@keyframes WidthFit {
+@keyframes column-spacer-shrink {
     from { width: 100%; }
     to { width: 100px; }
 }
 
-@keyframes HideContent {
+@keyframes disable-content-opacity {
     from { opacity: 1; }
     to { opacity: 0; }
 }
 
-@keyframes ShowContent {
+@keyframes enable-content-opacity {
     from { opacity: 0; }
     to { opacity: 1; }
 }
