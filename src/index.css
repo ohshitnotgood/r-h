@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     overflow-y: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -25,51 +25,59 @@ code {
 
 @layer components {
     .section {
-        @apply flex
+        display: grid;
+        grid-template-columns: 100px auto;
     }
 
     .col {
         @apply border-r border-slate-300 dark:border-zinc-600 dark:bg-zinc-900
-            text-black dark:text-white h-screen cursor-pointer
+        text-black dark:text-white h-screen cursor-pointer
     }
-    
+
     .col-full {
         width: 100%;
         animation-name: WidthFull;
-        animation-duration: 0.3s;
+        /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+        animation-duration: 1s;
     }
-    
+
     .col-fit {
         width: 100px;
         min-width: 100px;
         animation-name: WidthFit;
-        animation-duration: 0.3s;
-    }
-
-    .col-fit div {
-        display: hidden;
+        /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+        animation-duration: 1s;
     }
 
     .column-header {
         @apply  h-screen flex-none grid place-content-center w-[100px]
     }
 
+    .column-header-title {
+        @apply rotate-[270deg] font-inter text-3xl font-bold uppercase
+    }
+
     .column-content {
-        @apply w-full grid h-screen place-content-center rounded-xl overflow-y-scroll
+        /* white-space: nowrap; */
+        min-width: 60vw;
     }
 
     .column-content-visible {
-        animation: 0.3s ShowContent;
+        opacity: 1;
+        animation-name: ShowContent;
+        animation-duration: 0.2s;
+        animation-timing-function: ease-out;
+        @apply w-full grid h-screen place-content-center overflow-y-scroll
     }
 
     .column-content-hidden {
-        opacity: 0;
-        display: none;
-        animation: 0.1s HideContent;
+        opacity: 0; 
+        animation: 0.2s HideContent;
+        @apply w-full grid h-screen place-content-center overflow-y-scroll
     }
 
     .font-inter {
-        font-family: Inter;
+        font-family: Inter, sans-serif;
     }
 }
 
@@ -84,25 +92,11 @@ code {
 }
 
 @keyframes HideContent {
-    from { 
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-        width: 0;
-        display: none;
-    }
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
 @keyframes ShowContent {
-    from { 
-        width: 0;
-        opacity: 0;
-        display: none;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

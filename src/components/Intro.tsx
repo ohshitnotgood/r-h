@@ -1,12 +1,14 @@
+import { Show } from "solid-js"
+
 export default function Intro(props) {
     return (
         <div class='section relative'>
             <div class='column-header'>
-                <div class='header-text rotate-[270deg] font-inter text-3xl font-bold'>
+                <div class='column-header-title'>
                     INTRO
                 </div>
             </div>
-            <div classList={{"column-content column-content-hidden": props.hidden, "column-content column-content-visible": !props.hidden}}>
+            <div class="column-content" classList={{"column-content-hidden": props.hidden, "column-content-visible": !props.hidden}}>
                 <Show when={props.lang === "en"}>
                     <EnglishText />
                 </Show>
@@ -26,15 +28,12 @@ export default function Intro(props) {
 
 function EnglishText() {
     return (
-        <div>
-            <div>
-                Hi there.
-            </div>
-            <div>
+        <div class="space-y-4">
+            <div class="font-inter text-8xl font-bold">
                 I'm Praanto!
             </div>
-            <div>
-                Comp Eng. student at KTH
+            <div class="font-inter text-7xl font-medium">
+                CompEng student at KTH
             </div>
         </div>
     )
