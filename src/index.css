@@ -7,7 +7,6 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    overflow-y: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -24,53 +23,50 @@ code {
 
 
 @layer components {
-    .section {
-        display: grid;
-        grid-template-columns: 100px auto;
-    }
-
     .col {
         @apply border-r border-slate-300 dark:border-zinc-600 dark:bg-zinc-900
         text-black dark:text-white h-screen cursor-pointer
     }
 
-    .col-full {
+
+    .col-spacer-visible {
         width: 100%;
         animation-name: WidthFull;
-        /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
         animation-duration: 1s;
     }
 
-    .col-fit {
+    .col-spacer-hidden {
         width: 100px;
         min-width: 100px;
         animation-name: WidthFit;
-        /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
         animation-duration: 1s;
     }
 
-    .column-header {
-        @apply  h-screen flex-none grid place-content-center w-[100px]
+    .col-header {
+        @apply  h-screen grid place-content-center
     }
 
-    .column-header-title {
-        @apply rotate-[270deg] font-inter text-3xl font-bold uppercase
+    .col-header-title {
+        @apply font-inter text-3xl font-bold uppercase rotate-[270deg]
+    }
+
+    .col-spacer {
+
     }
 
     .column-content {
-        /* white-space: nowrap; */
-        min-width: 60vw;
+        @apply right-0 bottom-0 left-0 top-0 m-auto z-50 absolute
     }
 
-    .column-content-visible {
+    .col-content-visible {
         opacity: 1;
         animation-name: ShowContent;
-        animation-duration: 0.2s;
+        animation-duration: 0.1s;
         animation-timing-function: ease-out;
         @apply w-full grid h-screen place-content-center overflow-y-scroll
     }
 
-    .column-content-hidden {
+    .col-content-hidden {
         opacity: 0; 
         animation: 0.2s HideContent;
         @apply w-full grid h-screen place-content-center overflow-y-scroll

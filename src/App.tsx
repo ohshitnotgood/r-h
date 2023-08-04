@@ -66,24 +66,52 @@ const App: Component = () => {
 
 
     return (
-        <div class='flex flex-row'>
-            <div class={d1Class()} onClick={onClickD1}>
-                <Intro hidden={d1Hidden()} lang="en"/>
-            </div>
-            <div class={d2Class()} onClick={onClickD2}>
-                <Education hidden={d2Hidden()}/>
-            </div>
-            <div class={d3Class()} onclick={onClickD3}>
-                <Experience hidden={d3Hidden()}/>
-            </div>
-            <div class={d4Class()} onclick={onClickD4}>
-                <Volunteering hidden={d4Hidden()}/>
-            </div>
-            <div class={d5Class()} onclick={onClickD5}>
-                <Outro hidden={d5Hidden()}/>
+        <div class='flex flex-row w-screen'>
+            <Section />
+
+            <div class='w-full relative'>
+                {/* Header Section */}
+                <div class='w-full flex'>
+                    <div class='col-header'>
+                        <div class='col-header-title'>
+                            Header
+                        </div>
+                    </div>
+                    <div class='col col-spacer-hidden border border-gray-200 bg-slate-400'>
+                    </div>
+                </div>
+
+                <div class='absolute top-0 left-0 w-full h-full'>
+                    <div class='grid place-content-center z-50'>
+                        Content
+                    </div>
+                </div>
             </div>
         </div>
     );
 };
+
+function Section() {
+    return(
+        <div class='w-full relative'>
+            {/* Header Section */}
+            <div class='w-full flex'>
+                <div class='col-header'>
+                    <div class='col-header-title'>
+                        Header
+                    </div>
+                </div>
+                <div class='col col-spacer-visible border border-gray-200 bg-slate-400'>
+                </div>
+            </div>
+
+            <div class='absolute top-0 left-0 w-full h-full'>
+                <div class='grid place-content-center h-screen z-50'>
+                    Content
+                </div>
+            </div>
+        </div>
+    )
+}
 
 export default App;

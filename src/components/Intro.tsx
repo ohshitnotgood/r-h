@@ -9,12 +9,15 @@ export default function Intro(props) {
                 </div>
             </div>
             <div class="column-content" classList={{"column-content-hidden": props.hidden, "column-content-visible": !props.hidden}}>
-                <Show when={props.lang === "en"}>
-                    <EnglishText />
-                </Show>
-                <Show when={props.lang === "bn"}>
-                    <BengaliText />
-                </Show>
+            </div>
+
+            <div class="space-y-4 column-content"  classList={{"column-content-hidden": props.hidden, "column-content-visible": !props.hidden}}>
+                    <div class="font-inter text-8xl font-bold">
+                        I'm Praanto!
+                    </div>
+                    <div class="font-inter text-7xl font-medium">
+                        CompEng student at KTH
+                    </div>
             </div>
 
             <div classList={{"absolute right-0 bottom-0": !props.hidden, "hidden": props.hidden}}>
