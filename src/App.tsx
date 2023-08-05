@@ -52,8 +52,8 @@ const App: Component = () => {
     return (
         <div class='flex flex-row w-screen'>
             <Intro hidden={d1Hidden()} onclickAction={onClickD1}/>
-            <Education hidden={d2Hidden()} onclickAction={onClickD2}/>
             <Experience hidden={d3Hidden()} onclickAction={onClickD3}/>
+            <Education hidden={d2Hidden()} onclickAction={onClickD2}/>
             <Volunteering hidden={d4Hidden()} onclickAction={onClickD4}/>
             <Outro hidden={d5Hidden()} onclickAction={onClickD5}/>
         </div>

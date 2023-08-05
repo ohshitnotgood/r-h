@@ -29,7 +29,7 @@ code {
     }
 
     .col-entire-section {
-        @apply relative border-r border-black
+        @apply relative border-r border-black bg-white
     }
 
     .col-spacer {
@@ -50,12 +50,16 @@ code {
 
     /* CSS for the header part of the column that includes the rotated title */
     .col-header {
-        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-white dark:bg-black
+        background: rgba(255, 255, 255, 0.42);
+        border-radius: 16px;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-white z-[100] dark:bg-black cursor-pointer
     }
 
     /* Rotated title in the header section */
     .col-header-title {
-        @apply font-inter text-3xl font-bold uppercase rotate-[270deg]
+        @apply font-inter text-3xl font-bold uppercase rotate-[270deg] bg-white
     }
 
 
@@ -73,11 +77,21 @@ code {
 
     .col-content-visible {
         opacity: 1;
-        animation: 0.7s enable-content-opacity ease-in-out;
+        animation: 0.6s enable-content-opacity ease-in-out;
     }
 
     .col-content-hidden {
         opacity: 0; 
+        animation: 0.7s disable-content-opacity ease-in-out;
+    }
+
+    .col-content-delayed-animation--visible {
+        opacity: 1;
+        animation: 1.5s enable-content-opacity ease-in-out;
+    }
+
+    .col-content-delayed-animation--hidden {
+        opacity: 0;
         animation: 0.7s disable-content-opacity ease-in-out;
     }
 
