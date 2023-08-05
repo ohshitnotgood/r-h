@@ -6,7 +6,7 @@ export default function Experience(props) {
                     {/* Header Section */}
                     <div class='col-header cursor-pointer'>
                         <div class="col-header-title">
-                            Work Experience
+                            Experience
                         </div>
                     </div>
                 </div>

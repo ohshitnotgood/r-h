@@ -39,13 +39,13 @@ code {
     /* Animates and expands the content box width*/
     .col-content-expand {
         width: 100%;
-        animation: 1s column-spacer-expand;
+        animation: 0.7s column-spacer-expand ease-in-out;
     }
 
     /* Animates and SHRINKS the content box width*/
     .col-content-shrink {
         width: 100px;
-        animation: 1s column-spacer-shrink;
+        animation: 0.7s column-spacer-shrink ease-in-out;
     }
 
     /* CSS for the header part of the column that includes the rotated title */
@@ -68,12 +68,12 @@ code {
     }
     .col-content-visible {
         opacity: 1;
-        animation: 1s enable-content-opacity ease-out;
+        animation: 0.7s enable-content-opacity ease-in-out;
     }
 
     .col-content-hidden {
         opacity: 0; 
-        animation: 1s disable-content-opacity ease-out;
+        animation: 0.7s disable-content-opacity ease-in-out;
     }
 
     .font-inter {
