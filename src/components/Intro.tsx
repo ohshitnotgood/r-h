@@ -1,13 +1,12 @@
-import { Show } from "solid-js"
-import ColumnSpacer from "./ColumnSpacer";
+import "animate.css"
 
 export default function Intro(props) {
     return (
         <div class='col-entire-section'
-             classList={{"col-content-expand": !props.hidden, "col-content-shrink": props.hidden}} onclick={props.onclickAction}>
+             classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
             {/* Header Section */}
             <div class='col-header cursor-pointer'>
-                <div class="col-header-title">
+                <div class="col-header-title animate__fadeInUp">
                     Intro
                 </div>
             </div>
@@ -15,7 +14,7 @@ export default function Intro(props) {
             <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden, "col-content-hidden col-content-shrink": props.hidden}}>
                     <div class="col-text">
-                        <div class="text-4xl font-medium mb-3">
+                        <div class="text-4xl font-medium mb-3 animate__fadeInUp">
                             Hi! I'm Praanto
                         </div>
                         <div>

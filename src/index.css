@@ -29,7 +29,7 @@ code {
     }
 
     .col-entire-section {
-        @apply relative
+        @apply relative border-r border-black
     }
 
     .col-spacer {
@@ -50,7 +50,7 @@ code {
 
     /* CSS for the header part of the column that includes the rotated title */
     .col-header {
-        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] border-r border-gray-600
+        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-white dark:bg-black
     }
 
     /* Rotated title in the header section */
@@ -60,12 +60,17 @@ code {
 
 
     .col-content {
-        @apply grid place-content-center h-screen z-50 ml-[100px]
+        @apply grid place-content-center h-screen z-50 
     }
 
     .col-text {
-        @apply min-w-[400px] max-w-[400px]
+        @apply xl:min-w-[1000px] xl:max-w-[1000px] pl-[100px]
     }
+
+    .col-text-grid {
+        grid-template-columns: 1fr 3fr;
+    }
+
     .col-content-visible {
         opacity: 1;
         animation: 0.7s enable-content-opacity ease-in-out;
