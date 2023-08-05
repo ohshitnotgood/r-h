@@ -23,13 +23,8 @@ code {
 
 
 @layer components {
-    .col {
-        @apply border-r border-slate-300 dark:border-zinc-600 dark:bg-zinc-900
-        text-black dark:text-white h-screen cursor-pointer
-    }
-
     .col-entire-section {
-        @apply relative border-r border-black bg-white
+        @apply relative border-r border-black bg-white z-10
     }
 
     .col-spacer {
@@ -46,15 +41,12 @@ code {
     .col-content-shrink {
         width: 100px;
         animation: 0.7s column-spacer-shrink ease-in-out;
+        @apply bg-white
     }
 
     /* CSS for the header part of the column that includes the rotated title */
     .col-header {
-        background: rgba(255, 255, 255, 0.42);
-        border-radius: 16px;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-white z-[100] dark:bg-black cursor-pointer
+        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-white z-10 dark:bg-black cursor-pointer
     }
 
     /* Rotated title in the header section */
@@ -64,7 +56,7 @@ code {
 
 
     .col-content {
-        @apply grid place-content-center h-screen z-50 
+        @apply grid place-content-center h-screen z-50
     }
 
     .col-text {

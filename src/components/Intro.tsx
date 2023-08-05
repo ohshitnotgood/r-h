@@ -5,8 +5,8 @@ export default function Intro(props) {
         <div class='col-entire-section'
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
             {/* Header Section */}
-            <div class='col-header'>
-                <div class="col-header-title animate__fadeInUp">
+            <div class='col-header bg-white'>
+                <div class="col-header-title bg-white">
                     Intro
                 </div>
             </div>
