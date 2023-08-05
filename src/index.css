@@ -36,29 +36,36 @@ code {
         @apply border border-gray-200 bg-slate-400
     }
 
-    .col-spacer-visible {
+    /* Animates and expands the content box width*/
+    .col-content-expand {
         width: 100%;
         animation: 1s column-spacer-expand;
     }
 
-    .col-spacer-hidden {
+    /* Animates and SHRINKS the content box width*/
+    .col-content-shrink {
         width: 100px;
         animation: 1s column-spacer-shrink;
     }
 
+    /* CSS for the header part of the column that includes the rotated title */
     .col-header {
         @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] border-r border-gray-600
     }
 
+    /* Rotated title in the header section */
     .col-header-title {
         @apply font-inter text-3xl font-bold uppercase rotate-[270deg]
     }
 
 
     .col-content {
-        @apply grid place-content-center h-screen z-50 ml-[100px] min-w-[300px] max-w-[300px]
+        @apply grid place-content-center h-screen z-50 ml-[100px]
     }
 
+    .col-text {
+        @apply min-w-[400px] max-w-[400px]
+    }
     .col-content-visible {
         opacity: 1;
         animation: 1s enable-content-opacity ease-out;
