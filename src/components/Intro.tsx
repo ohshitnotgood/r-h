@@ -2,8 +2,9 @@ import "animate.css"
 
 export default function Intro(props) {
     return (
-        <div class='col-entire-section'
-             classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
+        <div class='col-entire-section z-50'
+             classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
+             onclick={props.onclickAction}>
             {/* Header Section */}
             <div class='col-header bg-white'>
                 <div class="col-header-title bg-white">

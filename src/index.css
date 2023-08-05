@@ -24,7 +24,7 @@ code {
 
 @layer components {
     .col-entire-section {
-        @apply relative border-r border-black bg-white z-10
+        @apply relative border-r border-black bg-white
     }
 
     .col-spacer {
