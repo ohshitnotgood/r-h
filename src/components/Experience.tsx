@@ -14,12 +14,11 @@ export default function Experience(props) {
             <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
                     <div class="col-text overflow-y-scroll pr-20">
-                        <div class="grid grid-cols-2 mt-32">
-                            <div class="uppercase text-sm">About my experience</div>
-                            <div class="pb-24">
-                                And some text goes here describing <i>how</i> i got my experience.
-                            </div>
-
+                        <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold mr-40">About my experience</div>
+                        <div class="pb-24">
+                            And some text goes here describing <i>how</i> i got my experience.
+                        </div>
+                        <div class="grid grid-cols-2 ">
                             <div class="uppercase text-sm">Independent development</div>
                             <div>
                                 <div class="lowercase text-lg text-left font-medium">

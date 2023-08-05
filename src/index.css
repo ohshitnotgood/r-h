@@ -63,6 +63,10 @@ code {
         @apply xl:min-w-[1000px] xl:max-w-[1000px] pl-[100px]
     }
 
+    .col-text::-webkit-scrollbar {
+        display: none;
+    }
+
     .col-text-grid {
         grid-template-columns: 1fr 3fr;
     }
