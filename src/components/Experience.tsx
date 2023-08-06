@@ -9,6 +9,15 @@ import {createSignal} from "solid-js";
 
 export default function Experience(props) {
     const [userReachedBottom, setUserReachBottom] = createSignal(false)
+    let mainContent: HTMLDivElement
+
+    let counter = 0
+
+    function onScrollDown() {
+        console.log(mainContent.scrollTop)
+        if (mainContent.scrollTop >= 1400) setUserReachBottom(true)
+        else setUserReachBottom(false)
+    }
 
     return (
         <div class='col-entire-section' classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
@@ -26,17 +35,16 @@ export default function Experience(props) {
 
             {/*Scroll Indicator*/}
             <div class="absolute right-8 bottom-5"
-                 classList={{"text-gray-300": userReachedBottom(), "text-gray-700": !userReachedBottom()}}>
+                 classList={{"scroll-indicator-hide": userReachedBottom(), "scroll-indicator-show": !userReachedBottom()}}>
                 <div class="flex justify-center items-center flex-col">
-                    <img class="w-6 h-6" src={icDownCircled} alt="Down scroll indicator"/>
-                    scroll
+                    <img class="w-8 h-8" src={icDownCircled} alt="Down scroll indicator"/>
                 </div>
             </div>
 
             {/*Main Content*/}
             <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
-                    <div class="col-text overflow-y-scroll pr-20">
+                    <div ref={mainContent} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
                         <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold mr-40">About my experience</div>
                         <div class="pb-24">
                             Since commencing my programming journey in high school, I have accumulated extensive experience with diverse programming languages and frameworks highly sought after in the industry. Through numerous personal projects, I familiarized myself with industry standards and best practices, utilizing these ventures as platforms for continuous learning, drawing inspiration, and enhancing my creativity and skill set.

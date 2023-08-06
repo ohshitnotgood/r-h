@@ -105,6 +105,17 @@ code {
     .font-inter {
         font-family: Inter, sans-serif;
     }
+
+
+    .scroll-indicator-show {
+        opacity: 1;
+        animation: 0.3s enable-content-opacity ease-in-out;
+    }
+
+    .scroll-indicator-hide {
+        opacity: 0;
+        animation: 0.3s disable-content-opacity ease-in-out;
+    }
 }
 
 @keyframes column-spacer-expand {
