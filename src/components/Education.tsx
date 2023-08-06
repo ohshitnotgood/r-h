@@ -1,7 +1,7 @@
 export default function Education(props) {
     return (
         <div class='col-entire-section' classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
-            <div class="col-header">
+            <div class="cursor-pointer">
                 <div class='w-full flex cursor-pointer'>
                     {/* Header Section */}
                     <div class='col-header cursor-pointer'>
@@ -12,27 +12,49 @@ export default function Education(props) {
                 </div>
             </div>
             <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
-                <div class='col-content w-full' classList={{"col-content-expand col-content-visible": !props.hidden, "col-content-hidden col-content-shrink": props.hidden}}>
-                    <div class="col-text">
-                        <div class="text-center pb-56">
+                <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
+                    <div class="col-text overflow-y-scroll pr-20">
+                        <div class="mt-24 pt-24 pb-5 uppercase text-7xl font-bold mr-40">Academic Pursuits</div>
+                        <div class="pb-24 lowercase">
+                            As mentioned earlier, my passion for computer programming began in high school, and thus I
+                            decided to carry that on through university. During my time at university, I delved into
+                            challenging coursework, engaging projects, and collaborative coding clubs. Internships at a
+                            tech startup further solidified my passion, emphasizing teamwork and adaptability. As I
+                            neared graduation, I contemplated career opportunities and postgraduate studies to explore
+                            specialized areas. Regardless of the path ahead, my unwavering passion for computer
+                            programming will continue driving me towards a fulfilling and impactful career in the
+                            world of technology.
                         </div>
-                        <div class="col-text-grid gap-16 grid place-content-center w-full font-left">
-                            <div class="uppercase text-sm font-semibold">
-                                Bachelor's of Science
+                        <div class="grid grid-cols-2 ">
+                            <div class="uppercase text-sm">high school</div>
+                            <div>
+                                <div class="lowercase text-lg text-left font-medium">
+                                    Oxford International School
+                                </div>
+                                <div class="lowercase">
+                                    cambridge gce <i>o level</i> and <i>a level</i>
+                                </div>
+                                <div class="lowercase italic text-gray-600 text-sm pt-1.5">
+                                    2019 - 2021
+                                </div>
+                                <ul class="list-disc pb-10 pt-2 pl-4 text-gray-500 lowercase">
+                                    <li>Graduated with 5A*/4A in the O Level and 3A* in the A Level.</li>
+                                </ul>
                             </div>
-                            <div class="uppercase space-y-1 text-right">
-                                <div class="font-xl font-bold">Kungliga Tekniska Högskolan</div>
-                                <div class="text-sm font-normal">BSc in Information and Communication Technology</div>
-                                <div class="italic">2022 - Present</div>
-                            </div>
-                            <div class="text-left uppercase text-sm font-semibold"
-                                 classList={{"col-content-delayed-animation--visible": !props.hidden, "col-content-delayed-animation--hidden": props.hidden}}>
-                                High School
-                            </div>
-                            <div class="space-y-2 uppercase text-right">
-                                <div class="text-lg font-bold">Oxford International School</div>
-                                <div class="">CAIE GCE O Level and A Level</div>
-                                <div class="italic">2022 - Present</div>
+
+                            <div class="uppercase text-sm">Bachelor's of Science</div>
+                            <div class="pb-24">
+                                <div>
+                                    <div class="lowercase text-lg text-left font-medium">
+                                        Kungliga Tekniska Högskolan
+                                    </div>
+                                    <div class="lowercase">
+                                        bsc in information and communication technology
+                                    </div>
+                                    <ul class="list-disc pb-10 pt-2 pl-4 text-gray-500 lowercase">
+                                        <li>Graduated with 5A*/4A in the O Level and 3A* in the A Level.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

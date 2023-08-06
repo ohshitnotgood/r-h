@@ -1,8 +1,9 @@
 import "animate.css"
+import TypingAnimation from "./TypingAnimation";
 
 export default function Intro(props) {
     return (
-        <div class='col-entire-section z-50'
+        <div class='col-entire-section z-50 bg-white'
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
              onclick={props.onclickAction}>
             {/* Header Section */}
@@ -12,11 +13,11 @@ export default function Intro(props) {
                 </div>
             </div>
 
-            <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
+            <div classList={{'z-10 absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden, "col-content-hidden col-content-shrink": props.hidden}}>
                     <div class="col-text">
                         <div class="text-4xl font-medium mb-3 animate__fadeInUp">
-                            Hi! I'm Praanto
+                            <TypingAnimation text="Hi! I'm Praanto" delay={100} initialDelay={400} />
                         </div>
                         <div>
 

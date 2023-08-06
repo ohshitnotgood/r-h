@@ -11,6 +11,14 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+::-moz-selection { /* Code for Firefox */
+    @apply text-white bg-black dark:text-black dark:bg-white
+}
+
+::selection {
+    @apply text-white bg-black dark:text-black dark:bg-white
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -74,9 +74,11 @@ export default function Experience(props) {
                                 <div class="lowercase text-lg text-left font-medium">
                                     Swift
                                 </div>
-                                <ul class="list-disc pl-4 pb-10">
-                                    <li>some text</li>
-                                    <li>some more text</li>
+                                <ul class="list-disc pl-4 pb-10 lowercase pb-24">
+                                    <li>Cross-platform application for iOS, iPadOS and macOS using SwiftUI</li>
+                                    <li>Client-side RESTful programming</li>
+                                    <li>Reactive state management using StateObjects and ObservableObject</li>
+                                    <li>Calling backend API concurrently using URLSessions and async/await.</li>
                                 </ul>
                             </div>
 
