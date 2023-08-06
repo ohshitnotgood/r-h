@@ -2,7 +2,7 @@ import { createSignal, type Component } from 'solid-js';
 
 import Intro from './components/intro/Intro';
 import Education from "./components/Education";
-import Experience from "./components/Experience";
+import Experience from "./components/experience/Experience";
 import Volunteering from "./components/Volunteering";
 import Outro from "./components/Outro";
 import ColumnSpacer from "./components/ColumnSpacer";
