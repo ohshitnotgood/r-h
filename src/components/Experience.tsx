@@ -15,7 +15,7 @@ export default function Experience(props) {
 
     function onScrollDown() {
         console.log(mainContent.scrollTop)
-        if (mainContent.scrollTop >= 1400) setUserReachBottom(true)
+        if (mainContent.scrollTop >= 1330) setUserReachBottom(true)
         else setUserReachBottom(false)
     }
 

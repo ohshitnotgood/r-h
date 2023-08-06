@@ -15,6 +15,8 @@ const App: Component = () => {
     const [d4Hidden, setD4Hidden] = createSignal(true);
     const [d5Hidden, setD5Hidden] = createSignal(true);
 
+    const [lang, setLang] = createSignal("en")
+
     function resetAllWidthToDefault() {
         setD1Hidden(true)
         setD2Hidden(true)
@@ -51,7 +53,7 @@ const App: Component = () => {
 
     return (
         <div class='flex flex-row w-screen'>
-            <Intro hidden={d1Hidden()} onclickAction={onClickD1}/>
+            <Intro lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
             <Experience hidden={d3Hidden()} onclickAction={onClickD3}/>
             <Education hidden={d2Hidden()} onclickAction={onClickD2}/>
             <Volunteering hidden={d4Hidden()} onclickAction={onClickD4}/>
