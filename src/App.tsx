@@ -56,8 +56,8 @@ const App: Component = () => {
             <Intro lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
             <Experience lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
             <Education lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
-            <Volunteering hidden={d4Hidden()} onclickAction={onClickD4}/>
-            <Outro hidden={d5Hidden()} onclickAction={onClickD5}/>
+            <Volunteering lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
+            <Outro lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
         </div>
     );
 };

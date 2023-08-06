@@ -55,7 +55,7 @@ export default function Experience(props) {
             <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
                     <div ref={mainContent} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
-                        <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold mr-40">About my experience</div>
+                        <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold mr-40">Independent and Professional Experience</div>
                         <div class="pb-24">
                             Since commencing my programming journey in high school, I have accumulated extensive experience with diverse programming languages and frameworks highly sought after in the industry. Through numerous personal projects, I familiarized myself with industry standards and best practices, utilizing these ventures as platforms for continuous learning, drawing inspiration, and enhancing my creativity and skill set.
                         </div>

@@ -1,19 +1,23 @@
 export default function TypingAnimation(props) {
     let reference: HTMLDivElement;
     let itemizedText = props.text.split('')
-    var counter = 0
+    let counter = 0;
 
     setTimeout(() => {
+        reference.innerHTML = itemizedText[0]
         let typingInterval = setInterval(() => {
-            if (itemizedText[counter] === " ") reference.innerHTML += "\u2009"
-            else reference.innerText += itemizedText[counter]
             counter += 1
-            if (counter === itemizedText.length) clearInterval(typingInterval)
+            if (itemizedText[counter] === " ") reference.innerHTML += "\u2009"
+            if (itemizedText[counter] === " ") reference.innerHTML += "\u2009"
+            if (itemizedText[counter] === " ") reference.innerHTML += "\u2009"
+            reference.innerText += itemizedText[counter]
+            if (counter === itemizedText.length - 1) clearInterval(typingInterval)
         }, props.delay)
     }, props.initialDelay)
 
     return(
         <div ref={reference} class={props.class}>
+            &nbsp
         </div>
     )
 }
