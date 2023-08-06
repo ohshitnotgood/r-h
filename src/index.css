@@ -63,6 +63,9 @@ code {
     }
 
 
+    .grid-arrangement {
+        grid-template-rows: 1fr auto 1fr;
+    }
     .col-content {
         @apply grid place-content-center h-screen z-50
     }

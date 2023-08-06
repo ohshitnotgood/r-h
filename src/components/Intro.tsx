@@ -7,16 +7,23 @@ export default function Intro(props) {
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
              onclick={props.onclickAction}>
             {/* Header Section */}
-            <div class='col-header bg-white'>
-                <div class="col-header-title bg-white">
-                    Intro
+            <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer bg-white'>
+                <div class="grid grid-arrangement h-screen place-content-center">
+                    <div class="w-full text-center">
+                        blank
+                    </div>
+                    <div class="font-inter text-3xl font-bold rotate-[270deg] uppercase bg-white">
+                        Intro
+                    </div>
+                    <div>
+                    </div>
                 </div>
             </div>
 
             <div classList={{'z-10 absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden, "col-content-hidden col-content-shrink": props.hidden}}>
                     <div class="col-text">
-                        <div class="text-4xl font-medium mb-3 animate__fadeInUp">
+                        <div class="text-4xl font-medium mb-3">
                             <TypingAnimation text="Hi! I'm Praanto" delay={100} initialDelay={400} />
                         </div>
                         <div>
@@ -24,35 +31,6 @@ export default function Intro(props) {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    )
-}
-
-function EnglishText() {
-    return (
-        <div class="space-y-4">
-            <div class="font-inter text-8xl font-bold">
-                I'm Praanto!
-            </div>
-            <div class="font-inter text-7xl font-medium">
-                CompEng student at KTH
-            </div>
-        </div>
-    )
-}
-
-function BengaliText() {
-    return(
-        <div>
-            <div>
-                সাগতম!
-            </div>
-            <div>
-                আমি প্রান্ত!
-            </div>
-            <div>
-                সুইডেন অবস্থিত KTH বিশ্ববিদ্যালয়ের ছাত্র
             </div>
         </div>
     )
