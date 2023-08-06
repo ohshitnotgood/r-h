@@ -1,6 +1,6 @@
 import { createSignal, type Component } from 'solid-js';
 
-import Intro from './components/Intro';
+import Intro from './components/intro/Intro';
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Volunteering from "./components/Volunteering";
