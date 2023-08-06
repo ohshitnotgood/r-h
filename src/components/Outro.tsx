@@ -79,13 +79,13 @@ export default function Outro(props) {
                                         +46 70776 2321
                                     </div>
                                     <div class="pb-6">
-                                        phone sweden
+                                        phone - sweden 🇸🇪
                                     </div>
                                     <div class="lowercase text-lg text-left font-medium">
                                         +880 1766 239267
                                     </div>
                                     <div>
-                                        phone bangladesh
+                                        phone - bangladesh 🇧🇩
                                     </div>
                                 </div>
                             </div>

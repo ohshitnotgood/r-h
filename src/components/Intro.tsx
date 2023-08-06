@@ -3,9 +3,38 @@ import TypingAnimation from "./TypingAnimation";
 import rightArrow from "../assets/icons/ic_right.svg"
 import {Show} from "solid-js";
 import langIcon from "../assets/icons/ic_lang.svg"
+import fire from "../assets/img/fire-fireball.gif"
 import jsLogo from "../assets/img/js_logo_bw.png";
 
 export default function Intro(props) {
+    function getAge() {
+        var ageDifMs = Date.now() - Date.parse("2004-07-07");
+        var ageDate = new Date(ageDifMs); 
+
+        if (props.lang === "en") return Math.abs(ageDate.getUTCFullYear() - 1970);
+        else return langNumSwap((Math.abs(ageDate.getUTCFullYear() - 1970).toString()))
+    }
+
+    function langNumSwap(str: String): String {
+        let final: String = ""
+        for (let i in str) {
+            if (str[i] === "1") final += "১"
+            else if (str[i] === "2") final += "২"
+            else if (str[i] === "3") final += "৩"
+            else if (str[i] === "4") final += "৪"
+            else if (str[i] === "5") final += "৫"
+            else if (str[i] === "6") final += "৬"
+            else if (str[i] === "7") final += "৭"
+            else if (str[i] === "8") final += "৮"
+            else if (str[i] === "9") final += "৯"
+            else if (str[i] === "0") final += "০"
+            else final += str[i]
+        }
+        return final
+    }
+
+    console.log(langNumSwap("12345678910sdasd"))
+
     return (
         <div class='col-entire-section z-50 bg-white'
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
@@ -44,23 +73,36 @@ export default function Intro(props) {
                 <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden,
                     "col-content-hidden col-content-shrink": props.hidden}}>
                     <div class="col-text lowercase">
-                        <div class="text-7xl font-bold mb-3 uppercase">
+                        <div class="text-7xl flex flex-row font-bold mb-3 uppercase">
                             {/*<TypingAnimation text="Hi! I'm Praanto" delay={100} initialDelay={400} />*/}
-                            Hi! I'm Praanto
+                            <Show when={props.lang == "en"}>Hi! I'm Praanto</Show>
+                            <Show when={props.lang == "bn"}>স্বাগতম! আমি প্রান্ত</Show>
+                            <img class="w-14 ml-3"  src={fire} alt="" />
 
                         </div>
                         <div class="text-2xl">
                             {/*<TypingAnimation text="Comp.Eng student at KTH" delay={100} initialDelay={700} />*/}
-                            Comp.Eng. student at KTH
+                            <Show when={props.lang == "en"}>computer eng. student at kth</Show>
+                            <Show when={props.lang == "bn"}>সুইডেন অবস্থিত কেটিএইচ-এর কম্পিউটার ইঞ্জিনিয়ারিং ছাত্র </Show>
                         </div>
 
                         <div class="pt-4">
-                            Highly skilled software engineer and passionate programmer with a proven track record of developing robust and innovative solutions. Adept at leveraging cutting-edge technologies to deliver efficient and user-centric applications. Committed to continuous learning and seeking new challenges to drive excellence in software development.
+                            <Show when={props.lang === "en"} >
+                                {getAge()} year old highly skilled software engineer and passionate programmer. Adept at leveraging cutting-edge technologies to deliver efficient and user-centric applications. Committed to continuous learning and seeking new challenges to drive excellence in software development.
+                            </Show>
+                            <Show when={props.lang === "bn"} >
+                                {getAge()} বছর বয়সী উচ্চকৌশল সফটওয়্যার ইঞ্জিনিয়ার এবং উদ্দীপত সফটওয়্যার প্রোগ্রামার। দক্ষতার মাধ্যমে নতুনত্বপূর্ণ প্রযুক্তি ব্যবহার করে দক্ষ এবং ব্যবহারকারী-মনোযোগী অ্যাপ্লিকেশন প্রদানে দক্ষ। সফটওয়্যার উন্নতি উত্সাহিত করতে সতত শেখা এবং নতুন চ্যালেঞ্জ সন্ধান করায় প্রতিশ্রুতিবদ্ধ।
+                            </Show>
                         </div>
                         <div class="pt-7">
                             <button class="pointer-events-auto hover:cursor-pointer rounded-full my-4 p-2 px-4 border border-black">
                                 <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                                    <span>get to know me</span>
+                                    <Show when={props.lang === "en"}>
+                                        <span>get to know me</span>
+                                    </Show>
+                                    <Show when={props.lang === "bn"}>
+                                        <span>আমার সম্পর্কে জানুন</span>
+                                    </Show>
                                     <img src={rightArrow} class="w-6 h-6" alt={"Javascript logo in black and white"}/>
                                 </div>
                             </button>
