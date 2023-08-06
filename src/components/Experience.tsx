@@ -5,7 +5,7 @@ import androidLogoRound from "../assets/img/android_logo_bw_circle.png"
 import dbLogo from '../assets/img/database_logo_bw.png'
 import androidLogoBlock from '../assets/img/android_logo_bw_block.png'
 import swiftLogo from '../assets/img/swift_logo_bw.png'
-import {createSignal} from "solid-js";
+import {createSignal, Show} from "solid-js";
 
 export default function Experience(props) {
     const [userReachedBottom, setUserReachBottom] = createSignal(false)
@@ -20,14 +20,24 @@ export default function Experience(props) {
     }
 
     return (
-        <div class='col-entire-section' classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
+        <div class='col-entire-section'
+             classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
+             onclick={props.onclickAction}>
             {/*Header*/}
-            <div class="cursor-pointer">
-                <div class='w-full flex cursor-pointer'>
-                    {/* Header Section */}
-                    <div class='col-header cursor-pointer'>
-                        <div class="col-header-title">
-                            Experience
+            <div class='w-full flex cursor-pointer'>
+                {/* Header Section */}
+                <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer bg-white'>
+                    <div class="grid grid-arrangement h-screen place-content-center">
+                        <div class="h-fit text-center pt-10">
+                            02.
+                        </div>
+                        <div class="h-fit text-center"></div>
+                        <div class="col-header-title" classList={{"col-header-visible": props.hidden, "col-header-hidden": !props.hidden}}>
+                            <Show when={props.lang == "en"}>Experience</Show>
+                            <Show when={props.lang == "bn"}>কর্মদক্ষতা</Show>
+                        </div>
+                        <div class="h-fit"></div>
+                        <div class="h-full grid place-content-center">
                         </div>
                     </div>
                 </div>

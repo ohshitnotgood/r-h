@@ -25,7 +25,8 @@ export default function Intro(props) {
                             <div class="border-b border-gray-400 p-2">
                                 <img class="w-6 h-6" src={langIcon} alt="Language icon"/>
                             </div>
-                            <button onclick={() => {
+                            <button onclick={(e) => {
+                                e.stopPropagation()
                                 if (props.lang == "en") props.setLang("bn")
                                 else props.setLang("en")
                             }} class=" pt-1 cursor-pointer hover:bg-gray-100 rounded-b-lg">

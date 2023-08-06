@@ -62,6 +62,18 @@ code {
         @apply font-inter text-3xl font-bold uppercase rotate-[270deg] bg-white
     }
 
+    /* Display animation when a section is shrunk. */
+    .col-header-visible {
+        opacity: 1;
+        animation: 0.8s enable-content-opacity ease-in-out;
+    }
+
+    /* Display animation when a section is clicked on and expanded */
+    .col-header-hidden {
+        opacity: 0;
+        animation: 0.3s disable-content-opacity ease-in-out;
+    }
+
 
     .grid-arrangement {
         grid-template-rows: 1fr 1fr max-content 1fr 1fr;

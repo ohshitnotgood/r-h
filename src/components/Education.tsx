@@ -1,12 +1,25 @@
+import {Show} from "solid-js";
+import langIcon from "../assets/icons/ic_lang.svg";
+
 export default function Education(props) {
     return (
-        <div class='col-entire-section' classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
-            <div class="cursor-pointer">
-                <div class='w-full flex cursor-pointer'>
-                    {/* Header Section */}
-                    <div class='col-header cursor-pointer'>
-                        <div class="col-header-title">
-                            Education
+        <div class='col-entire-section'
+             classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
+             onclick={props.onclickAction}>
+            <div class='w-full flex cursor-pointer'>
+                {/* Header Section */}
+                <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer bg-white'>
+                    <div class="grid grid-arrangement h-screen place-content-center">
+                        <div class="h-fit text-center pt-10">
+                            03.
+                        </div>
+                        <div class="h-fit text-center"></div>
+                        <div class="col-header-title" classList={{"col-header-visible": props.hidden, "col-header-hidden": !props.hidden}}>
+                            <Show when={props.lang == "en"}>Education</Show>
+                            <Show when={props.lang == "bn"}>শিক্ষাগত যোগ্যতা</Show>
+                        </div>
+                        <div class="h-fit"></div>
+                        <div class="h-full grid place-content-center">
                         </div>
                     </div>
                 </div>
@@ -15,7 +28,7 @@ export default function Education(props) {
                 <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
                     <div class="col-text overflow-y-scroll pr-20">
                         <div class="mt-24 pt-24 pb-5 uppercase text-7xl font-bold mr-40">Academic Pursuits</div>
-                        <div class="pb-24 lowercase">
+                        <div class="pb-24 ">
                             As mentioned earlier, my passion for computer programming began in high school, and thus I
                             decided to carry that on through university. During my time at university, I delved into
                             challenging coursework, engaging projects, and collaborative coding clubs. Internships at a
