@@ -1,6 +1,12 @@
+import icDownCircled from '../assets/icons/ic_down_circled.svg'
+import {createSignal} from "solid-js";
+
 export default function Experience(props) {
+    const [userReachedBottom, setUserReachBottom] = createSignal(false)
+
     return (
         <div class='col-entire-section' classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
+            {/*Header*/}
             <div class="cursor-pointer">
                 <div class='w-full flex cursor-pointer'>
                     {/* Header Section */}
@@ -11,6 +17,17 @@ export default function Experience(props) {
                     </div>
                 </div>
             </div>
+
+            {/*Scroll Indicator*/}
+            <div class="absolute right-8 bottom-5"
+                 classList={{"text-gray-300": userReachedBottom(), "text-gray-700": !userReachedBottom()}}>
+                <div class="flex justify-center items-center flex-col">
+                    <img class="w-6 h-6" src={icDownCircled} alt="Down scroll indicator"/>
+                    scroll
+                </div>
+            </div>
+
+            {/*Main Content*/}
             <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
                     <div class="col-text overflow-y-scroll pr-20">
