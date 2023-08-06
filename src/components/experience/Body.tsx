@@ -25,106 +25,11 @@ export default function Body(props) {
                     <div class="grid grid-cols-2 ">
                         <div class="uppercase text-sm">Independent development</div>
                         <div>
-                            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                                <span>Javascript & Typescript</span>
-                                <img src={jsLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
-                            </div>
-                            <ul class="list-disc pl-4 pb-10 lowercase">
-                                <li>
-                                    Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS
-                                </li>
-                                <li>
-                                    Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS
-                                </li>
-                                <li>
-                                    Building full-stack web applications with SvelteKit and SolidJS
-                                </li>
-                                <li>
-                                    Handling server-side RESTful API with ExpressJS.
-                                </li>
-                                <li>
-                                    Database management with PostgresQL, MySQL and Prisma
-                                </li>
-                                <li>
-                                    Can center element inside a div
-                                </li>
-                            </ul>
-
-                            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                                <span>Database management</span>
-                                <img src={dbLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
-                            </div>
-                            <ul class="list-disc pl-4 pb-10 lowercase">
-                                <li>
-                                    Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS
-                                </li>
-                                <li>
-                                    Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS
-                                </li>
-                                <li>
-                                    Building full-stack web applications with SvelteKit and SolidJS
-                                </li>
-                                <li>
-                                    Handling server-side RESTful API with ExpressJS.
-                                </li>
-                                <li>
-                                    Database management with PostgresQL, MySQL and Prisma
-                                </li>
-                                <li>
-                                    Can center element inside a div
-                                </li>
-                            </ul>
-
-
-                            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                                <span>Kotlin</span>
-                                <img src={ktLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
-                            </div>
-                            <ul class="list-disc pl-4 pb-10 lowercase">
-                                <li>
-                                    RESTful Server programming with Ktor
-                                </li>
-                                <li>
-                                    Android app development with AndriodSDK
-                                </li>
-                                <li>
-                                    Asynchronous programming with Kotlin Coroutines
-                                </li>
-                                <li>
-                                    Cross-platform software development with Kotlin Multiplatform
-                                </li>
-                            </ul>
-
-                            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                                <span>Android</span>
-                                <img src={androidLogoBlock} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
-                            </div>
-                            <ul class="list-disc pl-4 pb-10 lowercase">
-                                <li>
-                                    Building reactive UIs using Kotlin LiveData
-                                </li>
-                                <li>
-                                    Database management with Room and SQLite
-                                </li>
-                                <li>
-                                    Responsive UIs with constraint layout, relative layout, linear layout, etc
-                                </li>
-                                <li>
-                                    Handling client-side RESTful requests with Ktor
-                                </li>
-                            </ul>
-
-                            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                                <span>Swift</span>
-                                <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
-                            </div>
-                            <ul class="list-disc pl-4 lowercase pb-24">
-                                <li>Declarative UI building with SwiftUI</li>
-                                <li>Cross-platform application for iOS, iPadOS and macOS from a single codebase</li>
-                                <li>Client-side RESTful programming</li>
-                                <li>Reactive state management using StateObjects and ObservableObject</li>
-                                <li>Calling backend API concurrently using URLSessions and async/await.</li>
-                            </ul>
+                            <Javascript />
+                            <Database />
+                            <Kotlin />
+                            <Android />
+                            <Swift />
                         </div>
 
                         <div class="uppercase text-sm">Teaching assistant in high school</div>
@@ -159,6 +64,136 @@ export default function Body(props) {
                     </div>
                 </div>
             </div>
+        </div>
+    )
+}
+
+function Javascript(){
+    return(
+        <div>
+            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <span>Javascript & Typescript</span>
+                <img src={jsLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+            </div>
+            <ul class="list-disc pl-4 pb-10 lowercase">
+                <li>
+                    Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS
+                </li>
+                <li>
+                    Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS
+                </li>
+                <li>
+                    Building full-stack web applications with SvelteKit and SolidJS
+                </li>
+                <li>
+                    Handling server-side RESTful API with ExpressJS.
+                </li>
+                <li>
+                    Database management with PostgresQL, MySQL and Prisma
+                </li>
+                <li>
+                    Can center element inside a div
+                </li>
+            </ul>
+        </div>
+    )
+}
+
+function Database() {
+    return (
+        <div>
+            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <span>Database management</span>
+                <img src={dbLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+            </div>
+            <ul class="list-disc pl-4 pb-10 lowercase">
+                <li>
+                    Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS
+                </li>
+                <li>
+                    Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS
+                </li>
+                <li>
+                    Building full-stack web applications with SvelteKit and SolidJS
+                </li>
+                <li>
+                    Handling server-side RESTful API with ExpressJS.
+                </li>
+                <li>
+                    Database management with PostgresQL, MySQL and Prisma
+                </li>
+                <li>
+                    Can center element inside a div
+                </li>
+            </ul>
+        </div>
+    )
+}
+
+function Kotlin() {
+    return (
+        <div>
+            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <span>Kotlin</span>
+                <img src={ktLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+            </div>
+            <ul class="list-disc pl-4 pb-10 lowercase">
+                <li>
+                    RESTful Server programming with Ktor
+                </li>
+                <li>
+                    Android app development with AndriodSDK
+                </li>
+                <li>
+                    Asynchronous programming with Kotlin Coroutines
+                </li>
+                <li>
+                    Cross-platform software development with Kotlin Multiplatform
+                </li>
+            </ul>
+        </div>
+    )
+}
+
+function Android() {
+    return(
+        <div>
+            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <span>Android</span>
+                <img src={androidLogoBlock} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+            </div>
+            <ul class="list-disc pl-4 pb-10 lowercase">
+                <li>
+                    Building reactive UIs using Kotlin LiveData
+                </li>
+                <li>
+                    Database management with Room and SQLite
+                </li>
+                <li>
+                    Responsive UIs with constraint layout, relative layout, linear layout, etc
+                </li>
+                <li>
+                    Handling client-side RESTful requests with Ktor
+                </li>
+            </ul>
+        </div>
+    )
+}
+
+function Swift() {
+    return (
+        <div>
+            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <span>Swift</span>
+                <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+            </div>
+            <ul class="list-disc pl-4 lowercase pb-24">
+                <li>Declarative UI building with SwiftUI</li>
+                <li>Cross-platform application for iOS, iPadOS and macOS from a single codebase</li>
+                <li>Client-side RESTful programming</li>
+                <li>Reactive state management using StateObjects and ObservableObject</li>
+                <li>Calling backend API concurrently using URLSessions and async/await.</li>
+            </ul>
         </div>
     )
 }
