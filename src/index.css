@@ -12,11 +12,11 @@ body {
 }
 
 ::-moz-selection { /* Code for Firefox */
-    @apply text-white bg-black dark:text-black dark:bg-white
+    @apply text-white bg-black
 }
 
 ::selection {
-    @apply text-white bg-black dark:text-black dark:bg-white
+    @apply text-white bg-black
 }
 
 code {
@@ -54,7 +54,7 @@ code {
 
     /* CSS for the header part of the column that includes the rotated title */
     .col-header {
-        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-white z-10 dark:bg-black cursor-pointer
+        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-white z-10 cursor-pointer
     }
 
     /* Rotated title in the header section */
