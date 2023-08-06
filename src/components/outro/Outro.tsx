@@ -1,12 +1,13 @@
-import icDownCircled from '../assets/icons/ic_down_circled.svg'
-import tailwindLogo from "../assets/img/tailwind-logo.jpg"
-import solidLogo from "../assets/img/solidjs_logo.jpg"
-import typescriptLogo from "../assets/img/typescript_logo_bw.png"
-import linkIcon from "../assets/icons/ic_link.svg"
+import icDownCircled from '../../assets/icons/ic_down_circled.svg'
+import tailwindLogo from "../../assets/img/tailwind-logo.jpg"
+import solidLogo from "../../assets/img/solidjs_logo.jpg"
+import typescriptLogo from "../../assets/img/typescript_logo_bw.png"
+import linkIcon from "../../assets/icons/ic_link.svg"
 import {createSignal, Show} from "solid-js";
-import rightArrow from "../assets/icons/ic_right.svg";
-import languageIcon from "../assets/icons/ic_lang.svg"
-import downIcon from "../assets/icons/ic_down_circled.svg"
+import rightArrow from "../../assets/icons/ic_right.svg";
+import languageIcon from "../../assets/icons/ic_lang.svg"
+import downIcon from "../../assets/icons/ic_down_circled.svg"
+import Header from "./Header";
 
 
 export default function Outro(props) {
@@ -17,7 +18,7 @@ export default function Outro(props) {
 
     function onScrollDown() {
         console.log(mainContent.scrollTop)
-        if (mainContent.scrollTop >= 1330) setUserReachBottom(true)
+        if (mainContent.scrollTop >= 900) setUserReachBottom(true)
         else setUserReachBottom(false)
     }
 
@@ -26,24 +27,7 @@ export default function Outro(props) {
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
              onclick={props.onclickAction}>
             {/*Header*/}
-            <div class='w-full flex cursor-pointer'>
-                {/* Header Section */}
-                <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer bg-white'>
-                    <div class="grid grid-arrangement h-screen place-content-center">
-                        <div class="h-fit text-center pt-10">
-                            05.
-                        </div>
-                        <div class="h-fit text-center"></div>
-                        <div class="col-header-title" classList={{"col-header-visible": props.hidden, "col-header-hidden": !props.hidden}}>
-                            <Show when={props.lang == "en"}>Others</Show>
-                            <Show when={props.lang == "bn"}>কর্মদক্ষতা</Show>
-                        </div>
-                        <div class="h-fit"></div>
-                        <div class="h-full grid place-content-center">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Header props={props}/>
 
             {/*Scroll Indicator*/}
             <div class="absolute right-8 bottom-5"

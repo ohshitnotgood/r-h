@@ -4,7 +4,7 @@ import Intro from './components/intro/Intro';
 import Education from "./components/Education";
 import Experience from "./components/experience/Experience";
 import Volunteering from "./components/Volunteering";
-import Outro from "./components/Outro";
+import Outro from "./components/outro/Outro";
 import ColumnSpacer from "./components/ColumnSpacer";
 import TypingAnimation from "./components/TypingAnimation";
 

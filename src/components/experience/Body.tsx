@@ -76,24 +76,12 @@ function Javascript(){
                 <img src={jsLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 pb-10 lowercase">
-                <li>
-                    Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS
-                </li>
-                <li>
-                    Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS
-                </li>
-                <li>
-                    Building full-stack web applications with SvelteKit and SolidJS
-                </li>
-                <li>
-                    Handling server-side RESTful API with ExpressJS.
-                </li>
-                <li>
-                    Database management with PostgresQL, MySQL and Prisma
-                </li>
-                <li>
-                    Can center element inside a div
-                </li>
+                <li>Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS</li>
+                <li>Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS</li>
+                <li>Building full-stack web applications with SvelteKit and SolidJS</li>
+                <li>Handling server-side RESTful API with ExpressJS.</li>
+                <li>Database management with PostgresQL, MySQL and Prisma</li>
+                <li>Can center element inside a div</li>
             </ul>
         </div>
     )
@@ -107,24 +95,12 @@ function Database() {
                 <img src={dbLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 pb-10 lowercase">
-                <li>
-                    Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS
-                </li>
-                <li>
-                    Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS
-                </li>
-                <li>
-                    Building full-stack web applications with SvelteKit and SolidJS
-                </li>
-                <li>
-                    Handling server-side RESTful API with ExpressJS.
-                </li>
-                <li>
-                    Database management with PostgresQL, MySQL and Prisma
-                </li>
-                <li>
-                    Can center element inside a div
-                </li>
+                <li>Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS</li>
+                <li>Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS</li>
+                <li>Building full-stack web applications with SvelteKit and SolidJS</li>
+                <li>Handling server-side RESTful API with ExpressJS.</li>
+                <li>Database management with PostgresQL, MySQL and Prisma</li>
+                <li>Can center element inside a div</li>
             </ul>
         </div>
     )
@@ -138,18 +114,10 @@ function Kotlin() {
                 <img src={ktLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 pb-10 lowercase">
-                <li>
-                    RESTful Server programming with Ktor
-                </li>
-                <li>
-                    Android app development with AndriodSDK
-                </li>
-                <li>
-                    Asynchronous programming with Kotlin Coroutines
-                </li>
-                <li>
-                    Cross-platform software development with Kotlin Multiplatform
-                </li>
+                <li>RESTful Server programming with Ktor</li>
+                <li>Android app development with AndriodSDK</li>
+                <li>Asynchronous programming with Kotlin Coroutines</li>
+                <li>Cross-platform software development with Kotlin Multiplatform</li>
             </ul>
         </div>
     )
@@ -163,18 +131,10 @@ function Android() {
                 <img src={androidLogoBlock} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 pb-10 lowercase">
-                <li>
-                    Building reactive UIs using Kotlin LiveData
-                </li>
-                <li>
-                    Database management with Room and SQLite
-                </li>
-                <li>
-                    Responsive UIs with constraint layout, relative layout, linear layout, etc
-                </li>
-                <li>
-                    Handling client-side RESTful requests with Ktor
-                </li>
+                <li>Building reactive UIs using Kotlin LiveData</li>
+                <li>Database management with Room and SQLite</li>
+                <li>Responsive UIs with constraint layout, relative layout, linear layout, etc</li>
+                <li>Handling client-side RESTful requests with Ktor</li>
             </ul>
         </div>
     )
