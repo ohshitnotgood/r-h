@@ -9,13 +9,15 @@ export default function Intro(props) {
             {/* Header Section */}
             <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer bg-white'>
                 <div class="grid grid-arrangement h-screen place-content-center">
-                    <div class="w-full text-center">
-                        blank
+                    <div class="h-fit text-center pt-10">
+                        <button onclick={() => {props.lang = "en"}} class="p-5 cursor-pointer hover:bg-gray-100">
+                            bn
+                        </button>
                     </div>
                     <div class="font-inter text-3xl font-bold rotate-[270deg] uppercase bg-white">
                         Intro
                     </div>
-                    <div>
+                    <div class="h-fit">
                     </div>
                 </div>
             </div>

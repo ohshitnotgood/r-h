@@ -1,4 +1,10 @@
 import icDownCircled from '../assets/icons/ic_down_circled.svg'
+import jsLogo from '../assets/img/js_logo_bw.png'
+import ktLogo from '../assets/img/kt_logo_bw.png'
+import androidLogoRound from "../assets/img/android_logo_bw_circle.png"
+import dbLogo from '../assets/img/database_logo_bw.png'
+import androidLogoBlock from '../assets/img/android_logo_bw_block.png'
+import swiftLogo from '../assets/img/swift_logo_bw.png'
 import {createSignal} from "solid-js";
 
 export default function Experience(props) {
@@ -33,13 +39,14 @@ export default function Experience(props) {
                     <div class="col-text overflow-y-scroll pr-20">
                         <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold mr-40">About my experience</div>
                         <div class="pb-24">
-                            And some text goes here describing <i>how</i> i got my experience.
+                            Since commencing my programming journey in high school, I have accumulated extensive experience with diverse programming languages and frameworks highly sought after in the industry. Through numerous personal projects, I familiarized myself with industry standards and best practices, utilizing these ventures as platforms for continuous learning, drawing inspiration, and enhancing my creativity and skill set.
                         </div>
                         <div class="grid grid-cols-2 ">
                             <div class="uppercase text-sm">Independent development</div>
                             <div>
-                                <div class="lowercase text-lg text-left font-medium">
-                                    Javascript & Typescript
+                                <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                                    <span>Javascript & Typescript</span>
+                                    <img src={jsLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
                                 </div>
                                 <ul class="list-disc pl-4 pb-10 lowercase">
                                     <li>
@@ -55,12 +62,42 @@ export default function Experience(props) {
                                         Handling server-side RESTful API with ExpressJS.
                                     </li>
                                     <li>
+                                        Database management with PostgresQL, MySQL and Prisma
+                                    </li>
+                                    <li>
                                         Can center element inside a div
                                     </li>
                                 </ul>
 
-                                <div class="lowercase text-lg text-left font-medium">
-                                    Kotlin
+                                <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                                    <span>Database management</span>
+                                    <img src={dbLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+                                </div>
+                                <ul class="list-disc pl-4 pb-10 lowercase">
+                                    <li>
+                                        Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS
+                                    </li>
+                                    <li>
+                                        Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS
+                                    </li>
+                                    <li>
+                                        Building full-stack web applications with SvelteKit and SolidJS
+                                    </li>
+                                    <li>
+                                        Handling server-side RESTful API with ExpressJS.
+                                    </li>
+                                    <li>
+                                        Database management with PostgresQL, MySQL and Prisma
+                                    </li>
+                                    <li>
+                                        Can center element inside a div
+                                    </li>
+                                </ul>
+
+
+                                <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                                    <span>Kotlin</span>
+                                    <img src={ktLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
                                 </div>
                                 <ul class="list-disc pl-4 pb-10 lowercase">
                                     <li>
@@ -70,9 +107,6 @@ export default function Experience(props) {
                                         Android app development with AndriodSDK
                                     </li>
                                     <li>
-                                        Reactive UIs for Android using Kotlin LiveData
-                                    </li>
-                                    <li>
                                         Asynchronous programming with Kotlin Coroutines
                                     </li>
                                     <li>
@@ -80,19 +114,32 @@ export default function Experience(props) {
                                     </li>
                                 </ul>
 
-                                <div class="lowercase text-lg text-left font-medium">
-                                    Android
+                                <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                                    <span>Android</span>
+                                    <img src={androidLogoBlock} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
                                 </div>
-                                <ul class="list-disc pl-4 pb-10">
-                                    <li>some text</li>
-                                    <li>some more text</li>
+                                <ul class="list-disc pl-4 pb-10 lowercase">
+                                    <li>
+                                        Building reactive UIs using Kotlin LiveData
+                                    </li>
+                                    <li>
+                                        Database management with Room and SQLite
+                                    </li>
+                                    <li>
+                                        Responsive UIs with constraint layout, relative layout, linear layout, etc
+                                    </li>
+                                    <li>
+                                        Handling client-side RESTful requests with Ktor
+                                    </li>
                                 </ul>
 
-                                <div class="lowercase text-lg text-left font-medium">
-                                    Swift
+                                <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                                    <span>Swift</span>
+                                    <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
                                 </div>
-                                <ul class="list-disc pl-4 pb-10 lowercase pb-24">
-                                    <li>Cross-platform application for iOS, iPadOS and macOS using SwiftUI</li>
+                                <ul class="list-disc pl-4 lowercase pb-24">
+                                    <li>Declarative UI building with SwiftUI</li>
+                                    <li>Cross-platform application for iOS, iPadOS and macOS from a single codebase</li>
                                     <li>Client-side RESTful programming</li>
                                     <li>Reactive state management using StateObjects and ObservableObject</li>
                                     <li>Calling backend API concurrently using URLSessions and async/await.</li>
