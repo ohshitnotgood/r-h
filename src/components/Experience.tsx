@@ -46,7 +46,7 @@ export default function Experience(props) {
             {/*Scroll Indicator*/}
             <div class="absolute right-8 bottom-5"
                  classList={{"scroll-indicator-hide": userReachedBottom(), "scroll-indicator-show": !userReachedBottom()}}>
-                <div class="flex justify-center items-center flex-col">
+                <div class="flex justify-center items-center flex-col" classList={{"col-content-visible": !props.hidden, "col-content-hidden": props.hidden}}>
                     <img class="w-8 h-8" src={icDownCircled} alt="Down scroll indicator"/>
                 </div>
             </div>
