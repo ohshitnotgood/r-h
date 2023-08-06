@@ -9,7 +9,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply w-screen overflow-x-clip
+
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -60,7 +60,9 @@ code {
 
     /* Rotated title in the header section */
     .col-header-title {
-        @apply font-inter text-3xl font-bold uppercase rotate-[270deg] bg-white
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        @apply font-inter text-3xl font-bold uppercase rotate-180 bg-white
     }
 
     /* Display animation when a section is shrunk. */
