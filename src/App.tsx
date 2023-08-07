@@ -1,4 +1,4 @@
-import { createSignal, type Component } from 'solid-js';
+import {createSignal, type Component, createEffect} from 'solid-js';
 
 import Intro from './components/intro/Intro';
 import Education from "./components/Education";
@@ -12,6 +12,7 @@ import Mobile from "./components/mobile/MobileIntro";
 import MobileIntro from "./components/mobile/MobileIntro";
 import MobileExperience from "./components/mobile/MobileExperience";
 import MobileNavBar from "./components/mobile/MobileNavBar";
+import {createScrollPosition} from "@solid-primitives/scroll";
 
 const App: Component = () => {
     const [d1Hidden, setD1Hidden] = createSignal(false);
@@ -55,6 +56,10 @@ const App: Component = () => {
         setD5Hidden(false)
     }
 
+    const position = createScrollPosition()
+    createEffect(() => {
+        console.log(position.y)
+    })
 
     return (
         <div>

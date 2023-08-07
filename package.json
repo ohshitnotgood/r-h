@@ -19,6 +19,7 @@
     "vite-plugin-solid": "^2.7.0"
   },
   "dependencies": {
+    "@solid-primitives/scroll": "^2.0.18",
     "animate.css": "^4.1.1",
     "solid-js": "^1.7.6",
     "tailwindcss-animatecss": "^3.0.4"
