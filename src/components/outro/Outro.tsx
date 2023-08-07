@@ -7,7 +7,7 @@ import {createSignal, Show} from "solid-js";
 import rightArrow from "../../assets/icons/ic_right.svg";
 import languageIcon from "../../assets/icons/ic_lang.svg"
 import downIcon from "../../assets/icons/ic_down_circled.svg"
-import Header from "./Header";
+import Header from "../reusable/Header";
 
 
 export default function Outro(props) {
@@ -27,7 +27,7 @@ export default function Outro(props) {
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
              onclick={props.onclickAction}>
             {/*Header*/}
-            <Header props={props}/>
+            <Header sectionNumber="05." lang={props.lang} hidden={props.hidden} enText={"Others"} bnText={"অন্যান্য"}/>
 
             {/*Scroll Indicator*/}
             <div class="absolute right-8 bottom-5"

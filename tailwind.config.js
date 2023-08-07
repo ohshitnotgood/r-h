@@ -13,7 +13,9 @@ module.exports = {
             animationDelaySpeed: 500,
             classes: ['bounce', 'heartBeat']
         },
-        extend: {},
+        extend: {
+
+        },
     },
     plugins: [
         require('tailwindcss-animatecss'),

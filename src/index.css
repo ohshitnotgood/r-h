@@ -131,6 +131,14 @@ code {
         opacity: 0;
         animation: 0.3s disable-content-opacity ease-in-out;
     }
+
+    .writing-mode-rl {
+        writing-mode: vertical-rl;
+    }
+
+    .orientation-mixed {
+        text-orientation: mixed;
+    }
 }
 
 @keyframes column-spacer-expand {

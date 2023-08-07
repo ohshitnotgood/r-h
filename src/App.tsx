@@ -7,6 +7,10 @@ import Volunteering from "./components/Volunteering";
 import Outro from "./components/outro/Outro";
 import ColumnSpacer from "./components/ColumnSpacer";
 import TypingAnimation from "./components/TypingAnimation";
+import {getAge} from "./functions/GetAge";
+import Mobile from "./components/mobile/MobileIntro";
+import MobileIntro from "./components/mobile/MobileIntro";
+import MobileExperience from "./components/mobile/MobileExperience";
 
 const App: Component = () => {
     const [d1Hidden, setD1Hidden] = createSignal(false);
@@ -52,12 +56,19 @@ const App: Component = () => {
 
 
     return (
-        <div class='flex flex-row w-screen'>
-            <Intro lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
-            <Experience lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
-            <Education lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
-            <Volunteering lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
-            <Outro lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
+        <div>
+            <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
+                <Intro lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
+                <Experience lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
+                <Education lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
+                <Volunteering lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
+                <Outro lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
+            </div>
+            <div class="">
+                {/*Intro section*/}
+                <MobileIntro lang={lang()}/>
+                <MobileExperience lang={lang()}/>
+            </div>
         </div>
     );
 };
