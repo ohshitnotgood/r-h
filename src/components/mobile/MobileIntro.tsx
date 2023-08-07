@@ -1,5 +1,6 @@
 import {getAge} from "../../functions/GetAge";
 import {Show} from "solid-js";
+import fire from "../../assets/img/fire-fireball.gif"
 import rightArrow from "../../assets/icons/ic_right.svg";
 import TypingAnimation from "../TypingAnimation";
 
@@ -17,10 +18,14 @@ export default function MobileIntro(props: {lang: string}) {
 
 function TextSection(props: {lang: string}) {
     return (
-        <div class="grid min-h-[40vh] place-content-center my-32">
+        <div class="grid min-h-[40vh] place-content-center my-24">
             <div class="max-w-[80vw] space-y-3">
                 <div class="text-4xl font-bold uppercase">
-                    Hi! I'm Praanto
+                    Hi! I'm
+                    <span class="flex flex-row items-center content-center">
+                        Praanto
+                        <img src={fire} class="w-8 h-10 ml-2"/>
+                    </span>
                 </div>
                 <div class="lowercase text-xl">
                     comp.eng. student at kth
