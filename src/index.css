@@ -139,6 +139,10 @@ code {
     .orientation-mixed {
         text-orientation: mixed;
     }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 @keyframes column-spacer-expand {

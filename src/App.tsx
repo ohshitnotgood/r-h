@@ -11,6 +11,7 @@ import {getAge} from "./functions/GetAge";
 import Mobile from "./components/mobile/MobileIntro";
 import MobileIntro from "./components/mobile/MobileIntro";
 import MobileExperience from "./components/mobile/MobileExperience";
+import MobileNavBar from "./components/mobile/MobileNavBar";
 
 const App: Component = () => {
     const [d1Hidden, setD1Hidden] = createSignal(false);
@@ -66,6 +67,7 @@ const App: Component = () => {
             </div>
             <div class="">
                 {/*Intro section*/}
+                <MobileNavBar />
                 <MobileIntro lang={lang()}/>
                 <MobileExperience lang={lang()}/>
             </div>
