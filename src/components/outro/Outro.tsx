@@ -10,7 +10,7 @@ import downIcon from "../../assets/icons/ic_down_circled.svg"
 import Header from "../reusable/Header";
 
 
-export default function Outro(props) {
+export default function Outro(props: any) {
     const [userReachedBottom, setUserReachBottom] = createSignal(false)
     let mainContent: HTMLDivElement
 
@@ -40,7 +40,7 @@ export default function Outro(props) {
             {/*Main Content*/}
             <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='grid place-content-center h-screen z-50' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
-                    <div ref={mainContent} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
+                    <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
                         <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold text-right">Contact Me!</div>
                         <div class="pb-24 text-justify">
 

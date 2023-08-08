@@ -1,7 +1,7 @@
 import {Show} from "solid-js";
 import langIcon from "../assets/icons/ic_lang.svg";
 
-export default function Education(props) {
+export default function Education(props: any) {
     return (
         <div class='col-entire-section'
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}

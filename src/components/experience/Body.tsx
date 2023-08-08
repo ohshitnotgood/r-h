@@ -4,7 +4,7 @@ import ktLogo from "../../assets/img/kt_logo_bw.png";
 import androidLogoBlock from "../../assets/img/android_logo_bw_block.png";
 import swiftLogo from "../../assets/img/swift_logo_bw.png";
 
-export default function Body(props) {
+export default function Body(props: any) {
     let _props = props.props
     let mainContent: HTMLDivElement
 
@@ -17,7 +17,7 @@ export default function Body(props) {
     return (
         <div classList={{'absolute top-0 left-0 w-full h-full': !_props.hidden, "hidden": _props.hidden}}>
             <div class='col-content' classList={{"col-content-visible": !_props.hidden, "col-content-shrink": _props.hidden}}>
-                <div ref={mainContent} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
+                <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
                     <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold mr-40">Independent and Professional Experience</div>
                     <div class="pb-24">
                         Since commencing my programming journey in high school, I have accumulated extensive experience with diverse programming languages and frameworks highly sought after in the industry. Through numerous personal projects, I familiarized myself with industry standards and best practices, utilizing these ventures as platforms for continuous learning, drawing inspiration, and enhancing my creativity and skill set.

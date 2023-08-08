@@ -3,7 +3,7 @@ import fire from "../../assets/img/fire-fireball.gif";
 import {getAge} from "../../functions/GetAge";
 import rightArrow from "../../assets/icons/ic_right.svg";
 
-export default function Body(props) {
+export default function Body(props: any) {
     let _props = props.props
 
 

@@ -9,7 +9,7 @@ import {createSignal, Show} from "solid-js";
 import Header from "./Header";
 import Body from "./Body";
 
-export default function Experience(props) {
+export default function Experience(props: any) {
     const [userReachedBottom, setUserReachBottom] = createSignal(false)
     let mainContent: HTMLDivElement
 

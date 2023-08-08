@@ -3,10 +3,9 @@ import {JSX, Show} from "solid-js";
 import Header from "../reusable/Header";
 import Body from "./Body";
 import langIcon from "../../assets/icons/ic_lang.svg";
-import EventHandler = JSX.EventHandler;
 
 
-export default function Intro(props: {lang: string, hidden: boolean}) {
+export default function Intro(props: any) {
 
     function LanguageSwitcher() {
         return (

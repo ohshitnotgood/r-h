@@ -2,14 +2,14 @@ import {Show} from "solid-js";
 
 /**
  *
- * @param sectionNumber Section Number
- * @param enText English display title for header
- * @param bnText Bengali display title for header
- * @param actionButton Action button (only used by intro for the language switcher)
- * @param lang Language signal
- * @param hidden Hidden state
+ * @param props.sectionNumber Section Number
+ * @param props.enText English display title for header
+ * @param props.bnText Bengali display title for header
+ * @param props.actionButton Action button (only used by intro for the language switcher)
+ * @param props.lang Language signal
+ * @param props.hidden Hidden state
  */
-export default function Header(props) {
+export default function Header(props: any) {
     return (
         <div>
             <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer bg-white'>
