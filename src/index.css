@@ -148,6 +148,11 @@ code {
     .hide-scrollbar::-webkit-scrollbar {
         display: none;
     }
+
+    .fade-in-anim {
+        height: 0;
+        animation: show-text 0.6s cubic-bezier(1,.11,.83,.67);
+    }
 }
 
 @keyframes column-spacer-expand {
@@ -168,4 +173,10 @@ code {
 @keyframes enable-content-opacity {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes show-text {
+    from {height: 100%;}
+    to {height: 0}
+
 }

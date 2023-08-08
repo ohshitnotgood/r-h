@@ -2,6 +2,7 @@ import {getAge} from "../../functions/GetAge";
 import {onMount, Show} from "solid-js";
 import fire from "../../assets/img/fire-fireball.gif"
 import rightArrow from "../../assets/icons/ic_right.svg";
+import AnimatedText from "../reusable/AnimatedText";
 
 export default function MobileIntro(props: any) {
     return (
@@ -12,20 +13,20 @@ export default function MobileIntro(props: any) {
 }
 
 function TextSection(props: {lang: string}) {
+    let description = getAge(props.lang) + " year old highly skilled software engineer and passionate programmer. Adept at leveraging cutting-edge technologies to deliver efficient and user-centric applications. Committed to continuous learning and seeking new challenges to drive excellence in software development."
+
     return (
         <div class="grid min-h-[40vh] place-content-center my-24">
             <div class="max-w-[80vw] space-y-3">
                 <div class="text-5xl font-bold uppercase">
-                    Hi! I'm
-                    <span class="flex flex-row items-center content-center">
-                        Praanto
-                        <img alt={"Fire GIF"} src={fire} class="w-8 h-10 ml-2"/>
-                    </span>
+                    <AnimatedText text="Hi! I'm Praanto"/>
                 </div>
                 <div class="lowercase text-2xl">
-                    comp.eng. student at kth
+                    <AnimatedText text="comp.eng. student at kth" initialDelay={200}/>
                 </div>
-                <div class="pr-10">{getAge(props.lang)} year old highly skilled software engineer and passionate programmer. Adept at leveraging cutting-edge technologies to deliver efficient and user-centric applications. Committed to continuous learning and seeking new challenges to drive excellence in software development.</div>
+                <div class="pr-10">
+                    <AnimatedText text={description} initialDelay={400}/>
+                </div>
                 <PageCTAButton lang={props.lang} />
             </div>
         </div>
