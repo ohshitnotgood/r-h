@@ -14,7 +14,9 @@ module.exports = {
             classes: ['bounce', 'heartBeat']
         },
         extend: {
-
+            rotate: {
+                '270': '270deg'
+            }
         },
     },
     plugins: [
