@@ -3,6 +3,10 @@ import dbLogo from "../../assets/img/database_logo_bw.png";
 import ktLogo from "../../assets/img/kt_logo_bw.png";
 import androidLogoBlock from "../../assets/img/android_logo_bw_block.png";
 import swiftLogo from "../../assets/img/swift_logo_bw.png";
+import psqlLogo from "../../assets/img/psql_logo_alt.webp";
+import dgLogo from "../../assets/img/datagrip_alt.svg"
+import prismaLogo from "../../assets/img/prisma_logo.svg";
+import androidStudio from "../../assets/img/androidStudio_bw.png"
 
 export function Javascript(){
     return(
@@ -23,6 +27,31 @@ export function Javascript(){
     )
 }
 
+
+function PrismaLogo() {
+    return (
+        <img class="w-5 h-5 ml-1" src={prismaLogo} alt="Postgres logo"/>
+    )
+}
+
+function DatagripLogo() {
+    return (
+        <img class="w-5 h-5 ml-1" src={dgLogo} alt="DataGrip logo" />
+    )
+}
+
+function PostgresLogo() {
+    return (
+        <img class="w-5 h-5 ml-1" src={psqlLogo} alt="Postgres logo"/>
+    )
+}
+
+function AndroidStudioLogo() {
+    return (
+        <img class="w-5 h-5 ml-1" src={androidStudio} alt="Postgres logo"/>
+    )
+}
+
 export function Database() {
     return (
         <div>
@@ -31,12 +60,11 @@ export function Database() {
                 <img src={dbLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 pb-10 lowercase">
-                <li>Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS</li>
-                <li>Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS</li>
-                <li>Building full-stack web applications with SvelteKit and SolidJS</li>
-                <li>Handling server-side RESTful API with ExpressJS.</li>
-                <li>Database management with PostgresQL, MySQL and Prisma</li>
-                <li>Can center element inside a div</li>
+                <li>
+                    Database management with <span class="inline-flex items-center">PostgresQL <PostgresLogo /></span><span class="inline-flex items-center"> and Prisma <PrismaLogo /></span>
+                </li>
+                <li>Inspecting databases with <span class="inline-flex items-center">DataGrip <DatagripLogo /></span></li>
+                <li>SQLite databasing on Android with <span class="inline-flex items-center">RoomDB <AndroidStudioLogo /> </span></li>
             </ul>
         </div>
     )
