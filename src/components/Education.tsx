@@ -1,5 +1,4 @@
 import {Show} from "solid-js";
-import langIcon from "../assets/icons/ic_lang.svg";
 
 export default function Education(props: any) {
     return (

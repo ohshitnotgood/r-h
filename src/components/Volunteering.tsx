@@ -1,6 +1,6 @@
 import {Show} from "solid-js";
 
-export default function Volunteering(props) {
+export default function Volunteering(props: any) {
     return (
         <div class='col-entire-section' classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
             <div class='w-full flex cursor-pointer'>

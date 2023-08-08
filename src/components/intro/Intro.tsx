@@ -1,5 +1,4 @@
-import rightArrow from "../../assets/icons/ic_right.svg"
-import {JSX, Show} from "solid-js";
+import { Show } from "solid-js";
 import Header from "../reusable/Header";
 import langIcon from "../../assets/icons/ic_lang.svg";
 import {PageCTAButton, PageDescriptionText, PageSubtitle, PageTitle} from "./Components";

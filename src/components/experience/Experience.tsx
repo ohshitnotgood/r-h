@@ -1,10 +1,4 @@
 import icDownCircled from '../../assets/icons/ic_down_circled.svg'
-import jsLogo from '../../assets/img/js_logo_bw.png'
-import ktLogo from '../../assets/img/kt_logo_bw.png'
-import androidLogoRound from "../../assets/img/android_logo_bw_circle.png"
-import dbLogo from '../../assets/img/database_logo_bw.png'
-import androidLogoBlock from '../../assets/img/android_logo_bw_block.png'
-import swiftLogo from '../../assets/img/swift_logo_bw.png'
 import {createSignal, Show} from "solid-js";
 import Header from "../reusable/Header";
 import {Android, Database, Javascript, Kotlin, LabAssistant, MathTA, Swift} from "./Components";

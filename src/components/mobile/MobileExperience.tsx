@@ -1,8 +1,3 @@
-import jsLogo from "../../assets/img/js_logo_bw.png";
-import dbLogo from "../../assets/img/database_logo_bw.png";
-import ktLogo from "../../assets/img/kt_logo_bw.png";
-import androidLogoBlock from "../../assets/img/android_logo_bw_block.png";
-import swiftLogo from "../../assets/img/swift_logo_bw.png";
 import {Javascript, Database, Android, Kotlin, Swift} from "../experience/Components"
 
 
