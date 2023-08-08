@@ -21,7 +21,7 @@ export function Javascript(){
                 <li>Building full-stack web applications with SvelteKit and SolidJS</li>
                 <li>Handling server-side RESTful API with ExpressJS.</li>
                 <li>Database management with PostgresQL, MySQL and Prisma</li>
-                <li>Can center element inside a div</li>
+                <li>Can center element inside a <code>&ltdiv/&gt</code> </li>
             </ul>
         </div>
     )
@@ -42,7 +42,7 @@ function DatagripLogo() {
 
 function PostgresLogo() {
     return (
-        <img class="w-5 h-5 ml-1" src={psqlLogo} alt="Postgres logo"/>
+        <img class="w-5 h-5 mx-1" src={psqlLogo} alt="Postgres logo"/>
     )
 }
 
