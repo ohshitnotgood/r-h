@@ -1,4 +1,21 @@
-export default function MobileNavBar() {
+import {createEffect} from "solid-js";
+
+export default function MobileNavBar(props: any) {
+    let navBar_Intro: HTMLDivElement
+    let navBar_Experience: HTMLDivElement
+    let navBar_Education: HTMLDivElement
+    let navBar_Volunteering: HTMLDivElement
+    let navBar_Outro: HTMLDivElement
+
+    createEffect(() => {
+        console.log("detecting change from mobilenavbar")
+        if (props.currentPosition == "intro") navBar_Intro.scrollIntoView({behavior: 'smooth'})
+        else if (props.currentPosition == "experience") navBar_Experience.scrollIntoView({behavior: 'smooth'})
+        else if (props.currentPosition == "education") navBar_Education.scrollIntoView({behavior: 'smooth'})
+        else if (props.currentPosition == "volunteering") navBar_Volunteering.scrollIntoView({behavior: 'smooth'})
+        else if (props.currentPosition == "outro") navBar_Outro.scrollIntoView({behavior: 'smooth'})
+    })
+
     return (
             <nav class="sticky top-0 w-screen min-h-[7vh] border-b border-black grid bg-white overflow-x-clip">
                 <div class="grid grid-cols-[auto_150px] w-screen relative">
@@ -10,19 +27,19 @@ export default function MobileNavBar() {
 
                             </div>
                             <div class="lowercase font-semibold text-xl overflow-x-scroll z-10 hide-scrollbar h-full flex flex-row">
-                                <div class="min-w-[150px] grid place-content-center">
+                                <div ref={navBar_Intro!} class="min-w-[150px] grid place-content-center">
                                     Intro
                                 </div>
-                                <div class="min-w-[150px] grid place-content-center">
+                                <div ref={navBar_Experience!}  class="min-w-[150px] grid place-content-center">
                                     Experience
                                 </div>
-                                <div class="min-w-[150px] grid place-content-center">
+                                <div ref={navBar_Education!} class="min-w-[150px] grid place-content-center">
                                     Education
                                 </div>
-                                <div class="min-w-[150px] grid place-content-center">
+                                <div ref={navBar_Volunteering!} class="min-w-[150px] grid place-content-center">
                                     Volunteering
                                 </div>
-                                <div class="min-w-[150px] grid place-content-center">
+                                <div ref={navBar_Outro!} class="min-w-[150px] grid place-content-center">
                                     Others
                                 </div>
                             </div>

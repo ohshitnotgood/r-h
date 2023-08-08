@@ -1,9 +1,10 @@
 import {Javascript, Database, Android, Kotlin, Swift, MathTA, LabAssistant} from "../experience/Components"
+import {onMount} from "solid-js";
 
 
-export default function MobileExperience(props: {lang: string}) {
+export default function MobileExperience(props: any) {
     return (
-        <div class="py-12 border-t border-black">
+        <div ref={props.ref} class="py-12 border-t border-black">
             <nav class="w-screen px-12 h-[7vh] grid content-center">
                 02.
             </nav>

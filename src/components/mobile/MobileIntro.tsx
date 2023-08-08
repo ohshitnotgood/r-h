@@ -3,15 +3,9 @@ import {onMount, Show} from "solid-js";
 import fire from "../../assets/img/fire-fireball.gif"
 import rightArrow from "../../assets/icons/ic_right.svg";
 
-export default function MobileIntro(props: {lang: string}) {
-    let intro: HTMLDivElement
-
-    onMount(() => {
-        console.log(intro.clientHeight)
-    })
-
+export default function MobileIntro(props: any) {
     return (
-        <div ref={intro!} class="grid place-items-center">
+        <div ref={props.ref} class="grid place-items-center">
             <TextSection lang={props.lang}/>
         </div>
     )

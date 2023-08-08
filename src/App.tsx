@@ -53,9 +53,31 @@ const App: Component = () => {
         setD5Hidden(false)
     }
 
+    let introSection: HTMLDivElement
+    let experienceSection: HTMLDivElement
+    let volunteeringSection: HTMLDivElement
+    let educationSection: HTMLDivElement
+    let otherSection: HTMLDivElement
+    //
+    // let navBar_Intro: HTMLDivElement
+    // let navBar_Experience: HTMLDivElement
+    // let navBar_Education: HTMLDivElement
+    // let navBar_Volunteering: HTMLDivElement
+    // let navBar_Outro: HTMLDivElement
+
+    let [currentPosition, setCurrentPosition] = createSignal("intro")
+
     const position = createScrollPosition()
     createEffect(() => {
-        console.log(position.y)
+        // if (position.y > introSection.clientHeight) navBar_Experience.scrollIntoView({behavior: 'smooth'})
+        if (position.y < introSection.clientHeight) {
+            setCurrentPosition("intro")
+            console.log("Setting current position into intro")
+        }
+        else if (position.y < experienceSection.clientHeight) {
+            setCurrentPosition("experience")
+            console.log("Setting current position into experience")
+        }
     })
 
     return (
@@ -68,10 +90,10 @@ const App: Component = () => {
                 <Outro lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
             </div>
             <div class="lg:hidden">
-                {/*Intro section*/}
-                <MobileNavBar />
-                <MobileIntro lang={lang()}/>
-                <MobileExperience lang={lang()}/>
+                <MobileNavBar currentPosition={currentPosition()} />
+                <MobileIntro lang={lang()} ref={introSection!}/>
+                <MobileExperience lang={lang()} ref={experienceSection!}/>
+                <div class="h-screen"></div>
             </div>
         </div>
     );
