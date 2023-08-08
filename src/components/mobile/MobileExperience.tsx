@@ -10,64 +10,43 @@ export default function MobileExperience(props: any) {
             </nav>
 
 
-            <div class="px-12">
-                <div class="text-4xl font-bold uppercase">
-                    Independent and Professional Experience
+            <div class="">
+                <div class="text-6xl px-8 md:px-0 font-bold uppercase">
+                    Work Experience
                 </div>
             </div>
 
-            <div class="pt-6 text-sm px-12">
+            <div class="pt-6 text-sm px-12 hidden">
                 Since commencing my programming journey in high school, I have accumulated extensive experience with diverse programming languages and frameworks highly sought after in the industry. Through numerous personal projects, I familiarized myself with industry standards and best practices, utilizing these ventures as platforms for continuous learning, drawing inspiration, and enhancing my creativity and skill set.
             </div>
 
 
-            <div class="mx-12 my-4 font-bold mt-10 text-3xl lowercase ">
+            <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
                 Independent Development
             </div>
 
-            <div class="grid grid-cols-[auto_7vw] pl-12 ">
-                <div class="pr-12">
-                    <Javascript />
-                    <Database />
-                    <Android />
-                    <Kotlin />
-                    {/*<Swift />*/}
-                </div>
-                <div class="w-full hidden">
-                    <div class="w-full pointer-events-none font-bold text-2xl bg-black text-white flex content-start uppercase writing-mode-rl orientation-mixed">
-                        Independent Development
-                    </div>
-                </div>
+            <div class="px-8">
+                <Javascript />
+                <Database />
+                <Android />
+                <Kotlin />
+                {/*<Swift />*/}
             </div>
 
-            <div class="mx-12 my-4 font-bold mt-10 text-3xl lowercase ">
+            <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
                 teaching assistant
             </div>
 
-            <div class="grid grid-cols-[auto_7vw] pl-12 ">
-                <div class="pr-12">
-                    <MathTA />
-                </div>
-                <div class="w-full hidden">
-                    <div class="w-full pointer-events-none font-bold text-2xl bg-black text-white flex content-start uppercase writing-mode-rl orientation-mixed">
-                        teaching assistant
-                    </div>
-                </div>
+            <div class="px-8 ">
+                <MathTA />
             </div>
 
-            <div class="mx-12 my-4 font-bold mt-10 text-3xl lowercase ">
+            <div class="px-8 my-4 font-bold mt-10 text-3xl lowercase ">
                 lab assistant
             </div>
 
-            <div class="grid grid-cols-[auto_7vw] pl-12 ">
-                <div class="pr-12">
-                    <LabAssistant />
-                </div>
-                <div class="w-full hidden">
-                    <div class="w-full pointer-events-none font-bold text-2xl bg-black text-white flex content-start uppercase writing-mode-rl orientation-mixed">
-                        teaching assistant
-                    </div>
-                </div>
+            <div class="px-8 ">
+                <LabAssistant />
             </div>
 
         </div>
