@@ -1,7 +1,7 @@
 import {createSignal, type Component, createEffect} from 'solid-js';
 
 import Intro from './components/intro/Intro';
-import Education from "./components/Education";
+import Education from "./components/education/Education";
 import Experience from "./components/experience/Experience";
 import Volunteering from "./components/Volunteering";
 import Outro from "./components/outro/Outro";
@@ -9,6 +9,7 @@ import MobileIntro from "./components/mobile/MobileIntro";
 import MobileExperience from "./components/mobile/MobileExperience";
 import MobileNavBar from "./components/mobile/MobileNavBar";
 import {createScrollPosition} from "@solid-primitives/scroll";
+import {MobileEducation} from "./components/mobile/MobileEducation";
 
 const App: Component = () => {
     const [d1Hidden, setD1Hidden] = createSignal(false);
@@ -58,12 +59,7 @@ const App: Component = () => {
     let volunteeringSection: HTMLDivElement
     let educationSection: HTMLDivElement
     let otherSection: HTMLDivElement
-    //
-    // let navBar_Intro: HTMLDivElement
-    // let navBar_Experience: HTMLDivElement
-    // let navBar_Education: HTMLDivElement
-    // let navBar_Volunteering: HTMLDivElement
-    // let navBar_Outro: HTMLDivElement
+
 
     let [currentPosition, setCurrentPosition] = createSignal("intro")
 
@@ -89,7 +85,7 @@ const App: Component = () => {
                 <MobileNavBar currentPosition={currentPosition()} />
                 <MobileIntro lang={lang()} ref={introSection!}/>
                 <MobileExperience lang={lang()} ref={experienceSection!}/>
-                <div class="h-screen"></div>
+                <MobileEducation lang={lang()} ref={educationSection!}/>
             </div>
         </div>
     );

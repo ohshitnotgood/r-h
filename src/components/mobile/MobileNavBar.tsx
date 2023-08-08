@@ -1,12 +1,6 @@
 import {createEffect} from "solid-js";
 
 export default function MobileNavBar(props: any) {
-    let navBar_Intro: HTMLDivElement
-    let navBar_Experience: HTMLDivElement
-    let navBar_Education: HTMLDivElement
-    let navBar_Volunteering: HTMLDivElement
-    let navBar_Outro: HTMLDivElement
-
     let r: HTMLDivElement
 
     createEffect(() => {
@@ -35,19 +29,19 @@ export default function MobileNavBar(props: any) {
 
                             </div>
                             <div ref={r!} class="lowercase font-semibold text-xl overflow-x-scroll z-10 hide-scrollbar h-full flex flex-row">
-                                <div ref={navBar_Intro!} class="min-w-[150px] grid place-content-center">
-                                    Intro
+                                <div class="min-w-[150px] grid place-content-center">
+                                    <a href="#intro">Intro</a>
                                 </div>
-                                <div ref={navBar_Experience!}  class="min-w-[150px] grid place-content-center">
-                                    Experience
+                                <div class="min-w-[150px] grid place-content-center">
+                                    <a href="#experience">Experience</a>
                                 </div>
-                                <div ref={navBar_Education!} class="min-w-[150px] grid place-content-center">
+                                <div class="min-w-[150px] grid place-content-center">
                                     <a href="#education">Education</a>
                                 </div>
-                                <div ref={navBar_Volunteering!} class="min-w-[150px] grid place-content-center">
+                                <div class="min-w-[150px] grid place-content-center">
                                     <a href="#volunteering">Volunteering</a>
                                 </div>
-                                <div ref={navBar_Outro!} class="min-w-[150px] grid place-content-center">
+                                <div class="min-w-[150px] grid place-content-center">
                                     <a href="#outro">Others</a>
                                 </div>
                             </div>
