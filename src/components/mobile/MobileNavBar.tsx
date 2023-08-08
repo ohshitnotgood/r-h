@@ -28,19 +28,19 @@ export default function MobileNavBar(props: any) {
                             </div>
                             <div class="lowercase font-semibold text-xl overflow-x-scroll z-10 hide-scrollbar h-full flex flex-row">
                                 <div ref={navBar_Intro!} class="min-w-[150px] grid place-content-center">
-                                    Intro
+                                    <a href="#intro">Intro</a>
                                 </div>
                                 <div ref={navBar_Experience!}  class="min-w-[150px] grid place-content-center">
-                                    Experience
+                                    <a href="#experience">Experience</a>
                                 </div>
                                 <div ref={navBar_Education!} class="min-w-[150px] grid place-content-center">
-                                    Education
+                                    <a href="#education">Education</a>
                                 </div>
                                 <div ref={navBar_Volunteering!} class="min-w-[150px] grid place-content-center">
-                                    Volunteering
+                                    <a href="#volunteering">Volunteering</a>
                                 </div>
                                 <div ref={navBar_Outro!} class="min-w-[150px] grid place-content-center">
-                                    Others
+                                    <a href="#outro">Others</a>
                                 </div>
                             </div>
                             <div class="bg-gradient-to-l from-white to-transparent w-[20px] h-full absolute top-0 right-0 z-30">

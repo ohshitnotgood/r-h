@@ -5,7 +5,7 @@ import rightArrow from "../../assets/icons/ic_right.svg";
 
 export default function MobileIntro(props: any) {
     return (
-        <div ref={props.ref} class="grid place-items-center">
+        <div id="intro" ref={props.ref} class="grid place-items-center">
             <TextSection lang={props.lang}/>
         </div>
     )
