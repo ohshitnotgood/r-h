@@ -19,7 +19,7 @@ export default function MobileNavBar(props: any) {
     })
 
     return (
-            <nav class="sticky top-0 w-screen min-h-[7vh] border-b border-black grid bg-white overflow-x-clip">
+            <nav class="sticky z-50 top-0 w-screen min-h-[7vh] border-b border-black grid bg-white overflow-x-clip">
                 <div class="grid grid-cols-[auto_150px] w-screen relative">
                     <div>
                     </div>

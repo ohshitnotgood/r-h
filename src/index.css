@@ -151,7 +151,7 @@ code {
 
     .fade-in-anim {
         height: 0;
-        animation: show-text 0.6s cubic-bezier(1,.11,.83,.67);
+        animation: show-text 1s cubic-bezier(1,.11,.83,.67);
     }
 }
 
