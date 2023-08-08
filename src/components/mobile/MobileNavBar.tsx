@@ -7,13 +7,21 @@ export default function MobileNavBar(props: any) {
     let navBar_Volunteering: HTMLDivElement
     let navBar_Outro: HTMLDivElement
 
+    let r: HTMLDivElement
+
     createEffect(() => {
         console.log("detecting change from mobilenavbar")
-        if (props.currentPosition == "intro") navBar_Intro.scrollIntoView({behavior: 'smooth'})
-        else if (props.currentPosition == "experience") navBar_Experience.scrollIntoView({behavior: 'smooth'})
-        else if (props.currentPosition == "education") navBar_Education.scrollIntoView({behavior: 'smooth'})
-        else if (props.currentPosition == "volunteering") navBar_Volunteering.scrollIntoView({behavior: 'smooth'})
-        else if (props.currentPosition == "outro") navBar_Outro.scrollIntoView({behavior: 'smooth'})
+
+        if (props.currentPosition == "intro")
+            r.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+        else if (props.currentPosition == "experience")
+            r.scrollTo({top: 0, left: 150, behavior: 'smooth'})
+        else if (props.currentPosition == "education")
+            r.scrollTo({top: 0, left: 300, behavior: 'smooth'})
+        else if (props.currentPosition == "volunteering")
+            r.scrollTo({top: 0, left: 450, behavior: 'smooth'})
+        else if (props.currentPosition == "outro")
+            r.scrollTo({top: 0, left: 600, behavior: 'smooth'})
     })
 
     return (
@@ -26,12 +34,12 @@ export default function MobileNavBar(props: any) {
                             <div class="bg-gradient-to-r from-white to-transparent w-[20px] h-full absolute left-0 top-0 z-30">
 
                             </div>
-                            <div class="lowercase font-semibold text-xl overflow-x-scroll z-10 hide-scrollbar h-full flex flex-row">
+                            <div ref={r!} class="lowercase font-semibold text-xl overflow-x-scroll z-10 hide-scrollbar h-full flex flex-row">
                                 <div ref={navBar_Intro!} class="min-w-[150px] grid place-content-center">
-                                    <a href="#intro">Intro</a>
+                                    Intro
                                 </div>
                                 <div ref={navBar_Experience!}  class="min-w-[150px] grid place-content-center">
-                                    <a href="#experience">Experience</a>
+                                    Experience
                                 </div>
                                 <div ref={navBar_Education!} class="min-w-[150px] grid place-content-center">
                                     <a href="#education">Education</a>

@@ -70,14 +70,10 @@ const App: Component = () => {
     const position = createScrollPosition()
     createEffect(() => {
         // if (position.y > introSection.clientHeight) navBar_Experience.scrollIntoView({behavior: 'smooth'})
-        if (position.y < introSection.clientHeight) {
-            setCurrentPosition("intro")
-            console.log("Setting current position into intro")
-        }
-        else if (position.y < experienceSection.clientHeight) {
-            setCurrentPosition("experience")
-            console.log("Setting current position into experience")
-        }
+        if (position.y < introSection.clientHeight) setCurrentPosition("intro")
+        else if (position.y < experienceSection.clientHeight) setCurrentPosition("experience")
+        else if (position.y < educationSection.clientHeight) setCurrentPosition("education")
+
     })
 
     return (
