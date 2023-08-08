@@ -1,5 +1,5 @@
-export function langNumSwap(str: String): String {
-    let final: String = ""
+export function langNumSwap(str: String): string {
+    let final: string = ""
     for (let i in str) {
         if (str[i] === "1") final += "১"
         else if (str[i] === "2") final += "২"

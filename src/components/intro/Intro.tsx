@@ -1,12 +1,12 @@
 import rightArrow from "../../assets/icons/ic_right.svg"
-import {Show} from "solid-js";
-import fire from "../../assets/img/fire-fireball.gif"
-import { getAge } from "../../functions/GetAge";
+import {JSX, Show} from "solid-js";
 import Header from "../reusable/Header";
 import Body from "./Body";
 import langIcon from "../../assets/icons/ic_lang.svg";
+import EventHandler = JSX.EventHandler;
 
-export default function Intro(props) {
+
+export default function Intro(props: {lang: string, hidden: boolean}) {
 
     function LanguageSwitcher() {
         return (
@@ -26,10 +26,6 @@ export default function Intro(props) {
                 </div>
             </div>
         )
-    }
-
-    function secondaryAction() {
-        props.secondaryAction()
     }
 
     return (

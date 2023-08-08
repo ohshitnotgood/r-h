@@ -1,4 +1,4 @@
-export default function TypingAnimation(props) {
+export default function TypingAnimation(props: {text: string, class: string, initialDelay: number, delay: number}) {
     let reference: HTMLDivElement;
     let itemizedText = props.text.split('')
     let counter = 0;
@@ -16,7 +16,7 @@ export default function TypingAnimation(props) {
     }, props.initialDelay)
 
     return(
-        <div ref={reference} class={props.class}>
+        <div ref={reference!} class={props.class}>
             &nbsp
         </div>
     )

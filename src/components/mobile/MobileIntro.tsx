@@ -2,7 +2,6 @@ import {getAge} from "../../functions/GetAge";
 import {Show} from "solid-js";
 import fire from "../../assets/img/fire-fireball.gif"
 import rightArrow from "../../assets/icons/ic_right.svg";
-import TypingAnimation from "../TypingAnimation";
 
 export default function MobileIntro(props: {lang: string}) {
     return (
