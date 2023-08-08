@@ -29,7 +29,7 @@ export default function AnimatedText(props: any) {
 
     return (
         <div class="relative">
-            <div ref={ref!}  class="z-20">
+            <div ref={ref!}  class="z-20" classList={{"col-content-visible-slow": delayPeriodExpired()}}>
                 {props.text}
             </div>
             <div class="w-full z-30 absolute top-0 left-0">

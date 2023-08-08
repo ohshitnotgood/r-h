@@ -19,13 +19,15 @@ function TextSection(props: {lang: string}) {
         <div class="grid min-h-[40vh] place-content-center my-24">
             <div class="max-w-[80vw] space-y-3">
                 <div class="text-5xl font-bold uppercase">
-                    <AnimatedText text="Hi! I'm Praanto"/>
+                    {/*<AnimatedText text="Hi! I'm Praanto"/>*/}
+                    Hi! I'm Praanto
                 </div>
                 <div class="lowercase text-2xl">
-                    <AnimatedText text="comp.eng. student at kth" initialDelay={200}/>
+                    {/*<AnimatedText text="comp.eng. student at kth" initialDelay={200}/>*/}
+                    comp.eng student at kth
                 </div>
                 <div class="pr-10">
-                    <AnimatedText text={description} initialDelay={400}/>
+                    <AnimatedText text={description} initialDelay={600}/>
                 </div>
                 <PageCTAButton lang={props.lang} />
             </div>

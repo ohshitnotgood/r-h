@@ -107,6 +107,10 @@ code {
         animation: 0.6s enable-content-opacity ease-in-out;
     }
 
+    .col-content-visible-slow {
+        animation: 1s swipe-up ease-in-out;
+    }
+
     .col-content-hidden {
         opacity: 0; 
         animation: 0.7s disable-content-opacity ease-in-out;
@@ -178,5 +182,11 @@ code {
 @keyframes show-text {
     from {height: 100%;}
     to {height: 0}
+
+}
+
+@keyframes swipe-up {
+    from {margin-bottom: -100px;}
+    to {margin-bottom: 0}
 
 }
