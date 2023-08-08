@@ -23,6 +23,7 @@ const App: Component = () => {
 
     const [lang, setLang] = createSignal("en")
 
+    const [sectionIndex, setSectionIndex] = createSignal(0)
     function resetAllWidthToDefault() {
         setD1Hidden(true)
         setD2Hidden(true)
@@ -70,7 +71,7 @@ const App: Component = () => {
                 <Volunteering lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
                 <Outro lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
             </div>
-            <div class="">
+            <div class="lg:hidden">
                 {/*Intro section*/}
                 <MobileNavBar />
                 <MobileIntro lang={lang()}/>

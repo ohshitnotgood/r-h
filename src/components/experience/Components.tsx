@@ -93,3 +93,35 @@ export function Swift() {
         </div>
     )
 }
+
+export function MathTA() {
+    return (
+        <div>
+            <div class="lowercase text-lg text-left font-medium">
+                Faculty of Mathematics
+            </div>
+            <div class="lowercase">
+                Oxford International School
+            </div>
+            <div class="pt-2 text-gray-500">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores excepturi perspiciatis ea delectus corrupti cum quae harum? Amet, necessitatibus itaque?
+            </div>
+        </div>
+    )
+}
+
+export function LabAssistant() {
+    return (
+        <div>
+            <div class="lowercase text-lg text-left font-medium">
+                Faculty of Chemistry
+            </div>
+            <div class="lowercase">
+                Oxford International School
+            </div>
+            <div class="pt-2 text-gray-500">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores excepturi perspiciatis ea delectus corrupti cum quae harum? Amet, necessitatibus itaque?
+            </div>
+        </div>
+    )
+}

@@ -1,8 +1,8 @@
 import rightArrow from "../../assets/icons/ic_right.svg"
 import {JSX, Show} from "solid-js";
 import Header from "../reusable/Header";
-import Body from "./Body";
 import langIcon from "../../assets/icons/ic_lang.svg";
+import {PageCTAButton, PageDescriptionText, PageSubtitle, PageTitle} from "./Components";
 
 
 export default function Intro(props: any) {
@@ -33,7 +33,18 @@ export default function Intro(props: any) {
              onclick={props.onclickAction}>
             {/* Header Section */}
             <Header lang={props.lang} enText="Intro" bnText="সূচনা" sectionNumber="01." hidden={props.hidden} actionButton={LanguageSwitcher} />
-            <Body props={props}/>
+
+            <div classList={{'pointer-events-none z-10 absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
+                <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden,
+                    "col-content-hidden col-content-shrink": props.hidden}}>
+                    <div class="col-text lowercase">
+                        <PageTitle lang={props.lang}/>
+                        <PageSubtitle lang={props.lang}/>
+                        <PageDescriptionText lang={props.lang} />
+                        <PageCTAButton lang={props.lang}/>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

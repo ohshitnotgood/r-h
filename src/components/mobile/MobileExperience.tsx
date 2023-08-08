@@ -18,7 +18,7 @@ export default function MobileExperience(props: {lang: string}) {
                 </div>
             </div>
 
-            <div class="grid grid-cols-[auto_10vw] px-12 mt-12">
+            <div class="grid grid-cols-[auto_5vw] px-12 mt-12">
                 <div>
                     <Javascript />
                     <Database />
@@ -26,7 +26,7 @@ export default function MobileExperience(props: {lang: string}) {
                     <Kotlin />
                     <Swift />
                 </div>
-                <div class="pointer-events-none uppercase text-sm writing-mode-rl orientation-mixed">
+                <div class="pointer-events-none flex content-start uppercase text-sm writing-mode-rl orientation-mixed">
                     Independent Development
                 </div>
             </div>
