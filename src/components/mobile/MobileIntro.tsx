@@ -18,7 +18,7 @@ function TextSection(props: {lang: string}) {
     return (
         <div class="grid min-h-[40vh] place-content-center my-24">
             <div class="max-w-[80vw] space-y-3">
-                <div class="text-5xl font-bold uppercase">
+                <div class="text-6xl font-bold uppercase">
                     {/*<AnimatedText text="Hi! I'm Praanto"/>*/}
                     Hi! I'm Praanto
                 </div>
