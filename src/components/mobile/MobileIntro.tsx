@@ -2,7 +2,7 @@ import {getAge} from "../../functions/GetAge";
 import {onMount, Show} from "solid-js";
 import fire from "../../assets/img/fire-fireball.gif"
 import rightArrow from "../../assets/icons/ic_right.svg";
-import {AnimatedText} from "../reusable/AnimatedText";
+import AnimatedText from "../reusable/AnimatedText";
 
 export default function MobileIntro(props: any) {
     return (

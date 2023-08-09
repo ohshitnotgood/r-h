@@ -1,5 +1,6 @@
 import {Show} from "solid-js";
-import {OpacityAnimatedText} from "./AnimatedText";
+import OpacityAnimatedText from "./OpacityAnimatedText";
+import AnimatedHeaderText from "./AnimatedHeaderText";
 
 /**
  *
@@ -21,7 +22,7 @@ export default function Header(props: any) {
                     <div class="h-fit text-center"></div>
                     <div class="col-header-title" classList={{"col-header-visible": props.hidden, "col-header-hidden": !props.hidden}}>
                         <Show when={props.lang === "en"}>
-                            <OpacityAnimatedText text={props.enText} initialDelay={props.initialDelay}/>
+                            <AnimatedHeaderText text={props.enText} initialDelay={props.initialDelay}/>
                         </Show>
                         <Show when={props.lang === "bn"}>{props.bnText}</Show>
                     </div>
