@@ -131,7 +131,7 @@ export function MathTA() {
             <div class="lowercase">
                 Oxford International School
             </div>
-            <div class="pt-2 text-gray-500 lowercase">
+            <div class="pt-2 lowercase">
                 I generated and formulated practice test papers along with their corresponding answer key for younger grade levels. Additionally, I evaluated assignments and provided assistance to students in grasping concepts through online sessions after regular class hours.
             </div>
         </div>
@@ -147,7 +147,7 @@ export function LabAssistant() {
             <div class="lowercase">
                 Oxford International School
             </div>
-            <div class="pt-2 text-gray-500 lowercase">
+            <div class="pt-2 lowercase">
                 I readied laboratory equipment and reagents in advance for practical examinations for junior classes,
                 aided the teacher in tidying up the apparatuses post-experiment. I also readied reagents
                 and provided guidance on procedures to those students who required assistance.
