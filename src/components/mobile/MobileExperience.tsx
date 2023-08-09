@@ -60,8 +60,8 @@ export default function MobileExperience(props: any) {
 
 
             <div class="">
-                <div class="text-6xl px-8 md:px-0 font-bold uppercase">
-                    <OpacityAnimatedText show={!props.hidden} text={<div ref={title!}>Work Experience</div>} initialDelay={800} />
+                <div class="text-6xl px-8 hyphens-manual font-bold uppercase">
+                    <OpacityAnimatedText show={!props.hidden} text={<div ref={title!}>Work Experie&shynce</div>} initialDelay={800} />
                 </div>
             </div>
 
