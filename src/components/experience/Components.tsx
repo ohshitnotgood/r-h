@@ -106,7 +106,7 @@ export function Android() {
 
 export function Swift() {
     return (
-        <div class="rounded-3xl border border-black p-4 mb-24">
+        <div class="rounded-3xl border border-black p-4 mb-8 lg:mb-24">
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Swift</span>
                 <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
@@ -124,7 +124,7 @@ export function Swift() {
 
 export function MathTA() {
     return (
-        <div class="rounded-3xl border border-black p-4 mb-24">
+        <div class="rounded-3xl border border-black p-4 mb-8 lg:mb-24">
             <div class="lowercase text-lg text-left font-medium">
                 Faculty of Mathematics
             </div>

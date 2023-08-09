@@ -30,7 +30,7 @@ export default function MobileExperience(props: any) {
                 <Database />
                 <Android />
                 <Kotlin />
-                {/*<Swift />*/}
+                <Swift />
             </div>
 
             <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
