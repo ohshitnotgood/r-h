@@ -11,13 +11,13 @@ import AnimatedHeaderText from "./AnimatedHeaderText";
  * @param props.lang Language signal
  * @param props.hidden Hidden state
  */
-export default function Header(props: any) {
+export default function Header(props: { sectionNumber: string, enText: string, bnText: string, initialDelay: number, hidden: boolean, lang: string, actionButton: any }) {
     return (
         <div class='w-full flex cursor-pointer'>
             <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer bg-white'>
                 <div class="grid grid-arrangement h-screen place-content-center">
                     <div class="h-fit text-center pt-10">
-                        {props.sectionNumber}
+                        <AnimatedHeaderText text={props.sectionNumber} initialDelay={props.initialDelay}/>
                     </div>
                     <div class="h-fit text-center"></div>
                     <div class="col-header-title" classList={{"col-header-visible": props.hidden, "col-header-hidden": !props.hidden}}>
