@@ -131,8 +131,8 @@ export function MathTA() {
             <div class="lowercase">
                 Oxford International School
             </div>
-            <div class="pt-2 text-gray-500">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores excepturi perspiciatis ea delectus corrupti cum quae harum? Amet, necessitatibus itaque?
+            <div class="pt-2 text-gray-500 lowercase">
+                I generated and formulated practice test papers along with their corresponding answer key for younger grade levels. Additionally, I evaluated assignments and provided assistance to students in grasping concepts through online sessions after regular class hours.
             </div>
         </div>
     )
@@ -147,8 +147,10 @@ export function LabAssistant() {
             <div class="lowercase">
                 Oxford International School
             </div>
-            <div class="pt-2 text-gray-500">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores excepturi perspiciatis ea delectus corrupti cum quae harum? Amet, necessitatibus itaque?
+            <div class="pt-2 text-gray-500 lowercase">
+                I readied laboratory equipment and reagents in advance for practical examinations for junior classes,
+                aided the teacher in tidying up the apparatuses post-experiment. I also readied reagents
+                and provided guidance on procedures to those students who required assistance.
             </div>
         </div>
     )
