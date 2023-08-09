@@ -79,9 +79,9 @@ const App: Component = () => {
                 <div>
                     <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
                         <Intro initialDelay={2100} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
-                        <Experience initialDelay={2400} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
-                        <Education initialDelay={2500} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
-                        <Volunteering initialDelay={2600} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
+                        <Volunteering initialDelay={2400} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
+                        <Experience initialDelay={2500} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
+                        <Education initialDelay={2600} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
                         <Outro initialDelay={2700} lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
                     </div>
                 </div>

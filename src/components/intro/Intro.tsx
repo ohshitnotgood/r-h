@@ -37,7 +37,7 @@ export default function Intro(props: any) {
             <div classList={{'pointer-events-none z-10 absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden,
                     "col-content-hidden col-content-shrink": props.hidden}}>
-                    <div class="col-text lowercase">
+                    <div class="col-text space-y-2.5 lowercase">
                         <PageTitle hidden={props.hidden} lang={props.lang}/>
                         <PageSubtitle hidden={props.hidden} lang={props.lang}/>
                         <PageDescriptionText hidden={props.hidden} lang={props.lang} />
