@@ -20,7 +20,7 @@ export default function Experience(props: any) {
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
              onclick={props.onclickAction}>
 
-            <Header sectionNumber="02." enText="Experience" bnText="কর্মদক্ষতা" hidden={props.hidden} lang={props.lang}/>
+            <Header initialDelay={props.initialDelay} sectionNumber="02." enText="Experience" bnText="কর্মদক্ষতা" hidden={props.hidden} lang={props.lang}/>
 
             <div class="absolute right-8 bottom-5"
                  classList={{"scroll-indicator-hide": userReachedBottom(), "scroll-indicator-show": !userReachedBottom()}}>

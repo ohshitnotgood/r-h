@@ -75,11 +75,11 @@ const App: Component = () => {
     return (
         <div>
             <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
-                <Intro lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
-                <Experience lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
-                <Education lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
-                <Volunteering lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
-                <Outro lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
+                <Intro initialDelay={2000} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
+                <Experience initialDelay={2300} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
+                <Education initialDelay={2400} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
+                <Volunteering initialDelay={2500} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
+                <Outro initialDelay={2600} lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
             </div>
             <div class="lg:hidden">
                 <MobileNavBar currentPosition={currentPosition()} />

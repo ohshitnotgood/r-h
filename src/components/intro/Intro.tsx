@@ -2,6 +2,7 @@ import { Show } from "solid-js";
 import Header from "../reusable/Header";
 import langIcon from "../../assets/icons/ic_lang.svg";
 import {PageCTAButton, PageDescriptionText, PageSubtitle, PageTitle} from "./Components";
+import {AnimatedText, OpacityAnimatedText} from "../reusable/AnimatedText";
 
 
 export default function Intro(props: any) {
@@ -40,7 +41,7 @@ export default function Intro(props: any) {
                         <PageTitle lang={props.lang}/>
                         <PageSubtitle lang={props.lang}/>
                         <PageDescriptionText lang={props.lang} />
-                        <PageCTAButton lang={props.lang}/>
+                        <OpacityAnimatedText initialDelay={1700} text={<PageCTAButton lang={props.lang}/>}/>
                     </div>
                 </div>
             </div>

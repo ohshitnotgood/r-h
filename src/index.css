@@ -67,7 +67,7 @@ code {
     .col-header-title {
         writing-mode: vertical-rl;
         text-orientation: mixed;
-        @apply font-inter text-3xl font-bold uppercase rotate-180 bg-white
+        @apply font-inter text-2xl font-bold uppercase rotate-180 bg-white
     }
 
     /* Display animation when a section is shrunk. */
@@ -108,7 +108,7 @@ code {
     }
 
     .col-content-visible-slow {
-        animation: 1s swipe-up ease-in-out;
+        animation: 1s enable-content-opacity ease-in-out;
     }
 
     .col-content-hidden {
@@ -155,7 +155,63 @@ code {
 
     .fade-in-anim {
         height: 0;
-        animation: show-text 1s cubic-bezier(1,.11,.83,.67);
+        animation: show-text 1s ease-in-out;
+    }
+
+    .anim-opacity-0 {
+        animation-name: disable-content-opacity;
+    }
+
+    .anim-opacity-1 {
+        animation-name: enable-content-opacity;
+    }
+
+    .animation-duration-0 {
+        animation-duration: 0ms;
+    }
+
+    .animation-duration-400 {
+        animation-duration: 400ms;
+    }
+
+    .animation-duration-700 {
+        animation-duration: 700ms;
+    }
+
+    .animation-duration-1400 {
+        animation-duration: 1400ms;
+    }
+
+    .animation-delay-0 {
+        animation-delay: 0ms;
+    }
+
+    .animation-delay-100 {
+        animation-delay: 100ms;
+    }
+
+    .animation-delay-200 {
+        animation-delay: 200ms;
+    }
+
+    .animation-delay-300 {
+        animation-delay: 300ms;
+    }
+
+    .animation-delay-400 {
+        animation-delay: 400ms;
+    }
+
+    .animation-delay-1000 {
+        animation-delay: 1000ms;
+    }
+
+    .animation-delay-1400 {
+        animation-delay: 1400ms;
+    }
+
+    .animation-delay-1700 {
+        animation-delay: 1700ms;
     }
 }
 
@@ -186,7 +242,7 @@ code {
 }
 
 @keyframes swipe-up {
-    from {margin-bottom: -100px;}
+    from {margin-bottom: 0;}
     to {margin-bottom: 0}
 
 }

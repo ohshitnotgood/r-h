@@ -27,7 +27,7 @@ export default function Outro(props: any) {
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
              onclick={props.onclickAction}>
             {/*Header*/}
-            <Header sectionNumber="05." lang={props.lang} hidden={props.hidden} enText={"Others"} bnText={"অন্যান্য"}/>
+            <Header initialDelay={props.initialDelay} sectionNumber="05." lang={props.lang} hidden={props.hidden} enText={"Others"} bnText={"অন্যান্য"}/>
 
             {/*Scroll Indicator*/}
             <div class="absolute right-8 bottom-5"
