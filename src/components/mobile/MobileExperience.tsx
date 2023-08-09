@@ -84,7 +84,7 @@ export default function MobileExperience(props: any) {
             </div>
 
             <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
-                <OpacityAnimatedText show={showMathTA()} text={<div>Teaching assistant in high school</div>} initialDelay={400} />
+                <OpacityAnimatedText show={showMathTA()} text={<div>Teaching assistant</div>} initialDelay={400} />
             </div>
 
             <div class="px-8 ">

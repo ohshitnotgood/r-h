@@ -3,6 +3,7 @@ import {onMount, Show} from "solid-js";
 import fire from "../../assets/img/fire-fireball.gif"
 import rightArrow from "../../assets/icons/ic_right.svg";
 import AnimatedText from "../reusable/AnimatedText";
+import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 
 export default function MobileIntro(props: any) {
     return (
@@ -20,16 +21,17 @@ function TextSection(props: {lang: string}) {
             <div class="max-w-[80vw] space-y-3">
                 <div class="text-6xl font-bold uppercase">
                     {/*<AnimatedText text="Hi! I'm Praanto"/>*/}
-                    Hi! I'm Praanto
+                    <OpacityAnimatedText text={"Hi! I'm Praanto"} initialDelay={600} show={true}/>
                 </div>
                 <div class="lowercase text-2xl">
                     {/*<AnimatedText text="comp.eng. student at kth" initialDelay={200}/>*/}
-                    comp.eng student at kth
+                    <OpacityAnimatedText text={"comp.eng student at kth"} initialDelay={800} show={true}/>
+
                 </div>
                 <div class="pr-10">
-                    <AnimatedText text={description} initialDelay={600}/>
+                    <OpacityAnimatedText text={description} initialDelay={1000} show={true}/>
                 </div>
-                <PageCTAButton lang={props.lang} />
+                <OpacityAnimatedText show={true} text={<PageCTAButton lang={props.lang} />} initialDelay={1300} />
             </div>
         </div>
     )
