@@ -32,7 +32,7 @@ export default function Intro(props: any) {
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
              onclick={props.onclickAction}>
             {/* Header Section */}
-            <Header lang={props.lang} enText="Intro" bnText="সূচনা" sectionNumber="01." hidden={props.hidden} actionButton={LanguageSwitcher} />
+            <Header lang={props.lang} enText="Intro" bnText="সূচনা" sectionNumber="01." hidden={props.hidden} actionButton={LanguageSwitcher}  initialDelay={0}/>
 
             <div classList={{'pointer-events-none z-10 absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden,
@@ -41,7 +41,7 @@ export default function Intro(props: any) {
                         <PageTitle hidden={props.hidden} lang={props.lang}/>
                         <PageSubtitle hidden={props.hidden} lang={props.lang}/>
                         <PageDescriptionText hidden={props.hidden} lang={props.lang} />
-                        <PageCTAButton lang={props.lang}/>
+                        <PageCTAButton hidden={props.hidden} lang={props.lang}/>
                     </div>
                 </div>
             </div>

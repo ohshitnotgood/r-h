@@ -6,15 +6,16 @@ import AnimatedText from "../reusable/AnimatedText";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 
 export function PageTitle(props: any) {
+    let image = <img class="w-14 h-16 ml-3" src={fire} alt="" />
     return (
         <div class="text-7xl flex flex-row font-bold mb-3 uppercase">
             <Show when={props.lang == "en"}>
-                <AnimatedText animStyle={"fade"} text={"Hi! I'm Praanto"} initialDelay={100}/>
+                <OpacityAnimatedText show={!props.hidden} text={"Hi! I'm Praanto"} initialDelay={1700}/>
             </Show>
             <Show when={props.lang == "bn"}>
-                <AnimatedText text={"স্বাগতম! আমি প্রান্ত"} initialDelay={100}/>
+                <OpacityAnimatedText show={!props.hidden} text={"স্বাগতম! আমি প্রান্ত"} initialDelay={1700}/>
             </Show>
-            <img class="w-14 hidden ml-3" src={fire} alt="" />
+            <OpacityAnimatedText show={!props.hidden} text={image} initialDelay={1700}/>
         </div>
     )
 }
@@ -24,10 +25,10 @@ export function PageSubtitle(props: any) {
         <div class="text-2xl">
             {/*<TypingAnimation text="Comp.Eng student at KTH" delay={100} initialDelay={700} />*/}
             <Show when={props.lang == "en"}>
-                <AnimatedText text={"computer eng. student at kth"} initialDelay={300}/>
+                <OpacityAnimatedText show={!props.hidden} text={"computer eng. student at kth"} initialDelay={1900}/>
             </Show>
             <Show when={props.lang == "bn"}>
-                <AnimatedText text="সুইডেন অবস্থিত কেটিএইচ-এর কম্পিউটার ইঞ্জিনিয়ারিং ছাত্র " initialDelay={300}/>
+                <OpacityAnimatedText show={!props.hidden} text="সুইডেন অবস্থিত কেটিএইচ-এর কম্পিউটার ইঞ্জিনিয়ারিং ছাত্র" initialDelay={1900}/>
             </Show>
         </div>
     )
@@ -49,20 +50,21 @@ export function PageDescriptionText(props: { lang: string, hidden: boolean }) {
     )
 }
 
-export function PageCTAButton(props: any) {
+export function PageCTAButton(props: { hidden: boolean, lang: string }) {
+    let button = (
+        <button class="mt-7 pointer-events-auto z-10 hover:cursor-pointer rounded-full my-4 p-2 px-4 border border-black">
+            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <Show when={props.lang === "en"}>
+                    <span>get to know me</span>
+                </Show>
+                <Show when={props.lang === "bn"}>
+                    <span>আমার সম্পর্কে জানুন</span>
+                </Show>
+                <img src={rightArrow} class="w-6 h-6" alt={"Javascript logo in black and white"}/>
+            </div>
+        </button>
+    )
     return (
-        <div class="pt-7">
-            <button class="pointer-events-auto hover:cursor-pointer rounded-full my-4 p-2 px-4 border border-black">
-                <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                    <Show when={props.lang === "en"}>
-                        <span>get to know me</span>
-                    </Show>
-                    <Show when={props.lang === "bn"}>
-                        <span>আমার সম্পর্কে জানুন</span>
-                    </Show>
-                    <img src={rightArrow} class="w-6 h-6" alt={"Javascript logo in black and white"}/>
-                </div>
-            </button>
-        </div>
+        <OpacityAnimatedText show={!props.hidden} text={button} initialDelay={2200} />
     )
 }
