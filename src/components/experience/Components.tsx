@@ -10,12 +10,12 @@ import androidStudio from "../../assets/img/androidStudio_bw.png"
 
 export function Javascript(){
     return(
-        <div>
+        <div class="rounded-3xl border border-black p-4 mb-8">
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Javascript & Typescript</span>
                 <img src={jsLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 pb-10 lowercase">
+            <ul class="list-disc pl-4 lowercase">
                 <li>Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS</li>
                 <li>Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS</li>
                 <li>Building full-stack web applications with SvelteKit and SolidJS</li>
@@ -54,12 +54,12 @@ function AndroidStudioLogo() {
 
 export function Database() {
     return (
-        <div>
+        <div class="rounded-3xl border border-black p-4 mb-8">
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Database management</span>
                 <img src={dbLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 pb-10 lowercase">
+            <ul class="list-disc pl-4 lowercase">
                 <li>
                     Database management with <span class="inline-flex items-center">PostgresQL <PostgresLogo /></span><span class="inline-flex items-center"> and Prisma <PrismaLogo /></span>
                 </li>
@@ -72,12 +72,12 @@ export function Database() {
 
 export function Kotlin() {
     return (
-        <div>
+        <div class="rounded-3xl border border-black p-4 mb-8">
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Kotlin</span>
                 <img src={ktLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 pb-10 lowercase">
+            <ul class="list-disc pl-4 lowercase">
                 <li>RESTful Server programming with Ktor</li>
                 <li>Android app development with AndriodSDK</li>
                 <li>Asynchronous programming with Kotlin Coroutines</li>
@@ -89,12 +89,12 @@ export function Kotlin() {
 
 export function Android() {
     return(
-        <div>
+        <div class="rounded-3xl border border-black p-4 mb-8">
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Android</span>
                 <img src={androidLogoBlock} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 pb-10 lowercase">
+            <ul class="list-disc pl-4 lowercase">
                 <li>Building reactive UIs using Kotlin LiveData</li>
                 <li>Database management with Room and SQLite</li>
                 <li>Responsive UIs with constraint layout, relative layout, linear layout, etc</li>
@@ -106,12 +106,12 @@ export function Android() {
 
 export function Swift() {
     return (
-        <div>
+        <div class="rounded-3xl border border-black p-4 mb-24">
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Swift</span>
                 <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 lowercase pb-24">
+            <ul class="list-disc pl-4 lowercase">
                 <li>Declarative UI building with SwiftUI</li>
                 <li>Cross-platform application for iOS, iPadOS and macOS from a single codebase</li>
                 <li>Client-side RESTful programming</li>
@@ -124,7 +124,7 @@ export function Swift() {
 
 export function MathTA() {
     return (
-        <div>
+        <div class="rounded-3xl border border-black p-4 mb-24">
             <div class="lowercase text-lg text-left font-medium">
                 Faculty of Mathematics
             </div>
@@ -140,7 +140,7 @@ export function MathTA() {
 
 export function LabAssistant() {
     return (
-        <div>
+        <div class="rounded-3xl border border-black p-4 mb-24">
             <div class="lowercase text-lg text-left font-medium">
                 Faculty of Chemistry
             </div>

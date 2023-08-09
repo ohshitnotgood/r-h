@@ -100,14 +100,14 @@ export default function Experience(props: any) {
                                 <div class="uppercase text-sm">
                                     <OpacityAnimatedText show={showMathTA()} text={<div>Teaching assistant in high school</div>} initialDelay={400} />
                                 </div>
-                                <div class="pb-24">
+                                <div class="">
                                     <OpacityAnimatedText show={showMathTA()} text={<div ref={mathTA!}><MathTA /> </div>} initialDelay={400} />
                                 </div>
 
                                 <div class="uppercase text-sm">
                                     <OpacityAnimatedText show={showLA()} text={<div>Laboratory assistant in high school</div>} initialDelay={400} />
                                 </div>
-                                <div class="pb-24">
+                                <div class="">
                                     <OpacityAnimatedText show={showLA()} text={<div ref={lA!}><LabAssistant /></div>} initialDelay={400} />
                                 </div>
                             </div>
