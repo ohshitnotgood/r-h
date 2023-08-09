@@ -158,6 +158,11 @@ code {
         animation: show-text 1s ease-in-out;
     }
 
+    .loading-screen-animation {
+        opacity: 0;
+        animation: 2s progress-bar-fade-away ease-in-out;
+    }
+
     .anim-opacity-0 {
         animation-name: disable-content-opacity;
     }
@@ -239,6 +244,12 @@ code {
     from {height: 100%;}
     to {height: 0}
 
+}
+
+@keyframes progress-bar-fade-away {
+    from {opacity: 1}
+    75% { opacity: 1}
+    to {opacity: 0;}
 }
 
 @keyframes swipe-up {

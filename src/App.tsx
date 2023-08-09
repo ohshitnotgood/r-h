@@ -10,6 +10,7 @@ import MobileExperience from "./components/mobile/MobileExperience";
 import MobileNavBar from "./components/mobile/MobileNavBar";
 import {createScrollPosition} from "@solid-primitives/scroll";
 import {MobileEducation} from "./components/mobile/MobileEducation";
+import loadingIcon from "./assets/icons/ic_progress.svg"
 
 const App: Component = () => {
     const [d1Hidden, setD1Hidden] = createSignal(false);
@@ -74,12 +75,19 @@ const App: Component = () => {
 
     return (
         <div>
-            <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
-                <Intro initialDelay={2000} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
-                <Experience initialDelay={2300} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
-                <Education initialDelay={2400} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
-                <Volunteering initialDelay={2500} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
-                <Outro initialDelay={2600} lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
+            <div class="max-lg:hidden relative">
+                <div>
+                    <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
+                        <Intro initialDelay={2100} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
+                        <Experience initialDelay={2400} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
+                        <Education initialDelay={2500} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
+                        <Volunteering initialDelay={2600} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
+                        <Outro initialDelay={2700} lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
+                    </div>
+                </div>
+                <div class="w-screen z-50 h-screen bg-white grid place-content-center absolute top-0 left-0 pointer-events-none loading-screen-animation">
+                    <img alt="Spinning progress bar" class="animate-spin" src={loadingIcon}/>
+                </div>
             </div>
             <div class="lg:hidden">
                 <MobileNavBar currentPosition={currentPosition()} />
