@@ -11,7 +11,7 @@ import {Show} from "solid-js";
  */
 export default function Header(props: any) {
     return (
-        <div>
+        <div class='w-full flex cursor-pointer'>
             <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer bg-white'>
                 <div class="grid grid-arrangement h-screen place-content-center">
                     <div class="h-fit text-center pt-10">
