@@ -6,6 +6,20 @@ import AnimatedText from "../reusable/AnimatedText";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import {Text} from "../reusable/Texts";
 
+const borderColor: {[index: number]: string} = {
+    1: "border-contrast-1 ",
+    2: "border-contrast-2 ",
+    3: "border-contrast-3 ",
+    4: "border-contrast-4 ",
+    5: "border-contrast-5 ",
+    6: "border-contrast-6 ",
+    7: "border-contrast-7 ",
+    8: "border-contrast-8 ",
+    9: "border-contrast-9 ",
+    10: "border-contrast-10 ",
+}
+
+
 export default function MobileIntro(props: { lang: string, ref: any, palette: number }) {
     return (
         <div id="intro" ref={props.ref} class={`bg-bg-${props.palette} transition-all duration-150 grid place-items-center`}>
@@ -16,19 +30,6 @@ export default function MobileIntro(props: { lang: string, ref: any, palette: nu
 
 function TextSection(props: {lang: string, palette: number}) {
     let description = getAge(props.lang) + " year old highly skilled software engineer and passionate programmer. Adept at leveraging cutting-edge technologies to deliver efficient and user-centric applications. Committed to continuous learning and seeking new challenges to drive excellence in software development."
-
-    const bgColor: {[index: number]: string} = {
-        1: "bg-bg-1 ",
-        2: "bg-bg-2 ",
-        3: "bg-bg-3 ",
-        4: "bg-bg-4 ",
-        5: "bg-bg-5 ",
-        6: "bg-bg-6 ",
-        7: "bg-bg-7 ",
-        8: "bg-bg-8 ",
-        9: "bg-bg-9 ",
-        10: "bg-bg-10 ",
-    }
 
     return (
         <div class={`grid min-h-[40vh] place-content-center py-24`}>
@@ -49,26 +50,46 @@ function TextSection(props: {lang: string, palette: number}) {
                         <Text  bnT={""} class={""} enT={description} lang={props.lang} palette={props.palette}/>
                     } initialDelay={1000} show={true}/>
                 </div>
-                <OpacityAnimatedText show={true} text={<PageCTAButton lang={props.lang} />} initialDelay={1300} />
+                <OpacityAnimatedText show={true} text={<PageCTAButton lang={props.lang} palette={props.palette}/>} initialDelay={1300} />
             </div>
         </div>
 
     )
 }
 
-function PageCTAButton(props: {lang: string}) {
+function PageCTAButton(props: {lang: string, palette: number}) {
+    let enText = (
+        <div class="lowercase text-left text-sm flex flex-row items-center space-x-1">
+            <span>get to know me</span>
+            <img src={rightArrow} class="w-4 h-4 rotate-[90deg]" alt={"Javascript logo in black and white"}/>
+        </div>
+    )
+
+    let bnText = (
+        <div class="lowercase text-left text-sm flex flex-row items-center space-x-1">
+            <Show when={props.lang === "en"}>
+                <span>get to know me</span>
+            </Show>
+            <Show when={props.lang === "bn"}>
+                <span>আমার সম্পর্কে জানুন</span>
+            </Show>
+            <img src={rightArrow} class="w-4 h-4 rotate-[90deg]" alt={"Javascript logo in black and white"}/>
+        </div>
+    )
+
     return (
         <div class="">
-            <button class="pointer-events-auto hover:cursor-pointer rounded-full my-4 p-2 px-4 border border-black">
-                <div class="lowercase text-left text-sm flex flex-row items-center space-x-1">
-                    <Show when={props.lang === "en"}>
-                        <span>get to know me</span>
-                    </Show>
-                    <Show when={props.lang === "bn"}>
-                        <span>আমার সম্পর্কে জানুন</span>
-                    </Show>
-                    <img src={rightArrow} class="w-4 h-4 rotate-[90deg]" alt={"Javascript logo in black and white"}/>
-                </div>
+            <button class={`pointer-events-auto hover:cursor-pointer rounded-full my-4 p-2 px-4 border ${borderColor[props.palette]}`}>
+                {/*<div class="lowercase text-left text-sm flex flex-row items-center space-x-1">*/}
+                {/*    <Show when={props.lang === "en"}>*/}
+                {/*        <span>get to know me</span>*/}
+                {/*    </Show>*/}
+                {/*    <Show when={props.lang === "bn"}>*/}
+                {/*        <span>আমার সম্পর্কে জানুন</span>*/}
+                {/*    </Show>*/}
+                {/*    <img src={rightArrow} class="w-4 h-4 rotate-[90deg]" alt={"Javascript logo in black and white"}/>*/}
+                {/*</div>*/}
+                <Text enT={enText} bnT={bnText} lang={props.lang} palette={props.palette} class={""} />
             </button>
         </div>
     )
