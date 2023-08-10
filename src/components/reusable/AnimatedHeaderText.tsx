@@ -11,10 +11,7 @@ export default function AnimatedHeaderText(props: { initialDelay: number, text: 
 
     return (
         <div class="relative">
-            <div class="">
-                {props.text}
-            </div>
-            <div class="absolute text-transparent top-0 left-0 bg-white" classList={{"col-content-hidden": render(), "w-full h-full": !render()}}>
+            <div class="" classList={{"opacity-0": !render(), "col-content-visible": render()}}>
                 {props.text}
             </div>
         </div>
