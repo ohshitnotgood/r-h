@@ -90,7 +90,7 @@ export default function Experience(props: any) {
                                     <OpacityAnimatedText show={showJavascript()} text={"Independent development"} initialDelay={1400}/>
                                 </div>
                                 <div>
-                                    <OpacityAnimatedText show={showJavascript()} text={<div ref={js!}><Javascript /></div>} initialDelay={1500} />
+                                    <OpacityAnimatedText show={showJavascript()} text={<div ref={js!}><Javascript palette={props.palette} lang={props.lang} /></div>} initialDelay={1500} />
                                     <OpacityAnimatedText show={showDatabase()} text={<div ref={db!}><Database /></div>} initialDelay={400} />
                                     <OpacityAnimatedText show={showKotlin()} text={<div ref={kotlin!}><Kotlin /></div>} initialDelay={400} />
                                     <OpacityAnimatedText show={showAndroid()} text={<div ref={android!}><Android /></div>} initialDelay={400} />

@@ -7,21 +7,37 @@ import psqlLogo from "../../assets/img/psql_logo_alt.webp";
 import dgLogo from "../../assets/img/datagrip_alt.svg"
 import prismaLogo from "../../assets/img/prisma_logo.svg";
 import androidStudio from "../../assets/img/androidStudio_bw.png"
+import {Text} from "../reusable/Texts";
 
-export function Javascript(){
+export function Javascript(props: { lang: string, palette: number }){
     return(
         <div class="rounded-3xl border border-black p-4 mb-8">
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>Javascript & Typescript</span>
+                <span>
+                    <Text text={{en: "Javascript & Typescript", bn: "জাভা-স্ক্রিপ্ট ও টাইপ-স্ক্রিপ্ট"}} lang={"en"} palette={props.palette} class={""} />
+                </span>
                 <img src={jsLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 lowercase">
-                <li>Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS</li>
-                <li>Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS</li>
-                <li>Building full-stack web applications with SvelteKit and SolidJS</li>
-                <li>Handling server-side RESTful API with ExpressJS.</li>
-                <li>Database management with PostgresQL, MySQL and Prisma</li>
-                <li>Can center element inside a <code>&ltdiv/&gt</code> </li>
+                <li>
+                    <Text text={{en: "Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                </li>
+                <li>
+                    <Text text={{en: "Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                </li>
+                <li>
+                    <Text text={{en: "Building full-stack web applications with SvelteKit and SolidJS", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                </li>
+                <li>
+                    <Text text={{en: "Handling server-side RESTful API with ExpressJS.", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                </li>
+                <li>
+                    <Text text={{en: "Database management with PostgresQL, MySQL and Prisma", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+
+                </li>
+                <li>
+                    <Text text={{en: "Can center element inside a <div/>", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                </li>
             </ul>
         </div>
     )

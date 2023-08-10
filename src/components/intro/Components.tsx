@@ -9,8 +9,8 @@ import { Text } from "../reusable/Texts";
 export function PageTitle(props: {lang: string, hidden: boolean, palette: number}) {
     let bnText = "স্বাগতম! আমি প্রান্ত"
     let enText = "Hi! I'm Praanto"
-    let textElement = <Text text={{en: enText, bn: bnText}} lang={props.lang} palette={3}
-                            class={"mb-3 text-6xl xl:text-8xl lg:text-6xl font-bold uppercase"} accent={"primary"}/>
+    let textElement = <Text text={{en: enText, bn: bnText}} lang={props.lang} palette={props.palette}
+                            class={"mb-3 text-6xl xl:text-8xl lg:text-6xl font-bold uppercase"} />
     return (
         <OpacityAnimatedText show={!props.hidden} text={textElement} initialDelay={1700}/>
     )
@@ -19,8 +19,8 @@ export function PageTitle(props: {lang: string, hidden: boolean, palette: number
 export function PageSubtitle(props: {lang: string, hidden: boolean, palette: number}) {
     let enText = "computer eng. student at kth"
     let bnText = "সুইডেন অবস্থিত কেটিএইচ-এর কম্পিউটার ইঞ্জিনিয়ারিং ছাত্র"
-    let textElement = <Text text={{en: enText, bn: bnText}} lang={props.lang} palette={3}
-                            class={"xl:text-5xl lg:text-4xl"} accent={"primary"}/>
+    let textElement = <Text text={{en: enText, bn: bnText}} lang={props.lang} palette={props.palette}
+                            class={"xl:text-5xl lg:text-4xl"} />
 
     return (
         <OpacityAnimatedText show={!props.hidden} text={textElement} initialDelay={1900} />
@@ -32,8 +32,8 @@ export function PageDescriptionText(props: { lang: string, hidden: boolean, pale
     let enText = getAge(props.lang) + " year old highly skilled software engineer and passionate programmer. Adept at leveraging cutting-edge technologies to deliver efficient and user-centric applications. Committed to continuous learning and seeking new challenges to drive excellence in software development."
     let bnText = getAge(props.lang) + " বছর বয়সী উচ্চকৌশল সফটওয়্যার ইঞ্জিনিয়ার এবং উদ্দীপত সফটওয়্যার প্রোগ্রামার। দক্ষতার মাধ্যমে নতুনত্বপূর্ণ প্রযুক্তি ব্যবহার করে দক্ষ এবং ব্যবহারকারী-মনোযোগী অ্যাপ্লিকেশন প্রদানে দক্ষ। সফটওয়্যার উন্নতি উত্সাহিত করতে সতত শেখা এবং নতুন চ্যালেঞ্জ সন্ধান করায় প্রতিশ্রুতিবদ্ধ।"
 
-    let textElement = <Text text={{en: enText, bn: bnText}} lang={props.lang} palette={3}
-                            class={"xl:text-2xl lg:text-lg lg:pr-20"} accent={"primary"}/>
+    let textElement = <Text text={{en: enText, bn: bnText}} lang={props.lang} palette={props.palette}
+                            class={"xl:text-2xl lg:text-lg lg:pr-20"} />
 
     return (
         <OpacityAnimatedText show={!props.hidden} text={textElement} initialDelay={2000} />

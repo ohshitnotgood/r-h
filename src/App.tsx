@@ -23,7 +23,8 @@ const App: Component = () => {
 
     const [sectionIndex, setSectionIndex] = createSignal(0)
 
-    const palette = Math.floor(Math.random() * 9 + 1);
+    // const palette = Math.floor(Math.random() * 9 + 1);
+    const palette = 1
 
     function resetAllWidthToDefault() {
         setD1Hidden(true)
@@ -82,10 +83,10 @@ const App: Component = () => {
                 <div>
                     <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
                         <Intro palette={palette} initialDelay={2100} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
-                        <Volunteering initialDelay={2400} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
-                        <Experience initialDelay={2500} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
-                        <Education initialDelay={2600} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
-                        <Outro initialDelay={2700} lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
+                        <Volunteering palette={palette} initialDelay={2400} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
+                        <Experience palette={palette} initialDelay={2500} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
+                        <Education palette={palette} initialDelay={2600} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
+                        <Outro palette={palette} initialDelay={2700} lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
                     </div>
                 </div>
                 <div class="w-screen z-50 h-screen bg-white grid place-content-center absolute top-0 left-0 pointer-events-none loading-screen-animation">
