@@ -12,6 +12,32 @@ import {EmailAndPhone} from "./Components";
 
 
 export default function Outro(props: any) {
+    const bgColor: {[index: number]: string} = {
+        1: "bg-bg-1 z-50 relative",
+        2: "bg-bg-2 z-50 relative",
+        3: "bg-bg-3 z-50 relative",
+        4: "bg-bg-4 z-50 relative",
+        5: "bg-bg-5 z-50 relative",
+        6: "bg-bg-6 z-50 relative",
+        7: "bg-bg-7 z-50 relative",
+        8: "bg-bg-8 z-50 relative",
+        9: "bg-bg-9 z-50 relative",
+        10: "bg-bg-10 z-50 relative",
+    }
+
+    const borderColor: {[index: number]: string} = {
+        1: "border-contrast-1 border-r",
+        2: "border-contrast-2 border-r",
+        3: "border-contrast-3 border-r",
+        4: "border-contrast-4 border-r",
+        5: "border-contrast-5 border-r",
+        6: "border-contrast-6 border-r",
+        7: "border-contrast-7 border-r",
+        8: "border-contrast-8 border-r",
+        9: "border-contrast-9 border-r",
+        10: "border-contrast-10 border-r",
+    }
+
     const [userReachedBottom, setUserReachBottom] = createSignal(false)
     let mainContent: HTMLDivElement
 
@@ -24,29 +50,31 @@ export default function Outro(props: any) {
     }
 
     return (
-        <div class='col-entire-section'
+        <div class={bgColor[props.palette]}
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
              onclick={props.onclickAction}>
-            {/*Header*/}
-            <Header initialDelay={props.initialDelay} sectionNumber="05." lang={props.lang} hidden={props.hidden} enText={"Others"} bnText={"অন্যান্য"} actionButton={null}/>
+            <div class={borderColor[props.palette]}>
+                {/*Header*/}
+                <Header initialDelay={props.initialDelay} sectionNumber="05." lang={props.lang} hidden={props.hidden} enText={"Others"} bnText={"অন্যান্য"} actionButton={null}/>
 
-            {/*Scroll Indicator*/}
-            <div class="absolute right-8 bottom-5"
-                 classList={{"scroll-indicator-hide": userReachedBottom(), "scroll-indicator-show": !userReachedBottom()}}>
-                <div class="flex justify-center items-center flex-col" classList={{"col-content-visible": !props.hidden, "col-content-hidden": props.hidden}}>
-                    <img class="w-8 h-8" src={icDownCircled} alt="Down scroll indicator"/>
+                {/*Scroll Indicator*/}
+                <div class="absolute right-8 bottom-5"
+                     classList={{"scroll-indicator-hide": userReachedBottom(), "scroll-indicator-show": !userReachedBottom()}}>
+                    <div class="flex justify-center items-center flex-col" classList={{"col-content-visible": !props.hidden, "col-content-hidden": props.hidden}}>
+                        <img class="w-8 h-8" src={icDownCircled} alt="Down scroll indicator"/>
+                    </div>
                 </div>
-            </div>
 
-            {/*Main Content*/}
-            <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
-                <div class='grid place-content-center h-screen z-50' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
-                    <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
-                        <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold text-right">Contact Me!</div>
-                        <div class="pb-24 text-justify">
+                {/*Main Content*/}
+                <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
+                    <div class='grid place-content-center h-screen z-50' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
+                        <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
+                            <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold text-right">Contact Me!</div>
+                            <div class="pb-24 text-justify">
 
+                            </div>
+                            <EmailAndPhone />
                         </div>
-                        <EmailAndPhone />
                     </div>
                 </div>
             </div>

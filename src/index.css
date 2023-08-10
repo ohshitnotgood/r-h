@@ -60,14 +60,14 @@ code {
 
     /* CSS for the header part of the column that includes the rotated title */
     .col-header {
-        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-white z-10 cursor-pointer
+        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-black z-10 cursor-pointer
     }
 
     /* Rotated title in the header section */
     .col-header-title {
         writing-mode: vertical-rl;
         text-orientation: mixed;
-        @apply font-inter text-2xl font-bold uppercase rotate-180 bg-white
+        @apply font-inter text-2xl font-bold uppercase rotate-180 bg-transparent
     }
 
     /* Display animation when a section is shrunk. */
