@@ -3,7 +3,7 @@ import {createSignal, type Component, createEffect} from 'solid-js';
 import Intro from './components/intro/Intro';
 import Education from "./components/education/Education";
 import Experience from "./components/experience/Experience";
-import Volunteering from "./components/Volunteering";
+import Volunteering from "./components/volunteering/Volunteering";
 import Outro from "./components/outro/Outro";
 import MobileIntro from "./components/mobile/MobileIntro";
 import MobileExperience from "./components/mobile/MobileExperience";
@@ -22,6 +22,8 @@ const App: Component = () => {
     const [lang, setLang] = createSignal("en")
 
     const [sectionIndex, setSectionIndex] = createSignal(0)
+
+    let didChangeColor = false
 
     let p = Math.floor(Math.random() * 9 + 1)
 
@@ -73,11 +75,19 @@ const App: Component = () => {
 
     const position = createScrollPosition()
     createEffect(() => {
-        // if (position.y > introSection.clientHeight) navBar_Experience.scrollIntoView({behavior: 'smooth'})
+        console.log("position: " + position.y)
         if (position.y < introSection.clientHeight) setCurrentPosition("intro")
         else if (position.y < experienceSection.clientHeight + introSection.clientHeight) setCurrentPosition("experience")
         else if (position.y < educationSection.clientHeight + experienceSection.clientHeight + introSection.clientHeight) setCurrentPosition("education")
 
+        // if (position.y > introSection.clientHeight && !didChangeColor) {
+        //     setPalette(Math.floor(Math.random() * 9 + 1))
+        //     didChangeColor = true
+        // }
+        //
+        // if (position.y === 0) {
+        //     didChangeColor = false
+        // }
     })
 
     return (
@@ -98,9 +108,9 @@ const App: Component = () => {
             </div>
             <div class="lg:hidden">
                 <MobileNavBar currentPosition={currentPosition()} />
-                <MobileIntro lang={lang()} ref={introSection!}/>
-                <MobileExperience lang={lang()} ref={experienceSection!}/>
-                <MobileEducation lang={lang()} ref={educationSection!}/>
+                <MobileIntro palette={palette()} lang={lang()} ref={introSection!}/>
+                <MobileExperience palette={palette()} lang={lang()} ref={experienceSection!}/>
+                <MobileEducation palette={palette()} lang={lang()} ref={educationSection!}/>
             </div>
         </div>
     );

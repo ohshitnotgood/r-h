@@ -24,7 +24,7 @@ const borderColor: {[index: number]: string} = {
 
 export function Javascript(props: {palette: number}){
     return(
-        <div class={`${borderColor[props.palette]} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Javascript & Typescript</span>
                 <img src={jsLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
@@ -44,7 +44,7 @@ export function Javascript(props: {palette: number}){
 
 export function Database(props: {palette: number}) {
     return (
-        <div class={`${borderColor[props.palette]} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Database management</span>
                 <img src={dbLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
@@ -62,7 +62,7 @@ export function Database(props: {palette: number}) {
 
 export function Kotlin(props: {palette: number}) {
     return (
-        <div class={`${borderColor[props.palette]} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Kotlin</span>
                 <img src={ktLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
@@ -79,7 +79,7 @@ export function Kotlin(props: {palette: number}) {
 
 export function Android(props: {palette: any}) {
     return(
-        <div class={`${borderColor[props.palette]} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Android</span>
                 <img src={androidLogoBlock} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
@@ -96,7 +96,7 @@ export function Android(props: {palette: any}) {
 
 export function Swift(props: {palette: any}) {
     return (
-        <div class={`${borderColor[props.palette]} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Swift</span>
                 <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
@@ -114,7 +114,7 @@ export function Swift(props: {palette: any}) {
 
 export function MathTA(props: {palette: any}) {
     return (
-        <div class={`${borderColor[props.palette]} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
             <div class="lowercase text-lg text-left font-medium">
                 Faculty of Mathematics
             </div>
@@ -130,7 +130,7 @@ export function MathTA(props: {palette: any}) {
 
 export function LabAssistant(props: {palette: any}) {
     return (
-        <div class={`${borderColor[props.palette]} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
             <div class="lowercase text-lg text-left font-medium">
                 Faculty of Chemistry
             </div>

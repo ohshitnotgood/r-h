@@ -1,5 +1,5 @@
 import {Show} from "solid-js";
-import Header from "./reusable/Header";
+import Header from "../reusable/Header";
 
 export default function Volunteering(props: any) {
     const bgColor: {[index: number]: string} = {

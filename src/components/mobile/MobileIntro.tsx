@@ -4,36 +4,55 @@ import fire from "../../assets/img/fire-fireball.gif"
 import rightArrow from "../../assets/icons/ic_right.svg";
 import AnimatedText from "../reusable/AnimatedText";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
+import {Text} from "../reusable/Texts";
 
-export default function MobileIntro(props: any) {
+export default function MobileIntro(props: { lang: string, ref: any, palette: number }) {
     return (
-        <div id="intro" ref={props.ref} class="grid place-items-center">
-            <TextSection lang={props.lang}/>
+        <div id="intro" ref={props.ref} class={`bg-bg-${props.palette} transition-all duration-150 grid place-items-center`}>
+            <TextSection palette={props.palette} lang={props.lang}/>
         </div>
     )
 }
 
-function TextSection(props: {lang: string}) {
+function TextSection(props: {lang: string, palette: number}) {
     let description = getAge(props.lang) + " year old highly skilled software engineer and passionate programmer. Adept at leveraging cutting-edge technologies to deliver efficient and user-centric applications. Committed to continuous learning and seeking new challenges to drive excellence in software development."
 
+    const bgColor: {[index: number]: string} = {
+        1: "bg-bg-1 ",
+        2: "bg-bg-2 ",
+        3: "bg-bg-3 ",
+        4: "bg-bg-4 ",
+        5: "bg-bg-5 ",
+        6: "bg-bg-6 ",
+        7: "bg-bg-7 ",
+        8: "bg-bg-8 ",
+        9: "bg-bg-9 ",
+        10: "bg-bg-10 ",
+    }
+
     return (
-        <div class="grid min-h-[40vh] place-content-center my-24">
+        <div class={`grid min-h-[40vh] place-content-center py-24`}>
             <div class="max-w-[80vw] space-y-3">
                 <div class="text-6xl font-bold uppercase">
-                    {/*<AnimatedText text="Hi! I'm Praanto"/>*/}
-                    <OpacityAnimatedText text={"Hi! I'm Praanto"} initialDelay={600} show={true}/>
+                    <OpacityAnimatedText text={
+                        <Text  bnT={""} class={""} enT={"Hi! I'm Praanto"} lang={props.lang} palette={props.palette}/>
+                    } initialDelay={600} show={true}/>
                 </div>
                 <div class="lowercase text-2xl">
-                    {/*<AnimatedText text="comp.eng. student at kth" initialDelay={200}/>*/}
-                    <OpacityAnimatedText text={"comp.eng student at kth"} initialDelay={800} show={true}/>
+                    <OpacityAnimatedText text={
+                        <Text  bnT={""} class={""} enT={"comp.eng student at kth"} lang={props.lang} palette={props.palette}/>
+                    } initialDelay={800} show={true}/>
 
                 </div>
                 <div class="pr-10">
-                    <OpacityAnimatedText text={description} initialDelay={1000} show={true}/>
+                    <OpacityAnimatedText text={
+                        <Text  bnT={""} class={""} enT={description} lang={props.lang} palette={props.palette}/>
+                    } initialDelay={1000} show={true}/>
                 </div>
                 <OpacityAnimatedText show={true} text={<PageCTAButton lang={props.lang} />} initialDelay={1300} />
             </div>
         </div>
+
     )
 }
 
