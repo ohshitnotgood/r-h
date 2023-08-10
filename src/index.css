@@ -4,7 +4,7 @@
 
 html {
     scroll-behavior: smooth;
-    @apply bg-white
+    @apply bg-black
 }
 
 body {
@@ -38,7 +38,7 @@ code {
 
 @layer components {
     .col-entire-section {
-        @apply relative border-r border-black bg-white
+        @apply relative border-r border-black bg-black
     }
 
     .col-spacer {

@@ -23,8 +23,8 @@ const App: Component = () => {
 
     const [sectionIndex, setSectionIndex] = createSignal(0)
 
-    // const palette = Math.floor(Math.random() * 9 + 1);
-    const palette = 1
+    const palette = Math.floor(Math.random() * 9 + 1);
+    // const palette = 1
 
     function resetAllWidthToDefault() {
         setD1Hidden(true)
@@ -82,7 +82,7 @@ const App: Component = () => {
             <div class="max-lg:hidden relative">
                 <div>
                     <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
-                        <Intro palette={palette} initialDelay={2100} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
+                        <Intro palette={palette} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
                         <Volunteering palette={palette} initialDelay={2400} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
                         <Experience palette={palette} initialDelay={2500} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
                         <Education palette={palette} initialDelay={2600} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
