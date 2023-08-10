@@ -29,7 +29,7 @@ export function Text(props: {text: {en: any, bn: any}, lang: string, palette: nu
     )
 }
 
-export function SecondaryText() {
+export function SecondaryText(props: {text: {en: any, bn: any}, lang: string, palette: number, class: string}) {
     const c: {[index: number]: string} = {
         1: "text-secondary-1",
         2: "text-secondary-2",
@@ -42,6 +42,19 @@ export function SecondaryText() {
         9: "text-secondary-9",
         10: "text-secondary-10",
     }
+
+    return (
+        <div class={props.class}>
+            <div class={c[props.palette]}>
+                <Show when={props.lang == "en"}>
+                    {props.text.en}
+                </Show>
+                <Show when={props.lang == "bn"}>
+                    {props.text.en}
+                </Show>
+            </div>
+        </div>
+    )
 }
 
 export function TertiaryText() {

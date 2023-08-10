@@ -59,7 +59,7 @@ export default function Intro(props: { palette: number, lang: string, setLang: a
              onclick={props.onclickAction}>
             <div class={borderColor[props.palette]}>
                 {/* Header Section */}
-                <Header lang={props.lang} enText="Intro" bnText="সূচনা" sectionNumber="01." hidden={props.hidden} actionButton={LanguageSwitcher}  initialDelay={0}/>
+                <Header palette={props.palette} bnSectionNumber={"০১."} lang={props.lang} enText="Intro" bnText="সূচনা" sectionNumber="01." hidden={props.hidden} actionButton={LanguageSwitcher}  initialDelay={0}/>
 
                 <div classList={{'pointer-events-none z-10 absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                     <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden,

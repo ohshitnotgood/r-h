@@ -99,7 +99,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
              onclick={props.onclickAction}>
 
             <div class={borderColor[props.palette]}>
-                <Header initialDelay={props.initialDelay} sectionNumber="02." enText="Experience" bnText="কর্মদক্ষতা" hidden={props.hidden} lang={props.lang} actionButton={null}/>
+                <Header palette={props.palette} initialDelay={props.initialDelay} sectionNumber="02." bnSectionNumber="০২." enText="Experience" bnText="কর্মদক্ষতা" hidden={props.hidden} lang={props.lang} actionButton={null}/>
 
                 <OpacityAnimatedText show={!props.hidden} text={<ScrollIndicator signal={userReachedBottom()} hidden={props.hidden}/>} initialDelay={900}/>
 

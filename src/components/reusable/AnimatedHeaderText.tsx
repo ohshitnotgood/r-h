@@ -1,6 +1,6 @@
 import {createEffect, createSignal} from "solid-js";
 
-export default function AnimatedHeaderText(props: { initialDelay: number, text: string}) {
+export default function AnimatedHeaderText(props: { initialDelay: number, text: any}) {
     const [render, setRenderState ] = createSignal(false)
 
     setTimeout(() => {
