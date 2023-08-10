@@ -3,8 +3,9 @@ import {createEffect, createSignal, Show} from "solid-js";
 import Header from "../reusable/Header";
 import {Android, Database, Javascript, Kotlin, LabAssistant, MathTA, Swift} from "./Components";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
+import {Text} from "../reusable/Texts";
 
-export default function Experience(props: any) {
+export default function Experience(props: {lang: string, palette: number, hidden: boolean, onclickAction: any, initialDelay:number}) {
     const [userReachedBottom, setUserReachBottom] = createSignal(false)
 
     const [showJavascript, setShowJavascript] = createSignal(false)
@@ -78,37 +79,99 @@ export default function Experience(props: any) {
                 <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
                     <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
                         <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold mr-40">
-                            <OpacityAnimatedText show={!props.hidden} text={<div ref={title!}>Independent and Professional Experience</div>} initialDelay={800} />
+                            <OpacityAnimatedText show={!props.hidden} text={
+                                <div ref={title!}>
+                                    <Text text={{en: "Independent and Professional Experience", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                </div>
+                            } initialDelay={800} />
                         </div>
                         <div class="pb-24">
                             <OpacityAnimatedText show={!props.hidden}
-                                                 text={<div ref={subtitle!}>Since commencing my programming journey in high school, I have accumulated extensive experience with diverse programming languages and frameworks highly sought after in the industry. Through numerous personal projects, I familiarized myself with industry standards and best practices, utilizing these ventures as platforms for continuous learning, drawing inspiration, and enhancing my creativity and skill set.</div>} initialDelay={1000} />
+                                                 text={
+                                <div ref={subtitle!}>
+                                    <Text
+                                        text={{en: "Since commencing my programming journey in high school, " +
+                                                "I have accumulated extensive experience with diverse programming languages " +
+                                                "and frameworks highly sought after in the industry. Through numerous personal projects, " +
+                                                "I familiarized myself with industry standards and best practices, utilizing these" +
+                                                " ventures as platforms for continuous learning, drawing inspiration, and " +
+                                                "enhancing my creativity and skill set.",
+                                            bn: ""}}
+                                        lang={props.lang}
+                                        palette={props.palette}
+                                        class={""} />
+                                </div>
+                            } initialDelay={1000} />
                         </div>
                         <div>
                             <div class="grid grid-cols-2 ">
+                                {/*Independent development*/}
                                 <div class="uppercase text-sm">
-                                    <OpacityAnimatedText show={showJavascript()} text={"Independent development"} initialDelay={1400}/>
+                                    <OpacityAnimatedText show={showJavascript()} text={<Text text={{en: "Independent development", bn: "একাকী প্রোগ্রামিং"}} lang={props.lang} palette={props.palette} class={""}/>} initialDelay={1400}/>
                                 </div>
                                 <div>
-                                    <OpacityAnimatedText show={showJavascript()} text={<div ref={js!}><Javascript palette={props.palette} lang={props.lang} /></div>} initialDelay={1500} />
-                                    <OpacityAnimatedText show={showDatabase()} text={<div ref={db!}><Database /></div>} initialDelay={400} />
-                                    <OpacityAnimatedText show={showKotlin()} text={<div ref={kotlin!}><Kotlin /></div>} initialDelay={400} />
-                                    <OpacityAnimatedText show={showAndroid()} text={<div ref={android!}><Android /></div>} initialDelay={400} />
-                                    <OpacityAnimatedText show={showSwift()} text={<div ref={swift!}><Swift /></div>} initialDelay={400} />
+                                    {/*JavaScript*/}
+                                    <OpacityAnimatedText show={showJavascript()} text={
+                                        <div ref={js!}>
+                                            <Text text={{en: <Javascript />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        </div>
+                                    } initialDelay={1500} />
+
+                                    {/*Database*/}
+                                    <OpacityAnimatedText show={showDatabase()} text={
+                                        <div ref={db!}>
+                                            <Text text={{en: <Database />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        </div>} initialDelay={400} />
+
+                                    {/*Kotlin*/}
+                                    <OpacityAnimatedText show={showKotlin()} text={
+                                        <div ref={kotlin!}>
+                                            <Text text={{en: <Kotlin />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        </div>
+                                    } initialDelay={400} />
+
+                                    {/*Android*/}
+                                    <OpacityAnimatedText show={showAndroid()} text={
+                                        <div ref={android!}>
+                                            <Text text={{en: <Android />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        </div>
+                                    } initialDelay={400} />
+
+                                    {/*Swift*/}
+                                    <OpacityAnimatedText show={showSwift()} text={
+                                        <div ref={swift!}>
+                                            <Text text={{en: <Swift />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        </div>
+                                    } initialDelay={400} />
                                 </div>
 
                                 <div class="uppercase text-sm">
-                                    <OpacityAnimatedText show={showMathTA()} text={<div>Teaching assistant in high school</div>} initialDelay={400} />
+                                    <OpacityAnimatedText show={showMathTA()} text={
+                                        <div>
+                                            <Text text={{en: "Teaching assistant in high school", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        </div>
+                                    } initialDelay={400} />
                                 </div>
                                 <div class="">
-                                    <OpacityAnimatedText show={showMathTA()} text={<div ref={mathTA!}><MathTA /> </div>} initialDelay={400} />
+                                    <OpacityAnimatedText show={showMathTA()} text={
+                                        <div ref={mathTA!}>
+                                            <Text text={{en: <MathTA />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        </div>
+                                    } initialDelay={400} />
                                 </div>
 
                                 <div class="uppercase text-sm">
-                                    <OpacityAnimatedText show={showLA()} text={<div>Laboratory assistant in high school</div>} initialDelay={400} />
+                                    <OpacityAnimatedText show={showLA()} text={
+                                        <div>
+                                            <Text text={{en: "Lab assistant in high school", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        </div>
+                                    } initialDelay={400} />
                                 </div>
                                 <div class="">
-                                    <OpacityAnimatedText show={showLA()} text={<div ref={lA!}><LabAssistant /></div>} initialDelay={400} />
+                                    <OpacityAnimatedText show={showLA()} text={
+                                        <div ref={lA!}>
+                                            <Text text={{en: <LabAssistant />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        </div>} initialDelay={400} />
                                 </div>
                             </div>
                         </div>

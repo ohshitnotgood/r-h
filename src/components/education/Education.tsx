@@ -8,7 +8,7 @@ export default function Education(props: any) {
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
              onclick={props.onclickAction}>
             <div class='w-full flex cursor-pointer'>
-                <Header initialDelay={props.initialDelay} hidden={props.hidden} lang={props.lang} enText="Education" bnText="িক্ষাগত যোগ্যতা" sectionNumber="03." actionButton={null}/>
+                <Header initialDelay={props.initialDelay} hidden={props.hidden} lang={props.lang} enText="Education" bnText="শিক্ষাগত যোগ্যতা" sectionNumber="03." actionButton={null}/>
             </div>
             <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>

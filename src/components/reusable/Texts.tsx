@@ -1,6 +1,6 @@
 import {createEffect, createSignal, Show} from "solid-js";
 
-export function Text(props: {text: {en: string, bn: string}, lang: string, palette: number, class: string}) {
+export function Text(props: {text: {en: any, bn: any}, lang: string, palette: number, class: string}) {
 
     const c: {[index: number]: string} = {
         1: "text-primary-1",
