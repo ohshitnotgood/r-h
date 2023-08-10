@@ -4,7 +4,7 @@ import { render } from 'solid-js/web';
 import './index.css';
 import App from './App';
 import {Route, Router, Routes} from "@solidjs/router";
-import Acknowledgements from "./Acknowledgements";
+import Acknowledgements from "./components/credits/Acknowledgements";
 
 const root = document.getElementById('root');
 
