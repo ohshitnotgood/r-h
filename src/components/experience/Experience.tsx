@@ -141,34 +141,34 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                         {/*JavaScript*/}
                                         <OpacityAnimatedText show={showJavascript()} text={
                                             <div ref={js!}>
-                                                <Text enT={<Javascript />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Javascript palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={1500} />
 
                                         {/*Database*/}
                                         <OpacityAnimatedText show={showDatabase()} text={
                                             <div ref={db!}>
-                                                <Text enT={<Database />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Database  palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>} initialDelay={400} />
 
                                         {/*Kotlin*/}
                                         <OpacityAnimatedText show={showKotlin()} text={
                                             <div ref={kotlin!}>
-                                                <Text enT={<Kotlin />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Kotlin palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
 
                                         {/*Android*/}
                                         <OpacityAnimatedText show={showAndroid()} text={
                                             <div ref={android!}>
-                                                <Text enT={<Android />} bnT="" lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Android palette={props.palette} />} bnT="" lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
 
                                         {/*Swift*/}
                                         <OpacityAnimatedText show={showSwift()} text={
                                             <div ref={swift!}>
-                                                <Text enT={<Swift />} bnT="" lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Swift palette={props.palette}/>} bnT="" lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
                                     </div>
@@ -183,7 +183,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                     <div class="">
                                         <OpacityAnimatedText show={showMathTA()} text={
                                             <div ref={mathTA!}>
-                                                <Text enT={<MathTA />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<MathTA palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
                                     </div>
@@ -198,7 +198,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                     <div class="">
                                         <OpacityAnimatedText show={showLA()} text={
                                             <div ref={lA!}>
-                                                <Text enT={<LabAssistant/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<LabAssistant palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>} initialDelay={400} />
                                     </div>
                                 </div>
