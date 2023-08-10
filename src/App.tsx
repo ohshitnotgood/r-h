@@ -107,7 +107,7 @@ const App: Component = () => {
                 </div>
             </div>
             <div class="lg:hidden">
-                <MobileNavBar currentPosition={currentPosition()} />
+                <MobileNavBar palette={palette()} currentPosition={currentPosition()} />
                 <MobileIntro palette={palette()} lang={lang()} ref={introSection!}/>
                 <MobileExperience palette={palette()} lang={lang()} ref={experienceSection!}/>
                 <MobileEducation palette={palette()} lang={lang()} ref={educationSection!}/>
