@@ -4,19 +4,28 @@ import {getAge} from "../../functions/GetAge";
 import rightArrow from "../../assets/icons/ic_right.svg";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import gradHat from "../../assets/icons/ic_education.svg"
+import {Text} from "../reusable/Texts";
 
 export function PageTitle(props: any) {
     let image = <img class="w-14 hidden h-16 ml-3" src={fire} alt="" />
+    let bnText = "স্বাগতম! আমি প্রান্ত"
+    let enText = "Hi! I'm Praanto"
+    // return (
+    //     <div class="xl:text-8xl lg:text-6xl flex flex-row font-bold mb-3 uppercase">
+    //         <Show when={props.lang == "en"}>
+    //             <OpacityAnimatedText show={!props.hidden} text={"Hi! I'm Praanto"} initialDelay={1700}/>
+    //         </Show>
+    //         <Show when={props.lang == "bn"}>
+    //             <OpacityAnimatedText show={!props.hidden} text={"স্বাগতম! আমি প্রান্ত"} initialDelay={1700}/>
+    //         </Show>
+    //         <OpacityAnimatedText show={!props.hidden} text={image} initialDelay={1700}/>
+    //     </div>
+    // )
     return (
-        <div class="xl:text-8xl lg:text-6xl flex flex-row font-bold mb-3 uppercase">
-            <Show when={props.lang == "en"}>
-                <OpacityAnimatedText show={!props.hidden} text={"Hi! I'm Praanto"} initialDelay={1700}/>
-            </Show>
-            <Show when={props.lang == "bn"}>
-                <OpacityAnimatedText show={!props.hidden} text={"স্বাগতম! আমি প্রান্ত"} initialDelay={1700}/>
-            </Show>
-            <OpacityAnimatedText show={!props.hidden} text={image} initialDelay={1700}/>
-        </div>
+        <OpacityAnimatedText show={!props.hidden}
+                             text={<Text text={{en: enText, bn: bnText}} lang={props.lang} palette={"1"}
+                                         class={"mb-3 text-6xl xl:text-8xl lg:text-6xl font-bold uppercase"}/>}
+                             initialDelay={1700}/>
     )
 }
 
