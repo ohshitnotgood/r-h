@@ -109,7 +109,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                             <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold mr-40">
                                 <OpacityAnimatedText show={!props.hidden} text={
                                     <div ref={title!}>
-                                        <Text text={{en: "Independent and Professional Experience", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                        <Text enT={"Independent and Professional Experience"} bnT="" lang={props.lang} palette={props.palette} class={""} />
                                     </div>
                                 } initialDelay={800} />
                             </div>
@@ -118,13 +118,13 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                                      text={
                                     <div ref={subtitle!}>
                                         <Text
-                                            text={{en: "Since commencing my programming journey in high school, " +
+                                            enT={"Since commencing my programming journey in high school, " +
                                                     "I have accumulated extensive experience with diverse programming languages " +
                                                     "and frameworks highly sought after in the industry. Through numerous personal projects, " +
                                                     "I familiarized myself with industry standards and best practices, utilizing these" +
                                                     " ventures as platforms for continuous learning, drawing inspiration, and " +
-                                                    "enhancing my creativity and skill set.",
-                                                bn: ""}}
+                                                    "enhancing my creativity and skill set."}
+                                                bnT=""
                                             lang={props.lang}
                                             palette={props.palette}
                                             class={""} />
@@ -135,40 +135,40 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                 <div class="grid grid-cols-2 ">
                                     {/*Independent development*/}
                                     <div class="uppercase text-sm">
-                                        <OpacityAnimatedText show={showJavascript()} text={<Text text={{en: "Independent development", bn: "একাকী প্রোগ্রামিং"}} lang={props.lang} palette={props.palette} class={""}/>} initialDelay={1400}/>
+                                        <OpacityAnimatedText show={showJavascript()} text={<Text enT="Independent development" bnT="একাকী প্রোগ্রামিং" lang={props.lang} palette={props.palette} class={""}/>} initialDelay={1400}/>
                                     </div>
                                     <div>
                                         {/*JavaScript*/}
                                         <OpacityAnimatedText show={showJavascript()} text={
                                             <div ref={js!}>
-                                                <Text text={{en: <Javascript />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Javascript />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={1500} />
 
                                         {/*Database*/}
                                         <OpacityAnimatedText show={showDatabase()} text={
                                             <div ref={db!}>
-                                                <Text text={{en: <Database />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Database />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>} initialDelay={400} />
 
                                         {/*Kotlin*/}
                                         <OpacityAnimatedText show={showKotlin()} text={
                                             <div ref={kotlin!}>
-                                                <Text text={{en: <Kotlin />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Kotlin />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
 
                                         {/*Android*/}
                                         <OpacityAnimatedText show={showAndroid()} text={
                                             <div ref={android!}>
-                                                <Text text={{en: <Android />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Android />} bnT="" lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
 
                                         {/*Swift*/}
                                         <OpacityAnimatedText show={showSwift()} text={
                                             <div ref={swift!}>
-                                                <Text text={{en: <Swift />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<Swift />} bnT="" lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
                                     </div>
@@ -176,14 +176,14 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                     <div class="uppercase text-sm">
                                         <OpacityAnimatedText show={showMathTA()} text={
                                             <div>
-                                                <Text text={{en: "Teaching assistant in high school", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={"Teaching assistant in high school"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
                                     </div>
                                     <div class="">
                                         <OpacityAnimatedText show={showMathTA()} text={
                                             <div ref={mathTA!}>
-                                                <Text text={{en: <MathTA />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<MathTA />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
                                     </div>
@@ -191,14 +191,14 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                     <div class="uppercase text-sm">
                                         <OpacityAnimatedText show={showLA()} text={
                                             <div>
-                                                <Text text={{en: "Lab assistant in high school", bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={"Lab assistant in high school"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>
                                         } initialDelay={400} />
                                     </div>
                                     <div class="">
                                         <OpacityAnimatedText show={showLA()} text={
                                             <div ref={lA!}>
-                                                <Text text={{en: <LabAssistant />, bn: ""}} lang={props.lang} palette={props.palette} class={""} />
+                                                <Text enT={<LabAssistant/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                                             </div>} initialDelay={400} />
                                     </div>
                                 </div>

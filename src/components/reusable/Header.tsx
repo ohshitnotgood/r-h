@@ -20,20 +20,17 @@ export default function Header(props: { palette: number, bnSectionNumber: string
                     <div class="h-fit text-center pt-10">
                         <AnimatedHeaderText text={
                             <div>
-                                <SecondaryText text={{en: props.sectionNumber, bn: props.bnSectionNumber}} lang={props.lang} palette={props.palette} class={""} />
+                                <SecondaryText enT={props.sectionNumber} bnT={props.bnSectionNumber} lang={props.lang} palette={props.palette} class={""} />
                             </div>
                         } initialDelay={props.initialDelay}/>
                     </div>
                     <div class="h-fit text-center"></div>
                     <div class="col-header-title" classList={{"col-header-visible": props.hidden, "col-header-hidden": !props.hidden}}>
-                        {/*<Show when={props.lang === "en"}>*/}
-                            <AnimatedHeaderText text={
-                                <div>
-                                    <SecondaryText text={{en: props.enText, bn: props.bnText}} lang={props.lang} palette={props.palette} class={""} />
-                                </div>
-                            } initialDelay={props.initialDelay}/>
-                        {/*</Show>*/}
-                        {/*<Show when={props.lang === "bn"}>{props.bnText}</Show>*/}
+                        <AnimatedHeaderText text={
+                            <div>
+                                <SecondaryText enT={props.enText} bnT={props.bnText} lang={props.lang} palette={props.palette} class={""} />
+                            </div>
+                        } initialDelay={props.initialDelay}/>
                     </div>
                     <div class="h-fit"></div>
                     <div class="h-full grid place-content-center">

@@ -1,6 +1,15 @@
 import {createEffect, createSignal, Show} from "solid-js";
 
-export function Text(props: {text: {en: any, bn: any}, lang: string, palette: number, class: string}) {
+/**
+ *
+ * @param props.enT
+ * @param props.bnT
+ * @param props.lang
+ * @param props.palette
+ * @param props.class
+ * @constructor
+ */
+export function Text(props: {enT: any, bnT: any, lang: string, palette: number, class: string}) {
 
     const c: {[index: number]: string} = {
         1: "text-primary-1",
@@ -19,17 +28,17 @@ export function Text(props: {text: {en: any, bn: any}, lang: string, palette: nu
         <div class={props.class}>
             <div class={c[props.palette]}>
                 <Show when={props.lang == "en"}>
-                    {props.text.en}
+                    {props.enT}
                 </Show>
                 <Show when={props.lang == "bn"}>
-                    {props.text.en}
+                    {props.bnT}
                 </Show>
             </div>
         </div>
     )
 }
 
-export function SecondaryText(props: {text: {en: any, bn: any}, lang: string, palette: number, class: string}) {
+export function SecondaryText(props: {enT: any, bnT: any, lang: string, palette: number, class: string}) {
     const c: {[index: number]: string} = {
         1: "text-secondary-1",
         2: "text-secondary-2",
@@ -47,10 +56,10 @@ export function SecondaryText(props: {text: {en: any, bn: any}, lang: string, pa
         <div class={props.class}>
             <div class={c[props.palette]}>
                 <Show when={props.lang == "en"}>
-                    {props.text.en}
+                    {props.enT}
                 </Show>
                 <Show when={props.lang == "bn"}>
-                    {props.text.en}
+                    {props.bnT}
                 </Show>
             </div>
         </div>
