@@ -4,7 +4,7 @@ import {getAge} from "../../functions/GetAge";
 import rightArrow from "../../assets/icons/ic_right.svg";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import gradHat from "../../assets/icons/ic_education.svg"
-import {Text} from "../reusable/Texts";
+import { Text } from "../reusable/Texts";
 
 export function PageTitle(props: any) {
     let image = <img class="w-14 hidden h-16 ml-3" src={fire} alt="" />
@@ -23,8 +23,8 @@ export function PageTitle(props: any) {
     // )
     return (
         <OpacityAnimatedText show={!props.hidden}
-                             text={<Text text={{en: enText, bn: bnText}} lang={props.lang} palette={"1"}
-                                         class={"mb-3 text-6xl xl:text-8xl lg:text-6xl font-bold uppercase"}/>}
+                             text={<Text text={{en: enText, bn: bnText}} lang={props.lang} palette={3}
+                                         class={"mb-3 text-6xl xl:text-8xl lg:text-6xl font-bold uppercase"} accent={"primary"}/>}
                              initialDelay={1700}/>
     )
 }
