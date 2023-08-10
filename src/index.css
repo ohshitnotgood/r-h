@@ -4,7 +4,6 @@
 
 html {
     scroll-behavior: smooth;
-    @apply bg-black
 }
 
 body {
@@ -38,7 +37,7 @@ code {
 
 @layer components {
     .col-entire-section {
-        @apply relative border-r border-black bg-black
+        @apply relative border-r border-black
     }
 
     .col-spacer {
@@ -60,7 +59,7 @@ code {
 
     /* CSS for the header part of the column that includes the rotated title */
     .col-header {
-        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] bg-black z-10 cursor-pointer
+        @apply  h-screen grid place-content-center min-w-[100px] max-w-[100px] z-10 cursor-pointer
     }
 
     /* Rotated title in the header section */
