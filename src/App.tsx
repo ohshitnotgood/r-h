@@ -23,8 +23,10 @@ const App: Component = () => {
 
     const [sectionIndex, setSectionIndex] = createSignal(0)
 
-    const [palette, setPalette] = createSignal(1)
-    // const palette = 1
+    let p = Math.floor(Math.random() * 9 + 1)
+
+    console.log("Palette selected: " + p)
+    const [palette, setPalette] = createSignal(p)
 
     function resetAllWidthToDefault() {
         setD1Hidden(true)
@@ -32,7 +34,7 @@ const App: Component = () => {
         setD3Hidden(true)
         setD4Hidden(true)
         setD5Hidden(true)
-        setPalette(Math.floor(Math.random() * 9 + 1))
+        // setPalette(Math.floor(Math.random() * 9 + 1))
     }
 
     function onClickD1() {
