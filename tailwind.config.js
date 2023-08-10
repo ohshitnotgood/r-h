@@ -49,19 +49,19 @@ module.exports = {
                 "primary-5": "#ECE2D0",
                 "secondary-5": "#E9E9E9",
                 "tertiary-5": "#E9E9E9",
-                "contrast-5": "#ECE2D0",
+                "contrast-5": "#bea265",
 
                 "bg-6": "#ECE2D0",
                 "primary-6": "#C59666",
                 "secondary-6": "#572E2E",
                 "tertiary-6": "#96897D",
-                "contrast-6": "#64594D",
+                "contrast-6": "#3f362d",
 
                 "bg-7": "#F2E9E4",
                 "primary-7": "#4A4E69",
                 "secondary-7": "#727272",
                 "tertiary-7": "#4A4E69",
-                "contrast-7": "#C9ADA7",
+                "contrast-7": "#725653",
 
                 "bg-8": "#F4F4F9",
                 "primary-8": "#000",
@@ -73,7 +73,7 @@ module.exports = {
                 "primary-9": "#4A4E69",
                 "secondary-9": "#727272",
                 "tertiary-9": "#818181",
-                "contrast-9": "#C9ADA7",
+                "contrast-9": "#6c5651",
 
                 "bg-10": "#F2E8CF",
                 "primary-10": "#22223B",
