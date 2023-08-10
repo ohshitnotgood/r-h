@@ -6,63 +6,37 @@ import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import gradHat from "../../assets/icons/ic_education.svg"
 import { Text } from "../reusable/Texts";
 
-export function PageTitle(props: any) {
-    let image = <img class="w-14 hidden h-16 ml-3" src={fire} alt="" />
+export function PageTitle(props: {lang: string, hidden: boolean, palette: number}) {
     let bnText = "স্বাগতম! আমি প্রান্ত"
     let enText = "Hi! I'm Praanto"
-    // return (
-    //     <div class="xl:text-8xl lg:text-6xl flex flex-row font-bold mb-3 uppercase">
-    //         <Show when={props.lang == "en"}>
-    //             <OpacityAnimatedText show={!props.hidden} text={"Hi! I'm Praanto"} initialDelay={1700}/>
-    //         </Show>
-    //         <Show when={props.lang == "bn"}>
-    //             <OpacityAnimatedText show={!props.hidden} text={"স্বাগতম! আমি প্রান্ত"} initialDelay={1700}/>
-    //         </Show>
-    //         <OpacityAnimatedText show={!props.hidden} text={image} initialDelay={1700}/>
-    //     </div>
-    // )
+    let textElement = <Text text={{en: enText, bn: bnText}} lang={props.lang} palette={3}
+                            class={"mb-3 text-6xl xl:text-8xl lg:text-6xl font-bold uppercase"} accent={"primary"}/>
     return (
-        <OpacityAnimatedText show={!props.hidden}
-                             text={<Text text={{en: enText, bn: bnText}} lang={props.lang} palette={3}
-                                         class={"mb-3 text-6xl xl:text-8xl lg:text-6xl font-bold uppercase"} accent={"primary"}/>}
-                             initialDelay={1700}/>
+        <OpacityAnimatedText show={!props.hidden} text={textElement} initialDelay={1700}/>
     )
 }
 
-export function PageSubtitle(props: any) {
-    let text = (
-        <span class="inline-flex content-center items-center">
-            computer eng. student at kth
-            <img src={gradHat} class="w-8 hidden h-8" alt="Graduation hat GIF"/>
-        </span>
-    )
+export function PageSubtitle(props: {lang: string, hidden: boolean, palette: number}) {
+    let enText = "computer eng. student at kth"
+    let bnText = "সুইডেন অবস্থিত কেটিএইচ-এর কম্পিউটার ইঞ্জিনিয়ারিং ছাত্র"
+    let textElement = <Text text={{en: enText, bn: bnText}} lang={props.lang} palette={3}
+                            class={"xl:text-5xl lg:text-4xl"} accent={"primary"}/>
 
     return (
-        <div class="xl:text-5xl lg:text-4xl">
-            {/*<TypingAnimation text="Comp.Eng student at KTH" delay={100} initialDelay={700} />*/}
-            <Show when={props.lang == "en"}>
-                <OpacityAnimatedText show={!props.hidden} text={text} initialDelay={1900}/>
-            </Show>
-            <Show when={props.lang == "bn"}>
-                <OpacityAnimatedText show={!props.hidden} text="সুইডেন অবস্থিত কেটিএইচ-এর কম্পিউটার ইঞ্জিনিয়ারিং ছাত্র" initialDelay={1900}/>
-            </Show>
-        </div>
+        <OpacityAnimatedText show={!props.hidden} text={textElement} initialDelay={1900} />
     )
 }
 
 
-export function PageDescriptionText(props: { lang: string, hidden: boolean }) {
+export function PageDescriptionText(props: { lang: string, hidden: boolean, palette: number }) {
     let enText = getAge(props.lang) + " year old highly skilled software engineer and passionate programmer. Adept at leveraging cutting-edge technologies to deliver efficient and user-centric applications. Committed to continuous learning and seeking new challenges to drive excellence in software development."
     let bnText = getAge(props.lang) + " বছর বয়সী উচ্চকৌশল সফটওয়্যার ইঞ্জিনিয়ার এবং উদ্দীপত সফটওয়্যার প্রোগ্রামার। দক্ষতার মাধ্যমে নতুনত্বপূর্ণ প্রযুক্তি ব্যবহার করে দক্ষ এবং ব্যবহারকারী-মনোযোগী অ্যাপ্লিকেশন প্রদানে দক্ষ। সফটওয়্যার উন্নতি উত্সাহিত করতে সতত শেখা এবং নতুন চ্যালেঞ্জ সন্ধান করায় প্রতিশ্রুতিবদ্ধ।"
+
+    let textElement = <Text text={{en: enText, bn: bnText}} lang={props.lang} palette={3}
+                            class={"xl:text-2xl lg:text-lg lg:pr-20"} accent={"primary"}/>
+
     return (
-        <div class="xl:text-2xl lg:text-lg lg:pr-20">
-            <Show when={props.lang === "en"} >
-                <OpacityAnimatedText show={!props.hidden} text={enText} initialDelay={2000}/>
-            </Show>
-            <Show when={props.lang === "bn"} >
-                <OpacityAnimatedText show={!props.hidden} text={bnText} initialDelay={2000}/>
-            </Show>
-        </div>
+        <OpacityAnimatedText show={!props.hidden} text={textElement} initialDelay={2000} />
     )
 }
 

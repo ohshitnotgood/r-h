@@ -2,7 +2,6 @@ import { Show } from "solid-js";
 import Header from "../reusable/Header";
 import langIcon from "../../assets/icons/ic_lang.svg";
 import {PageCTAButton, PageDescriptionText, PageSubtitle, PageTitle} from "./Components";
-import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 
 
 export default function Intro(props: any) {
@@ -38,9 +37,9 @@ export default function Intro(props: any) {
                 <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden,
                     "col-content-hidden col-content-shrink": props.hidden}}>
                     <div class="col-text space-y-2.5 lowercase">
-                        <PageTitle hidden={props.hidden} lang={props.lang}/>
-                        <PageSubtitle hidden={props.hidden} lang={props.lang}/>
-                        <PageDescriptionText hidden={props.hidden} lang={props.lang} />
+                        <PageTitle palette={props.palette} hidden={props.hidden} lang={props.lang}/>
+                        <PageSubtitle palette={props.palette} hidden={props.hidden} lang={props.lang}/>
+                        <PageDescriptionText palette={props.palette} hidden={props.hidden} lang={props.lang} />
                         <PageCTAButton hidden={props.hidden} lang={props.lang}/>
                     </div>
                 </div>
