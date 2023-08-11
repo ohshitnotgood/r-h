@@ -48,11 +48,6 @@ export function MScroll(props: { class?: string, style?: string }) {
         <>
             <style>{`
                 .adam {
-                    z: 20;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    opacity: 0;    
                 }
                 
                 .adam::-webkit-scrollbar {
@@ -65,14 +60,15 @@ export function MScroll(props: { class?: string, style?: string }) {
             `}</style>
 
 
-            <div class={`w-[50vw] h-screen`}>
-                <div class={`w-full h-full overflow-y-scroll relative hide-scrollbar`}  ref={root} onscroll={onScroll} >
-                    <div style={mainStyle()} >
+            <div id={`root-ka-baap`} class={`w-fit border border-black h-screen`}>
+                <div id={`root`} class={`w-full h-full overflow-y-scroll relative hide-scrollbar`}  ref={root} onscroll={onScroll} >
+                    <div id={`main`} style={mainStyle()} >
                         <div ref={main}>
                             {props.children}
                         </div>
                     </div>
-                    <div class="adam">
+                    <div id={`scroll-capture`} class="adam w-full relative top-0 left-0 opacity-0">
+                        r
                         {props.children}
                     </div>
                 </div>
