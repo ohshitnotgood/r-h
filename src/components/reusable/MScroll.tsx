@@ -3,6 +3,7 @@ import {style} from "solid-js/web";
 
 export function MScroll(props: { class?: string, style?: string }) {
     let root: HTMLDivElement
+
     let main: HTMLDivElement
 
     let oldScroll: number = 0
@@ -21,7 +22,9 @@ export function MScroll(props: { class?: string, style?: string }) {
         dx = Math.floor(dx * 100) / 100;
         dy = Math.floor(dy * 100) / 100;
 
-        setMainStyle(`position: fixed; top: 0; left: 0; transform: translate(0, -${dy}px)`)
+        // setMainStyle(`position: fixed; top: 0; left: 0; transform: translate(0, -${dy}px)`)
+
+        main.scrollTo(0, dy)
 
         window.requestAnimationFrame(render)
     }
@@ -40,40 +43,23 @@ export function MScroll(props: { class?: string, style?: string }) {
         if (root.scrollTop > oldScroll) console.log("scrolling down")
         oldScroll = root.scrollTop
 
+
+
         sx = root.scrollLeft
         sy = root.scrollTop
     }
 
     return (
-        <>
-            <style>{`
-                .adam {
-                }
-                
-                .adam::-webkit-scrollbar {
-                    display: none;
-                }
-                
-                .hide-scrollbar::-webkit-scrollbar {
-                    display: none;
-                }
-            `}</style>
-
-
-            <div id={`root-ka-baap`} class={`w-fit border border-black h-screen`}>
-                <div id={`root`} class={`w-full h-full overflow-y-scroll relative hide-scrollbar`}  ref={root} onscroll={onScroll} >
-                    <div id={`main`} style={mainStyle()} >
-                        <div ref={main}>
-                            {props.children}
-                        </div>
-                    </div>
-                    <div id={`scroll-capture`} class="adam w-full relative top-0 left-0 opacity-0">
-                        r
-                        {props.children}
-                    </div>
-                </div>
+        <div class={`relative`}>
+            <div id={`scroll-capture`} class={`${props.class} max-h-[500px] border border-black absolute top-0 left-0 overflow-y-scroll opacity-0 z-30`} ref={root} onscroll={onScroll}>
+                {props.children}
             </div>
 
-        </>
+            <div id={`root`} class={`${props.class} border border-blue-200 max-h-[400px] overflow-hidden border border-transparent z-20 pointer-events-auto fixed top-0 left-0`} style={mainStyle()}>
+                <div class={`max-h-[400px] overflow-y-scroll`} ref={main}>
+                    {props.children}
+                </div>
+            </div>
+        </div>
     )
 }
