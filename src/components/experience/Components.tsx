@@ -7,6 +7,11 @@ import psqlLogo from "../../assets/img/psql_logo_alt.svg";
 import dgLogo from "../../assets/img/logo_datagrip.png"
 import prismaLogo from "../../assets/img/prisma_logo.png";
 import androidStudio from "../../assets/img/jetpack_logo.png"
+import solidJSLogo from "../../assets/img/logo/logo_solidjs.svg"
+import expressJSLogo from "../../assets/img/logo/logo_expressjs.png"
+import svelteLogo from "../../assets/img/logo/logo_svelte.png"
+import ktorLogo from "../../assets/img/logo/logo_ktor.png"
+import tailwindLogo from "../../assets/img/logo/logo_tailwind.svg"
 import {Text} from "../reusable/Texts";
 
 const borderColor: {[index: number]: string} = {
@@ -24,19 +29,53 @@ const borderColor: {[index: number]: string} = {
 
 export function Javascript(props: {palette: number}){
     return(
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
-            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>Javascript & Typescript</span>
-                <img src={jsLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4`}>
+            <div class=" text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <span>SolidJS and SolidStart</span>
+                <img src={solidJSLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 lowercase">
-                <li>Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS</li>
-                <li>Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS</li>
-                <li>Building full-stack web applications with SvelteKit and SolidJS</li>
-                <li>Handling server-side RESTful API with ExpressJS.</li>
-                <li>Database management with PostgresQL, MySQL and Prisma</li>
-                <li>Can center element inside a div</li>
+            <ul class="list-disc pl-4">
+                <li>building reactive web pages with responsive design that can update view based on state change</li>
+                <li>handle server-side logic and front-end logic, managing database with Postgresql/MySQL and PrismaORM</li>
             </ul>
+
+            <div class="pt-2 text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <span>TailwindCSS</span>
+                <img src={tailwindLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+            </div>
+            <ul class="list-disc pl-4 ">
+                <li>experienced with Tailwind class names and the Tailwind documentation</li>
+            </ul>
+
+            <div class="pt-2 text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <span>ExpressJS</span>
+                <img src={expressJSLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+            </div>
+            <ul class="list-disc pl-4 ">
+                <li>handling RESTful HTTP requests from clients, authenticating users with Auth2 and JWT</li>
+                <li>fetching data from a database and sending response to client with fetched data</li>
+                <li>testing servers with Postman and cURL</li>
+            </ul>
+
+            {/*<div class="pt-2 text-lg text-left font-medium flex flex-row items-center space-x-2">*/}
+            {/*    <span>Svelte and SvelteKit</span>*/}
+            {/*    <img src={svelteLogo} class="w-5" alt={"Javascript logo in black and white"}/>*/}
+            {/*</div>*/}
+            {/*<ul class="list-disc pl-4">*/}
+            {/*    <li>Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS</li>*/}
+            {/*    <li>Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS</li>*/}
+            {/*</ul>*/}
+
+            <div class="pt-4 text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <div class="text-sm">
+                    Others:
+                </div>
+                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>ReactJS</span>
+                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>SvelteKit</span>
+                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>SASS</span>
+                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>Pug</span>
+                {/*<img src={""} class="w-5" alt={"Javascript logo in black and white"}/>*/}
+            </div>
         </div>
     )
 }
@@ -44,15 +83,14 @@ export function Javascript(props: {palette: number}){
 
 export function Database(props: {palette: number}) {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>Database management</span>
-                <img src={dbLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+                <span>Postgresql</span>
+                <img src={psqlLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 lowercase">
-                <li>
-                    Database management with <span class="inline-flex items-center">PostgresQL <PostgresLogo /></span><span class="inline-flex items-center"> and Prisma <PrismaLogo /></span>
-                </li>
+            <ul class="list-disc pl-4 ">
+                <li>creating tables, roles, databases, etc from psql commandline interface</li>
+                <li>inserting and querying database with ORMs (such as Prisma and Ktorm)</li>
                 <li>Inspecting databases with <span class="inline-flex items-center">DataGrip <DatagripLogo /></span></li>
                 <li>SQLite databasing on Android with <span class="inline-flex items-center">RoomDB <AndroidStudioLogo /> </span></li>
             </ul>
@@ -62,24 +100,42 @@ export function Database(props: {palette: number}) {
 
 export function Kotlin(props: {palette: number}) {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>Kotlin</span>
-                <img src={ktLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+                <span>android</span>
+                <img src={androidLogoBlock} class="w-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 lowercase">
-                <li>RESTful Server programming with Ktor</li>
-                <li>Android app development with AndriodSDK</li>
-                <li>Asynchronous programming with Kotlin Coroutines</li>
-                <li>Cross-platform software development with Kotlin Multiplatform</li>
+                <li>responsive UI design with RelativeLayout and ConstraintLayout and animations with MotionLayout</li>
+                <li>reactive state management with LiveData</li>
+                <li>currently working on a mobile app with native front-end for Android with Jetpack Compose</li>
             </ul>
+
+            <div class="pt-2 text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <span>Ktor</span>
+                <img src={ktorLogo} class="w-5" alt={"Ktor logo"}/>
+            </div>
+            <ul class="list-disc pl-4">
+                <li>server-side request handling with Kotlin coroutines</li>
+            </ul>
+
+            <div class="pt-4 text-lg text-left font-medium flex flex-row items-center space-x-2">
+                <div class="text-sm">
+
+                </div>
+                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>Ktorm</span>
+                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>Jetpack Compose</span>
+                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>SASS</span>
+                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>Pug</span>
+                {/*<img src={""} class="w-5" alt={"Javascript logo in black and white"}/>*/}
+            </div>
         </div>
     )
 }
 
 export function Android(props: {palette: any}) {
     return(
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Android</span>
                 <img src={androidLogoBlock} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
@@ -96,7 +152,7 @@ export function Android(props: {palette: any}) {
 
 export function Swift(props: {palette: any}) {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>Swift</span>
                 <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
@@ -114,7 +170,7 @@ export function Swift(props: {palette: any}) {
 
 export function MathTA(props: {palette: any}) {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium">
                 Faculty of Mathematics
             </div>
@@ -130,7 +186,7 @@ export function MathTA(props: {palette: any}) {
 
 export function LabAssistant(props: {palette: any}) {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 mb-8`}>
+        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium">
                 Faculty of Chemistry
             </div>

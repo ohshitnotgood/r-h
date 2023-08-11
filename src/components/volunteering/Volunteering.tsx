@@ -33,7 +33,7 @@ export default function Volunteering(props: any) {
              classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}} onclick={props.onclickAction}>
             <div class={borderColor[props.palette]}>
                 <div class='w-full flex cursor-pointer'>
-                    <Header palette={props.palette} bnSectionNumber="০৪." initialDelay={props.initialDelay} hidden={props.hidden} lang={props.lang} sectionNumber="04." enText="Volunteering" bnText="স্বেচ্ছাসেবক কর্মসূচি" actionButton={null}/>
+                    <Header palette={props.palette} bnSectionNumber="০২." initialDelay={props.initialDelay} hidden={props.hidden} lang={props.lang} sectionNumber="02." enText="Projects" bnText="প্রজেক্টসমূহ" actionButton={null}/>
                 </div>
                 <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                     <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden, "col-content-hidden col-content-shrink": props.hidden}}>

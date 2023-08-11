@@ -132,46 +132,152 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                 } initialDelay={1000} />
                             </div>
                             <div>
-                                <div class="grid grid-cols-2 ">
-                                    {/*Independent development*/}
-                                    <div class="uppercase text-sm">
+                                {/*First layout*/}
+
+                                {/*<div class="grid space-x-4 grid-cols-2">*/}
+                                {/*    <div class="flex flex-col space-y-4">*/}
+                                {/*        <div class="uppercase font-semibold py-5 rounded-lg border border-black place grid place-content-center mb-12">*/}
+                                {/*            <OpacityAnimatedText show={showJavascript()} text={<Text enT="Independent development" bnT="একাকী প্রোগ্রামিং" lang={props.lang} palette={props.palette} class={""}/>} initialDelay={1400}/>*/}
+                                {/*        </div>*/}
+                                {/*        <OpacityAnimatedText show={showJavascript()} text={*/}
+                                {/*            <div ref={js!}>*/}
+                                {/*                <Text enT={<Javascript palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
+                                {/*            </div>*/}
+                                {/*        } initialDelay={1500} />*/}
+
+                                {/*        <OpacityAnimatedText show={showAndroid()} text={*/}
+                                {/*            <div ref={android!}>*/}
+                                {/*                <Text enT={<Android palette={props.palette} />} bnT="" lang={props.lang} palette={props.palette} class={""} />*/}
+                                {/*            </div>*/}
+                                {/*        } initialDelay={400} />*/}
+
+                                {/*    </div>*/}
+                                {/*    <div class="flex flex-col items-baseline">*/}
+                                {/*        <OpacityAnimatedText show={showDatabase()} text={*/}
+                                {/*            <div ref={db!}>*/}
+                                {/*                <Text enT={<Database  palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
+                                {/*            </div>} initialDelay={400} />*/}
+
+
+                                {/*        <OpacityAnimatedText show={showKotlin()} text={*/}
+                                {/*            <div ref={kotlin!}>*/}
+                                {/*                <Text enT={<Kotlin palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
+                                {/*            </div>*/}
+                                {/*        } initialDelay={400} />*/}
+
+                                {/*        <OpacityAnimatedText show={showSwift()} text={*/}
+                                {/*            <div ref={swift!}>*/}
+                                {/*                <Text enT={<Swift palette={props.palette}/>} bnT="" lang={props.lang} palette={props.palette} class={""} />*/}
+                                {/*            </div>*/}
+                                {/*        } initialDelay={400} />*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
+
+
+                                {/*Second layout*/}
+
+                                <div>
+                                    <div class={"lowercase text-3xl font-bold"}>
                                         <OpacityAnimatedText show={showJavascript()} text={<Text enT="Independent development" bnT="একাকী প্রোগ্রামিং" lang={props.lang} palette={props.palette} class={""}/>} initialDelay={1400}/>
                                     </div>
-                                    <div>
-                                        {/*JavaScript*/}
-                                        <OpacityAnimatedText show={showJavascript()} text={
-                                            <div ref={js!}>
-                                                <Text enT={<Javascript palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
-                                            </div>
-                                        } initialDelay={1500} />
+                                    <div class={"grid space-y-8 grid-cols-[40%_60%]"}>
+                                        <div>
+                                            <OpacityAnimatedText show={showJavascript()} text={
+                                                <Text enT={"Javascript/Typescript"} class={"uppercase text-sm py-4"} palette={props.palette} lang={props.lang} bnT={"জাভা-স্ক্রিপ্ট/টাইপ-স্ক্রিপ্ট"}/>
+                                            } initialDelay={400} />
+                                         </div>
+                                        <div>
+                                            <OpacityAnimatedText show={showJavascript()} text={
+                                                <div ref={js!}>
+                                                    <Text enT={<Javascript palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                                                </div>
+                                            } initialDelay={1500} />
+                                        </div>
 
-                                        {/*Database*/}
-                                        <OpacityAnimatedText show={showDatabase()} text={
-                                            <div ref={db!}>
-                                                <Text enT={<Database  palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
-                                            </div>} initialDelay={400} />
+                                        <div>
+                                            <OpacityAnimatedText show={showDatabase()} text={
+                                                <Text enT={"Databases"} class={"uppercase text-sm pt-4"} palette={props.palette} lang={props.lang} bnT={"ডাটাবেস"}/>
+                                            } initialDelay={400} />
+                                        </div>
+                                        <div>
+                                            <OpacityAnimatedText show={showDatabase()} text={
+                                                <div ref={js!}>
+                                                    <Text enT={<Database palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                                                </div>
+                                            } initialDelay={400} />
+                                        </div>
 
-                                        {/*Kotlin*/}
-                                        <OpacityAnimatedText show={showKotlin()} text={
-                                            <div ref={kotlin!}>
-                                                <Text enT={<Kotlin palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
-                                            </div>
-                                        } initialDelay={400} />
+                                        <div>
+                                            <OpacityAnimatedText show={showKotlin()} text={
+                                                <Text enT={"Kotlin"} class={"uppercase text-sm pt-4"} palette={props.palette} lang={props.lang} bnT={"কোটলিন"}/>
+                                            } initialDelay={400} />
+                                        </div>
+                                        <div>
+                                            <OpacityAnimatedText show={showKotlin()} text={
+                                                <div ref={js!}>
+                                                    <Text enT={<Kotlin palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                                                </div>
+                                            } initialDelay={400} />
+                                        </div>
 
-                                        {/*Android*/}
-                                        <OpacityAnimatedText show={showAndroid()} text={
-                                            <div ref={android!}>
-                                                <Text enT={<Android palette={props.palette} />} bnT="" lang={props.lang} palette={props.palette} class={""} />
-                                            </div>
-                                        } initialDelay={400} />
+                                        <div>
+                                            <OpacityAnimatedText show={showAndroid()} text={
+                                                <Text enT={"Android"} class={"uppercase text-sm pt-4"} palette={props.palette} lang={props.lang} bnT={"এন্ড্রোইড"}/>
+                                            } initialDelay={400} />
+                                        </div>
+                                        <div>
+                                            <OpacityAnimatedText show={showAndroid()} text={
+                                                <div ref={js!}>
+                                                    <Text enT={<Android palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                                                </div>
+                                            } initialDelay={400} />
+                                        </div>
 
-                                        {/*Swift*/}
-                                        <OpacityAnimatedText show={showSwift()} text={
-                                            <div ref={swift!}>
-                                                <Text enT={<Swift palette={props.palette}/>} bnT="" lang={props.lang} palette={props.palette} class={""} />
-                                            </div>
-                                        } initialDelay={400} />
+
                                     </div>
+                                </div>
+
+                                {/*Original layout*/}
+                                <div class="grid grid-cols-[20%_80%] ">
+                                    {/*/!*Independent development*!/*/}
+                                    {/*<div class="uppercase text-sm">*/}
+                                    {/*    <OpacityAnimatedText show={showJavascript()} text={<Text enT="Independent development" bnT="একাকী প্রোগ্রামিং" lang={props.lang} palette={props.palette} class={""}/>} initialDelay={1400}/>*/}
+                                    {/*</div>*/}
+                                    {/*<div class={"flex flex-col space-y-8 pb-24"}>*/}
+                                    {/*    /!*JavaScript*!/*/}
+                                    {/*    <OpacityAnimatedText show={showJavascript()} text={*/}
+                                    {/*        <div ref={js!}>*/}
+                                    {/*            <Text enT={<Javascript palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
+                                    {/*        </div>*/}
+                                    {/*    } initialDelay={1500} />*/}
+
+                                    {/*    /!*Database*!/*/}
+                                    {/*    <OpacityAnimatedText show={showDatabase()} text={*/}
+                                    {/*        <div ref={db!}>*/}
+                                    {/*            <Text enT={<Database  palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
+                                    {/*        </div>} initialDelay={400} />*/}
+
+                                    {/*    /!*Kotlin*!/*/}
+                                    {/*    <OpacityAnimatedText show={showKotlin()} text={*/}
+                                    {/*        <div ref={kotlin!}>*/}
+                                    {/*            <Text enT={<Kotlin palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
+                                    {/*        </div>*/}
+                                    {/*    } initialDelay={400} />*/}
+
+                                    {/*    /!*Android*!/*/}
+                                    {/*    <OpacityAnimatedText show={showAndroid()} text={*/}
+                                    {/*        <div ref={android!}>*/}
+                                    {/*            <Text enT={<Android palette={props.palette} />} bnT="" lang={props.lang} palette={props.palette} class={""} />*/}
+                                    {/*        </div>*/}
+                                    {/*    } initialDelay={400} />*/}
+
+                                    {/*    /!*Swift*!/*/}
+                                    {/*    <OpacityAnimatedText show={showSwift()} text={*/}
+                                    {/*        <div ref={swift!}>*/}
+                                    {/*            <Text enT={<Swift palette={props.palette}/>} bnT="" lang={props.lang} palette={props.palette} class={""} />*/}
+                                    {/*        </div>*/}
+                                    {/*    } initialDelay={400} />*/}
+                                    {/*</div>*/}
 
                                     <div class="uppercase text-sm">
                                         <OpacityAnimatedText show={showMathTA()} text={
