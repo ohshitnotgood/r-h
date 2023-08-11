@@ -46,7 +46,9 @@ export default function Experience(props: {lang: string, palette: number, hidden
     const [showLA, setLA] = createSignal(false)
 
 
-    const [animClass, setAnimClass] = createSignal(false)
+    const [showTitle, setShowTitle] = createSignal(true)
+    const [showIndiDevHeader, setIndiDevHeaderVisibility] = createSignal(false)
+    const [stickyIndiDevHeader, setIndiDivStickyStyle] = createSignal(false)
 
     let mainContent: HTMLDivElement
 
@@ -83,8 +85,14 @@ export default function Experience(props: {lang: string, palette: number, hidden
 
         console.log(mainContent.clientHeight)
 
-        if (mainContent.scrollTop > 20) setAnimClass(true)
-        else setAnimClass(false)
+        if (mainContent.scrollTop > 20) setIndiDevHeaderVisibility(true)
+        else setIndiDevHeaderVisibility(false)
+
+        if (mainContent.scrollTop > 40) setIndiDivStickyStyle(true)
+        else setIndiDivStickyStyle(false)
+
+        if (mainContent.scrollTop > 140) setShowTitle(false)
+        else setShowTitle(true)
 
         if (mainContent.scrollTop >= 1330) setUserReachBottom(true)
         else setUserReachBottom(false)
@@ -113,7 +121,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                          bnT=""
                                          lang={props.lang}
                                          palette={props.palette}
-                                         class={""} />
+                                         class={`text-xl`} />
                                  </div>
                              } initialDelay={1000} />
     )
@@ -128,135 +136,28 @@ export default function Experience(props: {lang: string, palette: number, hidden
 
                 <OpacityAnimatedText show={!props.hidden} text={<ScrollIndicator signal={userReachedBottom()} hidden={props.hidden}/>} initialDelay={900}/>
 
-                <div class={``} classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
-                    <div class='' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
-                        <div class="col-text">
-                            <div class={`pt-[40vh]`}>
-                                <div class={`font-bold text-7xl uppercase `}>
+                <div classList={{'absolute  top-0 left-0 w-full h-full ': !props.hidden, "hidden": props.hidden}}>
+                    <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
+                        <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
+                            <div class={`pt-[30vh] transition-all duration-700`} classList={{"opacity-0 mt-[-100px]": !showTitle(), "opacity-1 mt-0": showTitle()}}>
+                                <div class={`font-bold text-7xl pb-10 uppercase `}>
                                     {animTitle}
                                 </div>
                                 <div>
                                     {animSub}
                                 </div>
                             </div>
-                            <div class='independent-anim transition-all duration-700' classList={{"mt-0 opacity-1": animClass(), "mt-32 opacity-0": !animClass()}}>
-                                independent development
+                            <div class={`sticky top-[20vh] text-4xl lowercase font-bold pt-12 transition-all duration-700`} classList={{"mt-0 opacity-1": showIndiDevHeader(), "mt-32 opacity-0": !showIndiDevHeader()}}>
+                                <Text enT={`Independent development`} bnT={``} lang={props.lang} palette={props.palette} class={``}/>
                             </div>
+                            <div class={``}>
+                                h
+                            </div>
+
+                            <div class={`h-screen`}></div>
                         </div>
                     </div>
                 </div>
-
-                <div classList={{'absolute  top-0 left-0 w-full h-full ': !props.hidden, "hidden": props.hidden}}>
-                    <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
-                        <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
-                            <div class={`h-[50vh] sticky top-[50vh] bg-green-200`}></div>
-                            <div class={`h-screen bg-red-400`}></div>
-                            <div class={`h-screen bg-transparent`}></div>
-                            <div class={`h-screen bg-transparent`}></div>
-                        </div>
-                    </div>
-                </div>
-
-                                {/*Second layout*/}
-
-                            {/*    <div class={`relative`}>*/}
-                            {/*        <div class={`absolute top-0 left-0`}>*/}
-                            {/*            <div class={"lowercase text-3xl font-bold"}>*/}
-                            {/*                <OpacityAnimatedText show={showJavascript()} text={<Text enT="Independent development" bnT="একাকী প্রোগ্রামিং" lang={props.lang} palette={props.palette} class={""}/>} initialDelay={1400}/>*/}
-                            {/*            </div>*/}
-                            {/*            <div class={"grid space-y-8 grid-cols-[40%_60%]"}>*/}
-                            {/*                <div>*/}
-                            {/*                    <OpacityAnimatedText show={showJavascript()} text={*/}
-                            {/*                        <Text enT={"Javascript/Typescript"} class={"uppercase text-sm py-4"} palette={props.palette} lang={props.lang} bnT={"জাভা-স্ক্রিপ্ট/টাইপ-স্ক্রিপ্ট"}/>*/}
-                            {/*                    } initialDelay={400} />*/}
-                            {/*                </div>*/}
-                            {/*                <div>*/}
-                            {/*                    <OpacityAnimatedText show={showJavascript()} text={*/}
-                            {/*                        <div ref={js!}>*/}
-                            {/*                            <Text enT={<Javascript palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
-                            {/*                        </div>*/}
-                            {/*                    } initialDelay={1500} />*/}
-                            {/*                </div>*/}
-
-                            {/*                <div>*/}
-                            {/*                    <OpacityAnimatedText show={showDatabase()} text={*/}
-                            {/*                        <Text enT={"Databases"} class={"uppercase text-sm pt-4"} palette={props.palette} lang={props.lang} bnT={"ডাটাবেস"}/>*/}
-                            {/*                    } initialDelay={400} />*/}
-                            {/*                </div>*/}
-                            {/*                <div>*/}
-                            {/*                    <OpacityAnimatedText show={showDatabase()} text={*/}
-                            {/*                        <div ref={js!}>*/}
-                            {/*                            <Text enT={<Database palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
-                            {/*                        </div>*/}
-                            {/*                    } initialDelay={400} />*/}
-                            {/*                </div>*/}
-
-                            {/*                <div>*/}
-                            {/*                    <OpacityAnimatedText show={showKotlin()} text={*/}
-                            {/*                        <Text enT={"Kotlin"} class={"uppercase text-sm pt-4"} palette={props.palette} lang={props.lang} bnT={"কোটলিন"}/>*/}
-                            {/*                    } initialDelay={400} />*/}
-                            {/*                </div>*/}
-                            {/*                <div>*/}
-                            {/*                    <OpacityAnimatedText show={showKotlin()} text={*/}
-                            {/*                        <div ref={js!}>*/}
-                            {/*                            <Text enT={<Kotlin palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
-                            {/*                        </div>*/}
-                            {/*                    } initialDelay={400} />*/}
-                            {/*                </div>*/}
-
-                            {/*                <div>*/}
-                            {/*                    <OpacityAnimatedText show={showAndroid()} text={*/}
-                            {/*                        <Text enT={"Android"} class={"uppercase text-sm pt-4"} palette={props.palette} lang={props.lang} bnT={"এন্ড্রোইড"}/>*/}
-                            {/*                    } initialDelay={400} />*/}
-                            {/*                </div>*/}
-                            {/*                <div>*/}
-                            {/*                    <OpacityAnimatedText show={showAndroid()} text={*/}
-                            {/*                        <div ref={js!}>*/}
-                            {/*                            <Text enT={<Android palette={props.palette} />} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
-                            {/*                        </div>*/}
-                            {/*                    } initialDelay={400} />*/}
-                            {/*                </div>*/}
-
-
-                            {/*            </div>*/}
-                            {/*        </div>*/}
-                            {/*        <div class={`h-screen w-screen absolute top-0 left-0`}>*/}
-
-                            {/*        </div>*/}
-
-                            {/*    </div>*/}
-
-                            {/*    /!*Original layout*!/*/}
-                            {/*    <div class="grid grid-cols-[20%_80%] ">*/}
-                            {/*        <div class="uppercase text-sm">*/}
-                            {/*            <OpacityAnimatedText show={showMathTA()} text={*/}
-                            {/*                <div>*/}
-                            {/*                    <Text enT={"Teaching assistant in high school"} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
-                            {/*                </div>*/}
-                            {/*            } initialDelay={400} />*/}
-                            {/*        </div>*/}
-                            {/*        <div class="">*/}
-                            {/*            <OpacityAnimatedText show={showMathTA()} text={*/}
-                            {/*                <div ref={mathTA!}>*/}
-                            {/*                    <Text enT={<MathTA palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
-                            {/*                </div>*/}
-                            {/*            } initialDelay={400} />*/}
-                            {/*        </div>*/}
-
-                            {/*        <div class="uppercase text-sm">*/}
-                            {/*            <OpacityAnimatedText show={showLA()} text={*/}
-                            {/*                <div>*/}
-                            {/*                    <Text enT={"Lab assistant in high school"} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
-                            {/*                </div>*/}
-                            {/*            } initialDelay={400} />*/}
-                            {/*        </div>*/}
-                            {/*        <div class="">*/}
-                            {/*            <OpacityAnimatedText show={showLA()} text={*/}
-                            {/*                <div ref={lA!}>*/}
-                            {/*                    <Text enT={<LabAssistant palette={props.palette}/>} bnT={""} lang={props.lang} palette={props.palette} class={""} />*/}
-                            {/*                </div>} initialDelay={400} />*/}
-                            {/*        </div>*/}
-                            {/*    </div>*/}
             </div>
         </div>
     )
