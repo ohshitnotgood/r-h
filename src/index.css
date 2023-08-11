@@ -90,7 +90,7 @@ code {
     }
 
     .col-text {
-        @apply xl:min-w-[1000px] xl:max-w-[1000px] pl-[100px]
+        @apply xl:min-w-[1000px] lg:min-w-[700px] lg:max-w-[700px] xl:max-w-[1000px] pl-[100px]
     }
 
     .col-text::-webkit-scrollbar {
@@ -170,52 +170,10 @@ code {
         animation-name: enable-content-opacity;
     }
 
-    .animation-duration-0 {
-        animation-duration: 0ms;
-    }
-
-    .animation-duration-400 {
-        animation-duration: 400ms;
-    }
-
-    .animation-duration-700 {
-        animation-duration: 700ms;
-    }
-
-    .animation-duration-1400 {
-        animation-duration: 1400ms;
-    }
-
-    .animation-delay-0 {
-        animation-delay: 0ms;
-    }
-
-    .animation-delay-100 {
-        animation-delay: 100ms;
-    }
-
-    .animation-delay-200 {
-        animation-delay: 200ms;
-    }
-
-    .animation-delay-300 {
-        animation-delay: 300ms;
-    }
-
-    .animation-delay-400 {
-        animation-delay: 400ms;
-    }
-
-    .animation-delay-1000 {
-        animation-delay: 1000ms;
-    }
-
-    .animation-delay-1400 {
-        animation-delay: 1400ms;
-    }
-
-    .animation-delay-1700 {
-        animation-delay: 1700ms;
+    .independent-anim {
+        opacity: 1;
+        animation: independet-animation 3s ease-in-out;
+        /*animation-iteration-count: infinite ;*/
     }
 }
 
@@ -255,4 +213,9 @@ code {
     from {margin-bottom: 0;}
     to {margin-bottom: 0}
 
+}
+
+@keyframes independent-animation {
+    from {margin-top: 30px; opacity: 0}
+    to { margin-top: 0; opacity: 1}
 }

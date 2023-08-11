@@ -5,7 +5,7 @@ import {createEffect, createSignal, For, onCleanup, onMount, Show} from "solid-j
  *
  * @param props.text Text to be animated into
  */
-export default function AnimatedText(props: any) {
+export default function AnimatedText(props: { initialDelay: number, text: any }) {
     const [delayPeriodExpired, setDelayPeriodExpired] = createSignal(false)
     setTimeout(() => {
         setDelayPeriodExpired(true)
