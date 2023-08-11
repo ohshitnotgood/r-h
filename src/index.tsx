@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import {Route, Router, Routes} from "@solidjs/router";
 import Acknowledgements from "./components/credits/Acknowledgements";
+import TestView from "./components/TestView";
 
 const root = document.getElementById('root');
 
@@ -17,8 +18,9 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 render(() =>
     <Router>
         <Routes>
-          <Route path={"/"} component={App}/>
-          <Route path={"/credits"} component={Acknowledgements} />
-          <Route path={"*"} component={Acknowledgements} />
+            <Route path={"/"} component={App}/>
+            <Route path={"/credits"} component={Acknowledgements} />
+            <Route path={"*"} component={Acknowledgements} />
+            <Route path={"/test"} component={TestView} />
         </Routes>
     </Router>, root!);
