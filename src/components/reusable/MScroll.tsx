@@ -8,7 +8,7 @@ export function MScroll(props: { class?: string, style?: string }) {
 
     let oldScroll: number = 0
 
-    const [mainStyle, setMainStyle] = createSignal(`position: fixed; top: 0; left: 0;`)
+    const [mainStyle, setMainStyle] = createSignal(`top: 0; left: 0;`)
 
 
     let dy = 0, dx = 0
@@ -50,13 +50,13 @@ export function MScroll(props: { class?: string, style?: string }) {
     }
 
     return (
-        <div class={`relative`}>
-            <div id={`scroll-capture`} class={`${props.class} max-h-[500px] border border-black absolute top-0 left-0 overflow-y-scroll opacity-0 z-30`} ref={root} onscroll={onScroll}>
+        <div class={`relative ${props.class}`}>
+            <div id={`scroll-capture`} class={`${props.class} absolute top-0 left-0 overflow-y-scroll opacity-0 z-30`} ref={root} onscroll={onScroll}>
                 {props.children}
             </div>
 
-            <div id={`root`} class={`${props.class} border border-blue-200 max-h-[400px] overflow-hidden border border-transparent z-20 pointer-events-auto fixed top-0 left-0`} style={mainStyle()}>
-                <div class={`max-h-[400px] overflow-y-scroll`} ref={main}>
+            <div id={`root`} class={`${props.class} overflow-hidden z-20 pointer-events-auto absolute top-0 left-0`} style={mainStyle()}>
+                <div class={`${props.class} overflow-y-scroll`} ref={main}>
                     {props.children}
                 </div>
             </div>
