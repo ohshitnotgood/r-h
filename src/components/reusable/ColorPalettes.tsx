@@ -55,7 +55,7 @@ function getSecondaryColor(palette: number): string {
         9: "#727272",
         10: "#323259",
     }
-    return ""
+    return c[palette]
 }
 
 

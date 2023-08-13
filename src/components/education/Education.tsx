@@ -2,6 +2,7 @@ import {Show} from "solid-js";
 import Header from "../reusable/Header";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import {PrimaryText} from "../reusable/Texts";
+import Section from "../reusable/Section";
 
 export default function Education(props: { palette: number, hidden: boolean, lang: string, onclickAction: any, initialDelay: number }) {
     const bgColor: {[index: number]: string} = {
@@ -33,39 +34,30 @@ export default function Education(props: { palette: number, hidden: boolean, lan
 
 
     return (
-        <div class={bgColor[props.palette]}
-             classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
-             onclick={props.onclickAction}>
-
-            <div class={borderColor[props.palette]}>
-                <div class='w-full flex cursor-pointer'>
-                    <Header palette={props.palette} bnSectionNumber="০৩." initialDelay={props.initialDelay} hidden={props.hidden} lang={props.lang} enText="Education" bnText="শিক্ষাগত যোগ্যতা" sectionNumber="03." actionButton={null}/>
-                </div>
-                <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
-                    <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
-                        <div class="col-text overflow-y-scroll pr-20">
-                            <OpacityAnimatedText show={!props.hidden} children={
-                                <div>
-                                    <PrimaryText children={<PageTitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
-                                </div>
-                            } initialDelay={500} />
-                            <OpacityAnimatedText show={!props.hidden} children={
-                                <div>
-                                    <PrimaryText children={<PageSubtitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
-                                </div>
-                            } initialDelay={700} />
-                            <div class="grid grid-cols-2 ">
-                                <div class="uppercase text-sm">high school</div>
-                                <HighSchool />
-
-                                <div class="uppercase text-sm">Bachelor's of Science</div>
-                                <College />
-                            </div>
+        <Section header_en={`Education`} headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={`04.`} sectionNumber_bn={`04.`}
+                 palette={props.palette} lang={props.lang} clickAction={props.onclickAction}>
+            <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
+                <div class="col-text overflow-y-scroll pr-20">
+                    <OpacityAnimatedText show={!props.hidden} children={
+                        <div>
+                            <PrimaryText children={<PageTitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
                         </div>
+                    } initialDelay={500} />
+                    <OpacityAnimatedText show={!props.hidden} children={
+                        <div>
+                            <PrimaryText children={<PageSubtitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
+                        </div>
+                    } initialDelay={700} />
+                    <div class="grid grid-cols-2 ">
+                        <div class="uppercase text-sm">high school</div>
+                        <HighSchool />
+
+                        <div class="uppercase text-sm">Bachelor's of Science</div>
+                        <College />
                     </div>
                 </div>
             </div>
-        </div>
+        </Section>
     )
 }
 

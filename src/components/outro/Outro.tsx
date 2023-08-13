@@ -9,6 +9,7 @@ import languageIcon from "../../assets/icons/ic_lang.svg"
 import downIcon from "../../assets/icons/ic_down_circled.svg"
 import Header from "../reusable/Header";
 import {EmailAndPhone} from "./Components";
+import Section from "../reusable/Section";
 
 
 export default function Outro(props: any) {
@@ -48,36 +49,26 @@ export default function Outro(props: any) {
         if (mainContent.scrollTop >= 900) setUserReachBottom(true)
         else setUserReachBottom(false)
     }
+    {/*Scroll Indicator*/}
+    {/*<div class="absolute right-8 bottom-5"*/}
+    {/*     classList={{"scroll-indicator-hide": userReachedBottom(), "scroll-indicator-show": !userReachedBottom()}}>*/}
+    {/*    <div class="flex justify-center items-center flex-col" classList={{"col-content-visible": !props.hidden, "col-content-hidden": props.hidden}}>*/}
+    {/*        <img class="w-8 h-8" src={icDownCircled} alt="Down scroll indicator"/>*/}
+    {/*    </div>*/}
+    {/*</div>*/}
 
     return (
-        <div class={bgColor[props.palette]}
-             classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
-             onclick={props.onclickAction}>
-            <div class={borderColor[props.palette]}>
-                {/*Header*/}
-                <Header palette={props.palette} initialDelay={props.initialDelay} bnSectionNumber="০৫." sectionNumber="05." lang={props.lang} hidden={props.hidden} enText={"Others"} bnText={"অন্যান্য"} actionButton={null}/>
 
-                {/*Scroll Indicator*/}
-                <div class="absolute right-8 bottom-5"
-                     classList={{"scroll-indicator-hide": userReachedBottom(), "scroll-indicator-show": !userReachedBottom()}}>
-                    <div class="flex justify-center items-center flex-col" classList={{"col-content-visible": !props.hidden, "col-content-hidden": props.hidden}}>
-                        <img class="w-8 h-8" src={icDownCircled} alt="Down scroll indicator"/>
+        <Section header_en={`Outro`} headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={"05."} sectionNumber_bn={"05."} palette={props.palette} lang={props.lang} clickAction={props.onclickAction}>
+            <div class='grid place-content-center h-screen z-50' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
+                <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
+                    <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold text-right">Contact Me!</div>
+                    <div class="pb-24 text-justify">
+
                     </div>
-                </div>
-
-                {/*Main Content*/}
-                <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
-                    <div class='grid place-content-center h-screen z-50' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
-                        <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
-                            <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold text-right">Contact Me!</div>
-                            <div class="pb-24 text-justify">
-
-                            </div>
-                            <EmailAndPhone />
-                        </div>
-                    </div>
+                    <EmailAndPhone />
                 </div>
             </div>
-        </div>
+        </Section>
     )
 }
