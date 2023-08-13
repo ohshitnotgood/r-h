@@ -4,7 +4,7 @@ import fire from "../../assets/img/fire-fireball.gif"
 import rightArrow from "../../assets/icons/ic_right.svg";
 import AnimatedText from "../reusable/AnimatedText";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
-import {Text} from "../reusable/Texts";
+import {PrimaryText} from "../reusable/Texts";
 
 const borderColor: {[index: number]: string} = {
     1: "border-contrast-1 ",
@@ -36,18 +36,18 @@ function TextSection(props: {lang: string, palette: number}) {
             <div class="max-w-[80vw] space-y-3">
                 <div class="text-6xl font-bold uppercase">
                     <OpacityAnimatedText children={
-                        <Text bnT={""} class={""} children={"Hi! I'm Praanto"} lang={props.lang} palette={props.palette}/>
+                        <PrimaryText bnT={""} class={""} children={"Hi! I'm Praanto"} lang={props.lang} palette={props.palette}/>
                     } initialDelay={600} show={true}/>
                 </div>
                 <div class="lowercase text-2xl">
                     <OpacityAnimatedText children={
-                        <Text bnT={""} class={""} children={"comp.eng student at kth"} lang={props.lang} palette={props.palette}/>
+                        <PrimaryText bnT={""} class={""} children={"comp.eng student at kth"} lang={props.lang} palette={props.palette}/>
                     } initialDelay={800} show={true}/>
 
                 </div>
                 <div class="pr-10">
                     <OpacityAnimatedText children={
-                        <Text bnT={""} class={""} children={description} lang={props.lang} palette={props.palette}/>
+                        <PrimaryText bnT={""} class={""} children={description} lang={props.lang} palette={props.palette}/>
                     } initialDelay={1000} show={true}/>
                 </div>
                 <OpacityAnimatedText show={true} children={<PageCTAButton lang={props.lang} palette={props.palette}/>} initialDelay={1300} />
@@ -89,7 +89,7 @@ function PageCTAButton(props: {lang: string, palette: number}) {
                 {/*    </Show>*/}
                 {/*    <img src={rightArrow} class="w-4 h-4 rotate-[90deg]" alt={"Javascript logo in black and white"}/>*/}
                 {/*</div>*/}
-                <Text children={enText} bnT={bnText} lang={props.lang} palette={props.palette} class={""} />
+                <PrimaryText children={enText} bnT={bnText} lang={props.lang} palette={props.palette} class={""} />
             </button>
         </div>
     )

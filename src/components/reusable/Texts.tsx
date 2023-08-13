@@ -9,7 +9,7 @@ import {createEffect, createSignal, Show} from "solid-js";
  * @param props.class
  * @constructor
  */
-export function Text(props: {children: any, bnT?: any, lang: string, palette: number, class?: string}) {
+export function PrimaryText(props: {children: any, bnT?: any, lang?: string, palette: number, class?: string}) {
 
     const c: {[index: number]: string} = {
         1: "text-primary-1",
@@ -27,6 +27,9 @@ export function Text(props: {children: any, bnT?: any, lang: string, palette: nu
     return (
         <div class={props.class}>
             <div class={c[props.palette]}>
+                <Show when={props.lang == "" || props.lang == null}>
+                    {props.children}
+                </Show>
                 <Show when={props.lang == "en"}>
                     {props.children}
                 </Show>
@@ -38,7 +41,7 @@ export function Text(props: {children: any, bnT?: any, lang: string, palette: nu
     )
 }
 
-export function SecondaryText(props: {children: any, bnT?: any, lang: string, palette: number, class?: string}) {
+export function SecondaryText(props: {children: any, bnT?: any, lang?: string, palette: number, class?: string}) {
     const c: {[index: number]: string} = {
         1: "text-secondary-1",
         2: "text-secondary-2",
@@ -55,6 +58,9 @@ export function SecondaryText(props: {children: any, bnT?: any, lang: string, pa
     return (
         <div class={props.class}>
             <div class={c[props.palette]}>
+                <Show when={props.lang == "" || props.lang == null}>
+                    {props.children}
+                </Show>
                 <Show when={props.lang == "en"}>
                     {props.children}
                 </Show>
@@ -66,7 +72,7 @@ export function SecondaryText(props: {children: any, bnT?: any, lang: string, pa
     )
 }
 
-export function TertiaryText() {
+export function TertiaryText(props: {lang?: string, palette: number, children: any, bnT?: string, class?: string}) {
     const c: {[index: number]: any} = {
         1: "text-tertiary-1",
         2: "text-tertiary-2",
@@ -79,4 +85,20 @@ export function TertiaryText() {
         9: "text-tertiary-9",
         10: "text-tertiary-10",
     }
+
+    return (
+        <div class={props.class}>
+            <div class={c[props.palette]}>
+                <Show when={props.lang == "" || props.lang == null}>
+                    {props.children}
+                </Show>
+                <Show when={props.lang == "en"}>
+                    {props.children}
+                </Show>
+                <Show when={props.lang == "bn"}>
+                    {props.bnT}
+                </Show>
+            </div>
+        </div>
+    )
 }

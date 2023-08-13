@@ -12,7 +12,7 @@ import expressJSLogo from "../../assets/img/logo/logo_expressjs.png"
 import svelteLogo from "../../assets/img/logo/logo_svelte.png"
 import ktorLogo from "../../assets/img/logo/logo_ktor.png"
 import tailwindLogo from "../../assets/img/logo/logo_tailwind.svg"
-import {Text} from "../reusable/Texts";
+import {PrimaryText} from "../reusable/Texts";
 
 const borderColor: {[index: number]: string} = {
     1: "border-contrast-1",

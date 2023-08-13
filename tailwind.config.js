@@ -14,6 +14,10 @@ module.exports = {
             classes: ['bounce', 'heartBeat']
         },
         extend: {
+            animation: {
+                'animate-column-expand': '0.7s column-spacer-expand ease-in-out',
+                'animate-column-shrink': '0.7s column-spacer-shrink ease-in-out'
+            },
             rotate: {
                 '270': '270deg'
             },

@@ -2,6 +2,7 @@ import { Show } from "solid-js";
 import Header from "../reusable/Header";
 import langIcon from "../../assets/icons/ic_lang.svg";
 import {PageCTAButton, PageDescriptionText, PageSubtitle, PageTitle} from "./Components";
+import Section from "../reusable/Section";
 
 
 export default function Intro(props: { palette: number, lang: string, setLang: any, hidden: boolean, onclickAction: any }) {
@@ -54,25 +55,37 @@ export default function Intro(props: { palette: number, lang: string, setLang: a
     }
 
     return (
-        <div class={bgColor[props.palette]}
-             classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
-             onclick={props.onclickAction}>
-            <div class={borderColor[props.palette]}>
-                {/* Header Section */}
-                <Header palette={props.palette} bnSectionNumber={"০১."} lang={props.lang} enText="Intro" bnText="সূচনা" sectionNumber="01." hidden={props.hidden} actionButton={LanguageSwitcher}  initialDelay={0}/>
-
-                <div classList={{'pointer-events-none z-10 absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
-                    <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden,
-                        "col-content-hidden col-content-shrink": props.hidden}}>
-                        <div class="col-text space-y-2.5 lowercase">
-                            <PageTitle palette={props.palette} hidden={props.hidden} lang={props.lang}/>
-                            <PageSubtitle palette={props.palette} hidden={props.hidden} lang={props.lang}/>
-                            <PageDescriptionText palette={props.palette} hidden={props.hidden} lang={props.lang} />
-                            <PageCTAButton hidden={props.hidden} lang={props.lang}/>
-                        </div>
-                    </div>
-                </div>
+        <Section header_en={`Intro`} clickAction={props.onclickAction} header_bn={`suchona`}
+                 lang={props.lang} hidden={props.hidden} headerDelay={0} sectionNumber_bn={""} sectionNumber_en={`01.`} palette={props.palette}
+                 actionButton={<LanguageSwitcher />}>
+            <div class="col-text space-y-2.5 lowercase">
+                <PageTitle palette={props.palette} hidden={props.hidden} lang={props.lang}/>
+                <PageSubtitle palette={props.palette} hidden={props.hidden} lang={props.lang}/>
+                <PageDescriptionText palette={props.palette} hidden={props.hidden} lang={props.lang} />
+                <PageCTAButton hidden={props.hidden} lang={props.lang}/>
             </div>
-        </div>
+        </Section>
+
+
+        // <div class={bgColor[props.palette]}
+        //      classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}
+        //      onclick={props.onclickAction}>
+        //     <div class={borderColor[props.palette]}>
+        //         {/* Header Section */}
+        //         <Header palette={props.palette} bnSectionNumber={"০১."} lang={props.lang} enText="Intro" bnText="সূচনা" sectionNumber="01." hidden={props.hidden} actionButton={LanguageSwitcher}  initialDelay={0}/>
+        //
+        //         <div classList={{'pointer-events-none z-10 absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
+        //             <div class='col-content' classList={{"col-content-expand col-content-visible": !props.hidden,
+        //                 "col-content-hidden col-content-shrink": props.hidden}}>
+        //                 <div class="col-text space-y-2.5 lowercase">
+        //                     <PageTitle palette={props.palette} hidden={props.hidden} lang={props.lang}/>
+        //                     <PageSubtitle palette={props.palette} hidden={props.hidden} lang={props.lang}/>
+        //                     <PageDescriptionText palette={props.palette} hidden={props.hidden} lang={props.lang} />
+        //                     <PageCTAButton hidden={props.hidden} lang={props.lang}/>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>
     )
 }

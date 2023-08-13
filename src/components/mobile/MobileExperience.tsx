@@ -2,7 +2,7 @@ import {Javascript, Database, Android, Kotlin, Swift, MathTA, LabAssistant} from
 import {createEffect, createSignal, onMount} from "solid-js";
 import {createScrollPosition} from "@solid-primitives/scroll";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
-import {Text} from "../reusable/Texts";
+import {PrimaryText} from "../reusable/Texts";
 
 
 
@@ -62,7 +62,7 @@ export default function MobileExperience(props: any) {
                 <div class="text-6xl px-8 hyphens-manual font-bold uppercase">
                     <OpacityAnimatedText show={!props.hidden} children={
                         <div ref={title!}>
-                            <Text children={<div>Work Experie&shynce</div>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                            <PrimaryText children={<div>Work Experie&shynce</div>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                         </div>
                     } initialDelay={800} />
                 </div>
@@ -70,7 +70,7 @@ export default function MobileExperience(props: any) {
             <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
                 <OpacityAnimatedText show={!props.hidden} children={
                     <div ref={title!}>
-                        <Text children={"independent development"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                        <PrimaryText children={"independent development"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                     </div>} initialDelay={800} />
             </div>
 
@@ -85,7 +85,7 @@ export default function MobileExperience(props: any) {
             <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
                 <OpacityAnimatedText show={showMathTA()} children={
                     <div>
-                        <Text children={"Teaching assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                        <PrimaryText children={"Teaching assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                     </div>} initialDelay={400} />
             </div>
 
@@ -96,7 +96,7 @@ export default function MobileExperience(props: any) {
             <div class="px-8 my-4 font-bold mt-10 text-3xl lowercase ">
                 <OpacityAnimatedText show={showLA()} children={
                     <div>
-                        <Text children={"Lab assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                        <PrimaryText children={"Lab assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                     </div>} initialDelay={400} />
             </div>
 

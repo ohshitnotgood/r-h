@@ -1,7 +1,7 @@
 import {Show} from "solid-js";
 import Header from "../reusable/Header";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
-import {Text} from "../reusable/Texts";
+import {PrimaryText} from "../reusable/Texts";
 
 export default function Education(props: { palette: number, hidden: boolean, lang: string, onclickAction: any, initialDelay: number }) {
     const bgColor: {[index: number]: string} = {
@@ -46,12 +46,12 @@ export default function Education(props: { palette: number, hidden: boolean, lan
                         <div class="col-text overflow-y-scroll pr-20">
                             <OpacityAnimatedText show={!props.hidden} children={
                                 <div>
-                                    <Text children={<PageTitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
+                                    <PrimaryText children={<PageTitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
                                 </div>
                             } initialDelay={500} />
                             <OpacityAnimatedText show={!props.hidden} children={
                                 <div>
-                                    <Text children={<PageSubtitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
+                                    <PrimaryText children={<PageSubtitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
                                 </div>
                             } initialDelay={700} />
                             <div class="grid grid-cols-2 ">
