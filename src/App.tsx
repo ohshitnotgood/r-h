@@ -80,7 +80,7 @@ const App: Component = () => {
         console.log("should be only visible on mobile")
 
         if (position.y > introSection.clientHeight) {
-            if (!randomizedIntro) setTimeout(randomizePalette, 1000)
+            if (!randomizedIntro) randomizePalette()
             randomizedIntro = true
         }
         else if (position.y < introSection.clientHeight && randomizedIntro) randomizedIntro = false

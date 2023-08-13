@@ -32,13 +32,13 @@ export default function MobileNavBar(props: any) {
     })
 
     return (
-            <nav class={`sticky z-50 top-0 w-screen min-h-[7vh] border-b border-black bg-[color:var(--bg-color)] grid overflow-x-clip`}>
+            <nav class={`sticky z-50 top-0 w-screen min-h-[7vh] border-b border-black transition-all duration-700 bg-[color:var(--bg-color)] grid overflow-x-clip`}>
                 <div class="grid grid-cols-[auto_150px] w-screen relative">
                     <div>
                     </div>
                     <div class="max-w-[150px]">
                         <div class="max-w-[150px] h-full relative">
-                            <div class={`bg-gradient-to-r ${c[props.palette]} to-transparent w-[20px] h-full absolute left-0 top-0 z-30`}>
+                            <div class={`bg-gradient-to-r transition-all duration-700 from-[color:var(--bg-color)] to-transparent w-[20px] h-full absolute left-0 top-0 z-30`}>
 
                             </div>
                             <div ref={r!} class={`lowercase font-semibold text-primary-${props.palette} text-xl overflow-x-scroll z-10 hide-scrollbar h-full flex flex-row`}>
@@ -58,8 +58,7 @@ export default function MobileNavBar(props: any) {
                                     <a href="#outro">Others</a>
                                 </div>
                             </div>
-                            <div class={`bg-gradient-to-l ${c[props.palette]} to-transparent w-[20px] h-full absolute top-0 right-0 z-30`}>
-
+                            <div class={`bg-gradient-to-l transition-all duration-700 from-[color:var(--bg-color)] to-transparent w-[20px] h-full absolute top-0 right-0 z-30`}>
                             </div>
                         </div>
                     </div>
