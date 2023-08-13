@@ -10,23 +10,9 @@ import {createEffect, createSignal, Show} from "solid-js";
  * @constructor
  */
 export function PrimaryText(props: {children: any, bnT?: any, lang?: string, palette: number, class?: string}) {
-
-    const c: {[index: number]: string} = {
-        1: "text-primary-1",
-        2: "text-primary-2",
-        3: "text-primary-3",
-        4: "text-primary-4",
-        5: "text-primary-5",
-        6: "text-primary-6",
-        7: "text-primary-7",
-        8: "text-primary-8",
-        9: "text-primary-9",
-        10: "text-primary-10",
-    }
-    
     return (
         <div class={props.class}>
-            <div class={c[props.palette]}>
+            <div class={`text-[color:var(--primary-color)]`}>
                 <Show when={props.lang == "" || props.lang == null}>
                     {props.children}
                 </Show>
@@ -42,22 +28,9 @@ export function PrimaryText(props: {children: any, bnT?: any, lang?: string, pal
 }
 
 export function SecondaryText(props: {children: any, bnT?: any, lang?: string, palette: number, class?: string}) {
-    const c: {[index: number]: string} = {
-        1: "text-secondary-1",
-        2: "text-secondary-2",
-        3: "text-secondary-3",
-        4: "text-secondary-4",
-        5: "text-secondary-5",
-        6: "text-secondary-6",
-        7: "text-secondary-7",
-        8: "text-secondary-8",
-        9: "text-secondary-9",
-        10: "text-secondary-10",
-    }
-
     return (
         <div class={props.class}>
-            <div class={c[props.palette]}>
+            <div class={`text-[color:var(--secondary-color)]`}>
                 <Show when={props.lang == "" || props.lang == null}>
                     {props.children}
                 </Show>

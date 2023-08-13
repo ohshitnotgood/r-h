@@ -16,16 +16,16 @@ export default function Section(props: {
 }) {
 
     const bgColor: {[index: number]: string} = {
-        1: "bg-bg-1 z-50 relative",
-        2: "bg-bg-2 z-50 relative",
-        3: "bg-bg-3 z-50 relative",
-        4: "bg-bg-4 z-50 relative",
-        5: "bg-bg-5 z-50 relative",
-        6: "bg-bg-6 z-50 relative",
-        7: "bg-bg-7 z-50 relative",
-        8: "bg-bg-8 z-50 relative",
-        9: "bg-bg-9 z-50 relative",
-        10: "bg-bg-10 z-50 relative",
+        1: "bg-bg-1",
+        2: "bg-bg-2",
+        3: "bg-bg-3",
+        4: "bg-bg-4",
+        5: "bg-bg-5",
+        6: "bg-bg-6",
+        7: "bg-bg-7",
+        8: "bg-bg-8",
+        9: "bg-bg-9",
+        10: "bg-bg-10",
     }
 
     const borderColor: {[index: number]: string} = {
@@ -42,7 +42,7 @@ export default function Section(props: {
     }
 
     return (
-        <div class={bgColor[props.palette]}
+        <div class={`bg-[color:var(--bg-color)] relative z-50 transition-all duration-700`}
          classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}>
         <div class={borderColor[props.palette]}>
             <Header onclick={props.clickAction}

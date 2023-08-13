@@ -35,6 +35,14 @@ code {
 }
 
 
+@layer base {
+    :root {
+        --bg-color: #FFF;
+        --primary-color: #000;
+        --secondary-color: #262525;
+    }
+}
+
 @layer components {
     .col-entire-section {
         @apply relative border-r border-black

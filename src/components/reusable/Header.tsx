@@ -2,6 +2,7 @@ import {Show} from "solid-js";
 import OpacityAnimatedText from "./OpacityAnimatedText";
 import AnimatedHeaderText from "./AnimatedHeaderText";
 import {SecondaryText} from "./Texts";
+import {randomizePalette} from "./ColorPalettes";
 
 /**
  *
@@ -15,7 +16,10 @@ import {SecondaryText} from "./Texts";
 export default function Header(props: { onclick: any, palette: number, bnSectionNumber: string, sectionNumber: string, enText: string, bnText: string, initialDelay: number, hidden: boolean, lang: string, actionButton: any }) {
     return (
         <div class='w-full flex cursor-pointer'>
-            <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer' onclick={props.onclick}>
+            <div class='h-screen place-content-center w-[100px] z-10 cursor-pointer' onclick={() => {
+                props.onclick()
+                randomizePalette()
+            }}>
                 <div class="grid grid-arrangement h-screen place-content-center">
                     <div class="h-fit text-center pt-10">
                         <AnimatedHeaderText text={
