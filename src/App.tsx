@@ -11,6 +11,7 @@ import MobileNavBar from "./components/mobile/MobileNavBar";
 import {createScrollPosition} from "@solid-primitives/scroll";
 import {MobileEducation} from "./components/mobile/MobileEducation";
 import loadingIcon from "./assets/icons/ic_progress.svg"
+import {randomizePalette} from "./components/reusable/ColorPalettes";
 
 const App: Component = () => {
     const [d1Hidden, setD1Hidden] = createSignal(false);
@@ -21,11 +22,10 @@ const App: Component = () => {
 
     const [lang, setLang] = createSignal("en")
 
-    const [sectionIndex, setSectionIndex] = createSignal(0)
-
-    let didChangeColor = false
 
     let p = Math.floor(Math.random() * 9 + 1)
+
+    randomizePalette()
 
     console.log("Palette selected: " + p)
     const [palette, setPalette] = createSignal(p)
