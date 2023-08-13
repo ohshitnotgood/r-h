@@ -1,6 +1,4 @@
 import Header from "./Header";
-import {PageCTAButton, PageDescriptionText, PageSubtitle, PageTitle} from "../intro/Components";
-import icDownCircled from "../../assets/icons/ic_down_circled.svg";
 
 export default function Section(props: {
     header_en: string,
