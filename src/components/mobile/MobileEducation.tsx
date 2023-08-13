@@ -2,7 +2,7 @@ import jsLogo from "../../assets/img/js_logo_bw.png";
 
 export function MobileEducation(props: any) {
     return(
-        <div ref={props.ref} class="my-24 pb-5 px-12 ">
+        <div ref={props.ref} class="bg-[color:var(--bg-color)] my-24 pb-5 px-12 ">
             <nav class="h-[7vh] grid content-center">
                 03.
             </nav>

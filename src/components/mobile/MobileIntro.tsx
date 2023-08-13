@@ -22,7 +22,7 @@ const borderColor: {[index: number]: string} = {
 
 export default function MobileIntro(props: { lang: string, ref: any, palette: number }) {
     return (
-        <div id="intro" ref={props.ref} class={`bg-bg-${props.palette} transition-all duration-150 grid place-items-center`}>
+        <div id="intro" ref={props.ref} class={`bg-[color:var(--bg-color)] transition-all duration-150 grid place-items-center`}>
             <TextSection palette={props.palette} lang={props.lang}/>
         </div>
     )
@@ -36,13 +36,17 @@ function TextSection(props: {lang: string, palette: number}) {
             <div class="max-w-[80vw] space-y-3">
                 <div class="text-6xl font-bold uppercase">
                     <OpacityAnimatedText children={
-                        <PrimaryText bnT={""} class={""} children={"Hi! I'm Praanto"} lang={props.lang} palette={props.palette}/>
+                        <PrimaryText>
+                            Hi! I'm Praanto
+                        </PrimaryText>
                     } initialDelay={600} show={true}/>
                 </div>
                 <div class="lowercase text-2xl">
-                    <OpacityAnimatedText children={
-                        <PrimaryText bnT={""} class={""} children={"comp.eng student at kth"} lang={props.lang} palette={props.palette}/>
-                    } initialDelay={800} show={true}/>
+                    {/*<OpacityAnimatedText children={*/}
+                        <PrimaryText>
+                            comp.eng student at kth
+                        </PrimaryText>
+                    {/*} initialDelay={800} show={true}/>*/}
 
                 </div>
                 <div class="pr-10">
@@ -73,22 +77,13 @@ function PageCTAButton(props: {lang: string, palette: number}) {
             <Show when={props.lang === "bn"}>
                 <span>আমার সম্পর্কে জানুন</span>
             </Show>
-            <img src={rightArrow} class="w-4 h-4 rotate-[90deg]" alt={"Javascript logo in black and white"}/>
+            <img src={rightArrow} class="w-4 h-4 rotate-[90deg]" alt={"Downward icon indicating that the user must scroll down."}/>
         </div>
     )
 
     return (
         <div class="">
             <button class={`pointer-events-auto hover:cursor-pointer rounded-full my-4 p-2 px-4 border ${borderColor[props.palette]}`}>
-                {/*<div class="lowercase text-left text-sm flex flex-row items-center space-x-1">*/}
-                {/*    <Show when={props.lang === "en"}>*/}
-                {/*        <span>get to know me</span>*/}
-                {/*    </Show>*/}
-                {/*    <Show when={props.lang === "bn"}>*/}
-                {/*        <span>আমার সম্পর্কে জানুন</span>*/}
-                {/*    </Show>*/}
-                {/*    <img src={rightArrow} class="w-4 h-4 rotate-[90deg]" alt={"Javascript logo in black and white"}/>*/}
-                {/*</div>*/}
                 <PrimaryText children={enText} bnT={bnText} lang={props.lang} palette={props.palette} class={""} />
             </button>
         </div>

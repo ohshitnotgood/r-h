@@ -73,21 +73,17 @@ const App: Component = () => {
 
     let [currentPosition, setCurrentPosition] = createSignal("intro")
 
+    let randomizedIntro = false
+
     const position = createScrollPosition()
     createEffect(() => {
-        console.log("position: " + position.y)
-        if (position.y < introSection.clientHeight) setCurrentPosition("intro")
-        else if (position.y < experienceSection.clientHeight + introSection.clientHeight) setCurrentPosition("experience")
-        else if (position.y < educationSection.clientHeight + experienceSection.clientHeight + introSection.clientHeight) setCurrentPosition("education")
+        console.log("should be only visible on mobile")
 
-        // if (position.y > introSection.clientHeight && !didChangeColor) {
-        //     setPalette(Math.floor(Math.random() * 9 + 1))
-        //     didChangeColor = true
-        // }
-        //
-        // if (position.y === 0) {
-        //     didChangeColor = false
-        // }
+        if (position.y > introSection.clientHeight) {
+            if (!randomizedIntro) setTimeout(randomizePalette, 1000)
+            randomizedIntro = true
+        }
+        else if (position.y < introSection.clientHeight && randomizedIntro) randomizedIntro = false
     })
 
     return (

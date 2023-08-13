@@ -9,7 +9,7 @@ import {createEffect, createSignal, Show} from "solid-js";
  * @param props.class
  * @constructor
  */
-export function PrimaryText(props: {children: any, bnT?: any, lang?: string, palette: number, class?: string}) {
+export function PrimaryText(props: {children: any, bnT?: any, lang?: string, palette?: number, class?: string}) {
     return (
         <div class={props.class}>
             {/*<div class={`text-[color:var(--primary-color)]`}>*/}
@@ -28,7 +28,7 @@ export function PrimaryText(props: {children: any, bnT?: any, lang?: string, pal
     )
 }
 
-export function SecondaryText(props: {children: any, bnT?: any, lang?: string, palette: number, class?: string}) {
+export function SecondaryText(props: {children: any, bnT?: any, lang?: string, palette?: number, class?: string}) {
     return (
         <div class={props.class}>
             {/*<div class={`text-[color:var(--secondary-color)]`}>*/}

@@ -54,7 +54,7 @@ export default function MobileExperience(props: any) {
     })
 
     return (
-        <div ref={props.ref} id="experience" class={`bg-bg-${props.palette} duration-700 transition-all py-12 border-t border-black`}>
+        <div ref={props.ref} id="experience" class={`bg-[color:var(--bg-color)] duration-700 transition-all py-12 border-t border-black`}>
             <nav class="w-screen px-12 h-[7vh] grid content-center">
                 02.
             </nav>
