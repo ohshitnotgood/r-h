@@ -3,7 +3,7 @@ import {createEffect, createSignal, Show} from "solid-js";
 import Header from "../reusable/Header";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import {SecondaryText, Text} from "../reusable/Texts";
-import {Database, Javascript} from "./Components";
+import {Database, Javascript, Kotlin, Swift} from "./Components";
 
 export default function Experience(props: {lang: string, palette: number, hidden: boolean, onclickAction: any, initialDelay:number}) {
 
@@ -104,6 +104,32 @@ export default function Experience(props: {lang: string, palette: number, hidden
             setShowDatabase(false)
 
 
+        if (mainContent.scrollTop > (title.clientHeight + subtitle.clientHeight + js.clientHeight + db.clientHeight) * .8 && !showKotlin())
+            setShowKotlin(true)
+        else if (mainContent.scrollTop < (title.clientHeight + subtitle.clientHeight + js.clientHeight + db.clientHeight) && showKotlin())
+            setShowKotlin(false)
+
+
+
+        if (mainContent.scrollTop > (title.clientHeight + subtitle.clientHeight + js.clientHeight + db.clientHeight + kotlin.clientHeight) * .8 && !showSwift())
+            setShowSwift(true)
+        else if (mainContent.scrollTop < (title.clientHeight + subtitle.clientHeight + js.clientHeight + db.clientHeight + kotlin.clientHeight) && showSwift())
+            setShowSwift(false)
+
+
+        //
+        // if (mainContent.scrollTop > (title.clientHeight + subtitle.clientHeight + js.clientHeight + db.clientHeight) * .8 && !showKotlin())
+        //     setShowKotlin(true)
+        // else if (mainContent.scrollTop < (title.clientHeight + subtitle.clientHeight + js.clientHeight + db.clientHeight) && showKotlin())
+        //     setShowKotlin(false)
+        //
+        //
+        // if (mainContent.scrollTop > (title.clientHeight + subtitle.clientHeight + js.clientHeight + db.clientHeight) * .8 && !showKotlin())
+        //     setShowKotlin(true)
+        // else if (mainContent.scrollTop < (title.clientHeight + subtitle.clientHeight + js.clientHeight + db.clientHeight) && showKotlin())
+        //     setShowKotlin(false)
+
+
         //
         // if (mainContent.scrollTop > 250 && !showJavascript()) {
         //     setShowJavascript(true)
@@ -171,6 +197,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                 <div class={`w-full h-[1vh] bg-gradient-to-b from-bg-${props.palette} to-transparent`}></div>
                             </div>
 
+                            {/*Javascript cards*/}
                             <div class={`space-y-8 py-8`}>
                                 <div class={`transition-all duration-700 grid grid-cols-[30%_70%] pt-[5vh] opacity-0`} classList={{"opacity-0 mt-32": !showJavascript(), "opacity-1 mt-0": showJavascript()}}>
                                     <div class={`pt-4`}>
@@ -185,6 +212,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                     </div>
                                 </div>
 
+                                {/*Database cards*/}
                                 <div class={`transition-all duration-700 grid grid-cols-[30%_70%] opacity-0`} classList={{"opacity-0 mt-32": !showDatabase(), "opacity-1 mt-0": showDatabase()}}>
                                     <div class={`pt-4`}>
                                         <SecondaryText lang={props.lang} palette={props.palette}>
@@ -198,6 +226,33 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                     </div>
                                 </div>
 
+                                {/*Kotlin section*/}
+                                <div class={`transition-all duration-700 grid grid-cols-[30%_70%] opacity-0`} classList={{"opacity-0 mt-32": !showKotlin(), "opacity-1 mt-0": showKotlin()}}>
+                                    <div class={`pt-4`}>
+                                        <SecondaryText lang={props.lang} palette={props.palette}>
+                                            kotlin
+                                        </SecondaryText>
+                                    </div>
+                                    <div ref={db!}>
+                                        <Text lang={props.lang} palette={props.palette}>
+                                            <Kotlin palette={props.palette}/>
+                                        </Text>
+                                    </div>
+                                </div>
+
+                                {/*Swift section*/}
+                                <div class={`transition-all duration-700 grid grid-cols-[30%_70%] opacity-0`} classList={{"opacity-0 mt-32": !showSwift(), "opacity-1 mt-0": showSwift()}}>
+                                    <div class={`pt-4`}>
+                                        <SecondaryText lang={props.lang} palette={props.palette}>
+                                            swift
+                                        </SecondaryText>
+                                    </div>
+                                    <div ref={db!}>
+                                        <Text lang={props.lang} palette={props.palette}>
+                                            <Swift palette={props.palette}/>
+                                        </Text>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class={`h-screen`}></div>
