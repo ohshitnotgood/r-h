@@ -12,7 +12,8 @@ import {createEffect, createSignal, Show} from "solid-js";
 export function PrimaryText(props: {children: any, bnT?: any, lang?: string, palette: number, class?: string}) {
     return (
         <div class={props.class}>
-            <div class={`text-[color:var(--primary-color)]`}>
+            {/*<div class={`text-[color:var(--primary-color)]`}>*/}
+            <div class={`primary-text`}>
                 <Show when={props.lang == "" || props.lang == null}>
                     {props.children}
                 </Show>
@@ -30,7 +31,8 @@ export function PrimaryText(props: {children: any, bnT?: any, lang?: string, pal
 export function SecondaryText(props: {children: any, bnT?: any, lang?: string, palette: number, class?: string}) {
     return (
         <div class={props.class}>
-            <div class={`text-[color:var(--secondary-color)]`}>
+            {/*<div class={`text-[color:var(--secondary-color)]`}>*/}
+            <div class={`secondary-text`}>
                 <Show when={props.lang == "" || props.lang == null}>
                     {props.children}
                 </Show>

@@ -2,9 +2,38 @@ export function randomizePalette() {
 
     let palette = Math.floor(Math.random() * 9 + 1)
 
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', getBackgroundColor(palette));
+
     document.documentElement.style.setProperty("--bg-color", getBackgroundColor(palette))
-    document.documentElement.style.setProperty("--primary-color", getPrimaryColor(palette))
-    document.documentElement.style.setProperty("--secondary-color", getSecondaryColor(palette))
+
+    document.documentElement.style.setProperty("--primary-color-post", getPrimaryColor(palette))
+    document.documentElement.style.setProperty("--secondary-color-post", getSecondaryColor(palette))
+
+
+    Array.from(document.getElementsByClassName('primary-text') as HTMLCollectionOf<HTMLElement>).forEach((value) => {
+        value.animate({
+            color: [`var(--primary-color-pre)`, `var(--primary-color-post)`],
+        }, 1000)
+
+        setTimeout(() => {
+            value.style.color = `var(--primary-color-pre)`
+        }, 1000)
+    })
+
+    Array.from(document.getElementsByClassName('secondary-text') as HTMLCollectionOf<HTMLElement>).forEach((value) => {
+        value.animate({
+            color: [`var(--secondary-color-pre)`, `var(--secondary-color-post)`],
+        }, 1000)
+
+        setTimeout(() => {
+            value.style.color = `var(--secondary-color-pre)`
+        }, 1000)
+    })
+
+    setTimeout(() => {
+        document.documentElement.style.setProperty("--primary-color-pre", getPrimaryColor(palette))
+        document.documentElement.style.setProperty("--secondary-color-pre", getSecondaryColor(palette))
+    }, 1000)
 }
 
 

@@ -37,9 +37,15 @@ code {
 
 @layer base {
     :root {
-        --bg-color: #FFF;
+        --bg-color: #FFF00f;
         --primary-color: #000;
         --secondary-color: #262525;
+
+        --primary-color-pre: #000;
+        --primary-color-post: #000;
+
+        --secondary-color-pre: #262525;
+        --secondary-color-post: #262525;
     }
 }
 
@@ -183,6 +189,21 @@ code {
         animation: independet-animation 3s ease-in-out;
         /*animation-iteration-count: infinite ;*/
     }
+
+    .primary-text {
+    }
+    .secondary-text {
+    }
+
+    .primary-text-pre {
+        color: var(--primary-color-pre);
+        animation: 1s switch-to-primary-pre;
+    }
+
+    .primary-text-post {
+        color: var(--primary-color-post);
+        animation: 1s switch-to-primary-post;
+    }
 }
 
 @keyframes column-spacer-expand {
@@ -220,10 +241,19 @@ code {
 @keyframes swipe-up {
     from {margin-bottom: 0;}
     to {margin-bottom: 0}
-
 }
 
 @keyframes independent-animation {
     from {margin-top: 30px; opacity: 0}
     to { margin-top: 0; opacity: 1}
+}
+
+@keyframes switch-to-primary-post {
+    from {color: var(--primary-color-pre)}
+    to {color: var(--primary-color-post)}
+}
+
+@keyframes switch-to-primary-pre {
+    from {color: var(--primary-color-post)}
+    to {color: var(--primary-color-pre)}
 }

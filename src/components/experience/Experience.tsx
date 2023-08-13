@@ -130,7 +130,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                         <PrimaryText lang={props.lang} palette={props.palette} class={`pt-[10vh] bg-bg-${props.palette}`}>
                             Independent development
                         </PrimaryText>
-                        <div class={`w-full h-[1vh] bg-gradient-to-b from-bg-${props.palette} to-transparent`}></div>
+                        <div class={`w-full h-[1vh] bg-gradient-to-b from-[color:var(--bg-color)] to-transparent`}></div>
                     </div>
 
 
