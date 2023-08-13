@@ -32,7 +32,7 @@ export function MScroll(props: { class?: string, style?: string }) {
 
     window.requestAnimationFrame(render)
 
-    function linearInterpolate(a, b, n) {
+    function linearInterpolate(a: number, b: number, n: number) {
         return (1 - n) * a + n * b;
     }
 

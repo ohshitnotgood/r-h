@@ -20,7 +20,7 @@ export default function Header(props: { palette: number, bnSectionNumber: string
                     <div class="h-fit text-center pt-10">
                         <AnimatedHeaderText text={
                             <div>
-                                <SecondaryText enT={props.sectionNumber} bnT={props.bnSectionNumber} lang={props.lang} palette={props.palette} class={""} />
+                                <SecondaryText children={props.sectionNumber} bnT={props.bnSectionNumber} lang={props.lang} palette={props.palette} class={""} />
                             </div>
                         } initialDelay={props.initialDelay}/>
                     </div>
@@ -28,7 +28,7 @@ export default function Header(props: { palette: number, bnSectionNumber: string
                     <div class="col-header-title" classList={{"col-header-visible": props.hidden, "col-header-hidden": !props.hidden}}>
                         <AnimatedHeaderText text={
                             <div>
-                                <SecondaryText enT={props.enText} bnT={props.bnText} lang={props.lang} palette={props.palette} class={""} />
+                                <SecondaryText children={props.enText} bnT={props.bnText} lang={props.lang} palette={props.palette} class={""} />
                             </div>
                         } initialDelay={props.initialDelay}/>
                     </div>

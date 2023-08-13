@@ -9,7 +9,7 @@ import {createEffect, createSignal, Show} from "solid-js";
  * @param props.class
  * @constructor
  */
-export function Text(props: {enT: any, bnT: any, lang: string, palette: number, class: string}) {
+export function Text(props: {children: any, bnT?: any, lang: string, palette: number, class?: string}) {
 
     const c: {[index: number]: string} = {
         1: "text-primary-1",
@@ -28,7 +28,7 @@ export function Text(props: {enT: any, bnT: any, lang: string, palette: number, 
         <div class={props.class}>
             <div class={c[props.palette]}>
                 <Show when={props.lang == "en"}>
-                    {props.enT}
+                    {props.children}
                 </Show>
                 <Show when={props.lang == "bn"}>
                     {props.bnT}
@@ -38,7 +38,7 @@ export function Text(props: {enT: any, bnT: any, lang: string, palette: number, 
     )
 }
 
-export function SecondaryText(props: {enT: any, bnT: any, lang: string, palette: number, class: string}) {
+export function SecondaryText(props: {children: any, bnT?: any, lang: string, palette: number, class?: string}) {
     const c: {[index: number]: string} = {
         1: "text-secondary-1",
         2: "text-secondary-2",
@@ -56,7 +56,7 @@ export function SecondaryText(props: {enT: any, bnT: any, lang: string, palette:
         <div class={props.class}>
             <div class={c[props.palette]}>
                 <Show when={props.lang == "en"}>
-                    {props.enT}
+                    {props.children}
                 </Show>
                 <Show when={props.lang == "bn"}>
                     {props.bnT}

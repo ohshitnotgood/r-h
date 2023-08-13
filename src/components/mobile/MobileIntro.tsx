@@ -35,22 +35,22 @@ function TextSection(props: {lang: string, palette: number}) {
         <div class={`grid min-h-[40vh] place-content-center py-24`}>
             <div class="max-w-[80vw] space-y-3">
                 <div class="text-6xl font-bold uppercase">
-                    <OpacityAnimatedText text={
-                        <Text  bnT={""} class={""} enT={"Hi! I'm Praanto"} lang={props.lang} palette={props.palette}/>
+                    <OpacityAnimatedText children={
+                        <Text bnT={""} class={""} children={"Hi! I'm Praanto"} lang={props.lang} palette={props.palette}/>
                     } initialDelay={600} show={true}/>
                 </div>
                 <div class="lowercase text-2xl">
-                    <OpacityAnimatedText text={
-                        <Text  bnT={""} class={""} enT={"comp.eng student at kth"} lang={props.lang} palette={props.palette}/>
+                    <OpacityAnimatedText children={
+                        <Text bnT={""} class={""} children={"comp.eng student at kth"} lang={props.lang} palette={props.palette}/>
                     } initialDelay={800} show={true}/>
 
                 </div>
                 <div class="pr-10">
-                    <OpacityAnimatedText text={
-                        <Text  bnT={""} class={""} enT={description} lang={props.lang} palette={props.palette}/>
+                    <OpacityAnimatedText children={
+                        <Text bnT={""} class={""} children={description} lang={props.lang} palette={props.palette}/>
                     } initialDelay={1000} show={true}/>
                 </div>
-                <OpacityAnimatedText show={true} text={<PageCTAButton lang={props.lang} palette={props.palette}/>} initialDelay={1300} />
+                <OpacityAnimatedText show={true} children={<PageCTAButton lang={props.lang} palette={props.palette}/>} initialDelay={1300} />
             </div>
         </div>
 
@@ -89,7 +89,7 @@ function PageCTAButton(props: {lang: string, palette: number}) {
                 {/*    </Show>*/}
                 {/*    <img src={rightArrow} class="w-4 h-4 rotate-[90deg]" alt={"Javascript logo in black and white"}/>*/}
                 {/*</div>*/}
-                <Text enT={enText} bnT={bnText} lang={props.lang} palette={props.palette} class={""} />
+                <Text children={enText} bnT={bnText} lang={props.lang} palette={props.palette} class={""} />
             </button>
         </div>
     )

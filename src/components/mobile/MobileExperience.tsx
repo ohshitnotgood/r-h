@@ -60,48 +60,48 @@ export default function MobileExperience(props: any) {
             </nav>
             <div class="">
                 <div class="text-6xl px-8 hyphens-manual font-bold uppercase">
-                    <OpacityAnimatedText show={!props.hidden} text={
+                    <OpacityAnimatedText show={!props.hidden} children={
                         <div ref={title!}>
-                            <Text enT={<div>Work Experie&shynce</div>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                            <Text children={<div>Work Experie&shynce</div>} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                         </div>
                     } initialDelay={800} />
                 </div>
             </div>
             <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
-                <OpacityAnimatedText show={!props.hidden} text={
+                <OpacityAnimatedText show={!props.hidden} children={
                     <div ref={title!}>
-                        <Text enT={"independent development"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                        <Text children={"independent development"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                     </div>} initialDelay={800} />
             </div>
 
             <div class="px-8">
-                <OpacityAnimatedText show={showJavascript()} text={<div ref={js!}><Javascript palette={props.palette}/></div>} initialDelay={1500} />
-                <OpacityAnimatedText show={showDatabase()} text={<div ref={db!}><Database palette={props.palette}/></div>} initialDelay={400} />
-                <OpacityAnimatedText show={showKotlin()} text={<div ref={kotlin!}><Kotlin palette={props.palette}/></div>} initialDelay={400} />
-                <OpacityAnimatedText show={showAndroid()} text={<div ref={android!}><Android palette={props.palette}/></div>} initialDelay={400} />
-                <OpacityAnimatedText show={showSwift()} text={<div ref={swift!}><Swift palette={props.palette}/></div>} initialDelay={400} />
+                <OpacityAnimatedText show={showJavascript()} children={<div ref={js!}><Javascript palette={props.palette}/></div>} initialDelay={1500} />
+                <OpacityAnimatedText show={showDatabase()} children={<div ref={db!}><Database palette={props.palette}/></div>} initialDelay={400} />
+                <OpacityAnimatedText show={showKotlin()} children={<div ref={kotlin!}><Kotlin palette={props.palette}/></div>} initialDelay={400} />
+                <OpacityAnimatedText show={showAndroid()} children={<div ref={android!}><Android palette={props.palette}/></div>} initialDelay={400} />
+                <OpacityAnimatedText show={showSwift()} children={<div ref={swift!}><Swift palette={props.palette}/></div>} initialDelay={400} />
             </div>
 
             <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
-                <OpacityAnimatedText show={showMathTA()} text={
+                <OpacityAnimatedText show={showMathTA()} children={
                     <div>
-                        <Text enT={"Teaching assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                        <Text children={"Teaching assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                     </div>} initialDelay={400} />
             </div>
 
             <div class="px-8 ">
-                <OpacityAnimatedText show={showLA()} text={<div ref={mathTA!}><MathTA palette={props.palette}/></div>} initialDelay={400} />
+                <OpacityAnimatedText show={showLA()} children={<div ref={mathTA!}><MathTA palette={props.palette}/></div>} initialDelay={400} />
             </div>
 
             <div class="px-8 my-4 font-bold mt-10 text-3xl lowercase ">
-                <OpacityAnimatedText show={showLA()} text={
+                <OpacityAnimatedText show={showLA()} children={
                     <div>
-                        <Text enT={"Lab assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                        <Text children={"Lab assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
                     </div>} initialDelay={400} />
             </div>
 
             <div class="px-8 ">
-                <OpacityAnimatedText show={showLA()} text={<div ref={lA!}><LabAssistant palette={props.palette} /></div>} initialDelay={400} />
+                <OpacityAnimatedText show={showLA()} children={<div ref={lA!}><LabAssistant palette={props.palette} /></div>} initialDelay={400} />
             </div>
 
         </div>

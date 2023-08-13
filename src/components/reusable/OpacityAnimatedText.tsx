@@ -1,6 +1,6 @@
 import {createEffect, createSignal } from "solid-js";
 
-export default function OpacityAnimatedText(props: { show: boolean, text: any, initialDelay: number }) {
+export default function OpacityAnimatedText(props: { show: boolean, children: any, initialDelay: number }) {
     const [render, setRenderState ] = createSignal(false)
     // const [delayTimeout, setDelayTimeout] = createSignal(false)
 
@@ -23,7 +23,7 @@ export default function OpacityAnimatedText(props: { show: boolean, text: any, i
     return (
         <div class="relative">
             <div class="" classList={{"opacity-0": !render(), "col-content-visible": render()}}>
-                {props.text}
+                {props.children}
             </div>
         </div>
     )

@@ -44,14 +44,14 @@ export default function Education(props: { palette: number, hidden: boolean, lan
                 <div classList={{'absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                     <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
                         <div class="col-text overflow-y-scroll pr-20">
-                            <OpacityAnimatedText show={!props.hidden} text={
+                            <OpacityAnimatedText show={!props.hidden} children={
                                 <div>
-                                    <Text enT={<PageTitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
+                                    <Text children={<PageTitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
                                 </div>
                             } initialDelay={500} />
-                            <OpacityAnimatedText show={!props.hidden} text={
+                            <OpacityAnimatedText show={!props.hidden} children={
                                 <div>
-                                    <Text enT={<PageSubtitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
+                                    <Text children={<PageSubtitle />} bnT={""} lang={props.lang} palette={props.palette} class={""}/>
                                 </div>
                             } initialDelay={700} />
                             <div class="grid grid-cols-2 ">

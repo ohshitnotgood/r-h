@@ -49,7 +49,7 @@ export function Javascript(props: {palette: number}){
 
             <div class="pt-2 text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <span>ExpressJS</span>
-                <img src={expressJSLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+                <img src={expressJSLogo} class="h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 ">
                 <li>handling RESTful HTTP requests from clients, authenticating users with Auth2 and JWT</li>
