@@ -127,7 +127,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                     </div>
                     <div class={`text-4xl lowercase font-bold transition-all duration-700`}
                          classList={{"mt-0 opacity-1 sticky top-0": showIndiDevHeader(), "pt-32 opacity-0": !showIndiDevHeader()}}>
-                        <PrimaryText lang={props.lang} palette={props.palette} class={`pt-[10vh] bg-bg-${props.palette}`}>
+                        <PrimaryText lang={props.lang} palette={props.palette} class={`pt-[10vh] bg-[color:var(--bg-color)]`}>
                             Independent development
                         </PrimaryText>
                         <div class={`w-full h-[1vh] bg-gradient-to-b from-[color:var(--bg-color)] to-transparent`}></div>
@@ -195,7 +195,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                 <div>
                     <div class={`text-4xl lowercase font-bold transition-all duration-700 pt-34`}
                          classList={{"mt-0 opacity-1 sticky top-0": showIndiDevHeader(), "pt-32 opacity-0": !showIndiDevHeader()}}>
-                        <PrimaryText lang={props.lang} palette={props.palette} class={`pt-[1vh] bg-bg-${props.palette}`}>
+                        <PrimaryText lang={props.lang} palette={props.palette} class={`pt-[1vh] bg-[color:var(--bg-color)]`}>
                             work in high school
                         </PrimaryText>
                         <div class={`w-full h-[1vh] bg-gradient-to-b from-bg-${props.palette} to-transparent`}></div>

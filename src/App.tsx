@@ -3,7 +3,7 @@ import {createSignal, type Component, createEffect} from 'solid-js';
 import Intro from './components/intro/Intro';
 import Education from "./components/education/Education";
 import Experience from "./components/experience/Experience";
-import Volunteering from "./components/volunteering/Volunteering";
+import Projects from "./components/volunteering/Projects";
 import Outro from "./components/outro/Outro";
 import MobileIntro from "./components/mobile/MobileIntro";
 import MobileExperience from "./components/mobile/MobileExperience";
@@ -92,7 +92,7 @@ const App: Component = () => {
                 <div>
                     <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
                         <Intro palette={palette()} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
-                        <Volunteering palette={palette()} initialDelay={2400} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
+                        <Projects palette={palette()} initialDelay={2400} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
                         <Experience palette={palette()} initialDelay={2500} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
                         <Education palette={palette()} initialDelay={2600} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
                         <Outro palette={palette()} initialDelay={2700} lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
