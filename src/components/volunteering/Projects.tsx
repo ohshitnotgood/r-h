@@ -14,14 +14,24 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
     
     const [showTitle, setShowTitle] = createSignal(true)
 
-    const [showCurrentProjectTitle, setShowCurrentProjectTitle] = createSignal(false)
-    const [showHomeworkProject, setShowHomeworkProject] = createSignal(false)
+    const [showCurrentProjectTitle, setShowCurrentProjectTitle] = createSignal(true)
+    const [showHomeworkProject, setShowHomeworkProject] = createSignal(true)
 
-    const [showPastProjectTitle, setShowPastProjectTitle] = createSignal(false)
-    const [showMomentumScroll, setShowMomentumScroll] = createSignal(false)
+    const [showTFT, setShowtft] = createSignal(true)
+    const [showhw, setShowhw] = createSignal(true)
+    const [showsubtitle, setShowSubtitle] = createSignal(true)
+    const [showthisW, setShowthisW] = createSignal(true)
+    const [showhexcom, setShowhexcom] = createSignal(true)
+    const [showeyeTracker, setShoweyeTracker] = createSignal(true)
 
 
-    const [showUpcomingProjectTitle, setShowUpcomingProjectTitle] = createSignal(false)
+    const [showPastProjectTitle, setShowPastProjectTitle] = createSignal(true)
+    const [showSchedulerProject, setShowSchedulerProject] = createSignal(true)
+
+    const [showMomentumScroll, setShowMomentumScroll] = createSignal(true)
+
+
+    const [showUpcomingProjectTitle, setShowUpcomingProjectTitle] = createSignal(true)
 
     let mainContent: HTMLDivElement
 
@@ -61,6 +71,11 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
     let tft: HTMLDivElement
 
     /**
+     * Reference for _KTH scheduler_.
+     */
+    let scheduler: HTMLDivElement
+
+    /**
      * Reference for _Current projects_ title
      */
     let cpTitle: HTMLDivElement
@@ -74,6 +89,8 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
      * Reference for _Upcoming projects_ title
      */
     let upTitle: HTMLDivElement
+
+    let mScroll: HTMLDivElement
 
     createEffect(() => {
         if (!props.hidden)
@@ -89,8 +106,18 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
     function onScrollDown(e: any) {
         console.log("Experience scroll position" + mainContent.scrollTop)
 
-        // Toggle project title
+
+        // Toggle page subtitle
+        if (mainContent.scrollTop > title.clientHeight + subtitle.clientHeight) setShowSubtitle(true)
+
+        // Toggle current project title
         if (mainContent.scrollTop > title.clientHeight + subtitle.clientHeight) setShowCurrentProjectTitle(true)
+
+        // Toggle tennis for two
+
+        // Toggle Scheduler
+
+        // Toggle
     }
 
     return (
@@ -98,6 +125,7 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                  headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={`04.`} sectionNumber_bn={`০৪.`}
                  palette={props.palette} lang={props.lang} clickAction={props.onclickAction} secondaryActionButton={<ScrollIndicator signal={userReachedBottom()}/>}>
             <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
+
                 <div>
                     <div class={`pt-[30vh] transition-all duration-700`} classList={{"opacity-0 mt-[-100px]": !showTitle(), "opacity-1 mt-0": showTitle()}}>
                         <div class={`font-bold text-7xl pb-10 uppercase `}>
@@ -124,18 +152,18 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                     </div>
 
                     {/*Current project*/}
-                    <div class={`text-4xl lowercase font-bold transition-all duration-700`}
+                    <div class={`text-4xl lowercase font-bold transition-all duration-700 bg-[color:var(--bg-color)] z-20`}
                          classList={{"mt-0 opacity-1 sticky top-0": showCurrentProjectTitle(), "pt-32 opacity-0": !showCurrentProjectTitle()}}>
-                        <PrimaryText class={`pt-[1vh] bg-[color:var(--bg-color)]`}>
-                            Current projects
+                        <PrimaryText class={`pt-[10vh] bg-[color:var(--bg-color)]`}>
+                            Current Projects
                         </PrimaryText>
-                        <div class={`w-full h-[1vh] bg-[color:var(--bg-color)]`}></div>
+                        <div class={`w-full h-[1vh] bg-gradient-to-b from-[color:var(--bg-color)] to-transparent`}></div>
                     </div>
 
-
                     <div class={`space-y-8 py-8`}>
-                        {/*Android section*/}
-                        <CardColumns title={`android`}>
+                        {/* tennis for two */}
+                        <CardColumns classList={{"mt-0 opacity-1 ": showTFT(), "pt-32 opacity-0": !showTFT()}}
+                                     ref={tft!} title={`android`}>
                             <Card>
                                 <h1>
                                     <PrimaryText>Tennis for Two</PrimaryText>
@@ -155,19 +183,35 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                                         <em>
                                             Frameworks used:
                                         </em>
-                                        <span>C++/mips32.h</span>
-                                        <span>ESPAsyncWebServer</span>
-                                        <span>AsyncTCP</span>
-                                        <span>SwiftUI</span>
-                                        <span>CoreMotion</span>
-                                        <span>AndroidSDK</span>
-                                        <span>Ktor</span>
+                                        <a href={'https://github.com/is1200-example-projects/mcb32tools/releases/'}>
+                                            C++/mips32.h
+                                        </a>
+                                        <a href={`https://github.com/me-no-dev/ESPAsyncWebServer`}>
+                                            ESPAsyncWebServer
+                                        </a>
+                                        <a href={`https://github.com/me-no-dev/AsyncTCP`}>
+                                            AsyncTCP
+                                        </a>
+                                        <a href={'https://developer.apple.com/documentation/swiftui/'}>
+                                            SwiftUI
+                                        </a>
+                                        <a href={'https://developer.apple.com/documentation/swiftui/'}>
+                                            CoreMotion
+                                        </a>
+                                        <a href={'https://developer.android.com/docs'}>
+                                            AndroidSDK
+                                        </a>
+                                        <a href={'https://ktor.io/docs/welcome.html'}>
+                                            Ktor
+                                        </a>
                                     </p>
                                 </PrimaryText>
                             </Card>
                         </CardColumns>
-                        
-                        <CardColumns title={`javascript`}>
+
+                        {/* Scheduler */}
+                        <CardColumns classList={{"mt-0 opacity-1": showSchedulerProject(), "pt-32 opacity-0": !showSchedulerProject()}}
+                                     ref={scheduler!} title={`javascript`}>
                             <Card>
                                 <h1>
                                     <PrimaryText>Scheduler</PrimaryText>
@@ -190,12 +234,12 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                                         <em>
                                             Frameworks used:
                                         </em>
-                                        <span>SolidJS</span>
-                                        <span>SolidStart</span>
-                                        <span>TypeScript</span>
-                                        <span>TailwindCSS</span>
-                                        <span>Prisma</span>
-                                        <span>Postgresql</span>
+                                        <a href={`https://www.solidjs.com/`}>SolidJS</a>
+                                        <a href={`https://start.solidjs.com/getting-started/what-is-solidstart`}>SolidStart</a>
+                                        <a href={`https://www.typescriptlang.org/`}>TypeScript</a>
+                                        <a href={`https://tailwindcss.com/docs/installation`}>TailwindCSS</a>
+                                        <a href={`https://www.prisma.io/docs`}>Prisma</a>
+                                        <a href={`https://www.postgresql.org/`}>Postgresql</a>
                                     </p>
                                 </PrimaryText>
                             </Card>
@@ -205,17 +249,18 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
                 {/*Past project*/}
                 <div>
-                    <div class={`text-4xl lowercase font-bold transition-all duration-700 pt-34`}
-                         classList={{"mt-0 opacity-1 sticky top-0": showCurrentProjectTitle(), "pt-32 opacity-0": !showCurrentProjectTitle()}}>
-                        <PrimaryText class={`pt-[1vh] bg-[color:var(--bg-color)]`}>
+                    <div ref={ppTitle!} class={`text-4xl lowercase font-bold transition-all duration-700 bg-[color:var(--bg-color)] z-20`}
+                         classList={{"mt-0 opacity-1 sticky top-0": showPastProjectTitle(), "pt-32 opacity-0": !showPastProjectTitle()}}>
+                        <PrimaryText class={`pt-[10vh] bg-[color:var(--bg-color)]`}>
                             Past projects
                         </PrimaryText>
                         <div class={`w-full h-[1vh] bg-gradient-to-b from-[color:var(--bg-color)] to-transparent`}></div>
                     </div>
 
                     <div class={`space-y-8 py-8`}>
-                        {/*Kotlin section*/}
-                        <CardColumns title={`android`}>
+                        {/*Homework section*/}
+                        <CardColumns classList={{"mt-0 opacity-1 ": showHomeworkProject(), "pt-32 opacity-0": !showHomeworkProject()}}
+                                     ref={hw!} title={`android`}>
                             <Card>
                                 <h1>Homework Tracker</h1>
                                 <p>
@@ -231,19 +276,22 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
                                 <p>
                                     <em>Frameworks used</em>
-                                    <span>Android Studio</span>
-                                    <span>AndroidSDK</span>
-                                    <span>Kotlin</span>
-                                    <span>LiveData</span>
-                                    <span>MotionLayout</span>
+                                    <a>Android Studio</a>
+                                    <a href={'https://developer.android.com/docs'}>
+                                        AndroidSDK
+                                    </a>
+                                    <a>Kotlin</a>
+                                    <a>LiveData</a>
+                                    <a>MotionLayout</a>
                                 </p>
                             </Card>
                         </CardColumns>
 
-                        <CardColumns title={`swift`}>
+                        <CardColumns classList={{"mt-0 opacity-1 ": showeyeTracker(), "pt-32 opacity-0": !showeyeTracker()}}
+                                     ref={eyeTracker!} title={`swift`}>
                             <Card>
-                                <h1>Eye Allergy Tracker</h1>
-                                <p>
+                                <h1><PrimaryText>Eye Allergy Tracker</PrimaryText></h1>
+                            <p>
                                     <SecondaryText>
                                         A simple macOS app, built using SwiftUI, Swift Graphs and FileManager to track events of itches during a period I contracted eye allergies.
                                         This app would log data of eye itches over a period of time to aid in recording the effectiveness of the medicines received from the doctor.
@@ -253,13 +301,14 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
                                 <p>
                                     <em>Frameworks used</em>
-                                    <span>SwiftUI</span>
-                                    <span>Swift Graphs</span>
+                                    <a>SwiftUI</a>
+                                    <a>Swift Graphs</a>
                                 </p>
                             </Card>
                         </CardColumns>
 
-                        <CardColumns title={`python & bash`}>
+                        <CardColumns classList={{"mt-0 opacity-1 ": showhexcom(), "pt-32 opacity-0": !showhexcom()}}
+                                     ref={hexcom!} title={`python & bash`}>
                             <Card>
                                 <h1>hexcom</h1>
                                 <p>
@@ -273,10 +322,10 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
                                 <p>
                                     <em>Frameworks used</em>
-                                    <span>Python3</span>
-                                    <span>rich</span>
-                                    <span>Python ArgParser</span>
-                                    <span>Bash Script</span>
+                                    <a>Python3</a>
+                                    <a>rich</a>
+                                    <a>Python ArgParser</a>
+                                    <a>Bash Script</a>
                                 </p>
                             </Card>
                         </CardColumns>
@@ -285,15 +334,16 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
                 {/*Upcoming projects*/}
                 <div>
-                    <div class={`text-4xl lowercase font-bold transition-all duration-700 pt-34`}
-                         classList={{"mt-0 opacity-1 sticky top-0": showCurrentProjectTitle(), "pt-32 opacity-0": !showCurrentProjectTitle()}}>
-                        <PrimaryText class={`pt-[1vh] bg-[color:var(--bg-color)]`}>
+                    <div ref={upTitle!} class={`text-4xl lowercase font-bold transition-all duration-700 bg-[color:var(--bg-color)] z-20`}
+                         classList={{"mt-0 opacity-1 sticky top-0": showUpcomingProjectTitle(), "pt-32 opacity-0": !showUpcomingProjectTitle()}}>
+                        <PrimaryText class={`pt-[10vh] bg-[color:var(--bg-color)]`}>
                             Upcoming projects
                         </PrimaryText>
-                        <div class={`w-full h-[1vh] bg-gradient-to-b from-[color:var(--bg-color)] to-transparent`}></div>
+                        <div class={`w-full h-[5vh] bg-gradient-to-b from-[color:var(--bg-color)] to-transparent`}></div>
                     </div>
 
-                    <CardColumns title={`typescript`}>
+                    <CardColumns ref={mScroll!} title={`typescript`}
+                                 classList={{"mt-0 opacity-1 ": showMomentumScroll(), "pt-32 opacity-0": !showMomentumScroll()}}>
                         <Card>
                             <h1>solid-momentum-scroll</h1>
 
@@ -318,9 +368,9 @@ function ScrollIndicator(props: {signal: boolean}) {
     )
 }
 
-function CardColumns( props: { title: string, children: any}) {
+function CardColumns( props: { classList: any, ref: HTMLDivElement, title: string, children: any}) {
     return (
-        <div class={`transition-all duration-700 grid grid-cols-[25%_75%]`}>
+        <div classList={props.classList} class={`transition-all duration-700 grid grid-cols-[25%_75%]`}>
             <div class={`pt-4`}>
                 <SecondaryText>
                     {props.title}

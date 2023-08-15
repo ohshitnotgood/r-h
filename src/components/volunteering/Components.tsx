@@ -82,7 +82,7 @@ export function Card( props: { cardImage?: any, children: any}) {
                 }
                 
                 
-                p span {
+                p button, a {
                     display: inline-block;
                     border: 1px;
                     border-style: solid;
@@ -97,6 +97,10 @@ export function Card( props: { cardImage?: any, children: any}) {
                     line-height: 1.25rem;
                     margin-left: 0.5rem;
                     border-radius: 999px;
+                }
+                
+                p a:hover {
+                    background-color: var(--secondary-color)
                 }
                 
             `}</style>
