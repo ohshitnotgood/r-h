@@ -99,9 +99,22 @@ export function TennisForTwoCard() {
 
 export function SwiftEssentialsCard() {
     return(
-        <div>
-
-        </div>
+        <Card>
+            <h1 class={`hover:underline`}>
+                <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
+                    Swift Essentials
+                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
+                </button>
+            </h1>
+            <p>
+                <SecondaryText>
+                    A Python script uses the command line to convert binary inputs into
+                    their hexadecimal equivalents swiftly and efficiently.
+                    While studying in a course involving processor architecture, this Python script
+                    was conceived to verify on-paper conversions between hexadecimal and binary codes.
+                </SecondaryText>
+            </p>
+        </Card>
     )
 }
 
@@ -153,7 +166,7 @@ export function MomentumScrollCard() {
     )
 }
 
-export default function SchedulerCard() {
+export function SchedulerCard() {
     return (
         <Card>
             <h1>
@@ -185,6 +198,102 @@ export default function SchedulerCard() {
                     <a href={`https://www.postgresql.org/`}>Postgresql</a>
                 </p>
             </PrimaryText>
+        </Card>
+    )
+}
+
+export function HomeworkCard() {
+    return (
+        <Card>
+            <h1>
+                <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/ois-hw-tracker"}>
+                    <PrimaryText>Homework Tracker</PrimaryText>
+                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
+                </button>
+            </h1>
+            <p>
+                <SecondaryText>
+                    During my time in high school, I developed an Android application aimed at
+                    tracking homework tasks. As its name implies, the app's purpose was to
+                    maintain a log of assignment deadlines. Additionally, the app would generate
+                    personalized automatic alerts for users. What set this application apart from a
+                    basic calendar reminder was its incorporation of distinct fields, such as
+                    textbook page numbers and dates for referencing past papers.
+                </SecondaryText>
+            </p>
+
+            <PrimaryText>
+                <p>
+                    <em>Frameworks used</em>
+                    <a>Android Studio</a>
+                    <a href={'https://developer.android.com/docs'}>
+                        AndroidSDK
+                    </a>
+                    <a>Kotlin</a>
+                    <a>LiveData</a>
+                    <a>MotionLayout</a>
+                </p>
+            </PrimaryText>
+        </Card>
+    )
+}
+
+export function HexcomCard() {
+    return (
+        <Card>
+            <h1 class={`hover:underline`}>
+                <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
+                    hexcom
+                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
+                </button>
+            </h1>
+            <p>
+                <SecondaryText>
+                    A Python script uses the command line to convert binary inputs into
+                    their hexadecimal equivalents swiftly and efficiently.
+                    While studying in a course involving processor architecture, this Python script
+                    was conceived to verify on-paper conversions between hexadecimal and binary codes.
+                </SecondaryText>
+            </p>
+
+            <p>
+                <PrimaryText>
+                    <em>Frameworks used</em>
+                    <a>Python3</a>
+                    <a>rich</a>
+                    <a>Python ArgParser</a>
+                    <a>Bash Script</a>
+                </PrimaryText>
+            </p>
+        </Card>
+    )
+}
+
+
+export function ThisWCard() {
+    return (
+        <Card>
+            <h1>
+                <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/r-h"}>
+                    <code>
+                        <PrimaryText>this.website </PrimaryText>
+                    </code>
+                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
+                </button>
+            </h1>
+
+            <p>
+                praanto.com is a personal portfolio website showing off my programming prowess and capabilities.
+                This website was built in three weeks and is being hosted on Vercel. Visit the GitHub page to read more
+                about how the app does what is does and to discover the engineering behind it.
+            </p>
+            <p>
+                <em>Frameworks used:</em>
+                <a href="https://solidjs.com">SolidJS</a>
+                <a href="https://tailwindcss.com">TailwindCSS</a>
+                <a href="https://vercel.com">Vercel</a>
+            </p>
+
         </Card>
     )
 }

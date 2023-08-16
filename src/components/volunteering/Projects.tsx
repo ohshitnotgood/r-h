@@ -7,7 +7,14 @@ import {Database, Javascript, Kotlin, MathTA, Swift} from "../experience/Compone
 import linkIcon from '../../assets/icons/ic_link.svg'
 import Section from "../reusable/Section";
 import {Card, HomeworkTracker} from "./Components";
-import SchedulerCard, {EyeTrackerCard, MomentumScrollCard, TennisForTwoCard} from "../outro/Components";
+import {
+    SchedulerCard,
+    EyeTrackerCard,
+    MomentumScrollCard,
+    TennisForTwoCard,
+    HomeworkCard,
+    HexcomCard, SwiftEssentialsCard, ThisWCard
+} from "../outro/Components";
 
 
 export default function Projects(props: {lang: string, palette: number, hidden: boolean, onclickAction: any, initialDelay:number}) {
@@ -252,35 +259,13 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                         {/*Homework section*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showHomeworkProject(), "pt-32 opacity-0": !showHomeworkProject()}}
                                      ref={hw!} title={`android`}>
-                            <Card>
-                                <h1>
-                                    <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/ois-hw-tracker"}>
-                                        <PrimaryText>Homework Tracker</PrimaryText>
-                                        <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
-                                    </button>
-                                </h1>
-                                <p>
-                                    <SecondaryText>
-                                        During my time in high school, I developed an Android application aimed at
-                                        tracking homework tasks. As its name implies, the app's purpose was to
-                                        maintain a log of assignment deadlines. Additionally, the app would generate
-                                        personalized automatic alerts for users. What set this application apart from a
-                                        basic calendar reminder was its incorporation of distinct fields, such as
-                                        textbook page numbers and dates for referencing past papers.
-                                    </SecondaryText>
-                                </p>
+                            <HomeworkCard/>
+                        </CardColumns>
 
-                                <p>
-                                    <em>Frameworks used</em>
-                                    <a>Android Studio</a>
-                                    <a href={'https://developer.android.com/docs'}>
-                                        AndroidSDK
-                                    </a>
-                                    <a>Kotlin</a>
-                                    <a>LiveData</a>
-                                    <a>MotionLayout</a>
-                                </p>
-                            </Card>
+                        {/*This.Website*/}
+                        <CardColumns classList={{"mt-0 opacity-1 ": showThisW(), "pt-32 opacity-0": !showThisW()}}
+                                     ref={thisW!} title={`typescript/css`}>
+                            <ThisWCard />
                         </CardColumns>
 
                         {/*Eye tracker*/}
@@ -292,53 +277,13 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                         {/*hexcom*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showHEXCOM(), "pt-32 opacity-0": !showHEXCOM()}}
                                      ref={hexcom!} title={`python & bash`}>
-                            <Card>
-                                <h1 class={`hover:underline`}>
-                                    <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
-                                        hexcom
-                                        <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
-                                    </button>
-                                </h1>
-                                <p>
-                                    <SecondaryText>
-                                        A Python script uses the command line to convert binary inputs into
-                                        their hexadecimal equivalents swiftly and efficiently.
-                                        While studying in a course involving processor architecture, this Python script
-                                        was conceived to verify on-paper conversions between hexadecimal and binary codes.
-                                    </SecondaryText>
-                                </p>
-
-                                <p>
-                                    <PrimaryText>
-                                        <em>Frameworks used</em>
-                                        <a>Python3</a>
-                                        <a>rich</a>
-                                        <a>Python ArgParser</a>
-                                        <a>Bash Script</a>
-                                    </PrimaryText>
-                                </p>
-                            </Card>
+                            <HexcomCard />
                         </CardColumns>
 
                         {/*Swift Essentials*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showEssential(), "pt-32 opacity-0": !showEssential()}}
                                      ref={essentials!} title={`swift`}>
-                            <Card>
-                                <h1 class={`hover:underline`}>
-                                    <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
-                                        Swift Essentials
-                                        <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
-                                    </button>
-                                </h1>
-                                <p>
-                                    <SecondaryText>
-                                        A Python script uses the command line to convert binary inputs into
-                                        their hexadecimal equivalents swiftly and efficiently.
-                                        While studying in a course involving processor architecture, this Python script
-                                        was conceived to verify on-paper conversions between hexadecimal and binary codes.
-                                    </SecondaryText>
-                                </p>
-                            </Card>
+                            <SwiftEssentialsCard />
                         </CardColumns>
                     </div>
                 </div>

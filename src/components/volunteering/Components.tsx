@@ -91,7 +91,7 @@ export function Card( props: { cardImage?: any, children: any}) {
                     padding-right: 0.5rem;
                     padding-top: 0.15rem;
                     padding-bottom: 0.15rem;
-                    margin-bottom: 0.4rem;
+                    margin-top: 0.4rem;
                     align-items: center;
                     font-size: 0.875rem; 
                     line-height: 1.25rem;
