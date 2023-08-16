@@ -8,6 +8,7 @@ export function randomizePalette() {
 
     document.documentElement.style.setProperty("--primary-color-post", getPrimaryColor(palette))
     document.documentElement.style.setProperty("--secondary-color-post", getSecondaryColor(palette))
+    document.documentElement.style.setProperty("--border-color", getContrastColor(palette))
 
 
     Array.from(document.getElementsByClassName('primary-text') as HTMLCollectionOf<HTMLElement>).forEach((value) => {
@@ -88,3 +89,19 @@ function getSecondaryColor(palette: number): string {
 }
 
 
+function getContrastColor(palette: number): string {
+    let c:{[index: number]: string} = {
+            1: "#586F7C",
+            2: "#000000",
+            3: "#000000",
+            4: "#EA526F",
+            5: "#bea265",
+            6: "#3f362d",
+            7: "#725653",
+            8: "#0e0e0e",
+            9: "#6c5651",
+            10: "#133C55",
+    }
+
+    return c[palette]
+}

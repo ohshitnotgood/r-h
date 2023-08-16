@@ -4,6 +4,7 @@ import Header from "../reusable/Header";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import {SecondaryText, PrimaryText} from "../reusable/Texts";
 import {Database, Javascript, Kotlin, MathTA, Swift} from "../experience/Components";
+import linkIcon from '../../assets/icons/ic_link.svg'
 import Section from "../reusable/Section";
 import {Card, HomeworkTracker} from "./Components";
 
@@ -262,7 +263,12 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                         <CardColumns classList={{"mt-0 opacity-1 ": showHomeworkProject(), "pt-32 opacity-0": !showHomeworkProject()}}
                                      ref={hw!} title={`android`}>
                             <Card>
-                                <h1>Homework Tracker</h1>
+                                <h1>
+                                    <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/ois-hw-tracker"}>
+                                        Homework Tracker
+                                        <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
+                                    </button>
+                                </h1>
                                 <p>
                                     <SecondaryText>
                                         During my time in high school, I developed an Android application aimed at
@@ -287,6 +293,7 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                             </Card>
                         </CardColumns>
 
+                        {/*Eye tracker*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showeyeTracker(), "pt-32 opacity-0": !showeyeTracker()}}
                                      ref={eyeTracker!} title={`swift`}>
                             <Card>
@@ -307,10 +314,16 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                             </Card>
                         </CardColumns>
 
+                        {/*hexcom*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showhexcom(), "pt-32 opacity-0": !showhexcom()}}
                                      ref={hexcom!} title={`python & bash`}>
                             <Card>
-                                <h1>hexcom</h1>
+                                <h1 class={`hover:underline`}>
+                                    <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
+                                        hexcom
+                                        <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
+                                    </button>
+                                </h1>
                                 <p>
                                     <SecondaryText>
                                         A Python script uses the command line to convert binary inputs into
@@ -327,6 +340,35 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                                     <a>Python ArgParser</a>
                                     <a>Bash Script</a>
                                 </p>
+                            </Card>
+                        </CardColumns>
+
+                        {/*Swift Essentials*/}
+                        <CardColumns classList={{"mt-0 opacity-1 ": showhexcom(), "pt-32 opacity-0": !showhexcom()}}
+                                     ref={hexcom!} title={`swift`}>
+                            <Card>
+                                <h1 class={`hover:underline`}>
+                                    <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
+                                        Swift Essentials
+                                        <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
+                                    </button>
+                                </h1>
+                                <p>
+                                    <SecondaryText>
+                                        A Python script uses the command line to convert binary inputs into
+                                        their hexadecimal equivalents swiftly and efficiently.
+                                        While studying in a course involving processor architecture, this Python script
+                                        was conceived to verify on-paper conversions between hexadecimal and binary codes.
+                                    </SecondaryText>
+                                </p>
+
+                                {/*<p>*/}
+                                {/*    <em>Frameworks used</em>*/}
+                                {/*    <a>Python3</a>*/}
+                                {/*    <a>rich</a>*/}
+                                {/*    <a>Python ArgParser</a>*/}
+                                {/*    <a>Bash Script</a>*/}
+                                {/*</p>*/}
                             </Card>
                         </CardColumns>
                     </div>

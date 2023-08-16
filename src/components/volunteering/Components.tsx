@@ -86,12 +86,12 @@ export function Card( props: { cardImage?: any, children: any}) {
                     display: inline-block;
                     border: 1px;
                     border-style: solid;
-                    border-color: black;
+                    border-color: var(--border-color);
                     padding-left: 0.5rem;
                     padding-right: 0.5rem;
                     padding-top: 0.15rem;
                     padding-bottom: 0.15rem;
-                    margin-bottom: 0.2rem;
+                    margin-bottom: 0.4rem;
                     align-items: center;
                     font-size: 0.875rem; 
                     line-height: 1.25rem;
@@ -105,7 +105,7 @@ export function Card( props: { cardImage?: any, children: any}) {
                 
             `}</style>
             <div>
-                <div class={`rounded-3xl border p-4 `}>
+                <div class={`rounded-3xl border p-4 border-[color:var(--border-color)]`}>
                     { props.children }
                 </div>
             </div>

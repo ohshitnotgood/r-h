@@ -15,36 +15,10 @@ export default function Section(props: {
     secondaryActionButton?: any
 }) {
 
-    const bgColor: {[index: number]: string} = {
-        1: "bg-bg-1",
-        2: "bg-bg-2",
-        3: "bg-bg-3",
-        4: "bg-bg-4",
-        5: "bg-bg-5",
-        6: "bg-bg-6",
-        7: "bg-bg-7",
-        8: "bg-bg-8",
-        9: "bg-bg-9",
-        10: "bg-bg-10",
-    }
-
-    const borderColor: {[index: number]: string} = {
-        1: "border-contrast-1 border-r",
-        2: "border-contrast-2 border-r",
-        3: "border-contrast-3 border-r",
-        4: "border-contrast-4 border-r",
-        5: "border-contrast-5 border-r",
-        6: "border-contrast-6 border-r",
-        7: "border-contrast-7 border-r",
-        8: "border-contrast-8 border-r",
-        9: "border-contrast-9 border-r",
-        10: "border-contrast-10 border-r",
-    }
-
     return (
         <div class={`bg-[color:var(--bg-color)] relative z-50 transition-all duration-700`}
          classList={{"w-full col-content-expand": !props.hidden, "w-fit col-content-shrink": props.hidden}}>
-        <div class={borderColor[props.palette]}>
+        <div class={`border border-[color:var(--border-color)] transition-all duration-700`}>
             <Header onclick={props.clickAction}
                 palette={props.palette}
                 bnSectionNumber={props.sectionNumber_bn}
