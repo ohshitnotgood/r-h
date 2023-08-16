@@ -7,6 +7,8 @@ import {Database, Javascript, Kotlin, MathTA, Swift} from "../experience/Compone
 import linkIcon from '../../assets/icons/ic_link.svg'
 import Section from "../reusable/Section";
 import {Card, HomeworkTracker} from "./Components";
+import SchedulerCard, {EyeTrackerCard, MomentumScrollCard, TennisForTwoCard} from "../outro/Components";
+
 
 export default function Projects(props: {lang: string, palette: number, hidden: boolean, onclickAction: any, initialDelay:number}) {
 
@@ -19,11 +21,11 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
     const [showHomeworkProject, setShowHomeworkProject] = createSignal(true)
 
     const [showTFT, setShowtft] = createSignal(true)
-    const [showhw, setShowhw] = createSignal(true)
-    const [showsubtitle, setShowSubtitle] = createSignal(true)
-    const [showthisW, setShowthisW] = createSignal(true)
-    const [showhexcom, setShowhexcom] = createSignal(true)
-    const [showeyeTracker, setShoweyeTracker] = createSignal(true)
+    const [showHW, setShowhw] = createSignal(true)
+    const [showSubtitle, setShowSubtitle] = createSignal(true)
+    const [showThisW, setShowthisW] = createSignal(true)
+    const [showHEXCOM, setShowhexcom] = createSignal(true)
+    const [showEyeTracker, setShoweyeTracker] = createSignal(true)
 
 
     const [showPastProjectTitle, setShowPastProjectTitle] = createSignal(true)
@@ -165,85 +167,13 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                         {/* tennis for two */}
                         <CardColumns classList={{"mt-0 opacity-1 ": showTFT(), "pt-32 opacity-0": !showTFT()}}
                                      ref={tft!} title={`android`}>
-                            <Card>
-                                <h1>
-                                    <PrimaryText>Tennis for Two</PrimaryText>
-                                </h1>
-                                <p>
-                                    <SecondaryText>
-                                        Tennis-for-Two, an ungraded college project with my colleague Alin-Cristian
-                                        Serban at KTH, revives the 1958 game on an Arduino microcontroller.
-                                        Players control in-game rackets via a phone app, tracking gyroscope data
-                                        sent to an ESP32 and then transmitted to the MIPS-microprocessor. SPI
-                                        development paused due to hardware constraints; set to resume in November.
-                                    </SecondaryText>
-                                </p>
-
-                                <PrimaryText>
-                                    <p class={`footer`}>
-                                        <em>
-                                            Frameworks used:
-                                        </em>
-                                        <a href={'https://github.com/is1200-example-projects/mcb32tools/releases/'}>
-                                            C++/mips32.h
-                                        </a>
-                                        <a href={`https://github.com/me-no-dev/ESPAsyncWebServer`}>
-                                            ESPAsyncWebServer
-                                        </a>
-                                        <a href={`https://github.com/me-no-dev/AsyncTCP`}>
-                                            AsyncTCP
-                                        </a>
-                                        <a href={'https://developer.apple.com/documentation/swiftui/'}>
-                                            SwiftUI
-                                        </a>
-                                        <a href={'https://developer.apple.com/documentation/swiftui/'}>
-                                            CoreMotion
-                                        </a>
-                                        <a href={'https://developer.android.com/docs'}>
-                                            AndroidSDK
-                                        </a>
-                                        <a href={'https://ktor.io/docs/welcome.html'}>
-                                            Ktor
-                                        </a>
-                                    </p>
-                                </PrimaryText>
-                            </Card>
+                            <TennisForTwoCard />
                         </CardColumns>
 
                         {/* Scheduler */}
                         <CardColumns classList={{"mt-0 opacity-1": showSchedulerProject(), "pt-32 opacity-0": !showSchedulerProject()}}
                                      ref={scheduler!} title={`javascript`}>
-                            <Card>
-                                <h1>
-                                    <PrimaryText>Scheduler</PrimaryText>
-                                </h1>
-                                <p>
-                                    <SecondaryText>
-                                        An exceptionally adaptable and remarkably swift online questionnaire
-                                        platform for KTH's utilization. The platform will introduce
-                                        "Routes" that will change subsequent queries based on earlier responses.
-                                        Form creators will have the ability to not only personalize questions,
-                                        but also customize prompts, incorporating images
-                                        into multiple-choice selections. The application is set to feature various
-                                        themes, with plans to incorporate a SQL-style query language and
-                                        graphs for enhanced control over data visualization.
-                                    </SecondaryText>
-                                </p>
-
-                                <PrimaryText>
-                                    <p class={`footer`}>
-                                        <em>
-                                            Frameworks used:
-                                        </em>
-                                        <a href={`https://www.solidjs.com/`}>SolidJS</a>
-                                        <a href={`https://start.solidjs.com/getting-started/what-is-solidstart`}>SolidStart</a>
-                                        <a href={`https://www.typescriptlang.org/`}>TypeScript</a>
-                                        <a href={`https://tailwindcss.com/docs/installation`}>TailwindCSS</a>
-                                        <a href={`https://www.prisma.io/docs`}>Prisma</a>
-                                        <a href={`https://www.postgresql.org/`}>Postgresql</a>
-                                    </p>
-                                </PrimaryText>
-                            </Card>
+                            <SchedulerCard/>
                         </CardColumns>
                     </div>
                 </div>
@@ -265,7 +195,7 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                             <Card>
                                 <h1>
                                     <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/ois-hw-tracker"}>
-                                        Homework Tracker
+                                        <PrimaryText>Homework Tracker</PrimaryText>
                                         <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
                                     </button>
                                 </h1>
@@ -294,28 +224,13 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                         </CardColumns>
 
                         {/*Eye tracker*/}
-                        <CardColumns classList={{"mt-0 opacity-1 ": showeyeTracker(), "pt-32 opacity-0": !showeyeTracker()}}
+                        <CardColumns classList={{"mt-0 opacity-1 ": showEyeTracker(), "pt-32 opacity-0": !showEyeTracker()}}
                                      ref={eyeTracker!} title={`swift`}>
-                            <Card>
-                                <h1><PrimaryText>Eye Allergy Tracker</PrimaryText></h1>
-                            <p>
-                                    <SecondaryText>
-                                        A simple macOS app, built using SwiftUI, Swift Graphs and FileManager to track events of itches during a period I contracted eye allergies.
-                                        This app would log data of eye itches over a period of time to aid in recording the effectiveness of the medicines received from the doctor.
-                                        The graph displayed was a simple SwiftUI graph
-                                    </SecondaryText>
-                                </p>
-
-                                <p>
-                                    <em>Frameworks used</em>
-                                    <a>SwiftUI</a>
-                                    <a>Swift Graphs</a>
-                                </p>
-                            </Card>
+                            <EyeTrackerCard />
                         </CardColumns>
 
                         {/*hexcom*/}
-                        <CardColumns classList={{"mt-0 opacity-1 ": showhexcom(), "pt-32 opacity-0": !showhexcom()}}
+                        <CardColumns classList={{"mt-0 opacity-1 ": showHEXCOM(), "pt-32 opacity-0": !showHEXCOM()}}
                                      ref={hexcom!} title={`python & bash`}>
                             <Card>
                                 <h1 class={`hover:underline`}>
@@ -334,17 +249,19 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                                 </p>
 
                                 <p>
-                                    <em>Frameworks used</em>
-                                    <a>Python3</a>
-                                    <a>rich</a>
-                                    <a>Python ArgParser</a>
-                                    <a>Bash Script</a>
+                                    <PrimaryText>
+                                        <em>Frameworks used</em>
+                                        <a>Python3</a>
+                                        <a>rich</a>
+                                        <a>Python ArgParser</a>
+                                        <a>Bash Script</a>
+                                    </PrimaryText>
                                 </p>
                             </Card>
                         </CardColumns>
 
                         {/*Swift Essentials*/}
-                        <CardColumns classList={{"mt-0 opacity-1 ": showhexcom(), "pt-32 opacity-0": !showhexcom()}}
+                        <CardColumns classList={{"mt-0 opacity-1 ": showHEXCOM(), "pt-32 opacity-0": !showHEXCOM()}}
                                      ref={hexcom!} title={`swift`}>
                             <Card>
                                 <h1 class={`hover:underline`}>
@@ -361,14 +278,6 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                                         was conceived to verify on-paper conversions between hexadecimal and binary codes.
                                     </SecondaryText>
                                 </p>
-
-                                {/*<p>*/}
-                                {/*    <em>Frameworks used</em>*/}
-                                {/*    <a>Python3</a>*/}
-                                {/*    <a>rich</a>*/}
-                                {/*    <a>Python ArgParser</a>*/}
-                                {/*    <a>Bash Script</a>*/}
-                                {/*</p>*/}
                             </Card>
                         </CardColumns>
                     </div>
@@ -386,15 +295,7 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
                     <CardColumns ref={mScroll!} title={`typescript`}
                                  classList={{"mt-0 opacity-1 ": showMomentumScroll(), "pt-32 opacity-0": !showMomentumScroll()}}>
-                        <Card>
-                            <h1>solid-momentum-scroll</h1>
-
-                            <p>
-                                A SolidJS plugin that integrates momentum scrolling and parallax effects into webpage
-                                scrolling behavior. During website development, innovative approaches were employed
-                                for momentum scrolling, with ongoing testing prior to its SolidJS Ecosystem release.
-                            </p>
-                        </Card>
+                        <MomentumScrollCard />
                     </CardColumns>
                 </div>
             </div>

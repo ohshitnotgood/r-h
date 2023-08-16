@@ -3,7 +3,7 @@ import {createEffect, createSignal, Show} from "solid-js";
 import Header from "../reusable/Header";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import {SecondaryText, PrimaryText} from "../reusable/Texts";
-import {Database, Javascript, Kotlin, MathTA, Swift} from "./Components";
+import {Database, Javascript, Kotlin, LabAssistant, MathTA, Swift} from "./Components";
 import Section from "../reusable/Section";
 
 export default function Experience(props: {lang: string, palette: number, hidden: boolean, onclickAction: any, initialDelay:number}) {
@@ -195,13 +195,13 @@ export default function Experience(props: {lang: string, palette: number, hidden
                 <div>
                     <div class={`text-4xl lowercase font-bold transition-all duration-700 pt-34`}
                          classList={{"mt-0 opacity-1 sticky top-0": showIndiDevHeader(), "pt-32 opacity-0": !showIndiDevHeader()}}>
-                        <PrimaryText lang={props.lang} palette={props.palette} class={`pt-[1vh] bg-[color:var(--bg-color)]`}>
+                        <PrimaryText class={`pt-[10vh] bg-[color:var(--bg-color)]`}>
                             work in high school
                         </PrimaryText>
-                        <div class={`w-full h-[1vh] bg-gradient-to-b from-bg-${props.palette} to-transparent`}></div>
+                        <div class={`w-full h-[1vh] bg-gradient-to-b from-[color:var(--bg-color)] to-transparent`}></div>
                     </div>
 
-                    <div class={`transition-all duration-700 grid grid-cols-[25%_75%] opacity-0`} classList={{"opacity-0 mt-32": !showSwift(), "opacity-1 mt-0": showSwift()}}>
+                    <div class={`transition-all duration-700 grid grid-cols-[25%_75%] space-x-12 opacity-0`} classList={{"opacity-0 mt-32": !showSwift(), "opacity-1 mt-0": showSwift()}}>
                         <div class={`pt-4`}>
                             <SecondaryText lang={props.lang} palette={props.palette}>
                                 teaching assistant
@@ -220,9 +220,9 @@ export default function Experience(props: {lang: string, palette: number, hidden
                                 lab assistant
                             </SecondaryText>
                         </div>
-                        <div ref={mathTA!}>
+                        <div ref={lA!}>
                             <PrimaryText lang={props.lang} palette={props.palette}>
-                                <MathTA palette={props.palette}/>
+                                <LabAssistant palette={props.palette}/>
                             </PrimaryText>
                         </div>
                     </div>
