@@ -1,12 +1,8 @@
 import icDownCircled from '../../assets/icons/ic_down_circled.svg'
-import {createEffect, createSignal, Show} from "solid-js";
-import Header from "../reusable/Header";
+import {createEffect, createSignal } from "solid-js";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import {SecondaryText, PrimaryText} from "../reusable/Texts";
-import {Database, Javascript, Kotlin, MathTA, Swift} from "../experience/Components";
-import linkIcon from '../../assets/icons/ic_link.svg'
 import Section from "../reusable/Section";
-import {Card, HomeworkTracker} from "./Components";
 import {
     SchedulerCard,
     EyeTrackerCard,

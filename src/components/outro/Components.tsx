@@ -1,5 +1,5 @@
 import {PrimaryText, SecondaryText} from "../reusable/Texts";
-import {Card} from "../volunteering/Components";
+import {Card} from "../reusable/Card";
 import linkIcon from "../../assets/icons/ic_link.svg";
 import disableLink from "../../assets/icons/ic_link_off.svg";
 
