@@ -34,7 +34,7 @@ function TextSection(props: {lang: string, palette: number}) {
     return (
         <div class={`grid min-h-[40vh] place-content-center py-24`}>
             <div class="max-w-[80vw] space-y-3">
-                <div class="text-6xl font-bold uppercase">
+                <div class="text-7xl font-bold uppercase">
                     <OpacityAnimatedText children={
                         <PrimaryText>
                             Hi! I'm Praanto

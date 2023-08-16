@@ -55,7 +55,7 @@ export default function MobileExperience(props: any) {
 
     return (
         <div ref={props.ref} id="experience" class={`bg-[color:var(--bg-color)] duration-700 transition-all py-12 border-t border-black`}>
-            <nav class="w-screen px-12 h-[7vh] grid content-center">
+            <nav class="w-screen px-8 h-[7vh] grid content-center">
                 02.
             </nav>
             <div class="">
@@ -74,7 +74,7 @@ export default function MobileExperience(props: any) {
                     </div>} initialDelay={800} />
             </div>
 
-            <div class="px-8">
+            <div class="px-8 space-y-8">
                 <OpacityAnimatedText show={showJavascript()} children={<div ref={js!}><Javascript palette={props.palette}/></div>} initialDelay={1500} />
                 <OpacityAnimatedText show={showDatabase()} children={<div ref={db!}><Database palette={props.palette}/></div>} initialDelay={400} />
                 <OpacityAnimatedText show={showKotlin()} children={<div ref={kotlin!}><Kotlin palette={props.palette}/></div>} initialDelay={400} />

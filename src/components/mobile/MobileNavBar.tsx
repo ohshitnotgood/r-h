@@ -41,21 +41,21 @@ export default function MobileNavBar(props: any) {
                             <div class={`bg-gradient-to-r transition-all duration-700 from-[color:var(--bg-color)] to-transparent w-[20px] h-full absolute left-0 top-0 z-30`}>
 
                             </div>
-                            <div ref={r!} class={`lowercase font-semibold text-primary-${props.palette} text-xl overflow-x-scroll z-10 hide-scrollbar h-full flex flex-row`}>
+                            <div ref={r!} class={`lowercase font-semibold text-[color:var(--primary-color)] text-xl  overflow-x-scroll z-10 hide-scrollbar h-full flex flex-row`}>
                                 <div class="min-w-[150px] grid place-content-center">
-                                    <a href="#intro">Intro</a>
+                                    <a class="border-none text-xl" href="#intro">Intro</a>
                                 </div>
                                 <div class="min-w-[150px] grid place-content-center">
-                                    <a href="#experience">Experience</a>
+                                    <a class="border-none text-xl" href="#experience">Experience</a>
                                 </div>
                                 <div class="min-w-[150px] grid place-content-center">
-                                    <a href="#education">Education</a>
+                                    <a class="border-none text-xl" href="#education">Education</a>
                                 </div>
                                 <div class="min-w-[150px] grid place-content-center">
-                                    <a href="#volunteering">Volunteering</a>
+                                    <a class="border-none text-xl" href="#volunteering">Volunteering</a>
                                 </div>
                                 <div class="min-w-[150px] grid place-content-center">
-                                    <a href="#outro">Others</a>
+                                    <a class="border-none text-xl" href="#outro">Others</a>
                                 </div>
                             </div>
                             <div class={`bg-gradient-to-l transition-all duration-700 from-[color:var(--bg-color)] to-transparent w-[20px] h-full absolute top-0 right-0 z-30`}>

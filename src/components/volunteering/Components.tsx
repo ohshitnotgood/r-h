@@ -99,9 +99,6 @@ export function Card( props: { cardImage?: any, children: any}) {
                     border-radius: 999px;
                 }
                 
-                p a:hover {
-                    background-color: var(--secondary-color)
-                }
                 
             `}</style>
             <div>
