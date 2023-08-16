@@ -16,25 +16,23 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
     
     const [showTitle, setShowTitle] = createSignal(true)
-
-    const [showCurrentProjectTitle, setShowCurrentProjectTitle] = createSignal(true)
-    const [showHomeworkProject, setShowHomeworkProject] = createSignal(true)
-
-    const [showTFT, setShowtft] = createSignal(true)
-    const [showHW, setShowhw] = createSignal(true)
     const [showSubtitle, setShowSubtitle] = createSignal(true)
-    const [showThisW, setShowthisW] = createSignal(true)
-    const [showHEXCOM, setShowhexcom] = createSignal(true)
-    const [showEyeTracker, setShoweyeTracker] = createSignal(true)
+
+    const [showCurrentProjectTitle, setShowCurrentProjectTitle] = createSignal(false)
+
+    const [showSchedulerProject, setShowSchedulerProject] = createSignal(false)
+    const [showPastProjectTitle, setShowPastProjectTitle] = createSignal(false)
+    const [showTFT, setShowTFT] = createSignal(false)
+    const [showHomeworkProject, setShowHomeworkProject] = createSignal(false)
+    const [showEyeTracker, setShowEyeTracker] = createSignal(false)
+    const [showHEXCOM, setShowHEXCOM] = createSignal(false)
+    const [showEssential, setShowEssentials] = createSignal(false)
 
 
-    const [showPastProjectTitle, setShowPastProjectTitle] = createSignal(true)
-    const [showSchedulerProject, setShowSchedulerProject] = createSignal(true)
+    const [showThisW, setShowThisW] = createSignal(true)
 
-    const [showMomentumScroll, setShowMomentumScroll] = createSignal(true)
-
-
-    const [showUpcomingProjectTitle, setShowUpcomingProjectTitle] = createSignal(true)
+    const [showUpcomingProjectTitle, setShowUpcomingProjectTitle] = createSignal(false)
+    const [showMomentumScroll, setShowMomentumScroll] = createSignal(false)
 
     let mainContent: HTMLDivElement
 
@@ -95,6 +93,9 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
     let mScroll: HTMLDivElement
 
+    let essentials: HTMLDivElement
+
+
     createEffect(() => {
         if (!props.hidden)
             setShowTitle(true)
@@ -102,25 +103,84 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
     })
 
     function hideAllComponents() {
-        setShowCurrentProjectTitle(false)
-        setShowMomentumScroll(false)
+        // setShowCurrentProjectTitle(false)
+        // setShowMomentumScroll(false)
     }
 
     function onScrollDown(e: any) {
         console.log("Experience scroll position" + mainContent.scrollTop)
 
+        let height = title.clientHeight + subtitle.clientHeight
 
         // Toggle page subtitle
-        if (mainContent.scrollTop > title.clientHeight + subtitle.clientHeight) setShowSubtitle(true)
+        if (mainContent.scrollTop > (height) * 0.8) setShowSubtitle(true)
+        else setShowSubtitle(false)
 
         // Toggle current project title
-        if (mainContent.scrollTop > title.clientHeight + subtitle.clientHeight) setShowCurrentProjectTitle(true)
+        if (mainContent.scrollTop > (height) * 0.8) setShowCurrentProjectTitle(true)
+        else setShowCurrentProjectTitle(false)
 
         // Toggle tennis for two
+        height += cpTitle.clientHeight
+        if (mainContent.scrollTop > (height) * 0.8) {
+            setShowTFT(true)
+            console.log("Setting tft to visible")
+        } else setShowTFT(false)
 
         // Toggle Scheduler
+        height += tft.clientHeight
+        if (mainContent.scrollTop > (height) * 0.8) {
+            setShowSchedulerProject(true)
+            console.log("Setting Scheduler to visible")
+        } else setShowPastProjectTitle(false)
 
-        // Toggle
+        // Toggle ppTitle
+        height += scheduler.clientHeight
+        if (mainContent.scrollTop > height * 0.8) {
+            setShowPastProjectTitle(true)
+            console.log("Setting past project title to visible")
+        } else setShowPastProjectTitle(false)
+
+        // toggle hw tracker
+        height += ppTitle.clientHeight
+        if (mainContent.scrollTop > height * 0.8) {
+            setShowHomeworkProject(true)
+            console.log("Setting homework project visibility")
+        } else setShowHomeworkProject(false)
+
+        // toggle eye tracker
+        height += hw.clientHeight
+        if (mainContent.scrollTop > height * 0.8) {
+            setShowEyeTracker(true)
+            console.log("Setting eye tracker visibility")
+        } else setShowEyeTracker(false)
+
+        // toggle hexcom
+        height += eyeTracker.clientHeight
+        if (mainContent.scrollTop > height * 0.8) {
+            setShowHEXCOM(true)
+            console.log("Setting hexcom visibility")
+        } else setShowHEXCOM(false)
+
+        // toggle essential
+        height += hexcom.clientHeight
+        if (mainContent.scrollTop > height * 0.8) {
+            setShowEssentials(true)
+            console.log("Setting hexcom visibility")
+        } else setShowEssentials(false)
+
+        // toggle upcoming project titles
+        height += essentials.clientHeight
+        if (mainContent.scrollTop > height * 0.8) {
+            setShowUpcomingProjectTitle(true)
+            console.log("Setting upcoming project titles visibility")
+        } else setShowUpcomingProjectTitle(false)
+
+        height += upTitle.clientHeight
+        if (mainContent.scrollTop > height * 0.8) {
+            setShowMomentumScroll(true)
+            console.log("Setting essentials visibility")
+        } else setShowMomentumScroll(false)
     }
 
     return (
@@ -155,7 +215,7 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                     </div>
 
                     {/*Current project*/}
-                    <div class={`text-4xl lowercase font-bold transition-all duration-700 bg-[color:var(--bg-color)] z-20`}
+                    <div ref={cpTitle!} class={`text-4xl lowercase font-bold transition-all duration-700 bg-[color:var(--bg-color)] z-20`}
                          classList={{"mt-0 opacity-1 sticky top-0": showCurrentProjectTitle(), "pt-32 opacity-0": !showCurrentProjectTitle()}}>
                         <PrimaryText class={`pt-[10vh] bg-[color:var(--bg-color)]`}>
                             Current Projects
@@ -165,10 +225,10 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
                     <div class={`space-y-8 py-8`}>
                         {/* tennis for two */}
-                        <CardColumns classList={{"mt-0 opacity-1 ": showTFT(), "pt-32 opacity-0": !showTFT()}}
-                                     ref={tft!} title={`android`}>
+                        <CardColumns classList={{"mt-0 opacity-1 ": showTFT(), "pt-32 opacity-0": !showTFT()}} ref={tft!} title={`android`}>
                             <TennisForTwoCard />
                         </CardColumns>
+
 
                         {/* Scheduler */}
                         <CardColumns classList={{"mt-0 opacity-1": showSchedulerProject(), "pt-32 opacity-0": !showSchedulerProject()}}
@@ -261,8 +321,8 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                         </CardColumns>
 
                         {/*Swift Essentials*/}
-                        <CardColumns classList={{"mt-0 opacity-1 ": showHEXCOM(), "pt-32 opacity-0": !showHEXCOM()}}
-                                     ref={hexcom!} title={`swift`}>
+                        <CardColumns classList={{"mt-0 opacity-1 ": showEssential(), "pt-32 opacity-0": !showEssential()}}
+                                     ref={essentials!} title={`swift`}>
                             <Card>
                                 <h1 class={`hover:underline`}>
                                     <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
@@ -297,6 +357,7 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                                  classList={{"mt-0 opacity-1 ": showMomentumScroll(), "pt-32 opacity-0": !showMomentumScroll()}}>
                         <MomentumScrollCard />
                     </CardColumns>
+                    <div class={`h-[30vh]`}> </div>
                 </div>
             </div>
         </Section>
@@ -313,7 +374,7 @@ function ScrollIndicator(props: {signal: boolean}) {
 
 function CardColumns( props: { classList: any, ref: HTMLDivElement, title: string, children: any}) {
     return (
-        <div classList={props.classList} class={`transition-all duration-700 grid grid-cols-[25%_75%]`}>
+        <div ref={props.ref} classList={props.classList} class={`transition-all duration-700 grid grid-cols-[25%_75%]`}>
             <div class={`pt-4`}>
                 <SecondaryText>
                     {props.title}
