@@ -3,7 +3,7 @@ import {createSignal, type Component, createEffect} from 'solid-js';
 import Intro from './components/intro/Intro';
 import Education from "./components/education/Education";
 import Experience from "./components/experience/Experience";
-import Projects from "./components/volunteering/Projects";
+import Projects from "./components/projects/Projects";
 import Outro from "./components/outro/Outro";
 import MobileIntro from "./components/mobile/MobileIntro";
 import MobileExperience from "./components/mobile/MobileExperience";
@@ -13,6 +13,7 @@ import {MobileEducation} from "./components/mobile/MobileEducation";
 import loadingIcon from "./assets/icons/ic_progress.svg"
 import {randomizePalette} from "./components/reusable/ColorPalettes";
 import MobileProjects from "./components/mobile/MobileProjects";
+import MobileContacts from "./components/mobile/MobileContact";
 
 const App: Component = () => {
     const [d1Hidden, setD1Hidden] = createSignal(false);
@@ -69,6 +70,7 @@ const App: Component = () => {
     let experienceSection: HTMLDivElement
     let educationSection: HTMLDivElement
     let projectsSection: HTMLDivElement
+    let contactsSection: HTMLDivElement
 
     let [currentPosition, setCurrentPosition] = createSignal("intro")
 
@@ -86,18 +88,17 @@ const App: Component = () => {
             setCurrentPosition("experience")
         }
 
-        height += experienceSection.clientHeight
-        if (position.y > height) {
-            if (!randomizedIntro) randomizePalette()
-            randomizedIntro = true
-            if (currentPosition() != "education") setCurrentPosition("education")
-        }
-
-        height += educationSection.clientHeight
-        if (position.y > height) {
-
-            if (currentPosition() != "volunteering") setCurrentPosition("volunteering")
-        }
+        // height += experienceSection.clientHeight
+        // if (position.y > height) {
+        //     if (!randomizedIntro) randomizePalette()
+        //     randomizedIntro = true
+        //     if (currentPosition() != "education") setCurrentPosition("education")
+        // }
+        //
+        // height += educationSection.clientHeight
+        // if (position.y > height) {
+        //     if (currentPosition() != "projects") setCurrentPosition("projects")
+        // }
 
     })
 
@@ -123,6 +124,7 @@ const App: Component = () => {
                 <MobileExperience palette={palette()} lang={lang()} ref={experienceSection!}/>
                 <MobileEducation palette={palette()} lang={lang()} ref={educationSection!}/>
                 <MobileProjects ref={projectsSection!}/>
+                <MobileContacts ref={contactsSection!}/>
             </div>
         </div>
     );

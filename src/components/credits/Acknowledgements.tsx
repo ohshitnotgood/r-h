@@ -1,5 +1,5 @@
 import {MobileEducation} from "../mobile/MobileEducation";
-import {EmailAndPhone} from "../outro/Components";
+import {EmailAndPhone} from "../projects/Components";
 import typescriptLogo from "../../assets/img/typescript_logo_bw.png";
 import solidLogo from "../../assets/img/solidjs_logo.jpg";
 import tailwindLogo from "../../assets/img/tailwind-logo.jpg";

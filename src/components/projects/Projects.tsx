@@ -10,7 +10,7 @@ import {
     TennisForTwoCard,
     HomeworkCard,
     HexcomCard, SwiftEssentialsCard, ThisWCard
-} from "../outro/Components";
+} from "./Components";
 
 
 export default function Projects(props: {lang: string, palette: number, hidden: boolean, onclickAction: any, initialDelay:number}) {

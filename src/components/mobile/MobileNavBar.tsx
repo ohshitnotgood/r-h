@@ -25,7 +25,7 @@ export default function MobileNavBar(props: any) {
             r.scrollTo({top: 0, left: 150, behavior: 'smooth'})
         else if (props.currentPosition == "education")
             r.scrollTo({top: 0, left: 300, behavior: 'smooth'})
-        else if (props.currentPosition == "volunteering")
+        else if (props.currentPosition == "projects")
             r.scrollTo({top: 0, left: 450, behavior: 'smooth'})
         else if (props.currentPosition == "outro")
             r.scrollTo({top: 0, left: 600, behavior: 'smooth'})

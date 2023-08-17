@@ -8,7 +8,7 @@ import rightArrow from "../../assets/icons/ic_right.svg";
 import languageIcon from "../../assets/icons/ic_lang.svg"
 import downIcon from "../../assets/icons/ic_down_circled.svg"
 import Header from "../reusable/Header";
-import {EmailAndPhone} from "./Components";
+import {EmailAndPhone} from "../projects/Components";
 import Section from "../reusable/Section";
 
 

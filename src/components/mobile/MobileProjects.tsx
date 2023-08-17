@@ -8,7 +8,7 @@ import {
     SwiftEssentialsCard,
     TennisForTwoCard,
     ThisWCard
-} from "../outro/Components";
+} from "../projects/Components";
 
 export default function MobileProjects(props: {ref: HTMLDivElement}) {
     return (
@@ -49,7 +49,7 @@ export default function MobileProjects(props: {ref: HTMLDivElement}) {
                         <HexcomCard />
                     </div>
 
-                    <div class={`text-3xl lowercase font-bold pt-14`}>
+                    <div class={`text-3xl lowercase font-bold pt-14 pb-5`}>
                         <PrimaryText>
                             Planned Projects
                         </PrimaryText>
