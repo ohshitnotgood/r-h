@@ -42,11 +42,11 @@ function TextSection(props: {lang: string, palette: number}) {
                     } initialDelay={600} show={true}/>
                 </div>
                 <div class="lowercase text-2xl">
-                    {/*<OpacityAnimatedText children={*/}
+                    <OpacityAnimatedText initialDelay={800} show={true}>
                         <PrimaryText>
                             comp.eng student at kth
                         </PrimaryText>
-                    {/*} initialDelay={800} show={true}/>*/}
+                    </OpacityAnimatedText>
 
                 </div>
                 <div class="pr-10">
