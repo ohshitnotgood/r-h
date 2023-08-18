@@ -74,18 +74,46 @@ const App: Component = () => {
 
     let [currentPosition, setCurrentPosition] = createSignal("intro")
 
-    let randomizedIntro = false
+    let scrolledPastIntro = false
+    let scrolledPastExperience = false
+    let scrolledPastEducation = false
+    let scrolledPastProjects = false
 
     const position = createScrollPosition()
     createEffect(() => {
         console.log("should be only visible on mobile")
 
+        if (position.y < 2) {}
+
         let height = introSection.clientHeight
 
         if (position.y > height) {
-            if (!randomizedIntro) randomizePalette()
-            randomizedIntro = true
+            if (!scrolledPastIntro) randomizePalette()
+            scrolledPastIntro = true
             setCurrentPosition("experience")
+        }
+
+        height += experienceSection.clientHeight
+        if (position.y > height) {
+            if (!scrolledPastExperience) randomizePalette()
+            scrolledPastExperience = true
+            setCurrentPosition("education")
+        }
+
+
+        height += educationSection.clientHeight
+        if (position.y > height) {
+            if (!scrolledPastEducation) randomizePalette()
+            scrolledPastEducation = true
+            setCurrentPosition("projects")
+        }
+
+        height += projectsSection.clientHeight * 0.8
+        if (position.y > height) {
+            if (!scrolledPastProjects) randomizePalette()
+            scrolledPastProjects = true
+            setCurrentPosition("contact")
+
         }
 
         // height += experienceSection.clientHeight

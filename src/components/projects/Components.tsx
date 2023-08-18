@@ -285,9 +285,11 @@ export function ThisWCard() {
             </h1>
 
             <p>
-                praanto.com is a personal portfolio website showing off my programming prowess and capabilities.
-                This website was built in three weeks and is being hosted on Vercel. Visit the GitHub page to read more
-                about how the app does what is does and to discover the engineering behind it.
+                <PrimaryText>
+                    praanto.com is a personal portfolio website showing off my programming prowess and capabilities.
+                    This website was built in three weeks and is being hosted on Vercel. Visit the GitHub page to read more
+                    about how the app does what is does and to discover the engineering behind it.
+                </PrimaryText>
             </p>
             <p>
                 <em>Frameworks used:</em>
