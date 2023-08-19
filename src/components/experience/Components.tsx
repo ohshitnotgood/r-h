@@ -102,7 +102,7 @@ export function Kotlin(props: {palette: number}) {
     return (
         <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>android</span>
+                <span><PrimaryText>android</PrimaryText></span>
                 <img src={androidLogoBlock} class="w-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 lowercase">
@@ -137,7 +137,7 @@ export function Android(props: {palette: any}) {
     return(
         <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>Android</span>
+                <span><PrimaryText>Android</PrimaryText></span>
                 <img src={androidLogoBlock} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 lowercase">
@@ -150,11 +150,11 @@ export function Android(props: {palette: any}) {
     )
 }
 
-export function Swift(props: {palette: any}) {
+export function Swift(props: {palette?: any}) {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
+        <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>Swift</span>
+                <span><PrimaryText>Swift</PrimaryText></span>
                 <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 lowercase">

@@ -278,7 +278,7 @@ export function ThisWCard() {
             <h1>
                 <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/r-h"}>
                     <code>
-                        <PrimaryText>this.website </PrimaryText>
+                        <PrimaryText>this.website</PrimaryText>
                     </code>
                     <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
                 </button>

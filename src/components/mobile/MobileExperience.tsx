@@ -10,6 +10,7 @@ export default function MobileExperience(props: any) {
 
     const position = createScrollPosition()
 
+    const [showIndiDevText, setShowIndiText] = createSignal(false)
     const [showJavascript, setShowJavascript] = createSignal(false)
     const [showDatabase, setShowDatabase] = createSignal(false)
     const [showKotlin, setShowKotlin] = createSignal(false)
@@ -41,13 +42,16 @@ export default function MobileExperience(props: any) {
         setLA(false)
     }
 
-    setShowJavascript(true)
-
     createEffect(() => {
         console.log(position.y)
-        if (position.y > (1200 + title.clientHeight) * 0.50) setShowDatabase(true)
-        if (position.y > (1200 + title.clientHeight + js.clientHeight) * 0.50) setShowKotlin(true)
-        if (position.y > (1200 + title.clientHeight + js.clientHeight + kotlin.clientHeight) * 0.60) setShowAndroid(true)
+
+        if (position.y < 10) hideAllComponents()
+
+        if (position.y > window.outerHeight * 0.4) setShowIndiText(true)
+        if (position.y > window.outerHeight * 0.5) setShowJavascript(true)
+        if (position.y > window.outerHeight * 0.6) setShowDatabase(true)
+        if (position.y > window.outerHeight * 0.7) setShowKotlin(true)
+        if (position.y > window.outerHeight * 0.8) setShowAndroid(true)
         if (position.y > (1200 + title.clientHeight + js.clientHeight + kotlin.clientHeight + android.clientHeight) * 0.70) setShowSwift(true)
         if (position.y > (1200 + title.clientHeight + js.clientHeight + kotlin.clientHeight + android.clientHeight + swift.clientHeight) * 0.70) setShowMathTA(true)
         if (position.y > (1200 + title.clientHeight + js.clientHeight + kotlin.clientHeight + android.clientHeight + swift.clientHeight + mathTA.clientHeight) * 0.70) setLA(true)
@@ -67,25 +71,36 @@ export default function MobileExperience(props: any) {
                     } initialDelay={800} />
                 </div>
             </div>
-            <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
-                <OpacityAnimatedText show={!props.hidden} children={
-                    <div ref={title!}>
-                        <PrimaryText children={"independent development"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
-                    </div>} initialDelay={800} />
+            <div class="transition-all border-b border-black duration-700 px-8 my-4 font-bold mt-10 text-3xl lowercase sticky top-[7vh] z-20 bg-[color:var(--bg-color)]"
+                 classList={{'opacity-1 mt-0': showIndiDevText(), 'opacity-0 mt-32': !showIndiDevText()}}>
+                <OpacityAnimatedText show={!props.hidden} initialDelay={800} >
+                    <div ref={title!} class={`py-4`}>
+                        <PrimaryText>
+                            independent development
+                        </PrimaryText>
+                    </div>
+                </OpacityAnimatedText>
             </div>
 
             <div class="px-8 space-y-8">
-                <OpacityAnimatedText show={showJavascript()} children={<div ref={js!}><Javascript palette={props.palette}/></div>} initialDelay={1500} />
-                <OpacityAnimatedText show={showDatabase()} children={<div ref={db!}><Database palette={props.palette}/></div>} initialDelay={400} />
+                <div ref={js!} class={`transition-all duration-700`} classList={{'mt-0 opacity-1': showJavascript(), 'mt-32 opacity-0': !showJavascript()}}>
+                    <Javascript palette={props.palette}/>
+                </div>
+                <div ref={db!} class={`transition-all duration-700`} classList={{'opacity-0 mt-32': !showDatabase(), 'opacity-1 mt-0': showDatabase()}}>
+                    <Database palette={props.palette}/>
+                </div>
+
                 <OpacityAnimatedText show={showKotlin()} children={<div ref={kotlin!}><Kotlin palette={props.palette}/></div>} initialDelay={400} />
                 <OpacityAnimatedText show={showAndroid()} children={<div ref={android!}><Android palette={props.palette}/></div>} initialDelay={400} />
                 <OpacityAnimatedText show={showSwift()} children={<div ref={swift!}><Swift palette={props.palette}/></div>} initialDelay={400} />
             </div>
 
-            <div class="mx-8 my-4 font-bold mt-10 text-3xl lowercase ">
+            <div class="transition-all border-b border-black duration-700 px-8 my-4 font-bold mt-10 text-3xl lowercase sticky top-[7vh] z-20 bg-[color:var(--bg-color)]">
                 <OpacityAnimatedText show={showMathTA()} children={
-                    <div>
-                        <PrimaryText children={"Teaching assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                    <div class={`py-4`}>
+                        <PrimaryText>
+                            Teaching assistant
+                        </PrimaryText>
                     </div>} initialDelay={400} />
             </div>
 
@@ -93,10 +108,12 @@ export default function MobileExperience(props: any) {
                 <OpacityAnimatedText show={showLA()} children={<div ref={mathTA!}><MathTA palette={props.palette}/></div>} initialDelay={400} />
             </div>
 
-            <div class="px-8 my-4 font-bold mt-10 text-3xl lowercase ">
+            <div class="mx-8 border-b border-black py-4 top-[7vh] bg-[color:var(--bg-color)] sticky font-bold z-20 text-3xl lowercase ">
                 <OpacityAnimatedText show={showLA()} children={
-                    <div>
-                        <PrimaryText children={"Lab assistant"} bnT={""} lang={props.lang} palette={props.palette} class={""} />
+                    <div class={`py-4`}>
+                        <PrimaryText>
+                            Lab assistant
+                        </PrimaryText>
                     </div>} initialDelay={400} />
             </div>
 
