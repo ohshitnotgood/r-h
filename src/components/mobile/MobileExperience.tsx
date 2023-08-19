@@ -1,4 +1,4 @@
-import {Javascript, Database, Android, Kotlin, Swift, MathTA, LabAssistant} from "../experience/Components"
+import {Javascript, Database, Android, Kotlin, Swift, MathTA, LabAssistant, SwiftCard} from "../experience/Components"
 import {createEffect, createSignal, onMount} from "solid-js";
 import {createScrollPosition} from "@solid-primitives/scroll";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
@@ -92,7 +92,7 @@ export default function MobileExperience(props: any) {
 
                 <OpacityAnimatedText show={showKotlin()} children={<div ref={kotlin!}><Kotlin palette={props.palette}/></div>} initialDelay={400} />
                 <OpacityAnimatedText show={showAndroid()} children={<div ref={android!}><Android palette={props.palette}/></div>} initialDelay={400} />
-                <OpacityAnimatedText show={showSwift()} children={<div ref={swift!}><Swift palette={props.palette}/></div>} initialDelay={400} />
+                <OpacityAnimatedText show={showSwift()} children={<div ref={swift!}><SwiftCard/></div>} initialDelay={400} />
             </div>
 
             <div class="transition-all border-b border-black duration-700 px-8 my-4 font-bold mt-10 text-3xl lowercase sticky top-[7vh] z-20 bg-[color:var(--bg-color)]">

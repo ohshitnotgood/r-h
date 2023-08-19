@@ -3,7 +3,7 @@ import {createEffect, createSignal, Show} from "solid-js";
 import Header from "../reusable/Header";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import {SecondaryText, PrimaryText} from "../reusable/Texts";
-import {Database, Javascript, Kotlin, LabAssistant, MathTA, Swift} from "./Components";
+import {Database, Javascript, Kotlin, LabAssistant, MathTA, Swift, SwiftCard} from "./Components";
 import Section from "../reusable/Section";
 
 export default function Experience(props: {lang: string, palette: number, hidden: boolean, onclickAction: any, initialDelay:number}) {
@@ -138,12 +138,12 @@ export default function Experience(props: {lang: string, palette: number, hidden
                         {/*Javascript cards*/}
                         <div class={`transition-all duration-700 grid grid-cols-[25%_75%] pt-[5vh] opacity-0`} classList={{"opacity-0 mt-32": !showJavascript(), "opacity-1 mt-0": showJavascript()}}>
                             <div class={`pt-4`}>
-                                <SecondaryText lang={props.lang} palette={props.palette}>
+                                <SecondaryText>
                                     javascript/typescript
                                 </SecondaryText>
                             </div>
                             <div ref={js!}>
-                                <PrimaryText lang={props.lang} palette={props.palette}>
+                                <PrimaryText>
                                     <Javascript palette={props.palette}/>
                                 </PrimaryText>
                             </div>
@@ -158,7 +158,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                             </div>
                             <div ref={db!}>
                                 <PrimaryText lang={props.lang} palette={props.palette}>
-                                    <Database palette={props.palette}/>
+                                    <Database />
                                 </PrimaryText>
                             </div>
                         </div>
@@ -172,7 +172,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                             </div>
                             <div ref={kotlin!}>
                                 <PrimaryText palette={props.palette}>
-                                    <Kotlin palette={props.palette}/>
+                                    <Kotlin />
                                 </PrimaryText>
                             </div>
                         </div>
@@ -186,7 +186,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                             </div>
                             <div ref={swift!}>
                                 <PrimaryText lang={props.lang} palette={props.palette}>
-                                    <Swift palette={props.palette}/>
+                                    <SwiftCard />
                                 </PrimaryText>
                             </div>
                         </div>
@@ -201,7 +201,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                         <div class={`w-full h-[1vh] bg-gradient-to-b from-[color:var(--bg-color)] to-transparent`}></div>
                     </div>
 
-                    <div class={`transition-all duration-700 grid grid-cols-[25%_75%] space-x-12 opacity-0`} classList={{"opacity-0 mt-32": !showSwift(), "opacity-1 mt-0": showSwift()}}>
+                    <div class={`transition-all duration-700 pt-[5vh] grid grid-cols-[25%_75%] opacity-0`} classList={{"opacity-0 mt-32": !showSwift(), "opacity-1 mt-0": showSwift()}}>
                         <div class={`pt-4`}>
                             <SecondaryText lang={props.lang} palette={props.palette}>
                                 teaching assistant
@@ -214,7 +214,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                         </div>
                     </div>
 
-                    <div class={`transition-all duration-700 grid grid-cols-[25%_75%] space-x-12 opacity-0`} classList={{"opacity-0 mt-32": !showSwift(), "opacity-1 mt-0": showSwift()}}>
+                    <div class={`transition-all duration-700 pt-[5vh] grid grid-cols-[25%_75%] pb-64 opacity-0`} classList={{"opacity-0 mt-32": !showSwift(), "opacity-1 mt-0": showSwift()}}>
                         <div class={`pt-4`}>
                             <SecondaryText lang={props.lang} palette={props.palette}>
                                 lab assistant

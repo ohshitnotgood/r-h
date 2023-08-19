@@ -12,7 +12,8 @@ import expressJSLogo from "../../assets/img/logo/logo_expressjs.png"
 import svelteLogo from "../../assets/img/logo/logo_svelte.png"
 import ktorLogo from "../../assets/img/logo/logo_ktor.png"
 import tailwindLogo from "../../assets/img/logo/logo_tailwind.svg"
-import {PrimaryText} from "../reusable/Texts";
+import {PrimaryText, SecondaryText} from "../reusable/Texts";
+import {Card} from "../reusable/Card";
 
 const borderColor: {[index: number]: string} = {
     1: "border-contrast-1",
@@ -29,66 +30,66 @@ const borderColor: {[index: number]: string} = {
 
 export function Javascript(props: {palette: number}){
     return(
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4`}>
+        <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4`}>
             <div class=" text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>SolidJS and SolidStart</span>
+                <PrimaryText>SolidJS and SolidStart</PrimaryText>
                 <img src={solidJSLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4">
+            <ul class="list-disc pl-4 secondary-text">
                 <li>building reactive web pages with responsive design that can update view based on state change</li>
                 <li>handle server-side logic and front-end logic, managing database with Postgresql/MySQL and PrismaORM</li>
             </ul>
 
-            <div class="pt-2 text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>TailwindCSS</span>
+            <div class="pt-2 text-lg  text-left font-medium flex flex-row items-center space-x-2">
+                <PrimaryText>TailwindCSS</PrimaryText>
                 <img src={tailwindLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 ">
+            <ul class="list-disc pl-4 secondary-text">
                 <li>experienced with Tailwind class names and the Tailwind documentation</li>
             </ul>
 
             <div class="pt-2 text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>ExpressJS</span>
+                <PrimaryText>ExpressJS</PrimaryText>
                 <img src={expressJSLogo} class="h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 ">
+            <ul class="list-disc pl-4 pb-4 secondary-text">
                 <li>handling RESTful HTTP requests from clients, authenticating users with Auth2 and JWT</li>
                 <li>fetching data from a database and sending response to client with fetched data</li>
                 <li>testing servers with Postman and cURL</li>
             </ul>
 
-            {/*<div class="pt-2 text-lg text-left font-medium flex flex-row items-center space-x-2">*/}
-            {/*    <span>Svelte and SvelteKit</span>*/}
-            {/*    <img src={svelteLogo} class="w-5" alt={"Javascript logo in black and white"}/>*/}
-            {/*</div>*/}
-            {/*<ul class="list-disc pl-4">*/}
-            {/*    <li>Experienced with reactive building front-end web applications with ReactJS and, recently with SolidJS</li>*/}
-            {/*    <li>Proficient in writing responsive HTML and CSS and using CSS frameworks like SASS and TailwindCSS</li>*/}
-            {/*</ul>*/}
-
-            <div class="pt-4 text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <div class="text-sm">
-                    Others:
-                </div>
-                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>ReactJS</span>
-                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>SvelteKit</span>
-                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>SASS</span>
-                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>Pug</span>
-                {/*<img src={""} class="w-5" alt={"Javascript logo in black and white"}/>*/}
-            </div>
+            <p>
+            <span class={`primary-text`}>
+                Framework experiences:
+            </span>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+            </p>
         </div>
     )
 }
 
 
-export function Database(props: {palette: number}) {
+export function Database() {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
+        <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>Postgresql</span>
+                <PrimaryText>Postgresql</PrimaryText>
                 <img src={psqlLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 ">
+            <ul class="list-disc pl-4 secondary-text">
                 <li>creating tables, roles, databases, etc from psql commandline interface</li>
                 <li>inserting and querying database with ORMs (such as Prisma and Ktorm)</li>
                 <li>Inspecting databases with <span class="inline-flex items-center">DataGrip <DatagripLogo /></span></li>
@@ -98,59 +99,72 @@ export function Database(props: {palette: number}) {
     )
 }
 
-export function Kotlin(props: {palette: number}) {
+export function Kotlin() {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
+        <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span><PrimaryText>android</PrimaryText></span>
+                <PrimaryText>android</PrimaryText>
                 <img src={androidLogoBlock} class="w-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 lowercase">
-                <li>responsive UI design with RelativeLayout and ConstraintLayout and animations with MotionLayout</li>
-                <li>reactive state management with LiveData</li>
-                <li>currently working on a mobile app with native front-end for Android with Jetpack Compose</li>
+                <SecondaryText>
+                    <li>responsive UI design with RelativeLayout and ConstraintLayout and animations with MotionLayout</li>
+                    <li>reactive state management with LiveData</li>
+                    <li>currently working on a mobile app with native front-end for Android with Jetpack Compose</li>
+                </SecondaryText>
             </ul>
 
             <div class="pt-2 text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span>Ktor</span>
+                <PrimaryText>Ktor</PrimaryText>
                 <img src={ktorLogo} class="w-5" alt={"Ktor logo"}/>
             </div>
             <ul class="list-disc pl-4">
-                <li>server-side request handling with Kotlin coroutines</li>
+                <SecondaryText>
+                    <li>server-side request handling with Kotlin coroutines</li>
+                </SecondaryText>
             </ul>
 
-            <div class="pt-4 text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <div class="text-sm">
-
-                </div>
-                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>Ktorm</span>
-                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>Jetpack Compose</span>
-                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>SASS</span>
-                <span class={`rounded-3xl border ${borderColor[props.palette]} px-2 py-1 text-sm`}>Pug</span>
-                {/*<img src={""} class="w-5" alt={"Javascript logo in black and white"}/>*/}
-            </div>
+            <p>
+                <span class={`primary-text`}>
+                    Framework experiences:
+                </span>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+            </p>
         </div>
     )
 }
 
 export function Android(props: {palette: any}) {
     return(
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
-            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span><PrimaryText>Android</PrimaryText></span>
-                <img src={androidLogoBlock} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
-            </div>
-            <ul class="list-disc pl-4 lowercase">
+        <Card>
+            <h1>
+                Android
+                <img src={androidLogoBlock} class="ml-2 w-5 h-5" alt={"Javascript logo in black and white"}/>
+            </h1>
+            <ul>
                 <li>Building reactive UIs using Kotlin LiveData</li>
                 <li>Database management with Room and SQLite</li>
                 <li>Responsive UIs with constraint layout, relative layout, linear layout, etc</li>
                 <li>Handling client-side RESTful requests with Ktor</li>
             </ul>
-        </div>
+        </Card>
     )
 }
 
-export function Swift(props: {palette?: any}) {
+export function Swift() {
     return (
         <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
@@ -158,26 +172,49 @@ export function Swift(props: {palette?: any}) {
                 <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc pl-4 lowercase">
-                <li>Declarative UI building with SwiftUI</li>
-                <li>Cross-platform application for iOS, iPadOS and macOS from a single codebase</li>
-                <li>Client-side RESTful programming</li>
-                <li>Reactive state management using StateObjects and ObservableObject</li>
-                <li>Calling backend API concurrently using URLSessions and async/await.</li>
+                <PrimaryText>
+                    <li>Declarative UI building with SwiftUI</li>
+                    <li>Cross-platform application for iOS, iPadOS and macOS from a single codebase</li>
+                    <li>Client-side RESTful programming</li>
+                    <li>Reactive state management using StateObjects and ObservableObject</li>
+                    <li>Calling backend API concurrently using URLSessions and async/await.</li>
+                </PrimaryText>
             </ul>
         </div>
     )
 }
 
+export function SwiftCard() {
+    return (
+        <Card>
+            <h1>
+                <PrimaryText>Swift</PrimaryText>
+                <img src={swiftLogo} class="ml-2 w-5 h-5" alt={"Javascript logo in black and white"}/>
+            </h1>
+
+            <SecondaryText>
+                <ul>
+                    <li>Declarative UI building with SwiftUI</li>
+                    <li>Cross-platform application for iOS, iPadOS and macOS from a single codebase</li>
+                    <li>Client-side RESTful programming</li>
+                    <li>Reactive state management using StateObjects and ObservableObject</li>
+                    <li>Calling backend API concurrently using URLSessions and async/await.</li>
+                </ul>
+            </SecondaryText>
+        </Card>
+    )
+}
+
 export function MathTA(props: {palette: any}) {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
-            <div class="lowercase text-lg text-left font-medium">
+        <div class={`border-[color:var(--border-color)] rounded-3xl border p-4 `}>
+            <div class="lowercase text-lg text-left primary-text font-medium">
                 Faculty of Mathematics
             </div>
-            <div class="lowercase">
+            <div class="lowercase primary-text">
                 Oxford International School
             </div>
-            <div class="pt-2 lowercase">
+            <div class="pt-2 lowercase secondary-text">
                 I generated and formulated practice test papers along with their corresponding answer key for younger grade levels. Additionally, I evaluated assignments and provided assistance to students in grasping concepts through online sessions after regular class hours.
             </div>
         </div>
@@ -186,14 +223,14 @@ export function MathTA(props: {palette: any}) {
 
 export function LabAssistant(props: {palette: any}) {
     return (
-        <div class={`${borderColor[props.palette]} text-primary-${props.palette} rounded-3xl border p-4 `}>
-            <div class="lowercase text-lg text-left font-medium">
+        <div class={`border-[color:var(--border-color)] rounded-3xl border p-4 `}>
+            <div class="lowercase text-lg text-left font-medium primary-text">
                 Faculty of Chemistry
             </div>
-            <div class="lowercase">
+            <div class="lowercase primary-text">
                 Oxford International School
             </div>
-            <div class="pt-2 lowercase">
+            <div class="pt-2 lowercase secondary-text">
                 I readied laboratory equipment and reagents in advance for practical examinations for junior classes,
                 aided the teacher in tidying up the apparatuses post-experiment. I also readied reagents
                 and provided guidance on procedures to those students who required assistance.
