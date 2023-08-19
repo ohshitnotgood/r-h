@@ -22,12 +22,22 @@ export default function Education(props: { palette: number, hidden: boolean, lan
                             </PrimaryText>
                         </div>
                     } initialDelay={700} />
-                    <div class="grid grid-cols-2 ">
-                        <div class="uppercase text-sm secondary-text">high school</div>
-                        <HighSchool />
 
-                        <div class="uppercase text-sm secondary-text">Bachelor's of Science</div>
-                        <College />
+                    <div class="grid grid-cols-2 ">
+                        <OpacityAnimatedText show={!props.hidden} initialDelay={700}>
+                            <div class="uppercase text-sm secondary-text">high school</div>
+                        </OpacityAnimatedText>
+                        <OpacityAnimatedText show={!props.hidden} initialDelay={700}>
+                            <HighSchool />
+                        </OpacityAnimatedText>
+
+
+                        <OpacityAnimatedText show={!props.hidden} initialDelay={900}>
+                            <div class="uppercase text-sm secondary-text">Bachelor's of Science</div>
+                        </OpacityAnimatedText>
+                        <OpacityAnimatedText show={!props.hidden} initialDelay={900}>
+                            <College />
+                        </OpacityAnimatedText>
                     </div>
                 </div>
             </div>
