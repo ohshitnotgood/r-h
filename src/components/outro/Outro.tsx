@@ -1,15 +1,6 @@
-import icDownCircled from '../../assets/icons/ic_down_circled.svg'
-import tailwindLogo from "../../assets/img/tailwind-logo.jpg"
-import solidLogo from "../../assets/img/solidjs_logo.jpg"
-import typescriptLogo from "../../assets/img/typescript_logo_bw.png"
-import linkIcon from "../../assets/icons/ic_link.svg"
 import {createSignal, Show} from "solid-js";
-import rightArrow from "../../assets/icons/ic_right.svg";
-import languageIcon from "../../assets/icons/ic_lang.svg"
-import downIcon from "../../assets/icons/ic_down_circled.svg"
-import Header from "../reusable/Header";
-import {EmailAndPhone} from "../projects/Components";
 import Section from "../reusable/Section";
+import DownloadIcon from '../../assets/icons/ic_download.svg'
 
 
 export default function Outro(props: any) {
@@ -57,16 +48,46 @@ export default function Outro(props: any) {
     {/*    </div>*/}
     {/*</div>*/}
 
+
     return (
 
-        <Section header_en={`Outro`} headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={"05."} sectionNumber_bn={"05."} palette={props.palette} lang={props.lang} clickAction={props.onclickAction}>
+        <Section header_en={`Contact`} headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={"05."} sectionNumber_bn={"05."} palette={props.palette} lang={props.lang} clickAction={props.onclickAction}>
             <div class='grid place-content-center h-screen z-50' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
                 <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
                     <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold text-right">Contact Me!</div>
                     <div class="pb-24 text-justify">
 
                     </div>
-                    <EmailAndPhone />
+                    <div class="grid grid-cols-2 ">
+                        <div class="uppercase text-sm">Emails</div>
+                        <div class="pb-12">
+                            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                                <a class={`text-lg border-none p-0 m-0 hover:underline primary-text`} href="mailto:praanto@icloud.com">praanto@icloud.com (personal)</a>
+                            </div>
+                            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+                                <a class={`text-lg border-none p-0 m-0 hover:underline primary-text`} href="mailto:samadder@kth.se">samadder@kth.se (school)</a>
+                            </div>
+                        </div>
+
+                        <div class="uppercase text-sm primary-text">phone</div>
+                        <div class="pb-12">
+                            <div>
+                                <a class={`text-lg border-none font-medium p-0 m-0 hover:underline primary-text`} href="tel:+46707762321">+46 70776 2321</a>
+                                <div class="pb-6 secondary-text">
+                                    phone - sweden 🇸🇪
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uppercase text-sm primary-text">paper CV</div>
+                        <div class="pb-12">
+                            <div class={``}>
+                                <a class={`flex flex-row text-lg font-medium border-none p-0 m-0 hover:underline primary-text`} download={`paper resume download`} href="https://cdn.discordapp.com/attachments/1084984544144408678/1142520644047745024/ica_cant_handle_long_filenames.pdf">
+                                    download
+                                    <img class={`w-6 ml-2`} src={DownloadIcon} alt=""/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Section>
