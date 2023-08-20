@@ -1,6 +1,6 @@
 import androidLogoBlock from "../../assets/img/android_logo_bw_block.png";
 import ktorLogo from "../../assets/img/logo/logo_ktor.png";
-import {PrimaryText} from "./Texts";
+import {PrimaryText, SecondaryText} from "./Texts";
 
 
 /**
@@ -70,5 +70,22 @@ export function Card( props: { cardImage?: any, children: any}) {
                 </div>
             </div>
         </>
+    )
+}
+
+export function A(props: {href: string, children: any, xSetter: any, ySetter: any, hoverTextSetter: any}) {
+
+    let hoverHref = 'https://' + props.href.split("/")[2]
+
+    function mouseMoveAction(xPosSetter: any, yPosSetter: any, e: any) {
+        props.hoverTextSetter(hoverHref)
+        xPosSetter(`left: ${e.clientX - 150}px;`)
+        yPosSetter(`top: ${e.clientY + 20}px;`)
+    }
+
+    return (
+        <a onmousemove={(e) => mouseMoveAction(props.xSetter, props.ySetter, e)} onmouseleave={() => props.hoverTextSetter('null')} class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href={props.href}>
+            <SecondaryText>{props.children}</SecondaryText>
+        </a>
     )
 }

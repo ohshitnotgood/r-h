@@ -12,7 +12,8 @@ export default function Section(props: {
     palette: number,
     lang: string,
     clickAction: any,
-    secondaryActionButton?: any
+    secondaryActionButton?: any,
+    tertiaryActionButton?: any
 }) {
 
     return (
@@ -34,6 +35,8 @@ export default function Section(props: {
                     {props.secondaryActionButton}
                 </div>
             </div>
+
+            {props.tertiaryActionButton}
 
             <div classList={{'z-10 absolute top-0 left-0 w-full h-full': !props.hidden, "hidden": props.hidden}}>
                 <div class='grid place-content-center h-screen z-50'

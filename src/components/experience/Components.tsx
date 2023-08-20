@@ -14,6 +14,7 @@ import ktorLogo from "../../assets/img/logo/logo_ktor.png"
 import tailwindLogo from "../../assets/img/logo/logo_tailwind.svg"
 import {PrimaryText, SecondaryText} from "../reusable/Texts";
 import {Card} from "../reusable/Card";
+import {A} from '../reusable/Card'
 
 const borderColor: {[index: number]: string} = {
     1: "border-contrast-1",
@@ -28,14 +29,19 @@ const borderColor: {[index: number]: string} = {
     10: "border-contrast-10 ",
 }
 
-export function Javascript(props: {palette: number}){
+function mouseMoveAction(xPosSetter: any, yPosSetter: any, e: any) {
+    xPosSetter(`left: ${e.clientX - 150}px;`)
+    yPosSetter(`top: ${e.clientY + 20}px;`)
+}
+
+export function Javascript(props: {palette?: number}){
     return(
         <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4`}>
             <div class=" text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <PrimaryText>SolidJS and SolidStart</PrimaryText>
                 <img src={solidJSLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 secondary-text">
+            <ul class="list-disc secondary-text">
                 <li>building reactive web pages with responsive design that can update view based on state change</li>
                 <li>handle server-side logic and front-end logic, managing database with Postgresql/MySQL and PrismaORM</li>
             </ul>
@@ -44,7 +50,7 @@ export function Javascript(props: {palette: number}){
                 <PrimaryText>TailwindCSS</PrimaryText>
                 <img src={tailwindLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 secondary-text">
+            <ul class="list-disc secondary-text">
                 <li>experienced with Tailwind class names and the Tailwind documentation</li>
             </ul>
 
@@ -52,30 +58,21 @@ export function Javascript(props: {palette: number}){
                 <PrimaryText>ExpressJS</PrimaryText>
                 <img src={expressJSLogo} class="h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 pb-4 secondary-text">
+            <ul class="list-disc pb-4 secondary-text">
                 <li>handling RESTful HTTP requests from clients, authenticating users with Auth2 and JWT</li>
                 <li>fetching data from a database and sending response to client with fetched data</li>
                 <li>testing servers with Postman and cURL</li>
             </ul>
 
-            <p>
-            <span class={`primary-text`}>
-                Framework experiences:
-            </span>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="/">Ktorm</a>
+            <p class={`pb-0`}>
+                <span class={`primary-text`}>
+                    Framework experiences:
+                </span>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://www.solidjs.com/guides/getting-started">SolidJS</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://react.dev/">ReactJS</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://expressjs.com/">ExpressJS</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://tailwindcss.com/docs/installation">TailwindCSS</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://sass-lang.com/">SASS</a>
             </p>
         </div>
     )
@@ -89,17 +86,26 @@ export function Database() {
                 <PrimaryText>Postgresql</PrimaryText>
                 <img src={psqlLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
-            <ul class="list-disc pl-4 secondary-text">
+            <ul class="list-disc pl-4 pb-4 secondary-text">
                 <li>creating tables, roles, databases, etc from psql commandline interface</li>
                 <li>inserting and querying database with ORMs (such as Prisma and Ktorm)</li>
                 <li>Inspecting databases with <span class="inline-flex items-center">DataGrip <DatagripLogo /></span></li>
                 <li>SQLite databasing on Android with <span class="inline-flex items-center">RoomDB <AndroidStudioLogo /> </span></li>
             </ul>
+
+            <p class={`pb-0`}>
+                <span class={`primary-text`}>
+                    Databases used:
+                </span>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://www.solidjs.com/guides/getting-started">PostgresQL</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://prisma.io/">PrismaORM</a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://expressjs.com/">Ktorm</a>
+            </p>
         </div>
     )
 }
 
-export function Kotlin() {
+export function Kotlin( props: {xPosSetter: any, yPosSetter: any, linkSetter: any}) {
     return (
         <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
@@ -109,8 +115,7 @@ export function Kotlin() {
             <ul class="list-disc pl-4 lowercase">
                 <SecondaryText>
                     <li>responsive UI design with RelativeLayout and ConstraintLayout and animations with MotionLayout</li>
-                    <li>reactive state management with LiveData</li>
-                    <li>currently working on a mobile app with native front-end for Android with Jetpack Compose</li>
+                    <li>Model-View-ViewModel reactivity architecture with Android LiveData</li>
                 </SecondaryText>
             </ul>
 
@@ -118,30 +123,21 @@ export function Kotlin() {
                 <PrimaryText>Ktor</PrimaryText>
                 <img src={ktorLogo} class="w-5" alt={"Ktor logo"}/>
             </div>
-            <ul class="list-disc pl-4">
+            <ul class="list-disc pl-4 pb-4">
                 <SecondaryText>
-                    <li>server-side request handling with Kotlin coroutines</li>
+                    <li>asynchronous server-side request handling with Kotlin coroutines</li>
                 </SecondaryText>
             </ul>
 
-            <p>
+            <p class={`pb-0`}>
                 <span class={`primary-text`}>
                     Framework experiences:
                 </span>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="/"><SecondaryText>Ktorm</SecondaryText></a>
+                <A href={`https://developer.android.com`} ySetter={props.yPosSetter} hoverTextSetter={props.linkSetter} xSetter={props.xPosSetter}>AndroidSDK</A>
+                <A href={`https://kotlinlang.org/docs/coroutines-overview.html`} ySetter={props.yPosSetter} hoverTextSetter={props.linkSetter} xSetter={props.xPosSetter}>Kotlin Coroutines</A>
+                <A href="https://developer.android.com/topic/libraries/architecture/livedata" ySetter={props.yPosSetter} hoverTextSetter={props.linkSetter} xSetter={props.xPosSetter}>Android LiveData</A>
+                <A href="https://ktor.io/docs/welcome.html" ySetter={props.yPosSetter} hoverTextSetter={props.linkSetter} xSetter={props.xPosSetter}>Ktor</A>
+                <A href="https://www.ktorm.org/" ySetter={props.yPosSetter} hoverTextSetter={props.linkSetter} xSetter={props.xPosSetter}>Ktorm</A>
             </p>
         </div>
     )
@@ -164,27 +160,38 @@ export function Android(props: {palette: any}) {
     )
 }
 
-export function Swift() {
-    return (
-        <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4 `}>
-            <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <span><PrimaryText>Swift</PrimaryText></span>
-                <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
-            </div>
-            <ul class="list-disc pl-4 lowercase">
-                <PrimaryText>
-                    <li>Declarative UI building with SwiftUI</li>
-                    <li>Cross-platform application for iOS, iPadOS and macOS from a single codebase</li>
-                    <li>Client-side RESTful programming</li>
-                    <li>Reactive state management using StateObjects and ObservableObject</li>
-                    <li>Calling backend API concurrently using URLSessions and async/await.</li>
-                </PrimaryText>
-            </ul>
-        </div>
-    )
-}
+// export function Swift() {
+//     return (
+//         <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4 `}>
+//             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
+//                 <span><PrimaryText>Swift</PrimaryText></span>
+//                 <img src={swiftLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+//             </div>
+//             <ul class="list-disc lowercase">
+//                 <PrimaryText>
+//                     <li>Declarative UI building with SwiftUI</li>
+//                     <li>Cross-platform application for iOS, iPadOS and macOS from a single codebase</li>
+//                     <li>Reactive state management using StateObjects and ObservableObject</li>
+//                     <li>Concurrent network calls, data fetches, etc using Task and async/await.</li>
+//                     <li>Client-side RESTful programming with Swift concurrency and URLSession</li>
+//                     <li>Data visualisation with Swift Charts</li>
+//                 </PrimaryText>
+//             </ul>
+//
+//             <p class={`pb-0`}>
+//                 <span class={`primary-text`}>
+//                     Framework experiences:
+//                 </span>
+//                 <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://developer.apple.com/xcode/swiftui/"><SecondaryText>SwiftUI</SecondaryText></a>
+//                 <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://github.com/siteline/SwiftUI-Introspect"><SecondaryText>Swift Introspect</SecondaryText></a>
+//                 <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://developer.apple.com/documentation/swift/concurrency"><SecondaryText>Swift Concurrency</SecondaryText></a>
+//                 <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://developer.apple.com/documentation/charts"><SecondaryText>Swift Charts</SecondaryText></a>
+//             </p>
+//         </div>
+//     )
+// }
 
-export function SwiftCard() {
+export function Swift() {
     return (
         <Card>
             <h1>
@@ -201,6 +208,16 @@ export function SwiftCard() {
                     <li>Calling backend API concurrently using URLSessions and async/await.</li>
                 </ul>
             </SecondaryText>
+
+            <p class={`pb-0 text-justify`}>
+                <span class={`primary-text inline-block`}>
+                    Framework experiences:
+                </span>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://developer.apple.com/xcode/swiftui/"><SecondaryText>SwiftUI</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://github.com/siteline/SwiftUI-Introspect"><SecondaryText>Swift Introspect</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://developer.apple.com/documentation/swift/concurrency"><SecondaryText>Swift Concurrency</SecondaryText></a>
+                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://developer.apple.com/documentation/charts"><SecondaryText>Swift Charts</SecondaryText></a>
+            </p>
         </Card>
     )
 }
