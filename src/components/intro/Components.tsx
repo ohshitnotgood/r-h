@@ -12,7 +12,7 @@ export function PageTitle(props: {lang: string, hidden: boolean, palette: number
     let textElement = <PrimaryText children={enText} bnT={bnText} lang={props.lang} palette={props.palette}
                                    class={"mb-3 text-6xl xl:text-8xl lg:text-6xl font-bold uppercase"} />
     return (
-        <OpacityAnimatedText show={!props.hidden} children={textElement} initialDelay={1700}/>
+        <OpacityAnimatedText show={!props.hidden} children={textElement} initialDelay={1700}></OpacityAnimatedText>
     )
 }
 

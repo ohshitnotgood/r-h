@@ -22,12 +22,18 @@ const App: Component = () => {
     const [d4Hidden, setD4Hidden] = createSignal(true);
     const [d5Hidden, setD5Hidden] = createSignal(true);
 
+    const [firstPageLoad, setFirstPageLoad] = createSignal(false)
+
     const [lang, setLang] = createSignal("en")
 
 
     let p = Math.floor(Math.random() * 9 + 1)
 
     randomizePalette()
+
+    setTimeout(() => {
+        setFirstPageLoad(true)
+    }, 100)
 
     console.log("Palette selected: " + p)
     const [palette, setPalette] = createSignal(p)
@@ -135,7 +141,7 @@ const App: Component = () => {
             <div class="max-lg:hidden relative">
                 <div>
                     <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
-                        <Intro palette={palette()} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1}/>
+                        <Intro palette={palette()} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1} firstLoadCompleted={firstPageLoad()}/>
                         <Projects palette={palette()} initialDelay={2400} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
                         <Experience palette={palette()} initialDelay={2500} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
                         <Education palette={palette()} initialDelay={2600} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
