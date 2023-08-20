@@ -98,7 +98,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
 
     return (
         <Section header_en={`Experience`}
-                 headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={`03.`} sectionNumber_bn={`০৩.`}
+                 headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={`02.`} sectionNumber_bn={`০৩.`}
                  palette={props.palette} lang={props.lang} clickAction={props.onclickAction} secondaryActionButton={<ScrollIndicator signal={userReachedBottom()}/>}>
             <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
                 <div>

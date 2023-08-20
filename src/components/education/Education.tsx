@@ -6,7 +6,7 @@ import Section from "../reusable/Section";
 
 export default function Education(props: { palette: number, hidden: boolean, lang: string, onclickAction: any, initialDelay: number }) {
     return (
-        <Section header_en={`Education`} headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={`04.`} sectionNumber_bn={`04.`}
+        <Section header_en={`Education`} headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={`03.`} sectionNumber_bn={`04.`}
                  palette={props.palette} lang={props.lang} clickAction={props.onclickAction}>
             <div class='col-content' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
                 <div class="col-text overflow-y-scroll pr-20">

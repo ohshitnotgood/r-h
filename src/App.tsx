@@ -142,9 +142,9 @@ const App: Component = () => {
                 <div>
                     <div class='lg:flex lg:flex-row lg:w-screen max-lg:hidden'>
                         <Intro palette={palette()} lang={lang()} setLang={setLang} hidden={d1Hidden()} onclickAction={onClickD1} firstLoadCompleted={firstPageLoad()}/>
-                        <Projects palette={palette()} initialDelay={2400} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
-                        <Experience palette={palette()} initialDelay={2500} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
-                        <Education palette={palette()} initialDelay={2600} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
+                        <Experience palette={palette()} initialDelay={2400} lang={lang()} hidden={d3Hidden()} onclickAction={onClickD3}/>
+                        <Education palette={palette()} initialDelay={2500} lang={lang()} hidden={d2Hidden()} onclickAction={onClickD2}/>
+                        <Projects palette={palette()} initialDelay={2600} lang={lang()} hidden={d4Hidden()} onclickAction={onClickD4}/>
                         <Outro palette={palette()} initialDelay={2700} lang={lang()} hidden={d5Hidden()} onclickAction={onClickD5}/>
                     </div>
                 </div>
