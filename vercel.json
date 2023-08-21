@@ -1,5 +1,5 @@
 {
   "buildCommand": "vite build",
   "cleanUrls": true,
-  "rewrites": [{ "source": "/(.*)", "destination": "/src/404.tsx" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
