@@ -1,5 +1,4 @@
 {
-  "buildCommand": "vite",
   "cleanUrls": true,
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
