@@ -1,17 +1,13 @@
-import jsLogo from "../../assets/img/js_logo_bw.png";
-import dbLogo from "../../assets/img/logo_db.jpeg";
-import ktLogo from "../../assets/img/kt_logo_bw.png";
 import androidLogoBlock from "../../assets/img/android_logo_bw_block.png";
 import swiftLogo from "../../assets/img/logo_swift.png";
-import psqlLogo from "../../assets/img/psql_logo_alt.svg";
+import PsqlLogo from "../../assets/img/psql_logo_alt.svg";
 import dgLogo from "../../assets/img/logo_datagrip.png"
 import prismaLogo from "../../assets/img/prisma_logo.png";
 import androidStudio from "../../assets/img/jetpack_logo.png"
-import solidJSLogo from "../../assets/img/logo/logo_solidjs.svg"
+import SolidJSLogo from "../../assets/img/logo/logo_solidjs.svg"
 import expressJSLogo from "../../assets/img/logo/logo_expressjs.png"
-import svelteLogo from "../../assets/img/logo/logo_svelte.png"
 import ktorLogo from "../../assets/img/logo/logo_ktor.png"
-import tailwindLogo from "../../assets/img/logo/logo_tailwind.svg"
+import TailwindLogo from "../../assets/img/logo/logo_tailwind.svg"
 import {PrimaryText, SecondaryText} from "../reusable/Texts";
 import {Card} from "../reusable/Card";
 import {A} from '../reusable/Card'
@@ -39,7 +35,7 @@ export function Javascript(props: {palette?: number}){
         <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4`}>
             <div class=" text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <PrimaryText>SolidJS and SolidStart</PrimaryText>
-                <img src={solidJSLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+                <SolidJSLogo class="w-5 h-5" alt={"Javascript logo in black and white"}/>
             </div>
             <ul class="list-disc secondary-text">
                 <li>building reactive web pages with responsive design that can update view based on state change</li>
@@ -48,7 +44,7 @@ export function Javascript(props: {palette?: number}){
 
             <div class="pt-2 text-lg  text-left font-medium flex flex-row items-center space-x-2">
                 <PrimaryText>TailwindCSS</PrimaryText>
-                <img src={tailwindLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+                <TailwindLogo class="w-5 h-5"/>
             </div>
             <ul class="list-disc secondary-text">
                 <li>experienced with Tailwind class names and the Tailwind documentation</li>
@@ -80,11 +76,12 @@ export function Javascript(props: {palette?: number}){
 
 
 export function Database() {
+    // @ts-ignore
     return (
         <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                 <PrimaryText>Postgresql</PrimaryText>
-                <img src={psqlLogo} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+                <PsqlLogo class="w-5 h-5" />
             </div>
             <ul class="list-disc pl-4 pb-4 secondary-text">
                 <li>creating tables, roles, databases, etc from psql commandline interface</li>
@@ -268,11 +265,6 @@ function DatagripLogo() {
     )
 }
 
-function PostgresLogo() {
-    return (
-        <img class="w-5 h-5 mx-1" src={psqlLogo} alt="Postgres logo"/>
-    )
-}
 
 function AndroidStudioLogo() {
     return (

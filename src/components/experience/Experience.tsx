@@ -1,4 +1,4 @@
-import icDownCircled from '../../assets/icons/ic_down_circled.svg'
+import ScrollIndicatorIcon from '../../assets/icons/ic_down_circled.svg'
 import {createEffect, createSignal, Show} from "solid-js";
 import Header from "../reusable/Header";
 import linkIcon from '../../assets/icons/ic_open_link.svg'
@@ -245,7 +245,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
 function ScrollIndicator(props: {signal: boolean}) {
     return (
         <div classList={{"scroll-indicator-hide": props.signal, "scroll-indicator-show": !props.signal}}>
-            <img class="w-8 h-8" src={icDownCircled} alt="Down scroll indicator"/>
+            <ScrollIndicatorIcon class="w-8 h-8 fill-[color:var(--primary-color-post)]" alt="Down scroll indicator"/>
         </div>
     )
 }

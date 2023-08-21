@@ -1,7 +1,8 @@
 import {PrimaryText, SecondaryText} from "../reusable/Texts";
 import { Card} from "../reusable/Card";
-import linkIcon from "../../assets/icons/ic_link.svg";
-import disableLink from "../../assets/icons/ic_link_off.svg";
+import LinkIcon from "../../assets/icons/ic_link.svg";
+import DisableLink from "../../assets/icons/ic_link_off.svg";
+import {Show} from "solid-js";
 
 
 export function TennisForTwoCard( props: {xSetter: any, ySetter: any, setTextOnHover: any}) {
@@ -285,7 +286,12 @@ function A2( props: {href: string, children: any, xSetter: any, ySetter: any, ho
     return (
         <a onmousemove={(e) => mouseMoveAction(props.xSetter, props.ySetter, e)} onmouseleave={() => props.hoverTextSetter('null')} class={`rounded-none primary-text border-none font-medium text-lg p-0 m-0 flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} href={props.href}>
             <SecondaryText>{props.children}</SecondaryText>
-            <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
+            <Show when={props.href === 'no project link available yet'}>
+                <DisableLink alt={"Link icon"} class={`h-5 ml-[-5px] fill-[color:var(--primary-color-post)]`}/>
+            </Show>
+            <Show when={props.href != 'no project link available yet'}>
+                <LinkIcon alt={"Link icon"} class={`h-5 ml-[-5px] fill-[color:var(--primary-color-post)]`}/>
+            </Show>
         </a>
     )
 }

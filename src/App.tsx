@@ -10,7 +10,7 @@ import MobileExperience from "./components/mobile/MobileExperience";
 import MobileNavBar from "./components/mobile/MobileNavBar";
 import {createScrollPosition} from "@solid-primitives/scroll";
 import {MobileEducation} from "./components/mobile/MobileEducation";
-import loadingIcon from "./assets/icons/ic_progress.svg"
+import LoadingIcon from "./assets/icons/ic_progress.svg"
 import {randomizePalette} from "./components/reusable/ColorPalettes";
 import MobileProjects from "./components/mobile/MobileProjects";
 import MobileContacts from "./components/mobile/MobileContact";
@@ -149,7 +149,10 @@ const App: Component = () => {
                     </div>
                 </div>
                 <div class="w-screen z-50 h-screen bg-white grid place-content-center absolute top-0 left-0 pointer-events-none loading-screen-animation">
-                    <img alt="Spinning progress bar" class="animate-spin" src={loadingIcon}/>
+                    {/*<img alt="Spinning progress bar" class="animate-spin" src={loadingIcon}/>*/}
+                    <div class={`animate-spin`}>
+                        <LoadingIcon/>
+                    </div>
                 </div>
             </div>
             <div class="lg:hidden">

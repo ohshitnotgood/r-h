@@ -5,7 +5,7 @@ import Section from "../reusable/Section";
 import {PrimaryText, SecondaryText} from "../reusable/Texts";
 import OpacityAnimatedText from "../reusable/OpacityAnimatedText";
 import {getAge} from "../../functions/GetAge";
-import rightArrow from "../../assets/icons/ic_right.svg";
+import RightArrow from "../../assets/icons/ic_right.svg";
 
 
 export default function Intro(props: { palette: number, lang: string, setLang: any, hidden: boolean, onclickAction: any, firstLoadCompleted: boolean }) {
@@ -62,7 +62,10 @@ export default function Intro(props: { palette: number, lang: string, setLang: a
                     <button class="mt-7 border-[color:var(--primary-color-post)] pointer-events-auto z-10 hover:cursor-pointer rounded-full my-4 p-2 px-4 border">
                         <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                             <PrimaryText>get to know me</PrimaryText>
-                            <img src={rightArrow} class="w-6 h-6" alt={"Javascript logo in black and white"}/>
+                            {/*<img src={rightArrow} class="w-6 h-6" alt={"Javascript logo in black and white"}/>*/}
+                            <div>
+                                <RightArrow class={`w-6 h-6 fill-[color:var(--primary-color-post)]`}/>
+                            </div>
                         </div>
                     </button>
                 </OpacityAnimatedText>
