@@ -55,6 +55,24 @@ function getBackgroundColor(palette: number): string {
     return c[palette]
 }
 
+
+function getSecondaryBackgroundColor(palette: number): string {
+    let c: {[index: string]: string} = {
+        1: "#B8DBD9",
+        2: "#D9F0FF",
+        3: "#F7F7FF",
+        4: "#F7F7FF",
+        5: "#EA526F",
+        6: "#ECE2D0",
+        7: "#F2E9E4",
+        8: "#F4F4F9",
+        9: "#F2E9E4",
+        10: "#F2E8CF",
+    }
+
+    return c[palette]
+}
+
 function getPrimaryColor(palette: number): string {
     let c: {[index: number]: string} = {
         1: "#3066BE",

@@ -1,17 +1,21 @@
 import {PrimaryText, SecondaryText} from "../reusable/Texts";
-import {Card} from "../reusable/Card";
+import { Card} from "../reusable/Card";
 import linkIcon from "../../assets/icons/ic_link.svg";
 import disableLink from "../../assets/icons/ic_link_off.svg";
 
 
-export function TennisForTwoCard() {
+export function TennisForTwoCard( props: {setXPos: any, setYPos: any, setTextOnHover: any}) {
     return (
         <Card>
             <h1>
-                <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/ois-hw-tracker"}>
-                    <PrimaryText>Tennis For Two</PrimaryText>
-                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
-                </button>
+                {/*<button class={`flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} onclick={() => window.location.href="https://github.com/ohshitnotgood/ois-hw-tracker"}>*/}
+                {/*    <PrimaryText>Tennis For Two</PrimaryText>*/}
+                {/*    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>*/}
+                {/*</button>*/}
+
+                <A2 href={`https://github.com/ohshitnotgood/ois-hw-tracker`} hoverTextSetter={props.setTextOnHover} xSetter={props.setXPos} ySetter={props.setYPos}>
+                    Tennis for Two
+                </A2>
 
             </h1>
             <p>
@@ -29,27 +33,32 @@ export function TennisForTwoCard() {
                     <em>
                         Frameworks used:
                     </em>
-                    <a href={'https://github.com/is1200-example-projects/mcb32tools/releases/'}>
+                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://github.com/is1200-example-projects/mcb32tools/releases/'}>
                         C++/mips32.h
-                    </a>
-                    <a href={`https://github.com/me-no-dev/ESPAsyncWebServer`}>
+                    </A>
+
+                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://github.com/me-no-dev/ESPAsyncWebServer'}>
                         ESPAsyncWebServer
-                    </a>
-                    <a href={`https://github.com/me-no-dev/AsyncTCP`}>
+                    </A>
+
+                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={`https://github.com/me-no-dev/AsyncTCP`}>
                         AsyncTCP
-                    </a>
-                    <a href={'https://developer.apple.com/documentation/swiftui/'}>
+                    </A>
+
+                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://developer.apple.com/documentation/swiftui/'}>
                         SwiftUI
-                    </a>
-                    <a href={'https://developer.apple.com/documentation/swiftui/'}>
+                    </A>
+
+                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://developer.apple.com/documentation/swiftui/'}>
                         CoreMotion
-                    </a>
-                    <a href={'https://developer.android.com/docs'}>
+                    </A>
+
+                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://developer.android.com/docs'}>
                         AndroidSDK
-                    </a>
-                    <a href={'https://ktor.io/docs/welcome.html'}>
+                    </A>
+                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://ktor.io/docs/welcome.html'}>
                         Ktor
-                    </a>
+                    </A>
                 </p>
             </PrimaryText>
         </Card>
@@ -60,7 +69,7 @@ export function SwiftEssentialsCard() {
     return(
         <Card>
             <h1 class={`hover:underline`}>
-                <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
+                <button class={`flex items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
                     <PrimaryText>Swift Essentials</PrimaryText>
                     <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
                 </button>
@@ -81,7 +90,7 @@ export function EyeTrackerCard() {
     return (
         <Card>
             <h1 class={`hover:underline`}>
-                <button class={`flex hover:underline items-center flex-row`}
+                <button class={`flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`}
                         onclick={() => window.location.href="https://github.com/ohshitnotgood/eye-allergy.git"}>
                     <PrimaryText>Allergy Tracker</PrimaryText>
                     <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
@@ -110,7 +119,7 @@ export function MomentumScrollCard() {
     return (
         <Card>
             <h1>
-                <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="/"}>
+                <button class={`flex hover:underline items-center flex-row decoration-[color:var(--primary-color-post)]`}>
                     <PrimaryText>solid-momentum-scroll</PrimaryText>
                     <img src={disableLink} alt={"Unavailable link icon"} class={`h-5 pl-2`}/>
                 </button>
@@ -258,5 +267,39 @@ export function ThisWCard() {
             </p>
 
         </Card>
+    )
+}
+
+function A(props: {href: string, children: any, xSetter: any, ySetter: any, hoverTextSetter: any}) {
+
+    let hoverHref = 'https://' + props.href.split("/")[2]
+
+    function mouseMoveAction(xPosSetter: any, yPosSetter: any, e: any) {
+        props.hoverTextSetter(hoverHref)
+        xPosSetter(`left: ${e.clientX - 150 - 100 - 100}px;`)
+        yPosSetter(`top: ${e.clientY + 20}px;`)
+    }
+
+    return (
+        <a onmousemove={(e) => mouseMoveAction(props.xSetter, props.ySetter, e)} onmouseleave={() => props.hoverTextSetter('null')} class={`inline-block cursor-pointer rounded-3xl border border-[color:var(--border-color)] px-2`} href={props.href}>
+            <SecondaryText>{props.children}</SecondaryText>
+        </a>
+    )
+}
+
+function A2( props: {href: string, children: any, xSetter: any, ySetter: any, hoverTextSetter: any} ) {
+    let hoverHref = 'https://' + props.href.split("/")[2]
+
+    function mouseMoveAction(xPosSetter: any, yPosSetter: any, e: any) {
+        props.hoverTextSetter(hoverHref)
+        xPosSetter(`left: ${e.clientX - 150 - 100 - 100}px;`)
+        yPosSetter(`top: ${e.clientY + 20}px;`)
+    }
+
+    return (
+        <a onmousemove={(e) => mouseMoveAction(props.xSetter, props.ySetter, e)} onmouseleave={() => props.hoverTextSetter('null')} class={`rounded-none border-none text-lg p-0 m-0 flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} href={props.href}>
+            <SecondaryText>{props.children}</SecondaryText>
+            <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
+        </a>
     )
 }

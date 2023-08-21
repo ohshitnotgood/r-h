@@ -54,7 +54,7 @@ export default function Outro(props: any) {
         <Section header_en={`Contact`} headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={"05."} sectionNumber_bn={"05."} palette={props.palette} lang={props.lang} clickAction={props.onclickAction}>
             <div class='grid place-content-center h-screen z-50' classList={{"col-content-visible": !props.hidden, "col-content-shrink": props.hidden}}>
                 <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
-                    <div class="mt-32 pt-24 pb-5 uppercase text-7xl font-bold text-right primary-text">Contact Me!</div>
+                    <div class="my-12 pt-24 pb-5 uppercase text-7xl font-bold text-right primary-text">Contact Me!</div>
                     <div class="pb-24 text-justify">
 
                     </div>

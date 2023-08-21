@@ -186,10 +186,21 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
         } else setShowMomentumScroll(false)
     }
 
+    const [linkPositionX, setLinkPositionX] = createSignal('left: 0;')
+    const [linkPositionY, setLinkPositionY] = createSignal('top: 0;')
+    const [linkText, setLinkText] = createSignal('null')
+
+
+    let tertiaryButton = (
+        <div class={`absolute text-[color:var(--bg-color)] bg-[color:var(--primary-color-post)] px-2 text-sm rounded-lg whitespace-nowrap z-30`} classList={{'hidden': linkText() == 'null'}} style={`${linkPositionX()} ${linkPositionY()}`}>
+            {linkText()}
+        </div>
+    )
+
     return (
         <Section header_en={`Projects`}
                  headerDelay={props.initialDelay} hidden={props.hidden} sectionNumber_en={`04.`} sectionNumber_bn={`০৪.`}
-                 palette={props.palette} lang={props.lang} clickAction={props.onclickAction} secondaryActionButton={<ScrollIndicator signal={userReachedBottom()}/>}>
+                 palette={props.palette} lang={props.lang} clickAction={props.onclickAction} tertiaryActionButton={tertiaryButton} secondaryActionButton={<ScrollIndicator signal={userReachedBottom()}/>}>
             <div ref={mainContent!} onscroll={onScrollDown} class="col-text overflow-y-scroll pr-20">
 
                 <div>
@@ -229,7 +240,7 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                     <div class={`space-y-8 py-8`}>
                         {/* tennis for two */}
                         <CardColumns classList={{"mt-0 opacity-1 ": showTFT(), "pt-32 opacity-0": !showTFT()}} ref={tft!} title={`android`}>
-                            <TennisForTwoCard />
+                            <TennisForTwoCard setTextOnHover={setLinkText} setXPos={setLinkPositionX} setYPos={setLinkPositionY} />
                         </CardColumns>
 
 

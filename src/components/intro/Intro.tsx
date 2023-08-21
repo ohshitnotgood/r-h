@@ -59,7 +59,7 @@ export default function Intro(props: { palette: number, lang: string, setLang: a
                 </OpacityAnimatedText>
 
                 <OpacityAnimatedText show={!props.hidden} initialDelay={ props.firstLoadCompleted ? 800 : 2300}>
-                    <button class="mt-7 border-[color:var(--border-color)] pointer-events-auto z-10 hover:cursor-pointer rounded-full my-4 p-2 px-4 border">
+                    <button class="mt-7 border-[color:var(--primary-color-post)] pointer-events-auto z-10 hover:cursor-pointer rounded-full my-4 p-2 px-4 border">
                         <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
                             <PrimaryText>get to know me</PrimaryText>
                             <img src={rightArrow} class="w-6 h-6" alt={"Javascript logo in black and white"}/>
