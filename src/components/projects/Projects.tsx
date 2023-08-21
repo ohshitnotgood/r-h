@@ -240,14 +240,14 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                     <div class={`space-y-8 py-8`}>
                         {/* tennis for two */}
                         <CardColumns classList={{"mt-0 opacity-1 ": showTFT(), "pt-32 opacity-0": !showTFT()}} ref={tft!} title={`android`}>
-                            <TennisForTwoCard setTextOnHover={setLinkText} setXPos={setLinkPositionX} setYPos={setLinkPositionY} />
+                            <TennisForTwoCard setTextOnHover={setLinkText} xSetter={setLinkPositionX} ySetter={setLinkPositionY} />
                         </CardColumns>
 
 
                         {/* Scheduler */}
                         <CardColumns classList={{"mt-0 opacity-1": showSchedulerProject(), "pt-32 opacity-0": !showSchedulerProject()}}
                                      ref={scheduler!} title={`javascript`}>
-                            <SchedulerCard/>
+                            <SchedulerCard textSetter={setLinkText} xSetter={setLinkPositionX} ySetter={setLinkPositionY}/>
                         </CardColumns>
                     </div>
                 </div>
@@ -266,31 +266,31 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
                         {/*Homework section*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showHomeworkProject(), "pt-32 opacity-0": !showHomeworkProject()}}
                                      ref={hw!} title={`android`}>
-                            <HomeworkCard/>
+                            <HomeworkCard textSetter={setLinkText} xSetter={setLinkPositionX} ySetter={setLinkPositionY}/>
                         </CardColumns>
 
                         {/*This.Website*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showThisW(), "pt-32 opacity-0": !showThisW()}}
                                      ref={thisW!} title={`typescript/css`}>
-                            <ThisWCard />
+                            <ThisWCard textSetter={setLinkText} xSetter={setLinkPositionX} ySetter={setLinkPositionY}/>
                         </CardColumns>
 
                         {/*Eye tracker*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showEyeTracker(), "pt-32 opacity-0": !showEyeTracker()}}
                                      ref={eyeTracker!} title={`swift`}>
-                            <EyeTrackerCard />
+                            <EyeTrackerCard xSetter={setLinkPositionX} ySetter={setLinkPositionY} setTextOnHover={setLinkText}/>
                         </CardColumns>
 
                         {/*hexcom*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showHEXCOM(), "pt-32 opacity-0": !showHEXCOM()}}
                                      ref={hexcom!} title={`python & bash`}>
-                            <HexcomCard />
+                            <HexcomCard textSetter={setLinkText} xSetter={setLinkPositionX} ySetter={setLinkPositionY} />
                         </CardColumns>
 
                         {/*Swift Essentials*/}
                         <CardColumns classList={{"mt-0 opacity-1 ": showEssential(), "pt-32 opacity-0": !showEssential()}}
                                      ref={essentials!} title={`swift`}>
-                            <SwiftEssentialsCard />
+                            <SwiftEssentialsCard xSetter={setLinkPositionX} ySetter={setLinkPositionY} setTextOnHover={setLinkText} />
                         </CardColumns>
                     </div>
                 </div>
@@ -307,7 +307,7 @@ export default function Projects(props: {lang: string, palette: number, hidden: 
 
                     <CardColumns ref={mScroll!} title={`typescript`}
                                  classList={{"mt-0 opacity-1 ": showMomentumScroll(), "pt-32 opacity-0": !showMomentumScroll()}}>
-                        <MomentumScrollCard />
+                        <MomentumScrollCard setTextOnHover={setLinkText} xSetter={setLinkPositionX} ySetter={setLinkPositionY}/>
                     </CardColumns>
                     <div class={`h-[30vh]`}> </div>
                 </div>

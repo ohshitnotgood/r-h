@@ -4,7 +4,7 @@ import linkIcon from "../../assets/icons/ic_link.svg";
 import disableLink from "../../assets/icons/ic_link_off.svg";
 
 
-export function TennisForTwoCard( props: {setXPos: any, setYPos: any, setTextOnHover: any}) {
+export function TennisForTwoCard( props: {xSetter: any, ySetter: any, setTextOnHover: any}) {
     return (
         <Card>
             <h1>
@@ -13,7 +13,7 @@ export function TennisForTwoCard( props: {setXPos: any, setYPos: any, setTextOnH
                 {/*    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>*/}
                 {/*</button>*/}
 
-                <A2 href={`https://github.com/ohshitnotgood/ois-hw-tracker`} hoverTextSetter={props.setTextOnHover} xSetter={props.setXPos} ySetter={props.setYPos}>
+                <A2 href={`https://github.com/ohshitnotgood/ois-hw-tracker`} hoverTextSetter={props.setTextOnHover} xSetter={props.xSetter} ySetter={props.ySetter}>
                     Tennis for Two
                 </A2>
 
@@ -33,30 +33,30 @@ export function TennisForTwoCard( props: {setXPos: any, setYPos: any, setTextOnH
                     <em>
                         Frameworks used:
                     </em>
-                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://github.com/is1200-example-projects/mcb32tools/releases/'}>
+                    <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.setTextOnHover} href={'https://github.com/is1200-example-projects/mcb32tools/releases/'}>
                         C++/mips32.h
                     </A>
 
-                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://github.com/me-no-dev/ESPAsyncWebServer'}>
+                    <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.setTextOnHover} href={'https://github.com/me-no-dev/ESPAsyncWebServer'}>
                         ESPAsyncWebServer
                     </A>
 
-                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={`https://github.com/me-no-dev/AsyncTCP`}>
+                    <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.setTextOnHover} href={`https://github.com/me-no-dev/AsyncTCP`}>
                         AsyncTCP
                     </A>
 
-                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://developer.apple.com/documentation/swiftui/'}>
+                    <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.setTextOnHover} href={'https://developer.apple.com/documentation/swiftui/'}>
                         SwiftUI
                     </A>
 
-                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://developer.apple.com/documentation/swiftui/'}>
+                    <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.setTextOnHover} href={'https://developer.apple.com/documentation/swiftui/'}>
                         CoreMotion
                     </A>
 
-                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://developer.android.com/docs'}>
+                    <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.setTextOnHover} href={'https://developer.android.com/docs'}>
                         AndroidSDK
                     </A>
-                    <A xSetter={props.setXPos} ySetter={props.setYPos} hoverTextSetter={props.setTextOnHover} href={'https://ktor.io/docs/welcome.html'}>
+                    <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.setTextOnHover} href={'https://ktor.io/docs/welcome.html'}>
                         Ktor
                     </A>
                 </p>
@@ -65,14 +65,18 @@ export function TennisForTwoCard( props: {setXPos: any, setYPos: any, setTextOnH
     )
 }
 
-export function SwiftEssentialsCard() {
+export function SwiftEssentialsCard( props: {xSetter: any, ySetter: any, setTextOnHover: any} ) {
     return(
         <Card>
             <h1 class={`hover:underline`}>
-                <button class={`flex items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
-                    <PrimaryText>Swift Essentials</PrimaryText>
-                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
-                </button>
+                {/*<button class={`flex items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>*/}
+                {/*    <PrimaryText>Swift Essentials</PrimaryText>*/}
+                {/*    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>*/}
+                {/*</button>*/}
+
+                <A2 href={`https://github.com/ohshitnotgood/essentials`} hoverTextSetter={props.setTextOnHover} xSetter={props.xSetter} ySetter={props.ySetter}>
+                    Swift Essentials
+                </A2>
             </h1>
             <p>
                 <SecondaryText>
@@ -86,16 +90,22 @@ export function SwiftEssentialsCard() {
     )
 }
 
-export function EyeTrackerCard() {
+export function EyeTrackerCard( props: {xSetter: any, ySetter: any, setTextOnHover: any} ) {
     return (
         <Card>
             <h1 class={`hover:underline`}>
-                <button class={`flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`}
-                        onclick={() => window.location.href="https://github.com/ohshitnotgood/eye-allergy.git"}>
-                    <PrimaryText>Allergy Tracker</PrimaryText>
-                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
-                </button>
+                {/*<button class={`flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`}*/}
+                {/*        onclick={() => window.location.href="https://github.com/ohshitnotgood/eye-allergy.git"}>*/}
+                {/*    <PrimaryText>Allergy Tracker</PrimaryText>*/}
+                {/*    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>*/}
+                {/*</button>*/}
+
+
+                <A2 href={`https://github.com/ohshitnotgood/eye-allergy.git`} hoverTextSetter={props.setTextOnHover} xSetter={props.xSetter} ySetter={props.ySetter}>
+                    Tennis for Two
+                </A2>
             </h1>
+
             <p>
                 <SecondaryText>
                     A simple macOS app, built using SwiftUI, Swift Graphs and FileManager to track events of itches during a period I contracted eye allergies.
@@ -115,14 +125,19 @@ export function EyeTrackerCard() {
     )
 }
 
-export function MomentumScrollCard() {
+export function MomentumScrollCard( props: {xSetter: any, ySetter: any, setTextOnHover: any} ) {
     return (
         <Card>
             <h1>
-                <button class={`flex hover:underline items-center flex-row decoration-[color:var(--primary-color-post)]`}>
-                    <PrimaryText>solid-momentum-scroll</PrimaryText>
-                    <img src={disableLink} alt={"Unavailable link icon"} class={`h-5 pl-2`}/>
-                </button>
+                {/*<button class={`flex hover:underline items-center flex-row decoration-[color:var(--primary-color-post)]`}>*/}
+                {/*    <PrimaryText>solid-momentum-scroll</PrimaryText>*/}
+                {/*    <img src={disableLink} alt={"Unavailable link icon"} class={`h-5 pl-2`}/>*/}
+                {/*</button>*/}
+
+                <A2 href={`no project link available yet`} hoverTextSetter={props.setTextOnHover} xSetter={props.xSetter} ySetter={props.ySetter}>
+                    solid-momentum-scroll
+                </A2>
+
             </h1>
 
             <p>
@@ -136,12 +151,15 @@ export function MomentumScrollCard() {
     )
 }
 
-export function SchedulerCard() {
+export function SchedulerCard( props: { xSetter: any, ySetter: any, textSetter: any}) {
     return (
         <Card>
-            <h1>
-                <PrimaryText>Scheduler</PrimaryText>
-            </h1>
+            {/*<h1>*/}
+            {/*    <PrimaryText>Scheduler</PrimaryText>*/}
+            {/*</h1>*/}
+            <A2 href={`no project link available yet`} xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter}>
+                Scheduler
+            </A2>
             <p>
                 <SecondaryText>
                     An exceptionally adaptable and remarkably swift online questionnaire
@@ -172,15 +190,18 @@ export function SchedulerCard() {
     )
 }
 
-export function HomeworkCard() {
+export function HomeworkCard(props: {xSetter: any, ySetter: any, textSetter: any}) {
     return (
         <Card>
-            <h1>
-                <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/ois-hw-tracker"}>
-                    <PrimaryText>Homework Tracker</PrimaryText>
-                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
-                </button>
-            </h1>
+            {/*<h1>*/}
+            {/*    <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/ois-hw-tracker"}>*/}
+            {/*        <PrimaryText>Homework Tracker</PrimaryText>*/}
+            {/*        <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>*/}
+            {/*    </button>*/}
+            {/*</h1>*/}
+            <A2 href={`https://github.com/ohshitnotgood/ois-hw-tracker`} xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter}>
+                Homework Tracker
+            </A2>
             <p>
                 <SecondaryText>
                     During my time in high school, I developed an Android application aimed at
@@ -208,15 +229,18 @@ export function HomeworkCard() {
     )
 }
 
-export function HexcomCard() {
+export function HexcomCard(props: {xSetter: any, ySetter: any, textSetter: any}) {
     return (
         <Card>
-            <h1 class={`hover:underline`}>
-                <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>
-                    <PrimaryText>hexcom</PrimaryText>
-                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
-                </button>
-            </h1>
+            {/*<h1 class={`hover:underline`}>*/}
+            {/*    <button class={`flex items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/essentials"}>*/}
+            {/*        <PrimaryText>hexcom</PrimaryText>*/}
+            {/*        <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>*/}
+            {/*    </button>*/}
+            {/*</h1>*/}
+            <A2 href={`https://github.com/ohshitnotgood/hexcom`} xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter}>
+                hexcom
+            </A2>
             <p>
                 <SecondaryText>
                     A Python script uses the command line to convert binary inputs into
@@ -240,17 +264,21 @@ export function HexcomCard() {
 }
 
 
-export function ThisWCard() {
+export function ThisWCard(props: {xSetter: any, ySetter: any, textSetter: any}) {
     return (
         <Card>
-            <h1>
-                <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/r-h"}>
-                    <code>
-                        <PrimaryText>this.website</PrimaryText>
-                    </code>
-                    <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
-                </button>
-            </h1>
+            {/*<h1>*/}
+            {/*    <button class={`flex hover:underline items-center flex-row`} onclick={() => window.location.href="https://github.com/ohshitnotgood/r-h"}>*/}
+            {/*        <code>*/}
+            {/*            <PrimaryText>this.website</PrimaryText>*/}
+            {/*        </code>*/}
+            {/*        <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>*/}
+            {/*    </button>*/}
+            {/*</h1>*/}
+
+            <A2 href={`https://github.com/ohshitnotgood/r-h`} xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter}>
+                <code>this.website</code>
+            </A2>
 
             <p>
                 <PrimaryText>
@@ -288,7 +316,9 @@ function A(props: {href: string, children: any, xSetter: any, ySetter: any, hove
 }
 
 function A2( props: {href: string, children: any, xSetter: any, ySetter: any, hoverTextSetter: any} ) {
-    let hoverHref = 'https://' + props.href.split("/")[2]
+
+    let hoverHref = props.href
+    if (props.href != 'no project link available yet') hoverHref = 'https://' + props.href.split("/")[2]
 
     function mouseMoveAction(xPosSetter: any, yPosSetter: any, e: any) {
         props.hoverTextSetter(hoverHref)
@@ -297,7 +327,7 @@ function A2( props: {href: string, children: any, xSetter: any, ySetter: any, ho
     }
 
     return (
-        <a onmousemove={(e) => mouseMoveAction(props.xSetter, props.ySetter, e)} onmouseleave={() => props.hoverTextSetter('null')} class={`rounded-none border-none text-lg p-0 m-0 flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} href={props.href}>
+        <a onmousemove={(e) => mouseMoveAction(props.xSetter, props.ySetter, e)} onmouseleave={() => props.hoverTextSetter('null')} class={`rounded-none border-none font-medium text-lg p-0 m-0 flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} href={props.href}>
             <SecondaryText>{props.children}</SecondaryText>
             <img src={linkIcon} alt={"Link icon"} class={`h-5 pl-2`}/>
         </a>
