@@ -6,6 +6,7 @@ import App from './App';
 import {Route, Router, Routes} from "@solidjs/router";
 import Acknowledgements from "./components/credits/Acknowledgements";
 import TestView from "./components/TestView";
+import {Error404} from "./components/404";
 
 const root = document.getElementById('root');
 
@@ -20,7 +21,7 @@ render(() =>
         <Routes>
             <Route path={"/"} component={App}/>
             <Route path={"/credits"} component={Acknowledgements} />
-            <Route path={"*"} component={Acknowledgements} />
+            <Route path={"*"} component={Error404} />
             <Route path={"/test"} component={TestView} />
         </Routes>
     </Router>, root!);

@@ -45,7 +45,7 @@ export function Card( props: { cardImage?: any, children: any}) {
                 }
                 
                 
-                p button, a {
+                p > button, a {
                     display: inline-block;
                     border: 1px;
                     border-style: solid;

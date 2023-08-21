@@ -1,7 +1,7 @@
 import rightArrow from "../../assets/icons/ic_right.svg";
 import languageIcon from "../../assets/icons/ic_lang.svg";
 import downIcon from "../../assets/icons/ic_down_circled.svg";
-import linkIcon from "../../assets/icons/ic_link.svg";
+import LinkIcon from "../../assets/icons/ic_link.svg";
 import typescriptLogo from "../../assets/img/typescript_logo_bw.png";
 import solidLogo from "../../assets/img/solidjs_logo.jpg";
 import tailwindLogo from "../../assets/img/tailwind-logo.jpg";
@@ -65,9 +65,9 @@ export function Fonts() {
         <div class="pb-24">
             <div>
                 <div class="lowercase text-lg text-left font-medium">
-                    <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-1">
+                    <div class="lowercase text-lg text-left font-medium flex flex-row items-center">
                         <a href="https://fonts.google.com/specimen/Inter">Inter</a>
-                        <img src={linkIcon} class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+                        <LinkIcon class="w-5 h-5" alt={"Javascript logo in black and white"}/>
                     </div>
                 </div>
                 <div class="lowercase text-gray-600">
