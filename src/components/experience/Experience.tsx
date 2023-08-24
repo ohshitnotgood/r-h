@@ -154,7 +154,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                             </div>
                             <div ref={js!}>
                                 <PrimaryText>
-                                    <Javascript/>
+                                    <Javascript xSetter={setLinkPositionX} ySetter={setLinkPositionY} textSetter={setLinkText}/>
                                 </PrimaryText>
                             </div>
                         </div>
@@ -168,7 +168,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                             </div>
                             <div ref={db!}>
                                 <PrimaryText lang={props.lang} palette={props.palette}>
-                                    <Database />
+                                    <Database  xSetter={setLinkPositionX} ySetter={setLinkPositionY} textSetter={setLinkText}/>
                                 </PrimaryText>
                             </div>
                         </div>
@@ -196,7 +196,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
                             </div>
                             <div ref={swift!}>
                                 <PrimaryText lang={props.lang} palette={props.palette}>
-                                    <Swift />
+                                    <Swift xSetter={setLinkPositionX} ySetter={setLinkPositionY} textSetter={setLinkText}/>
                                 </PrimaryText>
                             </div>
                         </div>
@@ -243,6 +243,7 @@ export default function Experience(props: {lang: string, palette: number, hidden
 }
 
 function ScrollIndicator(props: {signal: boolean}) {
+    // @ts-ignore
     return (
         <div classList={{"scroll-indicator-hide": props.signal, "scroll-indicator-show": !props.signal}}>
             <ScrollIndicatorIcon class="w-8 h-8 fill-[color:var(--primary-color-post)]" alt="Down scroll indicator"/>

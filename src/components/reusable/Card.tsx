@@ -1,6 +1,9 @@
 import androidLogoBlock from "../../assets/img/android_logo_bw_block.png";
 import ktorLogo from "../../assets/img/logo/logo_ktor.png";
 import {PrimaryText, SecondaryText} from "./Texts";
+import {Show} from "solid-js";
+import DisableLink from "../../assets/icons/ic_link_off.svg";
+import LinkIcon from "../../assets/icons/ic_link.svg";
 
 
 /**
@@ -89,3 +92,57 @@ export function A(props: {href: string, children: any, xSetter: any, ySetter: an
         </a>
     )
 }
+
+
+export function A2( props: {href: string, children: any, xSetter: any, ySetter: any, hoverTextSetter: any} ) {
+
+    let hoverHref = props.href
+    if (props.href != 'no project link available yet') hoverHref = 'https://' + props.href.split("/")[2]
+
+    function mouseMoveAction(xPosSetter: any, yPosSetter: any, e: any) {
+        props.hoverTextSetter(hoverHref)
+        xPosSetter(`left: ${e.clientX - 150 - 100 - 100}px;`)
+        yPosSetter(`top: ${e.clientY + 20}px;`)
+    }
+
+    return (
+        <a onmousemove={(e) => mouseMoveAction(props.xSetter, props.ySetter, e)} onmouseleave={() => props.hoverTextSetter('null')} class={`rounded-none primary-text border-none font-medium text-lg p-0 m-0 flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} href={props.href}>
+            <SecondaryText>{props.children}</SecondaryText>
+            <Show when={props.href === 'no project link available yet'}>
+                <DisableLink alt={"Link icon"} class={`h-5 ml-[-5px] fill-[color:var(--primary-color-post)]`}/>
+            </Show>
+            <Show when={props.href != 'no project link available yet'}>
+                <LinkIcon alt={"Link icon"} class={`h-5 ml-[-5px] fill-[color:var(--primary-color-post)]`}/>
+            </Show>
+        </a>
+    )
+}
+
+export function A3( props: {href: string, children: any, xSetter: any, ySetter: any, hoverTextSetter: any, img?: any} ) {
+
+    let hoverHref = props.href
+    if (props.href != 'no project link available yet') hoverHref = 'https://' + props.href.split("/")[2]
+
+    function mouseMoveAction(xPosSetter: any, yPosSetter: any, e: any) {
+        props.hoverTextSetter(hoverHref)
+        xPosSetter(`left: ${e.clientX - 150}px;`)
+        yPosSetter(`top: ${e.clientY + 20}px;`)
+    }
+
+    return (
+        <a onmousemove={(e) => mouseMoveAction(props.xSetter, props.ySetter, e)} onmouseleave={() => props.hoverTextSetter('null')} class={`rounded-none primary-text border-none font-medium text-lg p-0 m-0 flex hover:underline items-center flex-row pt-0 decoration-[color:var(--primary-color-post)]`} href={props.href}>
+            <PrimaryText>{props.children}</PrimaryText>
+            <Show when={props.href === 'no project link available yet' && props.img == null || false || undefined}>
+                <DisableLink alt={"Link icon"} class={`h-5 ml-[-5px] fill-[color:var(--primary-color-post)]`}/>
+            </Show>
+            <Show when={props.href != 'no project link available yet' && props.img == null || false || undefined}>
+                <LinkIcon alt={"Link icon"} class={`h-5 ml-[-5px] fill-[color:var(--primary-color-post)]`}/>
+            </Show>
+            <Show when={props.img != null || false}>
+                {props.img}
+            </Show>
+        </a>
+    )
+}
+
+

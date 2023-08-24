@@ -9,7 +9,7 @@ export function TennisForTwoCard( props: {xSetter: any, ySetter: any, setTextOnH
     return (
         <Card>
             <h1>
-                <A2 href={`https://github.com/ohshitnotgood/ois-hw-tracker`} hoverTextSetter={props.setTextOnHover} xSetter={props.xSetter} ySetter={props.ySetter}>
+                <A2 href={`https://github.com/ohshitnotgood/tennis-for-two`} hoverTextSetter={props.setTextOnHover} xSetter={props.xSetter} ySetter={props.ySetter}>
                     Tennis for Two
                 </A2>
 

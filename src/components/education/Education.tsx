@@ -33,7 +33,7 @@ export default function Education(props: { palette: number, hidden: boolean, lan
 
 
                         <OpacityAnimatedText show={!props.hidden} initialDelay={900}>
-                            <div class="uppercase text-sm secondary-text">Bachelor's of Science</div>
+                            <div class="uppercase text-sm secondary-text">Bachelor of Science</div>
                         </OpacityAnimatedText>
                         <OpacityAnimatedText show={!props.hidden} initialDelay={900}>
                             <College />
@@ -69,18 +69,18 @@ function PageSubtitle() {
 function HighSchool() {
     return (
         <div>
-            <div class="lowercase text-lg text-left font-medium primary-text">
+            <div class=" text-lg text-left font-medium primary-text">
                 Oxford International School
             </div>
-            <div class="lowercase primary-text">
-                cambridge gce <i>o level</i> and <i>a level</i>
+            <div class=" primary-text">
+                Cambridge GCE <i>O level</i> and <i>A level</i>
             </div>
-            <div class="lowercase italic text-gray-600 text-sm pt-1.5 secondary-text">
+            <div class="pb-10  italic text-gray-600 text-sm pt-1.5 secondary-text">
                 2019 - 2021
             </div>
-            <ul class="list-disc pb-10 pt-2 text-gray-500 lowercase secondary-text">
-                <li>Graduated with 5A*/4A in the O Level and 3A* in the A Level.</li>
-            </ul>
+            {/*<div class="list-disc pb-10 pt-2 text-gray-500 lowercase secondary-text">*/}
+            {/*    Graduated with 5A*4A in the O Level and 3A* in the A Level.*/}
+            {/*</div>*/}
         </div>
     )
 }
@@ -89,14 +89,17 @@ function College() {
     return (
         <div class="pb-24">
             <div>
-                <div class="lowercase text-lg text-left font-medium primary-text">
-                    Kungliga Tekniska Högskolan
+                <div class="text-lg text-left font-medium primary-text">
+                    KTH Royal Institute of Technology
                 </div>
-                <div class="lowercase primary-text">
-                    bsc in information and communication technology
+                <div class="primary-text">
+                    BSc in Information and Communication Technology
                 </div>
-                <ul class="list-disc pb-10 pt-2 text-gray-500 lowercase secondary-text">
-                    <li>Graduated with 5A*/4A in the O Level and 3A* in the A Level.</li>
+                <div class=" italic text-gray-600 text-sm pt-1.5 secondary-text">
+                    2022 - Present
+                </div>
+                <ul class="list-disc pb-10 pt-2 text-gray-500  secondary-text">
+
                 </ul>
             </div>
         </div>

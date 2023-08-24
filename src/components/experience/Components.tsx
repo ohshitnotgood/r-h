@@ -9,7 +9,7 @@ import expressJSLogo from "../../assets/img/logo/logo_expressjs.png"
 import ktorLogo from "../../assets/img/logo/logo_ktor.png"
 import TailwindLogo from "../../assets/img/logo/logo_tailwind.svg"
 import {PrimaryText, SecondaryText} from "../reusable/Texts";
-import {Card} from "../reusable/Card";
+import {A2, A3, Card} from "../reusable/Card";
 import {A} from '../reusable/Card'
 
 const borderColor: {[index: number]: string} = {
@@ -30,12 +30,13 @@ function mouseMoveAction(xPosSetter: any, yPosSetter: any, e: any) {
     yPosSetter(`top: ${e.clientY + 20}px;`)
 }
 
-export function Javascript(props: {palette?: number}){
+export function Javascript(props: {palette?: number, xSetter: any, ySetter: any, textSetter: any}){
     return(
         <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4`}>
             <div class=" text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <PrimaryText>SolidJS and SolidStart</PrimaryText>
-                <SolidJSLogo class="w-5 h-5" alt={"Javascript logo in black and white"}/>
+                <A3 href={`https://solidjs.com`} xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} img={<SolidJSLogo class="w-5 h-5 ml-2" alt={"Javascript logo in black and white"}/>}>
+                    SolidJS and SolidStart
+                </A3>
             </div>
             <ul class="list-disc secondary-text">
                 <li>building reactive web pages with responsive design that can update view based on state change</li>
@@ -64,24 +65,25 @@ export function Javascript(props: {palette?: number}){
                 <span class={`primary-text`}>
                     Framework experiences:
                 </span>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://www.solidjs.com/guides/getting-started">SolidJS</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://react.dev/">ReactJS</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://expressjs.com/">ExpressJS</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://tailwindcss.com/docs/installation">TailwindCSS</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://sass-lang.com/">SASS</a>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://www.solidjs.com/guides/getting-started">SolidJS</A>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://react.dev/">ReactJS</A>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://expressjs.com/">ExpressJS</A>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://tailwindcss.com/docs/installation">TailwindCSS</A>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://sass-lang.com/">SASS</A>
             </p>
         </div>
     )
 }
 
 
-export function Database() {
+export function Database(props: {xSetter: any, ySetter: any, textSetter: any}) {
     // @ts-ignore
     return (
         <div class={`border-[color:var(--border-color)] text-[color:var(--primary-color)] rounded-3xl border p-4 `}>
             <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                <PrimaryText>Postgresql</PrimaryText>
-                <PsqlLogo class="w-5 h-5" />
+                <A3 xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href={`https://postgresql.org`} img={<PsqlLogo class="w-5 h-5 ml-2" />}>
+                    Postgresql
+                </A3>
             </div>
             <ul class="list-disc pl-4 pb-4 secondary-text">
                 <li>creating tables, roles, databases, etc from psql commandline interface</li>
@@ -94,9 +96,9 @@ export function Database() {
                 <span class={`primary-text`}>
                     Databases used:
                 </span>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://www.solidjs.com/guides/getting-started">PostgresQL</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://prisma.io/">PrismaORM</a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] secondary-text px-2`} href="https://expressjs.com/">Ktorm</a>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://www.solidjs.com/guides/getting-started">PostgresQL</A>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://prisma.io/">PrismaORM</A>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://expressjs.com/">Ktorm</A>
             </p>
         </div>
     )
@@ -188,7 +190,7 @@ export function Android(props: {palette: any}) {
 //     )
 // }
 
-export function Swift() {
+export function Swift(props: {xSetter: any, ySetter: any, textSetter: any}) {
     return (
         <Card>
             <h1>
@@ -210,10 +212,10 @@ export function Swift() {
                 <span class={`primary-text inline-block`}>
                     Framework experiences:
                 </span>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://developer.apple.com/xcode/swiftui/"><SecondaryText>SwiftUI</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://github.com/siteline/SwiftUI-Introspect"><SecondaryText>Swift Introspect</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://developer.apple.com/documentation/swift/concurrency"><SecondaryText>Swift Concurrency</SecondaryText></a>
-                <a class={`inline-block rounded-3xl border border-[color:var(--border-color)] px-2`} href="https://developer.apple.com/documentation/charts"><SecondaryText>Swift Charts</SecondaryText></a>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://developer.apple.com/xcode/swiftui/"><SecondaryText>SwiftUI</SecondaryText></A>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://github.com/siteline/SwiftUI-Introspect"><SecondaryText>Swift Introspect</SecondaryText></A>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://developer.apple.com/documentation/swift/concurrency"><SecondaryText>Swift Concurrency</SecondaryText></A>
+                <A xSetter={props.xSetter} ySetter={props.ySetter} hoverTextSetter={props.textSetter} href="https://developer.apple.com/documentation/charts"><SecondaryText>Swift Charts</SecondaryText></A>
             </p>
         </Card>
     )
