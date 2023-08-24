@@ -149,7 +149,6 @@ const App: Component = () => {
                     </div>
                 </div>
                 <div class="w-screen z-50 h-screen bg-white grid place-content-center absolute top-0 left-0 pointer-events-none loading-screen-animation">
-                    {/*<img alt="Spinning progress bar" class="animate-spin" src={loadingIcon}/>*/}
                     <div class={`animate-spin`}>
                         <LoadingIcon/>
                     </div>

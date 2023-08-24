@@ -43,29 +43,24 @@ export default function Intro(props: { palette: number, lang: string, setLang: a
 
                 {/*Page Subtitle*/}
                 <OpacityAnimatedText show={!props.hidden} initialDelay={ props.firstLoadCompleted ? 400 : 1900}>
-                    <PrimaryText class={`xl:text-5xl lg:text-4xl`}>comp. eng. student at kth</PrimaryText>
+                    <PrimaryText class={`xl:text-5xl lg:text-4xl normal-case`}>comp. eng. student at kth</PrimaryText>
                 </OpacityAnimatedText>
 
 
                 {/*Page description*/}
                 <OpacityAnimatedText show={!props.hidden} initialDelay={ props.firstLoadCompleted ? 600 : 2100}>
-                    <SecondaryText class={`xl:text-2xl lg:text-lg lg:pr-20`}>
-                        {getAge(props.lang)}
-                        year old highly skilled software engineer and passionate programmer.
-                        Adept at leveraging cutting-edge technologies to deliver efficient and
-                        user-centric applications. Committed to continuous learning and seeking
-                        new challenges to drive excellence in software development.
+                    <SecondaryText class={`xl:text-2xl lg:text-lg lg:pr-20 pt-3 normal-case`}>
+                        {getAge(props.lang)} year old passionate programmer, based in Stockholm, Sweden.
+                        Experienced with numerous software development framework and APIs and familiar with
+                        industry-standard techniques for coding and code upkeep.
                     </SecondaryText>
                 </OpacityAnimatedText>
 
                 <OpacityAnimatedText show={!props.hidden} initialDelay={ props.firstLoadCompleted ? 800 : 2300}>
                     <button class="mt-7 border-[color:var(--primary-color-post)] pointer-events-auto z-10 hover:cursor-pointer rounded-full my-4 p-2 px-4 border">
-                        <div class="lowercase text-lg text-left font-medium flex flex-row items-center space-x-2">
-                            <PrimaryText>get to know me</PrimaryText>
-                            {/*<img src={rightArrow} class="w-6 h-6" alt={"Javascript logo in black and white"}/>*/}
-                            <div>
-                                <RightArrow class={`w-6 h-6 fill-[color:var(--primary-color-post)]`}/>
-                            </div>
+                        <div class="normal-case text-lg text-left font-medium flex flex-row items-center space-x-2">
+                            <PrimaryText>Get to know me</PrimaryText>
+                            <RightArrow class={`w-6 h-6 fill-[color:var(--primary-color-post)]`}/>
                         </div>
                     </button>
                 </OpacityAnimatedText>
